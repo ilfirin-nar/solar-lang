@@ -1,4 +1,4 @@
-# solar-lang
+# Solar Language
 ## Common thesises
 * Simplicity
 * Dependency control
