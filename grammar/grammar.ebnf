@@ -1,4 +1,4 @@
-whiteSpace = ' ' | '\n' | '\t' | '\f'
+whiteSpace = ' ' | ' ' | '' | '\t' | '\f'
 capitalLetter = 'A' .. 'Z'
 lowercaseLetter = 'a' .. 'z'
 digit = '0' .. '9'
