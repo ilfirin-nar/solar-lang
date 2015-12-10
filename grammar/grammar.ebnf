@@ -1,14 +1,24 @@
-digit = '0' .. '9'
+whiteSpace = ' ' | '\n' | '\t' | '\f'
 capitalLetter = 'A' .. 'Z'
 lowercaseLetter = 'a' .. 'z'
+digit = '0' .. '9'
+binDigit = '0' .. '1'
+octDigit = '0' .. '7'
+hexDigit = digit | capitalLetter | lowercaseLetter
+binLiteral = '0' ('b' | 'B' ) binDigit
+octLiteral = '0' ('o' | 'c' | 'C') octDigit
+hexLiteral = '0' ( 'x' | 'X' ) hexdigit { hexdigit }
 letter =  capitalLetter | lowercaseLetter | '\x80' .. '\xff'
 letterSequence = letter { letter }
 sign = '+' | '-'
 mark = '.' | ',' | '!' | '?' | ':' | ';' | '_' | sign | '='
-unsignedNumber = digit { digit }
-signedNumber = [ sign ] unsignedNumber
-number = signedNumber [ '.' [ unsignedNumber ] ] [ ( 'e' | 'E' )  unsignedNumber ]
+digitSeqence = digit { digit }
+signedNumber = [ sign ] digitSeqence
+number = signedNumber [ '.' [ digitSeqence ] ] [ ( 'e' | 'E' )  digitSeqence ]
+
 
 charLiteral = ''' letter | digit '''
 stringLiteral = '"' letter { letter | ' ' } '"'
-identifier = letter { letter | unsignedNumber }
+identifier = letter { letter | digitSeqence }
+
+comment = '#'
