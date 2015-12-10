@@ -21,9 +21,10 @@ number = signedNumber [ '.' [ digitSequence ] ]
 charLiteral = '\'' letter | digit '\''
 stringLiteral = '"' letter { letter | ' ' } '"'
 
-localVariableIdentifier = lowercaseLetter { letterSequence | digitSequence }
-typeIdentifier = capitalLetter { letterSequence | digitSequence }
+identifier = letter { letterSequence | digitSequence }
 
 operand = identifier | number | charLiteral | stringLiteral
-binaryOperator = '+' | '-' | '*' | '/' | '%'
+unaryOperator = '+' | '-' | '!'
+binaryOperator = '+' | '-' | '*' | '/' | '%' | '&' | '|' | '^' | 'and' | 'or' | 'xor' | '=' | 'is' | '..'
+unaryExpression = unrayOperator operand
 binaryExpression = operand binaryOperator operand
