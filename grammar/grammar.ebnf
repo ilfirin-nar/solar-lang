@@ -3,9 +3,8 @@ capitalLetter = 'A' .. 'Z'
 lowercaseLetter = 'a' .. 'z'
 letter =  capitalLetter | lowercaseLetter | '\x80' .. '\xff'
 letterSequence = letter { letter }
-mark = '.' | ',' | '!' | '?' | ':' | ';' | '_' | '-' | '+' | '='
-
 sign = '+' | '-'
+mark = '.' | ',' | '!' | '?' | ':' | ';' | '_' | sign | '='
 unsignedNumber = digit { digit }
 signedNumber = [ sign ] unsignedNumber
 number = signedNumber [ '.' [ unsignedNumber ] ] [ ( 'e' | 'E' )  unsignedNumber ]
