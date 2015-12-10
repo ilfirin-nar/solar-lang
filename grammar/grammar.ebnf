@@ -15,14 +15,15 @@ hexLiteral = '0' ( 'x' | 'X' ) hexdigit { hexdigit }
 letter =  capitalLetter | lowercaseLetter | '\x80' .. '\xff'
 letterSequence = letter { letter }
 
-sign = '+' | '-'
-mark = '.' | ',' | '!' | '?' | ':' | ';' | '_' | sign | '='
-
 digitSequence = digit { digit }
-signedNumber = [ sign ] digitSequence
-number = signedNumber [ '.' [ digitSequence ] ] [ ( 'e' | 'E' )  digitSequence ]
-
+number = signedNumber [ '.' [ digitSequence ] ]
 
 charLiteral = '\'' letter | digit '\''
 stringLiteral = '"' letter { letter | ' ' } '"'
-identifier = letter { letterSequence | digitSequence }
+
+localVariableIdentifier = lowercaseLetter { letterSequence | digitSequence }
+typeIdentifier = capitalLetter { letterSequence | digitSequence }
+
+operand = identifier | number | charLiteral | stringLiteral
+binaryOperator = '+' | '-' | '*' | '/' | '%'
+binaryExpression = operand binaryOperator operand
