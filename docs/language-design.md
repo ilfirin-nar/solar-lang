@@ -1,4 +1,4 @@
-# Language design
+# Solar language design
 ## Literals
 ### Brackets
 #### Parentheses
