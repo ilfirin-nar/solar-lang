@@ -1,13 +1,35 @@
 # Examples of language design
 ## Literals
-* Numbers: `42`, `3.14`, `0x4fd2`
-* Characters: `'d'`, `'S'`, `'5'`
-* Strings: `'Some string'`, `'Some string with numbers: 42!'`
+### Brackets
+#### Parentheses
+`(`, `)`
+#### Square brackets
+`[`, `]`
+#### Angle brackets
+`<`, `>`
+#### Braces
+`{`, `}`
+
+### Number
+* `42` — integer number
+* `3.14` — real number
+* `0x4fd2` — HEX form
+
+### Characters and strings
+#### Characters
+`'d'`, `'S'`, `'5'`
+#### Strings
+`'Some string'`, `'Some string with numbers: 42!'`
+
 
 ## Operators
 ### Unary
+#### Infix
 * `-` — inverse sign
 * `!` — negation
+#### Postfix
+* `++` — increment
+* `--` — decrement
 
 ### Binary
 * `<-` — assigment
@@ -24,6 +46,7 @@
 * `or` — logical (inclusive) disjunction
 * `xor` — logical exclusive disjunction
 
+
 ## Statements
 ### Expressions
 #### Expressions is a statemets!
@@ -36,6 +59,7 @@ getNumber(3)
 ```
 (2 + 2) * getNumber(3) + 4*('42' to Int)
 ```
+
 ### Declare local variable
 #### Declare and initialize variable statement
 ```
