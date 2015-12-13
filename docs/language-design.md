@@ -9,7 +9,26 @@
 
 #### Square brackets
 `[`, `]`
-* Array definition: `[1..10]`
+* Array definition:
+`[1..10]`
+`['q', 'w', 'e', 'r', 't', 'y']`
+```
+[
+    'q'
+    'qw'
+    'qwe'
+    'qwer'
+    'qwert'
+    'qwerty'
+]
+```
+```
+[
+    1.0 0.0 0.0
+    0.0 1.0 0.0
+    0.0 0.0 1.0
+]
+```
 * Iterators or access by index: `someArray[3]`
 
 #### Angle brackets
@@ -19,7 +38,7 @@
 * Into some statemets such as conditional statement, cycles, type/method declaration, ect
 * String interpolation
 
-### Number
+### Numbers
 * `42` — integer number
 * `3.14` — real number
 * `0x4fd2` — HEX form of number
