@@ -1,4 +1,18 @@
 # Examples of language design
+## Operators
+### Assignment
+`<-`
+### Binary
+* `+`
+* * `+`* `+`
+
+## Local variable
+Without keywords
+```
+someVar <- 3.14
+anotherVar <- 's'
+andYetAnotherVar <- 'And yet another string variable'
+```
 ## Statements (and expressions?)
 ## Types
 ### Interfaces
