@@ -34,6 +34,7 @@
 ```
 firstName <- 'Mary'
 lastName <- 'Kass'
+age << 
 'Is {firstName} {lastName} loved me? She is {age} years old.'
 ```
 
@@ -54,6 +55,8 @@ lastName <- 'Kass'
 * `/` — division
 * `%` — modulo
 * `=` — equality
+* `>>` — bitwise right shift 
+* `<<` — bitwise left shift 
 * `&` — bitwise conjunction
 * `|` — bitwise (inclusive) disjunction
 * `^` — bitwise exclusive disjunction
