@@ -3,9 +3,16 @@
 ### Brackets
 #### Parentheses
 `(`, `)`
-* Group expressions: `(3 - 2) + 4` equal `5`, but `3 - (2 + 4)` equal `-3`
-* Method declaration: `someMethod()`, `someAnotherMethod(param1 Integer, param2 String)`
-* Method call: `someMethod()`, `someAnotherMethod(42, 'foo')`
+
+##### Group expressions
+`(3 - 2) + 4 = 5`, but `3 - (2 + 4) = -3`
+
+##### Method declaration
+`someMethod()`
+`someAnotherMethod(param1 Integer, param2 String)`
+##### Method call
+`someMethod()`
+`someAnotherMethod(42, 'foo')`
 
 #### Square brackets
 `[`, `]`
