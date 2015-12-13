@@ -29,7 +29,13 @@
 `'d'`, `'S'`, `'5'`
 #### Strings
 `'Some string'`, `'Some string with numbers: 42!'`
-##### String special symbols
+##### String escape sequences
+* `'\n'`
+* `'\t'`
+* `'\v'`
+* `'\\'`
+* `'\''`
+
 ###### String interpolation
 ```
 firstName <- 'Mary'
