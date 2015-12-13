@@ -4,8 +4,6 @@
 * Characters: `'d'`, `'S'`, `'5'`
 * Strings: `'Some string'`, `'Some string with numbers: 42!'`
 
-## Expressions
-
 ## Operators
 ### Unary
 * `+`
@@ -26,6 +24,37 @@
 * `and`
 * `or`
 * `xor`
+
+## Expressions
+* `(3.14 * (2 + 2 - 1) + 2) / 0.5`
+* `'Some' + ' ' + 'string'`
+
+## Statements
+### Conditional statement
+Presentet in one of next forms:
+```
+codition ? doSomething()
+```
+```
+condition ? {
+    doSomething()
+}
+```
+```
+condition ? doSomething() : doAnotherThing()
+```
+```
+condition
+    ? doSomethingWithLongLongLongName()
+    : doAnotherThingWithLongLongLongName()
+```
+```
+condition ? {
+    doSomething()
+} : {
+    doAnotherThing()
+}
+```
 
 ## Local variable
 ```
