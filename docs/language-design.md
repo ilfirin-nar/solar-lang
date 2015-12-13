@@ -49,6 +49,7 @@ age <- 24
 #### Infix
 * `-` — inverse sign
 * `!` — negation
+
 #### Postfix
 * `++` — increment
 * `--` — decrement
@@ -79,6 +80,7 @@ age <- 24
 'Some' + ' ' + 'string'
 getNumber(3)
 ```
+
 #### Expressions contains of another expressions or literals
 ```
 (2 + 2) * getNumber(3) + 4*('42' to Int)
@@ -91,6 +93,7 @@ someVar <- 3.14
 anotherVar <- 's'
 andYetAnotherVar <- 'And yet another string variable'
 ```
+
 #### Declare uninitialized variable statement
 ```
 someVar
@@ -122,6 +125,7 @@ condition ? {
     doAnotherThing()
 }
 ```
+
 ## Types
 ### Interfaces
 ```
@@ -149,6 +153,7 @@ person.name != "Chandler" ? {
     
 ...
 ```
+
 ## Other
 ```
 /*
