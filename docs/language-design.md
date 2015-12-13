@@ -1,4 +1,4 @@
-# Examples of language design
+# Language design
 ## Literals
 ### Brackets
 #### Parentheses
