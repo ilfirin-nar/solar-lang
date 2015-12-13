@@ -132,8 +132,8 @@ interface Foo {
     someProperty : Num
     
     someMethod
-    someAnotherMethod(parameter String)
-    yetSomeAnotherMethod(parameter String) -> Num
+    someAnotherMethod(parameter : String)
+    yetSomeAnotherMethod(parameter : String) -> Num
     andLastAnotherMethod(
         parameter : String <- 'some param default vaue'
         anotherParameter : Num
@@ -153,8 +153,8 @@ model Chandler {
 #### Services
 ```
 interface PersonReader {
-    read(Num id) -> Person
-    read(Num id, Num id) -> Person
+    read(id : Num) -> Person
+    read(id : Num, count : Num) -> Person
 }
 
 service ChandlerReader : PersonReader {
@@ -164,7 +164,7 @@ service ChandlerReader : PersonReader {
     
     name <= 'Chandler'
     
-    {
+    constructor {
         storage.initialize(session)
         checker.initialize(session)
     }
