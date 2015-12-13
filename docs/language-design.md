@@ -114,8 +114,13 @@ getNumber(3)
 
 #### Expressions contains of another expressions or literals
 ```
-(2 + 2) * getNumber(3) + 4*('42' to Int)
+(2 + 2) * getNumber(3) + 4 * ('42' to Int)
 ```
+
+### Type conversion expression
+`42 to String`<br/>
+`'42' to Integer`<br/>
+`(('1' to Integer) to Boolean) = true`
 
 ### Declare local variable
 #### Declare and initialize variable statement
