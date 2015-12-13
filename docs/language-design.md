@@ -4,7 +4,10 @@
 `<-`
 ### Binary
 * `+`
-* * `+`* `+`
+* `+`
+* `+`
+* `+`
+* `+`
 
 ## Local variable
 Without keywords
