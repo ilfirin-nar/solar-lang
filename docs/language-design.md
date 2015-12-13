@@ -118,8 +118,8 @@ getNumber(3)
 ```
 
 ### Type conversion expression
-`42 to String`<br/>
-`'42' to Integer`<br/>
+`42 to String = '42'`<br/>
+`'42' to Integer = 42`<br/>
 `(('1' to Integer) to Boolean) = true`
 
 ### Declare local variable
