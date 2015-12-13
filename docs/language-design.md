@@ -103,6 +103,60 @@ age <- 24
 * `xor` — logical exclusive disjunction
 * `is` — check type
 
+## Statements
+### Expressions
+#### Expressions is a statemets!
+```
+(3.14 * (2 + 2 - 1) + 2) / 0.5`
+'Some' + ' ' + 'string'
+getNumber(3)
+```
+
+#### Expressions contains of another expressions or literals
+```
+(2 + 2) * getNumber(3) + 4 * ('42' to Int)
+```
+
+### Type conversion expression
+`42 to String = '42'`<br/>
+`'42' to Int = 42`<br/>
+`(('1' to Int) to Bool) = true`
+
+### Declare local variable
+#### Declare and initialize variable statement
+```
+someVar <- 3.14
+anotherVar <- 's'
+andYetAnotherVar <- 'And yet another string variable'
+```
+
+#### Declare uninitialized variable statement
+```
+someVar
+someAnotherVar <- 42
+someVar <- someAnotherVar
+```
+### Conditional statement
+Presentet in one of next forms:
+```
+codition ? doSomething()                            # inline form only in expression variant
+```
+```
+condition ? {
+    doSomething()
+}
+```
+```
+condition ? doSomething() : doAnotherThing()        # inline form only in expression variant
+```
+```
+condition ? {
+    doSomething()
+} : {
+    doAnotherThing()
+}
+```
+
 ## Types
 ### Object
 All types is derived from Object
@@ -187,60 +241,5 @@ service ChandlerReader : PersonReader {
         }
         persons
     }
-}
-```
-
-
-## Statements
-### Expressions
-#### Expressions is a statemets!
-```
-(3.14 * (2 + 2 - 1) + 2) / 0.5`
-'Some' + ' ' + 'string'
-getNumber(3)
-```
-
-#### Expressions contains of another expressions or literals
-```
-(2 + 2) * getNumber(3) + 4 * ('42' to Int)
-```
-
-### Type conversion expression
-`42 to String = '42'`<br/>
-`'42' to Int = 42`<br/>
-`(('1' to Int) to Bool) = true`
-
-### Declare local variable
-#### Declare and initialize variable statement
-```
-someVar <- 3.14
-anotherVar <- 's'
-andYetAnotherVar <- 'And yet another string variable'
-```
-
-#### Declare uninitialized variable statement
-```
-someVar
-someAnotherVar <- 42
-someVar <- someAnotherVar
-```
-### Conditional statement
-Presentet in one of next forms:
-```
-codition ? doSomething()                            # inline form only in expression variant
-```
-```
-condition ? {
-    doSomething()
-}
-```
-```
-condition ? doSomething() : doAnotherThing()        # inline form only in expression variant
-```
-```
-condition ? {
-    doSomething()
-} : {
-    doAnotherThing()
 }
 ```
