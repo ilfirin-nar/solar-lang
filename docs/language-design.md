@@ -30,6 +30,19 @@
 * `'Some' + ' ' + 'string'`
 
 ## Statements
+### Declare local variable
+#### Declare and initialize variable statement
+```
+someVar <- 3.14
+anotherVar <- 's'
+andYetAnotherVar <- 'And yet another string variable'
+```
+#### Declare uninitialized variable statement
+```
+someVar
+someAnotherVar <- 42
+someVar <- someAnotherVar
+```
 ### Conditional statement
 Presentet in one of next forms:
 ```
@@ -54,13 +67,6 @@ condition ? {
 } : {
     doAnotherThing()
 }
-```
-
-## Local variable
-```
-someVar <- 3.14
-anotherVar <- 's'
-andYetAnotherVar <- 'And yet another string variable'
 ```
 ## Types
 ### Interfaces
