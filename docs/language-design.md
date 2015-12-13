@@ -10,6 +10,7 @@
 ##### Method declaration
 `someMethod()`
 `someAnotherMethod(param1 Integer, param2 String)`
+
 ##### Method call
 `someMethod()`
 `someAnotherMethod(42, 'foo')`
