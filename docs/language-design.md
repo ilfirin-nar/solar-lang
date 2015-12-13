@@ -1,13 +1,24 @@
 # Examples of language design
 ## Operators
-### Assignment
-`<-`
+### Unary
+* `+`
+* `-`
+* `!`
+
 ### Binary
+* `<-`
 * `+`
-* `+`
-* `+`
-* `+`
-* `+`
+* `-`
+* `*`
+* `/`
+* `%`
+* `=`
+* `&`
+* `|`
+* `^`
+* `and`
+* `or`
+* `xor`
 
 ## Local variable
 Without keywords
