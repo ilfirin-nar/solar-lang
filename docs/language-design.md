@@ -157,6 +157,18 @@ condition ? {
 }
 ```
 
+### Cycles
+#### For each cycle
+
+#### Conditional cycle
+```
+(2 + 2 = 4) % {	
+    ...
+}
+```
+
+#### Index seek cycle
+
 ## Types
 ### Object
 All types is derived from Object
