@@ -8,23 +8,19 @@
 `(3 - 2) + 4 = 5`, but `3 - (2 + 4) = -3`
 
 ##### Method declaration
-```
-someMethod()
-```
-```
-someAnotherMethod(param1 Integer, param2 String)
-```
+`someMethod()`<br/>
+`someAnotherMethod(param1 Integer, param2 String)`
 
 ##### Method call
-`someMethod()`
+`someMethod()`<br/>
 `someAnotherMethod(42, 'foo')`
 
 #### Square brackets
 `[`, `]`
 
 ##### Array definition
-`[1..10]`
-`['q', 'w', 'e', 'r', 't', 'y']`
+`[1..10]`<br/>
+`['q', 'w', 'e', 'r', 't', 'y']`<br/>
 ```
 [
     'q'
@@ -43,7 +39,7 @@ someAnotherMethod(param1 Integer, param2 String)
 ]
 ```
 ##### Iterators or access by index
-`someArray[3]`
+`someArray[3]`<br/>
 `someAnotherArray['key']`
 
 #### Angle brackets
