@@ -6,24 +6,23 @@
 
 ## Operators
 ### Unary
-* `+`
-* `-`
-* `!`
+* `-` — inverse sign
+* `!` — negation
 
 ### Binary
-* `<-`
-* `+`
-* `-`
-* `*`
-* `/`
-* `%`
-* `=`
-* `&`
-* `|`
-* `^`
-* `and`
-* `or`
-* `xor`
+* `<-` — assigment
+* `+` — addition
+* `-` — subtraction
+* `*` — multiplication
+* `/` — division
+* `%` — modulo
+* `=` — equality
+* `&` — bitwise conjunction
+* `|` — bitwise (inclusive) disjunction
+* `^` — bitwise exclusive disjunction
+* `and` — logical conjunction
+* `or` — logical (inclusive) disjunction
+* `xor` — logical exclusive disjunction
 
 ## Statements
 ### Expressions
