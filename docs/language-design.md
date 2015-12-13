@@ -102,6 +102,24 @@ age <- 24
 * `or` — logical (inclusive) disjunction
 * `xor` — logical exclusive disjunction
 
+## Types
+### Object
+All types is derived from Object
+
+### Integrated types
+#### `Num`
+Class of numeric types:
+* bit number (can be `1` or `0`)
+* integer numbers (of 8, 16, 32, 64 bits)
+* real floating point numbers (of 32 or 64 bits)
+
+#### `Bool`
+Can has one of two values: `true` or `false`. Equeals to `Bit` type and there is no need for cast bit-`Num` to `Bool` or vice versa.
+
+#### `String`
+* one character (placed at stack) of 2 byte
+* special type of `Array` of characters by 2 byte
+
 
 ## Statements
 ### Expressions
@@ -119,8 +137,8 @@ getNumber(3)
 
 ### Type conversion expression
 `42 to String = '42'`<br/>
-`'42' to Integer = 42`<br/>
-`(('1' to Integer) to Boolean) = true`
+`'42' to Int = 42`<br/>
+`(('1' to Int) to Bool) = true`
 
 ### Declare local variable
 #### Declare and initialize variable statement
@@ -166,7 +184,7 @@ condition ? {
 ### Interfaces
 ```
 interface Person {
-	id -> Integer                               // read only property (method, which only returns a value)
+	id -> Int                               // read only property (method, which only returns a value)
 	name => String                              // readable and writable property
 	say(word String "Anything") >> String       // method with parameter word type of String and return value type of String
 	greet -> String                             // method without parameters
