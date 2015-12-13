@@ -8,8 +8,12 @@
 `(3 - 2) + 4 = 5`, but `3 - (2 + 4) = -3`
 
 ##### Method declaration
-`someMethod()`
-`someAnotherMethod(param1 Integer, param2 String)`
+```
+someMethod()
+```
+```
+someAnotherMethod(param1 Integer, param2 String)
+```
 
 ##### Method call
 `someMethod()`
