@@ -40,7 +40,7 @@
 ```
 firstName <- 'Mary'
 lastName <- 'Kass'
-age << 
+age <- 24
 'Is {firstName} {lastName} loved me? She is {age} years old.'
 ```
 
