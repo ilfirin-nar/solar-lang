@@ -21,7 +21,6 @@
 * `xor`
 
 ## Local variable
-Without keywords
 ```
 someVar <- 3.14
 anotherVar <- 's'
