@@ -16,7 +16,8 @@
 
 #### Square brackets
 `[`, `]`
-* Array definition:
+
+##### Array definition
 `[1..10]`
 `['q', 'w', 'e', 'r', 't', 'y']`
 ```
@@ -36,13 +37,16 @@
     0.0 0.0 1.0
 ]
 ```
-* Iterators or access by index: `someArray[3]`
+##### Iterators or access by index
+`someArray[3]`
+`someAnotherArray['key']`
 
 #### Angle brackets
 `<`, `>`
+
 #### Braces
 `{`, `}`
-* Into some statemets such as conditional statement, cycles, type/method declaration, ect
+* Statemets scopes such as conditional statement, cycles, type/method declaration, ect
 * String interpolation
 
 ### Numbers
