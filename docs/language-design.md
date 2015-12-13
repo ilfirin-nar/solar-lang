@@ -1,4 +1,11 @@
 # Examples of language design
+## Literals
+* Numbers: `42`, `3.14`, `0x4fd2`
+* Characters: `'d'`, `'S'`, `'5'`
+* Strings: `'Some string'`, `'Some string with numbers: 42!'`
+
+## Expressions
+
 ## Operators
 ### Unary
 * `+`
@@ -26,7 +33,6 @@ someVar <- 3.14
 anotherVar <- 's'
 andYetAnotherVar <- 'And yet another string variable'
 ```
-## Statements (and expressions?)
 ## Types
 ### Interfaces
 ```
