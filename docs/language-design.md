@@ -158,16 +158,45 @@ condition ? {
 ```
 
 ### Cycles
+#### N-times cycle
+```
+a = 0
+42 => {
+    a++
+}
+```
+or in inline form
+```
+a = 0
+42 => a++
+```
+
 #### For each cycle
+```
+someArray = [1..10]
+someArray: item -> {
+    item++
+}
+```
+or in inline form
+```
+someArray = [1..10]
+someArray: item -> item++
+```
 
 #### Conditional cycle
 ```
-(2 + 2 = 4) % {	
-    ...
+index = 0
+index < 5 : {
+    console.print('hello!')
+    index++
 }
 ```
-
-#### Index seek cycle
+or in inline form
+```
+index = 0
+index < 5 -> index++
+```
 
 ## Types
 ### Object
