@@ -201,10 +201,13 @@ index < 5 => index++
 
 ### Local functions (lambdas)
 ```
-someLambda <- (x : String) => console.print(x)
+someLambda <-  (x : String) => {
+    console.print(x)
+}
 ```
-or another syntax
-```someLambda <- (x : String) => console.print(x)
+or inline syntax
+```
+someLambda <- (x : String) => console.print(x)
 ```
 
 ## Types
