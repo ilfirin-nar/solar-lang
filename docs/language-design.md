@@ -138,24 +138,33 @@ someAnotherVar <- 42
 someVar <- someAnotherVar
 ```
 ### Conditional statement
-Presentet in one of next forms:
-```
-codition ? doSomething()                            # inline form only in expression variant
-```
+#### With one branch
 ```
 condition ? {
     doSomething()
 }
+```
+
+#### With two or more branches
+```
+condition ? {
+    doSomething()
+} ? {
+    doAnotherThing()
+} ? {
+    doYetAnotherThing()
+} ... ? {
+    doLastAnotherThing()
+}
+```
+
+#### Inline form
+Allows only as an expressions
+```
+codition ? doSomething()
 ```
 ```
 condition ? doSomething() : doAnotherThing()        # inline form only in expression variant
-```
-```
-condition ? {
-    doSomething()
-} : {
-    doAnotherThing()
-}
 ```
 
 ### Cycles
