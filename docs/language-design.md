@@ -7,13 +7,15 @@
 ##### Group expressions
 `(3 - 2) + 4 = 5`, but `3 - (2 + 4) = -3`
 
-##### Method declaration
-`someMethod()`<br/>
-`someAnotherMethod(param1 Integer, param2 String)`
+##### Method/function/lambda declaration
+`someMethod() {}`<br/>
+`someAnotherMethod(param1: Num, param2: String) {}`<br/>
+`lambda <- (param: String) => console.print(param)`
 
-##### Method call
+##### Method/function/lambda call
 `someMethod()`<br/>
-`someAnotherMethod(42, 'foo')`
+`someAnotherMethod(42, 'foo')`<br/>
+`lambda('foo')`
 
 #### Square brackets
 `[`, `]`
