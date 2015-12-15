@@ -158,6 +158,7 @@ condition ? {
 ```
 
 ### Cycles
+Cycles based on lambda functions
 #### N-times cycle
 ```
 a = 0
@@ -174,7 +175,7 @@ a = 0
 #### For each cycle
 ```
 someArray = [1..10]
-someArray: item -> {
+someArray: item => {
     item++
 }
 ```
@@ -187,7 +188,7 @@ someArray: item -> item++
 #### Conditional cycle
 ```
 index = 0
-index < 5 : {
+index < 5 => {
     console.print('hello!')
     index++
 }
@@ -195,7 +196,15 @@ index < 5 : {
 or in inline form
 ```
 index = 0
-index < 5 -> index++
+index < 5 => index++
+```
+
+### Local functions (lambdas)
+```
+someLambda <- (x : String) => console.print(x)
+```
+or another syntax
+```someLambda <- (x : String) => console.print(x)
 ```
 
 ## Types
