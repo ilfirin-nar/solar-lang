@@ -177,6 +177,18 @@ codition ? doSomething()
 condition ? doSomething() : doAnotherThing()
 ```
 
+### Switch statement
+```
+value ? {
+    1: {
+       console.print('value = 1')
+    }
+    2: console.print('value = 2')
+    3: console.print('value = 3')
+    : console.print('value not equal 1, 2 or 3')
+}
+```
+
 ### Cycles
 Cycles based on lambda functions
 #### N-times cycle
@@ -202,7 +214,7 @@ someArray: item => {
 or in inline form
 ```
 someArray = [1..10]
-someArray: item -> item++
+someArray: item => item++
 ```
 
 #### Conditional cycle
