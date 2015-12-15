@@ -224,6 +224,14 @@ or inline syntax
 greet <- { console.print('Hello') }
 greet()
 ```
+#### Closures
+```
+greeting <- 'Hello!'
+greet <- {
+    console.print(greeting)
+}
+greet()
+```
 
 ## Types
 ### Object
