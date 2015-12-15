@@ -200,14 +200,29 @@ index < 5 => index++
 ```
 
 ### Local functions (lambdas)
+#### With parameteres
 ```
-someLambda <-  (x : String) => {
+greet <- (x : String) => {
     console.print(x)
 }
+greet('Hello!')
 ```
 or inline syntax
 ```
-someLambda <- (x : String) => console.print(x)
+greet <- (x : String) => console.print(x)
+greet('Hello!')
+```
+#### Without parameteres
+```
+greet <- {
+    console.print('Hello')
+}
+greet()
+```
+or inline syntax
+```
+greet <- { console.print('Hello') }
+greet()
 ```
 
 ## Types
