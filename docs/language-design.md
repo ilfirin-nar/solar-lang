@@ -48,6 +48,7 @@
 #### Braces
 `{`, `}`
 * Statemets scopes such as conditional statement, cycles, type/method declaration, ect
+* Sequence of statements
 * String interpolation
 
 ### Numbers
