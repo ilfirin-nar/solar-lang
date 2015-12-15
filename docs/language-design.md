@@ -297,6 +297,30 @@ someVar <- { console.printNewLine() }
 someVar is Lambda = true
 ```
 
+#### `Const`
+```
+const Pi: 3.14
+```
+
+##### `EnumConst`
+```
+const Colors { Red, Green, Blue }
+```
+```
+const Colors {
+    Red: 'Red color',
+    Green: 'Green color',
+    Blue: 'Blue color'
+}
+```
+```
+const Colors {
+    Red: 1,
+    Green: 2,
+    Blue: 3
+}
+```
+
 ### User defined types
 #### Interfaces
 ```
