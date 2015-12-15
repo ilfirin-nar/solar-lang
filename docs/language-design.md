@@ -145,15 +145,25 @@ condition ? {
 }
 ```
 
-#### With two or more branches
+#### With many branches
+##### 2-branches case
 ```
 condition ? {
+  doSomething()
+} : {
+  doAnotherThing()
+}
+```
+
+##### N-branches case
+```
+firstcondition ? {
     doSomething()
-} ? {
+} secondCondition ? {
     doAnotherThing()
-} ? {
+} thirdCondition ? {
     doYetAnotherThing()
-} ... ? {
+} ... : {
     doLastAnotherThing()
 }
 ```
@@ -164,7 +174,7 @@ Allows only as an expressions
 codition ? doSomething()
 ```
 ```
-condition ? doSomething() : doAnotherThing()        # inline form only in expression variant
+condition ? doSomething() : doAnotherThing()
 ```
 
 ### Cycles
