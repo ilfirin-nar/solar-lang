@@ -252,8 +252,16 @@ Can has one of two values: `true` or `false`. Equeals to bit-`Num` type and ther
 * special type of `Array` of characters by 2 byte
  
 #### `Array`
-`someArray <- [-100..100]`
+```
+someArray <- [-100..100]
+```
 Placed in a heap.
+
+#### `Lambda`
+```
+someVar <- { console.printNewLine() }
+someVar is Lambda = true
+```
 
 ### User defined types
 #### Interfaces
