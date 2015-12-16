@@ -81,30 +81,36 @@ age <- 24
 ## Operators
 ### Unary
 #### Infix
-* `-` — inverse sign
-* `!` — negation
+Syntax | Description
+-------|-------
+`-` | Inverse sign
+`!`| Negation
 
 #### Postfix
-* `++` — increment
-* `--` — decrement
+Syntax | Description
+-------|-------
+`++` | Increment
+`--` | Decrement
 
 ### Binary
-* `<-` — assigment
-* `+` — addition
-* `-` — subtraction
-* `*` — multiplication
-* `/` — division
-* `%` — modulo
-* `=` — equality
-* `>>` — bitwise right shift 
-* `<<` — bitwise left shift 
-* `&` — bitwise conjunction
-* `|` — bitwise (inclusive) disjunction
-* `^` — bitwise exclusive disjunction
-* `and` — logical conjunction
-* `or` — logical (inclusive) disjunction
-* `xor` — logical exclusive disjunction
-* `is` — check type
+Syntax | Description
+-------|-------
+`<-` | Assigment
+`+` | Addition
+`-` | Subtraction
+`*` | Multiplication
+`/` | Division
+`%` | Modulo
+`=` | Equality
+`>>` | Bitwise right shift 
+`<<` | Bitwise left shift 
+`&` | Bitwise conjunction
+`|` | Bitwise (inclusive) disjunction
+`^` | Bitwise exclusive disjunction
+`and` | Logical conjunction
+`or` | Logical (inclusive) disjunction
+`xor` | Logical exclusive disjunction
+`is`| Check type
 
 ## Statements
 ### Expressions
