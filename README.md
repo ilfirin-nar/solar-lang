@@ -5,3 +5,6 @@
 * Maximum SOLID
 * Unsafe when it is really necessary
 * Use both for scripting and development
+
+## Documentation
+1. [Language design](docs/language-design.md)
