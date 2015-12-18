@@ -1,46 +1,46 @@
-## Statements
-### Expressions
-#### Expressions is a statemets!
+# Statements
+## Expressions
+### Expressions is a statemets!
 ```
 (3.14 * (2 + 2 - 1) + 2) / 0.5`
 'Some' + ' ' + 'string'
 getNumber(3)
 ```
 
-#### Expressions contains of another expressions or literals
+### Expressions contains of another expressions or literals
 ```
 (2 + 2) * getNumber(3) + 4 * ('42' to Int)
 ```
 
-### Type conversion expression
+## Type conversion expression
 `42 to String = '42'`<br/>
 `'42' to Int = 42`<br/>
 `(('1' to Int) to Bool) = true`
 
-### Declare local variable
-#### Declare and initialize variable statement
+## Declare local variable
+### Declare and initialize variable statement
 ```
 someVar <- 3.14
 anotherVar <- 's'
 andYetAnotherVar <- 'And yet another string variable'
 ```
 
-#### Declare uninitialized variable statement
+### Declare uninitialized variable statement
 ```
 someVar
 someAnotherVar <- 42
 someVar <- someAnotherVar
 ```
-### Conditional statement
-#### With one branch
+## Conditional statement
+### With one branch
 ```
 condition ? {
     doSomething()
 }
 ```
 
-#### With many branches
-##### 2-branches case
+### With many branches
+#### 2-branches case
 ```
 condition ? {
   doSomething()
@@ -49,7 +49,7 @@ condition ? {
 }
 ```
 
-##### N-branches case
+#### N-branches case
 ```
 firstcondition ? {
     doSomething()
@@ -62,7 +62,7 @@ firstcondition ? {
 }
 ```
 
-#### Inline form
+### Inline form
 Allows only as an expressions
 ```
 codition ? doSomething()
@@ -71,7 +71,7 @@ codition ? doSomething()
 condition ? doSomething() : doAnotherThing()
 ```
 
-### Switch statement
+## Switch statement
 ```
 value ? {
     1: {
@@ -83,9 +83,9 @@ value ? {
 }
 ```
 
-### Cycles
+## Cycles
 Cycles based on lambda functions
-#### N-times cycle
+### N-times cycle
 ```
 a = 0
 42 => {
@@ -98,7 +98,7 @@ a = 0
 42 => a++
 ```
 
-#### For each cycle
+### For each cycle
 ```
 someArray = [1..10]
 someArray: item => {
@@ -111,7 +111,7 @@ someArray = [1..10]
 someArray: item => item++
 ```
 
-#### Conditional cycle
+### Conditional cycle
 ```
 index = 0
 index < 5 => {
@@ -125,8 +125,8 @@ index = 0
 index < 5 => index++
 ```
 
-### Local functions (lambdas)
-#### With parameteres
+## Local functions (lambdas)
+### With parameteres
 ```
 greet <- (x : String) => {
     console.print(x)
@@ -138,7 +138,7 @@ or inline syntax
 greet <- (x : String) => console.print(x)
 greet('Hello!')
 ```
-#### Without parameteres
+### Without parameteres
 ```
 greet <- {
     console.print('Hello')
@@ -150,7 +150,7 @@ or inline syntax
 greet <- { console.print('Hello') }
 greet()
 ```
-#### Closures
+### Closures
 ```
 greeting <- 'Hello!'
 greet <- {
