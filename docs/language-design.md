@@ -1,5 +1,5 @@
 # Solar language design
-[Literals](####Square brackets)
+[Literals](####Square-brackets)
 
 ##Literals
 ### Brackets
