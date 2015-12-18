@@ -1,39 +1,39 @@
-## Types
-### Object
+# Types
+## Object
 All types is derived from Object
 
-### Integrated types
-#### `Num`
+## Integrated types
+### `Num`
 Class of numeric types:
 * bit number (can be `1` or `0`)
 * integer numbers (of 8, 16, 32, 64 bits)
 * real floating point numbers (of 32 or 64 bits)
 
-#### `Bool`
+### `Bool`
 Can has one of two values: `true` or `false`. Equeals to bit-`Num` type and there is no need for cast bit-`Num` to `Bool` or vice versa.
 
-#### `String`
+### `String`
 * one character (placed in stack) of 2 byte
 * special type of `Array` of characters by 2 byte
  
-#### `Array`
+### `Array`
 ```
 someArray <- [-100..100]
 ```
 Placed in a heap.
 
-#### `Lambda`
+### `Lambda`
 ```
 someVar <- { console.printNewLine() }
 someVar is Lambda = true
 ```
 
-#### `Const`
+### `Const`
 ```
 const Pi: 3.14
 ```
 
-##### `EnumConst`
+#### `EnumConst`
 ```
 const Colors { Red, Green, Blue }
 ```
@@ -52,8 +52,8 @@ const Colors {
 }
 ```
 
-### User defined types
-#### Interfaces
+## User defined types
+### Interfaces
 ```
 interface Foo {
     someProperty : Num
@@ -68,7 +68,7 @@ interface Foo {
 }
 ```
 
-#### Models
+### Models
 ```
 model Chandler {
     id : Num
@@ -77,7 +77,7 @@ model Chandler {
 }
 ```
 
-#### Services
+### Services
 ```
 interface PersonReader {
     read(id : Num) -> Person
