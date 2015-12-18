@@ -1,25 +1,25 @@
-## Literals
-### Brackets
-#### Parentheses
+# Literals
+## Brackets
+### Parentheses
 `(`, `)`
 
-##### Group expressions
+#### Group expressions
 `(3 - 2) + 4 = 5`, but `3 - (2 + 4) = -3`
 
-##### Method/function/lambda declaration
+#### Method/function/lambda declaration
 `someMethod() {}`<br/>
 `someAnotherMethod(param1: Num, param2: String) {}`<br/>
 `lambda <- (param: String) => console.print(param)`
 
-##### Method/function/lambda call
+#### Method/function/lambda call
 `someMethod()`<br/>
 `someAnotherMethod(42, 'foo')`<br/>
 `lambda('foo')`
 
-#### Square brackets
+### Square brackets
 `[`, `]`
 
-##### Array definition
+#### Array definition
 `[1..10]`<br/>
 `['q', 'w', 'e', 'r', 't', 'y']`<br/>
 ```
@@ -39,37 +39,37 @@
     0.0 0.0 1.0
 ]
 ```
-##### Iterators or access by index
+#### Iterators or access by index
 `someArray[3]`<br/>
 `someAnotherArray['key']`
 
-#### Angle brackets
+### Angle brackets
 `<`, `>`
 
-#### Braces
+### Braces
 `{`, `}`
 * Statemets scopes such as conditional statement, cycles, type/method declaration, ect
 * Sequence of statements
 * String interpolation
 
-### Numbers
+## Numbers
 * `42` — integer number
 * `3.14` — real number
 * `0x4fd2` — HEX form of number
 
-### Characters and strings
-#### Characters
+## Characters and strings
+### Characters
 `'d'`, `'S'`, `'5'`
-#### Strings
+### Strings
 `'Some string'`, `'Some string with numbers: 42!'`
-##### String escape sequences
+#### String escape sequences
 * `'\n'`
 * `'\t'`
 * `'\v'`
 * `'\\'`
 * `'\''`
 
-###### String interpolation
+#### String interpolation
 ```
 firstName <- 'Mary'
 lastName <- 'Kass'
