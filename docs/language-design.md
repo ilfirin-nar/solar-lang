@@ -1,5 +1,7 @@
 # Solar language design
-## Literals
+[Literals](#### Square brackets)
+
+##Literals
 ### Brackets
 #### Parentheses
 `(`, `)`
