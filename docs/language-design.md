@@ -19,7 +19,7 @@
 `someAnotherMethod(42, 'foo')`<br/>
 `lambda('foo')`
 
-#### Square brackets
+####Square-brackets
 `[`, `]`
 
 ##### Array definition
