@@ -1,18 +1,18 @@
-## Operators
-### Unary
-#### Infix
+# Operators
+## Unary
+### Infix
 Syntax | Description
 -------|-------
 `-` | Inverse sign
 `!`| Negation
 
-#### Postfix
+### Postfix
 Syntax | Description
 -------|-------
 `++` | Increment
 `--` | Decrement
 
-### Binary
+## Binary
 Syntax | Description
 -------|-------
 `<-` | Assigment
