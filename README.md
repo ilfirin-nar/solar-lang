@@ -8,3 +8,4 @@
 
 ## Documentation
 1. [Language design](docs/language-design.md)
+2. [Theses](docs/theses.md)
