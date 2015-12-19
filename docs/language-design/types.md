@@ -24,8 +24,16 @@ Placed in a heap.
 
 ### `Lambda`
 ```
-someVar <- { console.printNewLine() }
-someVar is Lambda = true
+printNewLine <- { console.printNewLine() }
+printNewLine is Lambda = true
+```
+```
+showMessage <- m : String => console.print(m)
+showMessage is Lambda = true
+```
+```
+drawPoint <- (x : Num, y : Num) : String => painter.drawPoint(x, y)
+drawPoint is Lambda = true
 ```
 
 ### `Const`
