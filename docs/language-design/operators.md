@@ -16,6 +16,7 @@ Syntax | Description
 Syntax | Description
 -------|-------
 `<-` | Assigment
+`<=` | Read-only assigment
 `+` | Addition
 `-` | Subtraction
 `*` | Multiplication
