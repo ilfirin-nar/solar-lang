@@ -37,8 +37,19 @@ drawPoint is Lambda = true
 ```
 
 ### `Const`
+Constants — it is compile-time defined immutable variables.
 ```
 const Pi: 3.14
+```
+```
+const Six: 2 * 3
+```
+```
+const Six: mult(2, 3)
+```
+where `mult(Num, Num)` — it is compile-time function:
+```
+mult(op1 : Num, op2 : Num) => op1 * op2
 ```
 
 #### `EnumConst`
