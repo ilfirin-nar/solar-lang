@@ -81,7 +81,7 @@ interface Foo {
     someAnotherMethod(parameter : String)
     yetSomeAnotherMethod(parameter : String) -> Num
     andLastAnotherMethod(
-        parameter : String <- 'some param default vaue'
+        parameter : String <- 'some param default value'
         anotherParameter : Num
     ) -> Num
 }
