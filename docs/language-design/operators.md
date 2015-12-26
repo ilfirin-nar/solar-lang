@@ -17,6 +17,7 @@ Syntax | Description
 -------|-------
 `<-` | Assigment
 `<=` | Read-only assigment
+`:` | Compile-time assigment
 `+` | Addition
 `-` | Subtraction
 `*` | Multiplication
@@ -32,3 +33,4 @@ Syntax | Description
 `or` | Logical (inclusive) disjunction
 `xor` | Logical exclusive disjunction
 `is`| Check type
+
