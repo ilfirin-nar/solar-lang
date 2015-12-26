@@ -3,14 +3,14 @@
 All types is derived from Object
 
 ## Integrated types
-### `Num`
+### `Number`
 Class of numeric types:
 * bit number (can be `1` or `0`)
 * integer numbers (of 8, 16, 32, 64 bits)
 * real floating point numbers (of 32 or 64 bits)
 
-### `Bool`
-Can has one of two values: `true` or `false`. Equeals to bit-`Num` type and there is no need for cast bit-`Num` to `Bool` or vice versa.
+### `Boolean`
+Can has one of two values: `true` or `false`. Equeals to bit-`Number` type and there is no need for cast bit-`Numbe` to `Boolean` or vice versa.
 
 ### `String`
 * one character (placed in stack) of 2 byte
@@ -35,13 +35,13 @@ showMessage is Function = true
 drawPoint: (x, y) => painter.drawPoint(x, y)
 drawPoint is Function = true
 ```
-#### Functions interfaces
-For fuтctions
+#### Functions signatures
+For functions
 ```
 (x, y) => painter.getPoint(x, y)
 getSomePoint: (x, y, z) => painter.getPoint(x, y) + painter.getPoint(x, z)
 ```
-interfaces is
+signature is
 ```
 (Number, Number) -> Point
 getSomePoint(Number, Number) -> Point
@@ -58,13 +58,9 @@ Six: 2 * 3
 ```
 Six: mult(2, 3)
 ```
-where `mult(Num, Num)` — it is compile-time function:
+where `mult(Num, Num)` — it is compile-time function accessable throught interface:
 ```
-mult: (op1 Num, op2 Num) => op1 * op2
-```
-#### Constant functoins
-```
-const SomeFunction : (
+mult: (op1, op2) => op1 * op2
 ```
 
 #### `EnumConst`
@@ -90,7 +86,7 @@ const Colors {
 ### Interfaces
 ```
 interface Foo {
-    someProperty : Num
+    someProperty: Number
     
     someMethod
     someAnotherMethod(parameter : String)
