@@ -58,7 +58,7 @@ Six: 2 * 3
 ```
 Six: mult(2, 3)
 ```
-where `mult(Num, Num)` — it is compile-time function accessable throught interface:
+where `mult(Number, Number)` — it is compile-time function accessable throught interface:
 ```
 mult: (op1, op2) => op1 * op2
 ```
