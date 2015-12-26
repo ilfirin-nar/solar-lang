@@ -35,8 +35,8 @@ showMessage is Function = true
 drawPoint: (x, y) => painter.drawPoint(x, y)
 drawPoint is Function = true
 ```
-#### Function interfaces
-For fuctions
+#### Functions interfaces
+For fuтctions
 ```
 (x, y) => painter.getPoint(x, y)
 getSomePoint: (x, y, z) => painter.getPoint(x, y) + painter.getPoint(x, z)
