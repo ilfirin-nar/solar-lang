@@ -22,34 +22,49 @@ someArray <- [-100..100]
 ```
 Placed in a heap.
 
-### `Lambda`
+### `Function`
 ```
-printNewLine <- { console.printNewLine() }
-printNewLine is Lambda = true
-```
-```
-showMessage <- m : String => console.print(m)
-showMessage is Lambda = true
+printNewLine: { console.printNewLine() }
+printNewLine is Function = true
 ```
 ```
-drawPoint <- (x : Num, y : Num) : String => painter.drawPoint(x, y)
-drawPoint is Lambda = true
+showMessage: m => console.print(m)
+showMessage is Function = true
+```
+```
+drawPoint: (x, y) => painter.drawPoint(x, y)
+drawPoint is Function = true
+```
+#### Function interfaces
+For fuctions
+```
+(x, y) => painter.getPoint(x, y)
+getSomePoint: (x, y, z) => painter.getPoint(x, y) + painter.getPoint(x, z)
+```
+interfaces is
+```
+(Number, Number) -> Point
+getSomePoint(Number, Number) -> Point
 ```
 
 ### `Const`
-Constants — it is compile-time defined immutable variables.
+Constants — it is compile-time defined immutable variables. 
 ```
-const Pi: 3.14
-```
-```
-const Six: 2 * 3
+Pi: 3.14
 ```
 ```
-const Six: mult(2, 3)
+Six: 2 * 3
+```
+```
+Six: mult(2, 3)
 ```
 where `mult(Num, Num)` — it is compile-time function:
 ```
-mult(op1 : Num, op2 : Num) => op1 * op2
+mult: (op1 Num, op2 Num) => op1 * op2
+```
+#### Constant functoins
+```
+const SomeFunction : (
 ```
 
 #### `EnumConst`
