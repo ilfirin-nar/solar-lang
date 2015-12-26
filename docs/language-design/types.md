@@ -69,15 +69,15 @@ Colors: { Red, Green, Blue }
 ```
 ```
 Colors: {
-    Red: 'Red color',
-    Green: 'Green color',
+    Red: 'Red color'
+    Green: 'Green color'
     Blue: 'Blue color'
 }
 ```
 ```
 Colors: {
-    Red: 1,
-    Green: 2,
+    Red: 1
+    Green: 2
     Blue: 3
 }
 ```
@@ -89,11 +89,11 @@ interface Foo {
     someProperty: Number
     
     someMethod
-    someAnotherMethod(parameter : String)
-    yetSomeAnotherMethod(parameter : String) -> Num
+    someAnotherMethod(parameter String)
+    yetSomeAnotherMethod(parameter String) -> Num
     andLastAnotherMethod(
-        parameter : String <- 'some param default value'
-        anotherParameter : Num
+        parameter String <- 'some param default value'
+        anotherParameter Num
     ) -> Num
 }
 ```
