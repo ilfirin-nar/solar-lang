@@ -10,7 +10,7 @@ Class of numeric types:
 * real floating point numbers (of 32 or 64 bits)
 
 ### `Boolean`
-Can has one of two values: `true` or `false`. Equeals to bit-`Number` type and there is no need for cast bit-`Numbe` to `Boolean` or vice versa.
+Can has one of two values: `true` or `false`. Equeals to bit-`Number` type and there is no need for cast bit-`Number` to `Boolean` or vice versa.
 
 ### `String`
 * one character (placed in stack) of 2 byte
@@ -65,17 +65,17 @@ mult: (op1, op2) => op1 * op2
 
 #### `EnumConst`
 ```
-const Colors { Red, Green, Blue }
+Colors: { Red, Green, Blue }
 ```
 ```
-const Colors {
+Colors: {
     Red: 'Red color',
     Green: 'Green color',
     Blue: 'Blue color'
 }
 ```
 ```
-const Colors {
+Colors: {
     Red: 1,
     Green: 2,
     Blue: 3
