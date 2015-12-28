@@ -65,7 +65,7 @@ mult: (op1, op2) => op1 * op2
 
 #### `EnumConst`
 ```
-Colors: { Red, Green, Blue }
+Colors: Red, Green, Blue
 ```
 ```
 Colors: {
