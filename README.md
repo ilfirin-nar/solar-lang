@@ -5,6 +5,7 @@
 * Maximum SOLID
 * Unsafe when it is really necessary
 * Use both for scripting and development
+* Equal capabilities both compile-time and runtime
 
 ## Documentation
 1. [Language design](docs/language-design.md)
