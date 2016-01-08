@@ -89,11 +89,11 @@ interface Foo {
     someProperty: Number
     
     someMethod
-    someAnotherMethod(parameter String)
-    yetSomeAnotherMethod(parameter String) -> Num
+    someAnotherMethod(String)
+    yetSomeAnotherMethod(String) -> Num
     andLastAnotherMethod(
-        parameter String <- 'some param default value'
-        anotherParameter Num
+        String <- 'some param default value'
+        Num
     ) -> Num
 }
 ```
@@ -101,17 +101,17 @@ interface Foo {
 ### Models
 ```
 model Chandler {
-    id : Num
-	name : 'Chandler'
-	age <- 30
+    id: Number              # Variable (run time)
+    name: 'Chandler'        # Constant (compile time)
+    age <= 30               # Immutable variable (run time)
 }
 ```
 
 ### Services
 ```
 interface PersonReader {
-    read(id : Num) -> Person
-    read(id : Num, count : Num) -> Person
+    read(id: Number) -> Person
+    read(id: Number, count: Number) -> Person
 }
 
 service ChandlerReader : PersonReader {
