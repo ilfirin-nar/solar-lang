@@ -24,6 +24,7 @@ Syntax | Description
 `/` | Division
 `mod` | Modulo
 `=` | Equality
+`<>` | Non-equality
 `>>` | Bitwise right shift 
 `<<` | Bitwise left shift 
 `&` | Bitwise conjunction
