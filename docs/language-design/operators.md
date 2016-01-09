@@ -22,7 +22,7 @@ Syntax | Description
 `-` | Subtraction
 `*` | Multiplication
 `/` | Division
-`%` | Modulo
+`mod` | Modulo
 `=` | Equality
 `>>` | Bitwise right shift 
 `<<` | Bitwise left shift 
