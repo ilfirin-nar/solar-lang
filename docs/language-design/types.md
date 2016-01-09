@@ -142,11 +142,16 @@ service ChandlerReader : PersonReader [
     read(id, count) -> Person[] {
         persons <- storage.get(id, count)
         persons % {
-            !checker.checkName($, name) ? {
+            not checker.checkName($, name) ? {
                 $ <- storage.getFirst()
             }
         }
         persons
     }
 ]
+```
+
+### Attributes
+```
+attribute Bold
 ```
