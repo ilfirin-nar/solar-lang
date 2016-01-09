@@ -9,13 +9,13 @@ getNumber(3)
 
 ### Expressions contains of another expressions or literals
 ```
-(2 + 2) * getNumber(3) + 4 * ('42' to Int)
+(2 + 2) * getNumber(3) + 4 * ('42' to Number)
 ```
 
 ## Type conversion expression
 `42 to String = '42'`<br/>
-`'42' to Int = 42`<br/>
-`(('1' to Int) to Bool) = true`
+`'42' to Number = 42`<br/>
+`(('1' to Number) to Boolean) = true`
 
 ## Declare local variable
 ### Declare and initialize variable statement
@@ -44,7 +44,7 @@ condition ? {
 ```
 condition ? {
   doSomething()
-} : {
+} ! {
   doAnotherThing()
 }
 ```
@@ -57,7 +57,7 @@ firstcondition ? {
     doAnotherThing()
 } thirdCondition ? {
     doYetAnotherThing()
-} ... : {
+} ... ! {
     doLastAnotherThing()
 }
 ```
@@ -68,7 +68,7 @@ Allows only as an expressions
 codition ? doSomething()
 ```
 ```
-condition ? doSomething() : doAnotherThing()
+condition ? doSomething() ! doAnotherThing()
 ```
 
 ## Switch statement
