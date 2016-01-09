@@ -4,7 +4,7 @@
 Syntax | Description
 -------|-------
 `-` | Inverse sign
-`!`| Negation
+`not`| Negation
 
 ### Postfix
 Syntax | Description
