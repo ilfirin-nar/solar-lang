@@ -68,24 +68,27 @@ mult: (op1, op2) => op1 * op2
 Colors: Red, Green, Blue
 ```
 ```
-Colors: {
+Colors: [
     Red: 'Red color'
     Green: 'Green color'
     Blue: 'Blue color'
-}
+]
 ```
 ```
-Colors: {
+Colors: [
     Red: 1
     Green: 2
     Blue: 3
-}
+]
 ```
 
 ## User defined types
+Into square brackets `[]` defines declarations as a data.
+Into braces `{}` defines statements seqences.
+
 ### Interfaces
 ```
-interface Foo {
+interface Foo [
     someProperty: Number
     
     someMethod
@@ -95,26 +98,26 @@ interface Foo {
         String <- 'some param default value'
         Num
     ) -> Num
-}
+]
 ```
 
 ### Models
 ```
-model Chandler {
+model Chandler [
     id: Number              # Variable (run time)
     name: 'Chandler'        # Constant (compile time)
     age <= 30               # Immutable variable (run time)
-}
+]
 ```
 
 ### Services
 ```
-interface PersonReader {
+interface PersonReader [
     read(id: Number) -> Person
     read(id: Number, count: Number) -> Person
-}
+]
 
-service ChandlerReader : PersonReader {
+service ChandlerReader : PersonReader [
     get Session
     storage <= get PersonStorage
     checker <= get PersonChecker
@@ -144,5 +147,5 @@ service ChandlerReader : PersonReader {
         }
         persons
     }
-}
+]
 ```
