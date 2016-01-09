@@ -23,6 +23,7 @@ someArray <- [-100..100]
 Placed in a heap.
 
 ### `Function`
+Function is a sequence of actions.
 ```
 printNewLine: { console.printNewLine() }
 printNewLine is Function = true
@@ -84,7 +85,7 @@ Colors: [
 
 ## User defined types
 Into square brackets `[]` defines declarations as a data.
-Into braces `{}` defines statements seqences.
+Into braces `{}` defines sequences of actions.
 
 ### Interfaces
 ```
