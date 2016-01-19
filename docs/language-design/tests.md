@@ -1,4 +1,6 @@
-# Tests 
+# Tests
+Tests must be a part of implementation and in confinment state with implementation.
+
 ## Declaraction
 ```
 model Person {
