@@ -5,7 +5,8 @@
 * Maximum SOLID
 * Unsafe when it is really necessary
 * Use both for scripting and development
-* Equal capabilities both compile-time and runtime
+* Equal capabilities both compile-time and runtime (use compilier through API)
+* Maximum feedback from compilier
 
 ## Documentation
 1. [Language design](docs/language-design.md)
