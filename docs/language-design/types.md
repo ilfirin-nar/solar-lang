@@ -70,16 +70,16 @@ Colors: Red, Green, Blue
 ```
 ```
 Colors: [
-    Red: 'Red color'
-    Green: 'Green color'
-    Blue: 'Blue color'
+  Red: 'Red color'
+  Green: 'Green color'
+  Blue: 'Blue color'
 ]
 ```
 ```
 Colors: [
-    Red: 1
-    Green: 2
-    Blue: 3
+  Red: 1
+  Green: 2
+  Blue: 3
 ]
 ```
 
@@ -90,64 +90,64 @@ Into braces `{}` defines sequences of actions.
 ### Interfaces
 ```
 interface Foo [
-    someProperty: Number
+  someProperty: Number
     
-    someMethod
-    someAnotherMethod(String)
-    yetSomeAnotherMethod(String) -> Num
-    andLastAnotherMethod(
-        String <- 'some param default value'
-        Num
-    ) -> Num
+  someMethod
+  someAnotherMethod(String)
+  yetSomeAnotherMethod(String) -> Num
+  andLastAnotherMethod(
+    String <- 'some param default value'
+    Num
+  ) -> Num
 ]
 ```
 
 ### Models
 ```
 model Chandler [
-    id: Number              # Variable (run time)
-    name: 'Chandler'        # Constant (compile time)
-    age <= 30               # Immutable variable (run time)
+  id: Number              # Variable (run time)
+  name: 'Chandler'        # Constant (compile time)
+  age <= 30               # Immutable variable (run time)
 ]
 ```
 
 ### Services
 ```
 interface PersonReader [
-    read(id: Number) -> Person
-    read(id: Number, count: Number) -> Person
+  read(id: Number) -> Person
+  read(id: Number, count: Number) -> Person
 ]
 
 service ChandlerReader : PersonReader [
-    get Session
-    storage <= get PersonStorage
-    checker <= get PersonChecker
+  get Session
+  storage <= get PersonStorage
+  checker <= get PersonChecker
+  
+  name <= 'Chandler'
+  
+  constructor {
+    storage.initialize(session)
+    checker.initialize(session)
+  }
     
-    name <= 'Chandler'
-    
-    constructor {
-        storage.initialize(session)
-        checker.initialize(session)
+  read(id) -> Person {
+    person <- storage.get(id)
+    checker.checkName(person, name) ? {
+      person
+    } : {
+      storage.getFirst()
     }
+  }
     
-    read(id) -> Person {
-        person <- storage.get(id)
-        checker.checkName(person, name) ? {
-            person
-        } : {
-            storage.getFirst()
-        }
+  read(id, count) -> Person[] {
+    persons <- storage.get(id, count)
+    persons % {
+      not checker.checkName($, name) ? {
+        $ <- storage.getFirst()
+      }
     }
-    
-    read(id, count) -> Person[] {
-        persons <- storage.get(id, count)
-        persons % {
-            not checker.checkName($, name) ? {
-                $ <- storage.getFirst()
-            }
-        }
-        persons
-    }
+    persons
+  }
 ]
 ```
 
@@ -164,7 +164,9 @@ signal SomethingHappens
 #### Exceptions
 Exceptions — is an error level signals which stop current thread.
 ```
-exception SomethingWrong
+exception SomethingWrong [
+  message: 'Something is whrong'
+]
 ```
 
 #### Events
