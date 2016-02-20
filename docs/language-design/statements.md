@@ -12,6 +12,11 @@ getNumber(3)
 (2 + 2) * getNumber(3) + 4 * ('42' to Number)
 ```
 
+## Function call expression
+```
+someFunction()
+```
+
 ## Type conversion expression
 `42 to String = '42'`<br/>
 `'42' to Number = 42`<br/>
@@ -127,7 +132,7 @@ index < 5 % {
 or in inline form
 ```
 index = 0
-index < 5 % index++
+index < 5 % { index++ }
 ```
 
 ## Local functions (lambdas)
