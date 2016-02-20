@@ -18,6 +18,7 @@ getNumber(3)
 `(('1' to Number) to Boolean) = true`
 
 ## Declare local variable
+Declaring a local variable is runtime assignation expression from right side to variable name literal at the left side.
 ### Declare and initialize variable statement
 ```
 someVar <- 3.14
