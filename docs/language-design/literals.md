@@ -19,38 +19,53 @@
 ### Square brackets
 `[`, `]`
 
+#### Declaration list scope
+Declaration list scope contains only compile-time and readonly runtime assignations.
+```
+[
+  pi: 3.14
+  add: (a, b) => a + b
+  sub: (a, b) => a - b
+  mul: (a, b) => a * b
+  div: (a, b) => a / b
+  
+  foo <= get Foo
+  bar <= get Bar
+]
+```
+
 #### Array definition
 `[1..10]`<br/>
 `['q', 'w', 'e', 'r', 't', 'y']`<br/>
 ```
 [
-    'q'
-    'qw'
-    'qwe'
-    'qwer'
-    'qwert'
-    'qwerty'
+  'q'
+  'qw'
+  'qwe'
+  'qwer'
+  'qwert'
+  'qwerty'
 ]
 ```
 ```
 [
-    1.0 0.0 0.0
-    0.0 1.0 0.0
-    0.0 0.0 1.0
+  1.0 0.0 0.0
+  0.0 1.0 0.0
+  0.0 0.0 1.0
 ]
 ```
 #### Iterators or access by index
 `someArray[3]`<br/>
 `someAnotherArray['key']`
 
-### Angle brackets
-`<`, `>`
-
 ### Braces
 `{`, `}`
 * Statemets scopes such as conditional statement, cycles, type/method declaration, ect
 * Sequence of statements
 * String interpolation
+
+### Angle brackets
+`<`, `>`
 
 ## Numbers
 * `42` — integer number
