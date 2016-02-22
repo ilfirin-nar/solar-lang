@@ -13,3 +13,37 @@ someVar
 someAnotherVar <- 42
 someVar <- someAnotherVar
 ```
+
+## Local functions (lambdas)
+### With parameteres
+```
+greet <- x => {
+    console.print(x)
+}
+greet('Hello!')
+```
+or inline syntax
+```
+greet <- x => console.print(x)
+greet('Hello!')
+```
+### Without parameteres
+```
+greet <- {
+    console.print('Hello')
+}
+greet()
+```
+or inline syntax
+```
+greet <- { console.print('Hello') }
+greet()
+```
+### Closures
+```
+greeting <- 'Hello!'
+greet <- {
+    console.print(greeting)
+}
+greet()
+```
