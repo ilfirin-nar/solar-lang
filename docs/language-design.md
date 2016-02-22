@@ -1,8 +1,8 @@
 # Solar language design
 1. [Literals](language-design/literals.md)
-1.1. [Brackets](language-design/literals/brackets.md)
-1.2. [Numbers](language-design/literals/numbers.md)
-1.3. [Characters and strings](language-design/iterals/characters-and-strings.md)
+..1. [Brackets](language-design/literals/brackets.md)
+..2. [Numbers](language-design/literals/numbers.md)
+..3. [Characters and strings](language-design/iterals/characters-and-strings.md)
 2. [Operators](language-design/operators.md)
 2.1. [Unary](language-design/operators/unary.md)
 2.2. [Binary](language-design/operators/binary.md)
