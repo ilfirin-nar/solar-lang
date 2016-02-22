@@ -37,3 +37,15 @@ codition ? doSomething()
 ```
 condition ? doSomething() ! doAnotherThing()
 ```
+
+## Switch statement
+```
+value ? {
+    1: {
+       console.print('value = 1')
+    }
+    2: console.print('value = 2')
+    3: console.print('value = 3')
+    : console.print('value not equal 1, 2 or 3')
+}
+```
