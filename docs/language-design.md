@@ -1,4 +1,8 @@
 # Solar language design
+## About
+All about Solar language.
+
+## Details
 1. [Literals](language-design/literals.md)
   1. [Brackets](language-design/literals/brackets.md)
   2. [Numbers](language-design/literals/numbers.md)
