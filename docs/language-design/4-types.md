@@ -1,6 +1,6 @@
 # Types
-## Object
-All types is derived from Object
+
+
 
 ## Integrated types
 ### `Number`
