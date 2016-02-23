@@ -20,9 +20,23 @@ All about Solar language.
 4. [Types](language-design/types.md)
   1. [Object](language-design/types/object.md)
   2. [Integrated types](language-design/types/integrated-types.md)
+    1. Number
+    2. Boolean
+    3. String
+    4. Array
+    5. Function
+    6. Constants
   3. [User defined types](language-design/types/user-defined-types.md)
+    1. Interfaces
+    2. Models
+    3. Services
+    4. Attributes
+    5. Signals
+      1. Exceptions
+      2. Events
 5. [Modules](language-design/modules.md)
 6. [Contexts](language-design/contexts.md)
-7. [Compile-time](language-design/compile-time.md)
-8. [Runtime](language-design/runtime.md)
+7. Compile-time
+8. Runtime
 9. [Tests](language-design/tests.md)
+10. Actors
