@@ -21,12 +21,12 @@ All about Solar language.
 5. [Types](language-design/types.md)
   1. [Object](language-design/types/object.md)
   2. [Integrated types](language-design/types/integrated-types.md)
-    1. Number
-    2. Boolean
-    3. String
-    4. Array
-    5. Function
-    6. Constants
+    1. [Number](language-design/types/integrated-types/number.md)
+    2. [Boolean](language-design/types/integrated-types/boolean.md)
+    3. [Array](language-design/types/integrated-types/array.md)
+    4. [String](language-design/types/integrated-types/string.md)
+    5. [Function](language-design/types/integrated-types/function.md)
+    6. [Constants](language-design/types/integrated-types/constants.md)
   3. [User defined types](language-design/types/user-defined-types.md)
     1. [Interfaces](language-design/types/user-defined-types/interfaces.md)
     2. [Models](language-design/types/user-defined-types/models.md)
