@@ -26,7 +26,7 @@ All about Solar language.
     3. [Array](language-design/types/integrated-types/array.md)
     4. [String](language-design/types/integrated-types/string.md)
     5. [Function](language-design/types/integrated-types/function.md)
-    6. [Constants](language-design/types/integrated-types/constants.md)
+    6. [Constant](language-design/types/integrated-types/constant.md)
   3. [User defined types](language-design/types/user-defined-types.md)
     1. [Interfaces](language-design/types/user-defined-types/interfaces.md)
     2. [Models](language-design/types/user-defined-types/models.md)
