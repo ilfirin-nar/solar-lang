@@ -2,12 +2,12 @@
 Context is attribute, which supporteds some namespace functionality.
 ```
 @ Unicors
-class Beauty {
+model Beauty {
   // one functionality encapsulated into class with name Beauty
 }
 
 @ Elves
-class Beauty {
+model Beauty {
   // another functionality encapsulated into another class with the same name Beauty
 }
 
