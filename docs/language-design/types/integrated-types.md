@@ -1,6 +1,6 @@
 # Integrated types
 ## About
-A types, which integrated to language and have a support in runtime library.
+Types, which integrated to language and have a support in runtime library.
 
 ## Content
 1. [Number](integrated-types/number.md)
