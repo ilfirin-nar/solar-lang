@@ -7,6 +7,7 @@ All about Solar language.
   1. [Brackets](language-design/literals/brackets.md)
   2. [Numbers](language-design/literals/numbers.md)
   3. [Characters and strings](language-design/literals/characters-and-strings.md)
+  4. [Comments](language-design/literals/comments.md)
 2. [Keywords](language-design/keywords.md)
 3. [Operators](language-design/operators.md)
   1. [Unary](language-design/operators/unary.md)
