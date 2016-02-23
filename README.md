@@ -9,5 +9,6 @@
 * Maximum feedback from compilier
 
 ## Documentation
-1. [Language design](docs/language-design.md)
-2. [Theses](docs/theses.md)
+1. [Theses](docs/theses.md)
+2. [Language design](docs/language-design.md)
+3. [Library](docs/library.md)
