@@ -1,15 +1,15 @@
 # Keywords
-## Keywords which userd once in a file
-Syntax | Description
--------|-------
-`module` | Define a module
-`interface` | Define an interface
-`service` | Define a service
-`model` | Define a model
-`attribute` | Define an attribute
-`signal` | Define a signal
-`exception` | Define an exception
-`event` | Define an event
+Syntax | Description | Using
+-------|-------|-------
+`attribute` | Define an attribute | Once in a file
+`event` | Define an event | Once in a file
+`exception` | Define an exception | Once in a file
+`interface` | Define an interface | Once in a file
+`model` | Define a model | Once in a file
+`module` | Define a module | Once in a file
+`service` | Define a service | Once in a file
+`signal` | Define a signal | Once in a file
+`to` | Type cast operator | Into expression
 
 ## Reserved type names
 Syntax | Description
