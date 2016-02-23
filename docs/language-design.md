@@ -27,11 +27,11 @@ All about Solar language.
     5. Function
     6. Constants
   3. [User defined types](language-design/types/user-defined-types.md)
-    1. [Interfaces](user-defined-types/interfaces.md)
-    2. [Models](user-defined-types/models.md)
-    3. [Services](user-defined-types/services.md)
-    4. [Attributes](user-defined-types/attributes.md)
-    5. [Signals](user-defined-types/signals.md)
+    1. [Interfaces](language-design/user-defined-types/interfaces.md)
+    2. [Models](language-design/user-defined-types/models.md)
+    3. [Services](language-design/user-defined-types/services.md)
+    4. [Attributes](language-design/user-defined-types/attributes.md)
+    5. [Signals](language-design/user-defined-types/signals.md)
       1. Exceptions
       2. Events
 5. [Modules](language-design/modules.md)
