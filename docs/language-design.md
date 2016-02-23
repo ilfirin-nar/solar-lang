@@ -33,8 +33,8 @@ All about Solar language.
     3. [Services](language-design/types/user-defined-types/services.md)
     4. [Attributes](language-design/types/user-defined-types/attributes.md)
     5. [Signals](language-design/types/user-defined-types/signals.md)
-      1. Exceptions
-      2. Events
+      1. [Exceptions](language-design/types/user-defined-types/signals/exceptions.md)
+      2. [Events](language-design/types/user-defined-types/signals/events.md)
 6. [Modules](language-design/modules.md)
 7. [Contexts](language-design/contexts.md)
 8. Compile-time
