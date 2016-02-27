@@ -1,4 +1,4 @@
-﻿namespace Solar.Infrastructure.Interfaces.DomainLayer
+﻿namespace Solar.Infrastructure.Common.Interfaces.DomainLayer
 {
     public interface IEntity {}
 }

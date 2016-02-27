@@ -1,4 +1,4 @@
-﻿namespace Solar.Infrastructure.Interfaces
+﻿namespace Solar.Infrastructure.Common.Interfaces
 {
     public interface IService {}
 }

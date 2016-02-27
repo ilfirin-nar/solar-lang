@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}</ProjectGuid>
+    <ProjectGuid>{3ED75F47-1311-444A-87E9-7AA7CFAA7D00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Infrastructure.Common</RootNamespace>
-    <AssemblyName>Solar.Infrastructure.Common</AssemblyName>
+    <RootNamespace>Solar.Console.Compilier</RootNamespace>
+    <AssemblyName>slc</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,17 +35,23 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ApplicationLayer\IApplicationService.cs" />
-    <Compile Include="Interfaces\DomainLayer\IValueObject.cs" />
-    <Compile Include="Interfaces\DomainLayer\IDomainService.cs" />
-    <Compile Include="Interfaces\DomainLayer\IEntity.cs" />
-    <Compile Include="Interfaces\DomainLayer\IEntityBehaviorService.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObject.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IInfrastructureService.cs" />
-    <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
+      <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
+      <Name>Solar.Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.Console\Solar.Infrastructure.Console.csproj">
+      <Project>{e0c195e2-22a9-47d8-b992-6a7787374cbe}</Project>
+      <Name>Solar.Infrastructure.Console</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.DependencyInjection\Solar.Infrastructure.DependencyInjection.csproj">
+      <Project>{5a7f6799-6e41-401a-9ed2-daab755a4ed3}</Project>
+      <Name>Solar.Infrastructure.DependencyInjection</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
