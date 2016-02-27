@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solar.Infrastructure.Common", "Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj", "{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solar.Infrastructure.Common", "impl\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj", "{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
