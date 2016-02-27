@@ -7,8 +7,8 @@
     <ProjectGuid>{DA10B67C-DE09-4D20-82DF-392554464541}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Compilier.Domain</RootNamespace>
-    <AssemblyName>Solar.Compilier.Domain</AssemblyName>
+    <RootNamespace>Solar.Domain.Analysis</RootNamespace>
+    <AssemblyName>Solar.Domain.Analysis</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,14 +39,22 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IContentAnalyzer.cs" />
+    <Compile Include="SemanticAnalysis\ISemanticAnalyzer.cs" />
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="Entities\Token.cs" />
+    <Compile Include="SyntaxAnalysis\Entities\IAbstractSyntaxTree.cs" />
+    <Compile Include="LexecalAnalysis\Entities\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ILexer.cs" />
-    <Compile Include="Services\IParser.cs" />
-    <Compile Include="ValueObjects\Lexem.cs" />
+    <Compile Include="LexecalAnalysis\ILexicalAnalyzer.cs" />
+    <Compile Include="SyntaxAnalysis\ISyntaxAnalyser.cs" />
+    <Compile Include="LexecalAnalysis\ValueObjects\Lexem.cs" />
+    <Compile Include="LexecalAnalysis\ValueObjects\TokenAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">
+      <Project>{1df046e6-3083-4ba2-b38a-138fba765ae2}</Project>
+      <Name>Solar.Domain.Grammar</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
@@ -55,6 +63,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

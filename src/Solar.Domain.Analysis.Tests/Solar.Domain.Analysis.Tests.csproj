@@ -8,8 +8,8 @@
     <ProjectGuid>{4CB53998-D678-4306-B98E-9D1E07D533BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Compilier.Domain.Tests</RootNamespace>
-    <AssemblyName>Solar.Compilier.Domain.Tests</AssemblyName>
+    <RootNamespace>Solar.Domain.Analysis.Tests</RootNamespace>
+    <AssemblyName>Solar.Domain.Analysis.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
