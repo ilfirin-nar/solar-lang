@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A7F6799-6E41-401A-9ED2-DAAB755A4ED3}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{53C0C8E9-79FE-46AB-87EF-ED7FADD30F34}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Infrastructure.DependencyInjection</RootNamespace>
-    <AssemblyName>Solar.Infrastructure.DependencyInjection</AssemblyName>
+    <RootNamespace>Solar.Console.Compilier</RootNamespace>
+    <AssemblyName>Solar.Console.Compilier</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,12 +38,24 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Solar.Compilier.Application\Solar.Compilier.Application.csproj">
+      <Project>{d0f8b16d-4d00-49e0-af26-d826c5b702a3}</Project>
+      <Name>Solar.Compilier.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.Console\Solar.Infrastructure.Console.csproj">
+      <Project>{e0c195e2-22a9-47d8-b992-6a7787374cbe}</Project>
+      <Name>Solar.Infrastructure.Console</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

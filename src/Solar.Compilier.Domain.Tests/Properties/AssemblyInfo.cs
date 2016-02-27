@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Solar.Compilier")]
+[assembly: AssemblyTitle("Solar.Compilier.Domain.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Solar.Compilier")]
+[assembly: AssemblyProduct("Solar.Compilier.Domain.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3ed75f47-1311-444a-87e9-7aa7cfaa7d00")]
+[assembly: Guid("4cb53998-d678-4306-b98e-9d1e07d533bc")]
 
 // Version information for an assembly consists of the following four values:
 //
