@@ -40,7 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="Enums\TokenType.cs" />
+    <Compile Include="Lexical\Identifiers\Identifier.cs" />
+    <Compile Include="Lexical\Identifiers\LocalIdentifier.cs" />
+    <Compile Include="Lexical\Identifiers\MemberIdentifier.cs" />
+    <Compile Include="Lexical\Identifiers\TypeIdentifier.cs" />
+    <Compile Include="Lexical\Keywords\Keyword.cs" />
+    <Compile Include="Lexical\Operators\CompileTimeAssigmentOperator.cs" />
+    <Compile Include="Lexical\Operators\AssigmentOperator.cs" />
+    <Compile Include="Lexical\Operators\ImmutableAssigmentOperator.cs" />
+    <Compile Include="Lexical\Operators\Operator.cs" />
+    <Compile Include="Lexical\ITokenType.cs" />
+    <Compile Include="Lexical\Whitespaces\Whitespace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,8 +13,7 @@ namespace Solar.Domain.Analysis.LexicalAnalysis.EntityFactories
             return new Token
             {
                 Lexem = new Lexem(rawData.Content),
-                Type = rawData.TokenType,
-                Attributes = new List<TokenAttribute>() // TODO Think about attributes more!
+                Type = rawData.TokenType
             };
         }
 

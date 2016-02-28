@@ -1,7 +1,7 @@
 ﻿using LightInject.xUnit2;
 using Solar.Domain.Analysis.LexicalAnalysis.EntityFactories;
 using Solar.Domain.Analysis.LexicalAnalysis.EntityFactories.RawData;
-using Solar.Domain.Grammar.Enums;
+using Solar.Domain.Grammar.Lexical.Whitespaces;
 using Xunit;
 
 namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
@@ -13,7 +13,7 @@ namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
         [Theory, InjectData]
         internal void Produce_NotNullResult(ITokenFactory tokenFactory)
         {
-            var data = new TokenRawData(Content, TokenType.Expression);
+            var data = new TokenRawData(Content, new Whitespace());
             var result = tokenFactory.Produce(data);
             Assert.NotNull(result);
         }
@@ -21,7 +21,7 @@ namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
         [Theory, InjectData]
         internal void Produce_ValidContent_ValidLexem(ITokenFactory tokenFactory)
         {
-            var data = new TokenRawData(Content, TokenType.Expression);
+            var data = new TokenRawData(Content, new Whitespace());
             var result = tokenFactory.Produce(data);
             Assert.Equal(result.Lexem.Value, Content);
         }
@@ -29,9 +29,10 @@ namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
         [Theory, InjectData]
         internal void Produce_ValidType_ValidLexem(ITokenFactory tokenFactory)
         {
-            var data = new TokenRawData(Content, TokenType.Expression);
+            var tokenType = new Whitespace();
+            var data = new TokenRawData(Content, tokenType);
             var result = tokenFactory.Produce(data);
-            Assert.Equal(result.Type, TokenType.Expression);
+            Assert.Equal(result.Type, tokenType);
         }
     }
 }
