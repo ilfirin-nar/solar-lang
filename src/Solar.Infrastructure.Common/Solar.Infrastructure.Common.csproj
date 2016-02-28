@@ -47,11 +47,13 @@
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Interfaces\ApplicationLayer\IApplicationService.cs" />
+    <Compile Include="Interfaces\DomainLayer\IEntityFactory.cs" />
     <Compile Include="Interfaces\DomainLayer\IValueObject.cs" />
     <Compile Include="Interfaces\DomainLayer\IDomainService.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntity.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntityBehaviorService.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObject.cs" />
+    <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObjectFactory.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IInfrastructureService.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

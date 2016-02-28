@@ -7,7 +7,12 @@ namespace Solar.Domain.Analysis.LexecalAnalysis.Entities
 {
     internal class Token : IEntity
     {
-        public Guid Id { get; set; }
+        public Token()
+        {
+            Id = Guid.NewGuid();
+        }
+
+        public Guid Id { get; private set; }
 
         public Lexem Lexem { get; set; }
 

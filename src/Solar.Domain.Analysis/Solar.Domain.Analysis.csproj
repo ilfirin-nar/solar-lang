@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IContentAnalyzer.cs" />
+    <Compile Include="LexecalAnalysis\Entities\Factories\TokenFactory.cs" />
+    <Compile Include="LexecalAnalysis\LexicalAnalyzer.cs" />
     <Compile Include="SemanticAnalysis\ISemanticAnalyzer.cs" />
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="SyntaxAnalysis\Entities\IAbstractSyntaxTree.cs" />
