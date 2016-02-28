@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Solar.Domain.Analysis.LexecalAnalysis.Entities;
+using Solar.Domain.Analysis.LexicalAnalysis.Entities;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
-namespace Solar.Domain.Analysis.LexecalAnalysis
+namespace Solar.Domain.Analysis.LexicalAnalysis
 {
     internal interface ILexicalAnalyzer : IDomainService
     {

@@ -47,7 +47,9 @@
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Interfaces\ApplicationLayer\IApplicationService.cs" />
+    <Compile Include="Interfaces\DomainLayer\IAggregationRoot.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntityFactory.cs" />
+    <Compile Include="Interfaces\DomainLayer\IEntityRawData.cs" />
     <Compile Include="Interfaces\DomainLayer\IValueObject.cs" />
     <Compile Include="Interfaces\DomainLayer\IDomainService.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntity.cs" />

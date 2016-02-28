@@ -1,6 +1,6 @@
 ﻿using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
-namespace Solar.Domain.Analysis.LexecalAnalysis.ValueObjects
+namespace Solar.Domain.Analysis.LexicalAnalysis.ValueObjects
 {
     internal class Lexem : IValueObject
     {
@@ -10,5 +10,7 @@ namespace Solar.Domain.Analysis.LexecalAnalysis.ValueObjects
         }
 
         public string Value { get; private set; }
+
+        public int Length => Value.Length;
     }
 }

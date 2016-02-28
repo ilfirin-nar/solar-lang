@@ -4,7 +4,7 @@ using Solar.Infrastructure.Common.DependencyInjection;
 using Solar.Infrastructure.Common.DependencyInjection.Extensions;
 using Solar.Infrastructure.Common.Interfaces.ApplicationLayer;
 
-namespace Solar.Compilier.Application
+namespace Solar.Application.Compilier
 {
     internal class CompositionRoot : ISolarCompositionRoot
     {

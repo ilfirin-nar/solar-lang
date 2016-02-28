@@ -40,17 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IContentAnalyzer.cs" />
-    <Compile Include="LexecalAnalysis\Entities\Factories\TokenFactory.cs" />
-    <Compile Include="LexecalAnalysis\LexicalAnalyzer.cs" />
+    <Compile Include="LexicalAnalysis\EntityFactories\ITokenFactory.cs" />
+    <Compile Include="LexicalAnalysis\EntityFactories\TokenFactory.cs" />
+    <Compile Include="LexicalAnalysis\EntityFactories\RawData\TokenRawData.cs" />
+    <Compile Include="LexicalAnalysis\LexicalAnalyzer.cs" />
     <Compile Include="SemanticAnalysis\ISemanticAnalyzer.cs" />
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="SyntaxAnalysis\Entities\IAbstractSyntaxTree.cs" />
-    <Compile Include="LexecalAnalysis\Entities\Token.cs" />
+    <Compile Include="LexicalAnalysis\Entities\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LexecalAnalysis\ILexicalAnalyzer.cs" />
+    <Compile Include="LexicalAnalysis\ILexicalAnalyzer.cs" />
     <Compile Include="SyntaxAnalysis\ISyntaxAnalyser.cs" />
-    <Compile Include="LexecalAnalysis\ValueObjects\Lexem.cs" />
-    <Compile Include="LexecalAnalysis\ValueObjects\TokenAttribute.cs" />
+    <Compile Include="LexicalAnalysis\ValueObjects\Lexem.cs" />
+    <Compile Include="LexicalAnalysis\ValueObjects\TokenAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">

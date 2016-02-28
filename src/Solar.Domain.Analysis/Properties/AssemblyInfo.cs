@@ -34,4 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: InternalsVisibleTo("Solar.Compilier.Domain.Tests")]
+
+[assembly: InternalsVisibleTo("Solar.Domain.Analysis.Tests")]

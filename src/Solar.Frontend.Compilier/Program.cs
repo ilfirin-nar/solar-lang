@@ -1,4 +1,4 @@
-﻿namespace Solar.Console.Compilier
+﻿namespace Solar.Frontend.Compilier
 {
     public class Program
     {

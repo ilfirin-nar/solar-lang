@@ -61,11 +61,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LexicalAnalysis\EntityFactories\TokenFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Solar.Domain.Analysis\Solar.Domain.Analysis.csproj">
+      <Project>{da10b67c-de09-4d20-82df-392554464541}</Project>
+      <Name>Solar.Domain.Analysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">
+      <Project>{1DF046E6-3083-4BA2-B38A-138FBA765AE2}</Project>
+      <Name>Solar.Domain.Grammar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
+      <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
+      <Name>Solar.Infrastructure.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

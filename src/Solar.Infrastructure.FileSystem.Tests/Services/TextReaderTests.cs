@@ -30,7 +30,7 @@ namespace Solar.Infrastructure.FileSystem.Tests.Services
         }
 
         [Theory, InjectData]
-        public void Read_ValidFilePath_Success(ITextFileReader fileReader)
+        internal void Read_ValidFilePath_Success(ITextFileReader fileReader)
         {
             var result = fileReader.Read(_testFilePath);
             Assert.Equal(FileContent, result);
