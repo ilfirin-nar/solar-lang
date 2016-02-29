@@ -39,6 +39,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\RegexPatterns.cs" />
     <Compile Include="DependencyInjection\Extensions\ServiceRegistryExtensions.cs" />
     <Compile Include="DependencyInjection\ISolarCompositionRoot.cs" />
     <Compile Include="DependencyInjection\LifetimeFactory.cs" />

@@ -1,5 +1,6 @@
 ﻿using Solar.Domain.Analysis.LexicalAnalysis.ValueObjects;
 using Solar.Domain.Grammar.Lexical;
+using Solar.Domain.Grammar.Lexical.TokenTypes;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
 namespace Solar.Domain.Analysis.LexicalAnalysis.Entities

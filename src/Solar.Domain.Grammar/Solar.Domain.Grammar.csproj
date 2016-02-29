@@ -40,17 +40,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="Lexical\Identifiers\Identifier.cs" />
-    <Compile Include="Lexical\Identifiers\LocalIdentifier.cs" />
-    <Compile Include="Lexical\Identifiers\MemberIdentifier.cs" />
-    <Compile Include="Lexical\Identifiers\TypeIdentifier.cs" />
-    <Compile Include="Lexical\Keywords\Keyword.cs" />
-    <Compile Include="Lexical\Operators\CompileTimeAssigmentOperator.cs" />
-    <Compile Include="Lexical\Operators\AssigmentOperator.cs" />
-    <Compile Include="Lexical\Operators\ImmutableAssigmentOperator.cs" />
-    <Compile Include="Lexical\Operators\Operator.cs" />
-    <Compile Include="Lexical\ITokenType.cs" />
-    <Compile Include="Lexical\Whitespaces\Whitespace.cs" />
+    <Compile Include="Exceptions\GrammarException.cs" />
+    <Compile Include="Exceptions\InvalidGrammarOperationException.cs" />
+    <Compile Include="Lexical\Services\Exceptions\UnrecognizedTokenException.cs" />
+    <Compile Include="Lexical\Services\ITokenTypeRecognizer.cs" />
+    <Compile Include="Lexical\Services\TokenTypeRecognizer.cs" />
+    <Compile Include="Lexical\TokenTypes\Identifiers\Identifier.cs" />
+    <Compile Include="Lexical\TokenTypes\Identifiers\LocalIdentifier.cs" />
+    <Compile Include="Lexical\TokenTypes\Identifiers\MemberIdentifier.cs" />
+    <Compile Include="Lexical\TokenTypes\Identifiers\TypeIdentifier.cs" />
+    <Compile Include="Lexical\TokenTypes\Keywords\Keyword.cs" />
+    <Compile Include="Lexical\TokenTypes\Operators\CompileTimeAssigmentOperator.cs" />
+    <Compile Include="Lexical\TokenTypes\Operators\AssigmentOperator.cs" />
+    <Compile Include="Lexical\TokenTypes\Operators\ImmutableAssigmentOperator.cs" />
+    <Compile Include="Lexical\TokenTypes\Operators\Operator.cs" />
+    <Compile Include="Lexical\TokenTypes\ITokenType.cs" />
+    <Compile Include="Lexical\TokenTypes\TokenTypeBase.cs" />
+    <Compile Include="Lexical\TokenTypes\UndefinedToken.cs" />
+    <Compile Include="Lexical\TokenTypes\Whitespaces\Whitespace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +69,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
