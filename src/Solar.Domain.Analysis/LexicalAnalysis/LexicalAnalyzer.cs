@@ -50,7 +50,7 @@ namespace Solar.Domain.Analysis.LexicalAnalysis
 
         private static TokenRawData GetNewTokenRawData()
         {
-            return new TokenRawData(string.Empty, new UndefinedToken());
+            return new TokenRawData(string.Empty);
         }
 
         private static bool IsNewToken(TokenRawData tokenRawData)

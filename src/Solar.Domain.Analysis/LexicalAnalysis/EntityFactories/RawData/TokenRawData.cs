@@ -5,6 +5,11 @@ namespace Solar.Domain.Analysis.LexicalAnalysis.EntityFactories.RawData
 {
     internal class TokenRawData : IEntityRawData
     {
+        public TokenRawData(string lexeme)
+        {
+            Lexeme = lexeme;
+        }
+
         public TokenRawData(string lexeme, ITokenType tokenType)
         {
             Lexeme = lexeme;

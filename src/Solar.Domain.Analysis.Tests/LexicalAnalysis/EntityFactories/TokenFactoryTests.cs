@@ -13,7 +13,7 @@ namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
         [Theory, InjectData]
         internal void Produce_NotNullResult(ITokenFactory tokenFactory)
         {
-            var data = new TokenRawData(Content, new Whitespace());
+            var data = new TokenRawData(Content, new SpaceTokenType());
             var result = tokenFactory.Produce(data);
             Assert.NotNull(result);
         }
@@ -21,7 +21,7 @@ namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
         [Theory, InjectData]
         internal void Produce_ValidContent_ValidLexem(ITokenFactory tokenFactory)
         {
-            var data = new TokenRawData(Content, new Whitespace());
+            var data = new TokenRawData(Content, new SpaceTokenType());
             var result = tokenFactory.Produce(data);
             Assert.Equal(result.Lexem.Value, Content);
         }
@@ -29,7 +29,7 @@ namespace Solar.Domain.Analysis.Tests.LexicalAnalysis.EntityFactories
         [Theory, InjectData]
         internal void Produce_ValidType_ValidLexem(ITokenFactory tokenFactory)
         {
-            var tokenType = new Whitespace();
+            var tokenType = new SpaceTokenType();
             var data = new TokenRawData(Content, tokenType);
             var result = tokenFactory.Produce(data);
             Assert.Equal(result.Type, tokenType);
