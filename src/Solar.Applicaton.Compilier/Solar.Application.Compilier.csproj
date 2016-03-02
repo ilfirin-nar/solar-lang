@@ -43,6 +43,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Solar.Domain.Analysis.Lexical\Solar.Domain.Analysis.Lexical.csproj">
+      <Project>{da10b67c-de09-4d20-82df-392554464541}</Project>
+      <Name>Solar.Domain.Analysis.Lexical</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Domain.Analysis.Semantic\Solar.Domain.Analysis.Semantic.csproj">
+      <Project>{c44ef742-d11b-4803-9ce8-de6f035cdb6e}</Project>
+      <Name>Solar.Domain.Analysis.Semantic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Domain.Analysis.Syntax\Solar.Domain.Analysis.Syntax.csproj">
+      <Project>{2c11b4fd-c445-4c32-92b5-cb3186cc032c}</Project>
+      <Name>Solar.Domain.Analysis.Syntax</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
