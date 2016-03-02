@@ -4,10 +4,16 @@ using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
 namespace Solar.Domain.Analysis.Lexical.Entities
 {
-    internal class Token : IAggregationRoot
+    public class Token : IAggregationRoot
     {
-        public Lexem Lexem { get; set; }
+        public Token(Lexem lexem, ITokenType type)
+        {
+            Lexem = lexem;
+            Type = type;
+        }
 
-        public ITokenType Type { get; set; }
+        public Lexem Lexem { get; private set; }
+
+        public ITokenType Type { get; private set; }
     }
 }

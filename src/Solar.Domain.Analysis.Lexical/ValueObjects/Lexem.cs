@@ -2,7 +2,7 @@
 
 namespace Solar.Domain.Analysis.Lexical.ValueObjects
 {
-    internal class Lexem : IValueObject
+    public class Lexem : IValueObject
     {
         public Lexem(string value)
         {

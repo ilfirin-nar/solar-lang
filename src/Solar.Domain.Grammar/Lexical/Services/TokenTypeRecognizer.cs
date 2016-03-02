@@ -16,16 +16,22 @@ namespace Solar.Domain.Grammar.Lexical.Services
 
         public ITokenType Recognize(string lexeme)
         {
-            foreach (var tokenType in _tokenTypes.Where(t => t.CharacteristicRegex.IsMatch(lexeme)))
+            return Recognize(lexeme, _tokenTypes);
+        }
+
+        public ITokenType ClarifyTokenType(string lexeme, ITokenType tokenType)
+        {
+            var tokenTypesWithoutOld = new List<ITokenType> { tokenType };
+            return Recognize(lexeme, _tokenTypes.Except(tokenTypesWithoutOld));
+        }
+
+        private static ITokenType Recognize(string lexeme, IEnumerable<ITokenType> tokenTypes)
+        {
+            foreach (var tokenType in tokenTypes.Where(t => t.CharacteristicRegex.IsMatch(lexeme)))
             {
                 return tokenType;
             }
             throw new UnrecognizedTokenException(lexeme);
-        }
-
-        public bool CheckTokenType(string lexeme, ITokenType tokenType)
-        {
-            return tokenType.CharacteristicRegex.IsMatch(lexeme);
         }
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="Lexical\TokenTypes\Operators\DivisionOperatorTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Operators\MultiplyOperatorTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Operators\SubstractionOperatorTokenType.cs" />
+    <Compile Include="Lexical\TokenTypes\Whitespaces\IndentTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Whitespaces\NewLineTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Whitespaces\SpaceTokenType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

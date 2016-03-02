@@ -23,6 +23,25 @@ namespace Solar.Domain.Text.Tests
         }
 
         [Theory]
+        [InlineData("  ")]
+        internal void Indent_IsMatch(string value)
+        {
+            Assert.True(RegularExpressions.Indent.IsMatch(value));
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData(" ")]
+        [InlineData("   ")]
+        [InlineData("d  ")]
+        [InlineData("  d")]
+        [InlineData("ef")]
+        internal void Indent_IsNotMatch(string value)
+        {
+            Assert.False(RegularExpressions.Indent.IsMatch(value));
+        }
+
+        [Theory]
         [InlineData("\n\r")]
         internal void NewLine_IsMatch(string value)
         {
@@ -100,6 +119,26 @@ namespace Solar.Domain.Text.Tests
         internal void WordStartedWithNonCapitalChar_IsNotMatch(string value)
         {
             Assert.False(RegularExpressions.WordStartedWithNonCapitalChar.IsMatch(value));
+        }
+
+        [Theory]
+        [InlineData("<")]
+        [InlineData("<-")]
+        internal void LeftArrow_IsMatch(string value)
+        {
+            Assert.True(RegularExpressions.LeftArrow.IsMatch(value));
+        }
+
+        [Theory]
+        [InlineData("< ")]
+        [InlineData(" <")]
+        [InlineData("<- ")]
+        [InlineData(" <-")]
+        [InlineData("<-<")]
+        [InlineData("<<")]
+        internal void LeftArrow_IsNotMatch(string value)
+        {
+            Assert.False(RegularExpressions.LeftArrow.IsMatch(value));
         }
     }
 }

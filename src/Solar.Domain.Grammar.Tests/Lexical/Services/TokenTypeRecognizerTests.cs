@@ -14,7 +14,6 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
     {
         [Theory]
         [InjectData("")]
-        [InjectData("  ")]
         internal void Recognize_InvalidLexeme_Exception(ITokenTypeRecognizer recognizer, string lexeme)
         {
             try
@@ -30,6 +29,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
 
         [Theory]
         [InjectData(" ", typeof (SpaceTokenType))]
+        [InjectData("  ", typeof(IndentTokenType))]
         [InjectData("\n\r", typeof(NewLineTokenType))]
         [InjectData("(", typeof(LeftParentheseTokenType))]
         [InjectData(")", typeof(RightParentheseTokenType))]
@@ -44,18 +44,6 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
         {
             var result = recognizer.Recognize(lexeme);
             Assert.Equal(tokenTypeType, result.GetType());
-        }
-
-        [Theory, InjectData]
-        internal void CheckTokenType_SpaceAndSpaceTokenType_True(ITokenTypeRecognizer recognizer, SpaceTokenType tokenType)
-        {
-            Assert.True(recognizer.CheckTokenType(" ", tokenType));
-        }
-
-        [Theory, InjectData]
-        internal void CheckTokenType_SpaceAndNotSpaceTokenType_True(ITokenTypeRecognizer recognizer, NewLineTokenType tokenType)
-        {
-            Assert.False(recognizer.CheckTokenType(" ", tokenType));
         }
     }
 }

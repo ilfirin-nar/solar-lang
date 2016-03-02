@@ -6,6 +6,8 @@ namespace Solar.Domain.Text
     {
         public static readonly Regex Space = new Regex(@"^ $");
 
+        public static readonly Regex Indent = new Regex(@"^  $");
+
         public static readonly Regex NewLine = new Regex(@"^\n\r$");
 
         public static readonly Regex LeftParenthese = new Regex(@"^\($");
@@ -16,7 +18,7 @@ namespace Solar.Domain.Text
 
         public static readonly Regex WordStartedWithNonCapitalChar = new Regex(@"^([a-z])([a-zA-Z0-9])*$");
 
-        public static readonly Regex LeftArrow = new Regex(@"^<-$");
+        public static readonly Regex LeftArrow = new Regex(@"^((<-)|<)$");
 
         public static readonly Regex Addition = new Regex(@"^\+$");
 

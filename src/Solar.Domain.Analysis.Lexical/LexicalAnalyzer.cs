@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Solar.Domain.Analysis.Lexical.Entities;
 using Solar.Domain.Analysis.Lexical.EntityFactories;
 using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
+using Solar.Domain.Analysis.Lexical.Exceptions;
+using Solar.Domain.Grammar.Exceptions;
 using Solar.Domain.Grammar.Lexical.Services;
 
 namespace Solar.Domain.Analysis.Lexical
@@ -18,17 +19,30 @@ namespace Solar.Domain.Analysis.Lexical
             _tokenTypeRecognizer = tokenTypeRecognizer;
         }
 
-        public IList<Token> Analyse(string content)
+        public IReadOnlyList<Token> Analyse(string content)
         {
-            return Parse(content).ToList();
+            try
+            {
+                return Parse(content);
+            }
+            catch (GrammarException exception)
+            {
+                throw new LexicalAnalyzerException(exception);
+            }
         }
 
-        private IEnumerable<Token> Parse(string content)
+        private IReadOnlyList<Token> Parse(string content)
         {
+            var result = new List<Token>();
+            if (content == string.Empty)
+            {
+                return result;
+            }
             var tokenRawData = GetNewTokenRawData();
+            // TODO see to one char forward!!
             foreach (var character in content)
             {
-                if (IsNewToken(tokenRawData))
+                if (IsEmptyToken(tokenRawData))
                 {
                     AddCharacterToLexeme(tokenRawData, character);
                     continue;
@@ -37,13 +51,16 @@ namespace Solar.Domain.Analysis.Lexical
                 {
                     var token = _tokenFactory.Produce(tokenRawData);
                     tokenRawData = GetNewTokenRawData();
-                    yield return token;
+                    AddCharacterToLexeme(tokenRawData, character);
+                    result.Add(token);
                 }
                 else
                 {
                     AddCharacterToLexeme(tokenRawData, character);
                 }
             }
+            result.Add(_tokenFactory.Produce(tokenRawData));
+            return result;
         }
 
         private static TokenRawData GetNewTokenRawData()
@@ -51,7 +68,7 @@ namespace Solar.Domain.Analysis.Lexical
             return new TokenRawData(string.Empty);
         }
 
-        private static bool IsNewToken(TokenRawData tokenRawData)
+        private static bool IsEmptyToken(TokenRawData tokenRawData)
         {
             return tokenRawData.Lexeme == string.Empty;
         }
@@ -62,10 +79,10 @@ namespace Solar.Domain.Analysis.Lexical
             token.TokenType = _tokenTypeRecognizer.Recognize(token.Lexeme);
         }
 
-        private bool IsNextTokenStarts(TokenRawData tokenRawData, char character)
+        private static bool IsNextTokenStarts(TokenRawData tokenRawData, char character)
         {
             var checkedLexeme = tokenRawData.Lexeme + character;
-            return _tokenTypeRecognizer.CheckTokenType(checkedLexeme, tokenRawData.TokenType);
+            return !tokenRawData.TokenType.CharacteristicRegex.IsMatch(checkedLexeme);
         }
     }
 }
