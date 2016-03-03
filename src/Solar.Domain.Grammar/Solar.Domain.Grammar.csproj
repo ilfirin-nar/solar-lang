@@ -53,6 +53,8 @@
     <Compile Include="Lexical\TokenTypes\Operators\AssigmentOperatorTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\ITokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Operators\DivisionOperatorTokenType.cs" />
+    <Compile Include="Lexical\TokenTypes\Operators\GreaterThenOperatorTokenType.cs" />
+    <Compile Include="Lexical\TokenTypes\Operators\LessThenOperatorTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Operators\MultiplyOperatorTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Operators\SubstractionOperatorTokenType.cs" />
     <Compile Include="Lexical\TokenTypes\Whitespaces\IndentTokenType.cs" />

@@ -18,7 +18,11 @@ namespace Solar.Domain.Text
 
         public static readonly Regex WordStartedWithNonCapitalChar = new Regex(@"^([a-z])([a-zA-Z0-9])*$");
 
-        public static readonly Regex LeftArrow = new Regex(@"^((<-)|<)$");
+        public static readonly Regex LessThen = new Regex(@"^<$");
+
+        public static readonly Regex GreaterThen = new Regex(@"^>$");
+
+        public static readonly Regex LeftArrow = new Regex(@"^<-$");
 
         public static readonly Regex Addition = new Regex(@"^\+$");
 

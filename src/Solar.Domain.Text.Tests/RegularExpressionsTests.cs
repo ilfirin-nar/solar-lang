@@ -122,7 +122,42 @@ namespace Solar.Domain.Text.Tests
         }
 
         [Theory]
+        [InlineData(">")]
+        internal void GreaterThen_IsMatch(string value)
+        {
+            Assert.True(RegularExpressions.GreaterThen.IsMatch(value));
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("> ")]
+        [InlineData(" >")]
+        [InlineData(">>")]
+        [InlineData(">_")]
+        internal void GreaterThen_IsNotMatch(string value)
+        {
+            Assert.False(RegularExpressions.GreaterThen.IsMatch(value));
+        }
+
+        [Theory]
         [InlineData("<")]
+        internal void LessThen_IsMatch(string value)
+        {
+            Assert.True(RegularExpressions.LessThen.IsMatch(value));
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("< ")]
+        [InlineData(" <")]
+        [InlineData("<<")]
+        [InlineData("<-")]
+        internal void LessThen_IsNotMatch(string value)
+        {
+            Assert.False(RegularExpressions.LessThen.IsMatch(value));
+        }
+
+        [Theory]
         [InlineData("<-")]
         internal void LeftArrow_IsMatch(string value)
         {
@@ -130,6 +165,7 @@ namespace Solar.Domain.Text.Tests
         }
 
         [Theory]
+        [InlineData("")]
         [InlineData("< ")]
         [InlineData(" <")]
         [InlineData("<- ")]
