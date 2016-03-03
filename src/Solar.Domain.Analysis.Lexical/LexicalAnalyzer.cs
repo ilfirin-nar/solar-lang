@@ -44,8 +44,7 @@ namespace Solar.Domain.Analysis.Lexical
             {
                 if (tokenRawData.IsEmpty)
                 {
-                    AddCharacterToLexeme(tokenRawData, character);
-                    RecognizeTokenType(tokenRawData);
+                    SetCharToToken(tokenRawData, character);
                     continue;
                 }
                 var checkedLexeme = tokenRawData.Lexeme + character;
@@ -59,7 +58,7 @@ namespace Solar.Domain.Analysis.Lexical
                     {
                         continue;
                     }
-                    result.Add(_tokenFactory.Produce(tokenRawData));
+                    AddToResult(result, tokenRawData);
                     tokenRawData = GetNewTokenRawData(character);
                 }
             }
@@ -74,9 +73,14 @@ namespace Solar.Domain.Analysis.Lexical
             {
                 return tokenRawData;
             }
-            AddCharacterToLexeme(tokenRawData, character.Value);
-            RecognizeTokenType(tokenRawData);
+            SetCharToToken(tokenRawData, character.Value);
             return tokenRawData;
+        }
+
+        private void SetCharToToken(TokenRawData tokenRawData, char character)
+        {
+            AddCharacterToLexeme(tokenRawData, character);
+            RecognizeTokenType(tokenRawData);
         }
 
         private static void AddCharacterToLexeme(TokenRawData tokenRawData, char character)
@@ -87,6 +91,11 @@ namespace Solar.Domain.Analysis.Lexical
         private void RecognizeTokenType(TokenRawData token)
         {
             token.TokenType = _tokenTypeRecognizer.Recognize(token.Lexeme);
+        }
+
+        private void AddToResult(ICollection<Token> result, TokenRawData tokenRawData)
+        {
+            result.Add(_tokenFactory.Produce(tokenRawData));
         }
 
         private bool TryToClarifyTokenType(string checkedLexeme, TokenRawData tokenRawData, char character)
