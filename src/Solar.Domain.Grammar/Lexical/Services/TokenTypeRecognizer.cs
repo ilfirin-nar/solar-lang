@@ -30,5 +30,10 @@ namespace Solar.Domain.Grammar.Lexical.Services
             var newTokenType = tokemTypesExceptCurrent.FirstOrDefault(t => t.CharacteristicRegex.IsMatch(lexeme));
             return newTokenType ?? currentTokenType;
         }
+
+        public bool Check(string lexeme, ITokenType tokenType)
+        {
+            return tokenType.CharacteristicRegex.IsMatch(lexeme);
+        }
     }
 }

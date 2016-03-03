@@ -49,7 +49,7 @@ namespace Solar.Domain.Analysis.Lexical
                     continue;
                 }
                 var checkedLexeme = tokenRawData.Lexeme + character;
-                if(tokenRawData.TokenType.CharacteristicRegex.IsMatch(checkedLexeme))
+                if(_tokenTypeRecognizer.Check(checkedLexeme, tokenRawData.TokenType))
                 {
                     tokenRawData.Lexeme = checkedLexeme;
                 }

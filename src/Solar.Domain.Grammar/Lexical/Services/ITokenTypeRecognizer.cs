@@ -8,5 +8,7 @@ namespace Solar.Domain.Grammar.Lexical.Services
         ITokenType Recognize(string lexeme);
 
         ITokenType ClarifyTokenType(string lexeme, ITokenType currentTokenType);
+
+        bool Check(string lexeme, ITokenType tokenType);
     }
 }
