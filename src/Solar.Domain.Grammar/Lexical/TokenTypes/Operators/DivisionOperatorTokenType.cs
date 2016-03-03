@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class DivisionOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => RegularExpressions.Division;
+        public Regex CharacteristicRegex => LexemRegularExpressions.Division;
     }
 }

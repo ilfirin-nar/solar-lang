@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class GreaterThenOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => RegularExpressions.GreaterThen;
+        public Regex CharacteristicRegex => LexemRegularExpressions.GreaterThen;
     }
 }

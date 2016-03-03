@@ -35,6 +35,8 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
         [InjectData(")", typeof(RightParentheseTokenType))]
         [InjectData("fooBar", typeof(LocalIdentifierTokenType))]
         [InjectData("FooBar", typeof(TypeIdentifierTokenType))]
+        [InjectData("<", typeof(LessThenOperatorTokenType))]
+        [InjectData(">", typeof(GreaterThenOperatorTokenType))]
         [InjectData("<-", typeof(AssigmentOperatorTokenType))]
         [InjectData("+", typeof(AdditionOperatorTokenType))]
         [InjectData("-", typeof(SubstractionOperatorTokenType))]

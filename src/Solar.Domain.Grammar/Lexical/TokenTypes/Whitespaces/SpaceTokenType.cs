@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Whitespaces
 {
     public class SpaceTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => RegularExpressions.Space;
+        public Regex CharacteristicRegex => LexemRegularExpressions.Space;
     }
 }

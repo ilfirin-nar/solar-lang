@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class LessThenOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => RegularExpressions.LessThen;
+        public Regex CharacteristicRegex => LexemRegularExpressions.LessThen;
     }
 }
