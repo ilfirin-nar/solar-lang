@@ -6,6 +6,7 @@ using Solar.Domain.Analysis.Lexical.Exceptions;
 using Solar.Domain.Grammar.Exceptions;
 using Solar.Domain.Grammar.Lexical.Services;
 using Solar.Domain.Grammar.Lexical.TokenTypes;
+using Solar.Infrastructure.Common.Extensions;
 
 namespace Solar.Domain.Analysis.Lexical
 {
@@ -35,7 +36,7 @@ namespace Solar.Domain.Analysis.Lexical
         private IReadOnlyList<Token> Parse(string content)
         {
             var result = new List<Token>();
-            if (content == string.Empty)
+            if (content.IsEmpty())
             {
                 return result;
             }
@@ -62,7 +63,7 @@ namespace Solar.Domain.Analysis.Lexical
                     tokenRawData = GetNewTokenRawData(character);
                 }
             }
-            result.Add(_tokenFactory.Produce(tokenRawData));
+            AddToResult(result, tokenRawData);
             return result;
         }
 

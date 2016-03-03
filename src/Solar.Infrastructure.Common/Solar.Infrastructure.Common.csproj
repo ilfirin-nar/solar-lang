@@ -45,6 +45,7 @@
     <Compile Include="DependencyInjection\ServiceRegistrationFilter.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Interfaces\ApplicationLayer\IApplicationService.cs" />
     <Compile Include="Interfaces\DomainLayer\IAggregationRoot.cs" />
