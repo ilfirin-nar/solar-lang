@@ -5,6 +5,7 @@ using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
 using Solar.Domain.Analysis.Lexical.Exceptions;
 using Solar.Domain.Grammar.Exceptions;
 using Solar.Domain.Grammar.Lexical.Services;
+using Solar.Domain.Grammar.Lexical.TokenTypes;
 
 namespace Solar.Domain.Analysis.Lexical
 {
@@ -44,41 +45,65 @@ namespace Solar.Domain.Analysis.Lexical
                 if (tokenRawData.IsEmpty)
                 {
                     AddCharacterToLexeme(tokenRawData, character);
+                    RecognizeTokenType(tokenRawData);
                     continue;
                 }
                 var checkedLexeme = tokenRawData.Lexeme + character;
-                if(!tokenRawData.TokenType.CharacteristicRegex.IsMatch(checkedLexeme))
+                if(tokenRawData.TokenType.CharacteristicRegex.IsMatch(checkedLexeme))
                 {
-                    var clarifyedTokenType = _tokenTypeRecognizer.ClarifyTokenType(checkedLexeme, tokenRawData.TokenType);
-                    if (clarifyedTokenType != tokenRawData.TokenType)
-                    {
-                        tokenRawData += character;
-                        tokenRawData.TokenType = clarifyedTokenType;
-                        continue;
-                    }
-                    var token = _tokenFactory.Produce(tokenRawData);
-                    tokenRawData = GetNewTokenRawData();
-                    AddCharacterToLexeme(tokenRawData, character);
-                    result.Add(token);
+                    tokenRawData.Lexeme = checkedLexeme;
                 }
                 else
                 {
-                    AddCharacterToLexeme(tokenRawData, character);
+                    if (TryToClarifyTokenType(checkedLexeme, tokenRawData, character))
+                    {
+                        continue;
+                    }
+                    result.Add(_tokenFactory.Produce(tokenRawData));
+                    tokenRawData = GetNewTokenRawData(character);
                 }
             }
             result.Add(_tokenFactory.Produce(tokenRawData));
             return result;
         }
 
-        private static TokenRawData GetNewTokenRawData()
+        private TokenRawData GetNewTokenRawData(char? character = null)
         {
-            return new TokenRawData(string.Empty);
+            var tokenRawData = new TokenRawData(string.Empty);
+            if (character == null)
+            {
+                return tokenRawData;
+            }
+            AddCharacterToLexeme(tokenRawData, character.Value);
+            RecognizeTokenType(tokenRawData);
+            return tokenRawData;
         }
 
-        private void AddCharacterToLexeme(TokenRawData tokenRawData, char character)
+        private static void AddCharacterToLexeme(TokenRawData tokenRawData, char character)
         {
-            tokenRawData += character;
-            tokenRawData.TokenType = _tokenTypeRecognizer.Recognize(tokenRawData.Lexeme);
+            tokenRawData.Lexeme += character;
+        }
+
+        private void RecognizeTokenType(TokenRawData token)
+        {
+            token.TokenType = _tokenTypeRecognizer.Recognize(token.Lexeme);
+        }
+
+        private bool TryToClarifyTokenType(string checkedLexeme, TokenRawData tokenRawData, char character)
+        {
+            var clarifyedTokenType = _tokenTypeRecognizer.ClarifyTokenType(checkedLexeme, tokenRawData.TokenType);
+            if (clarifyedTokenType == tokenRawData.TokenType)
+            {
+                return false;
+            }
+            ApplyClarifyedTokenType(tokenRawData, character, clarifyedTokenType);
+            return true;
+        }
+
+        private static void ApplyClarifyedTokenType(TokenRawData tokenRawData, char character, ITokenType clarifyedTokenType)
+        {
+            AddCharacterToLexeme(tokenRawData, character);
+            tokenRawData.TokenType = clarifyedTokenType;
         }
     }
 }
