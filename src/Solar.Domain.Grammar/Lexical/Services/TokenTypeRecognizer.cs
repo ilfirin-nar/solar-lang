@@ -2,6 +2,7 @@
 using System.Linq;
 using Solar.Domain.Grammar.Lexical.Services.Exceptions;
 using Solar.Domain.Grammar.Lexical.TokenTypes;
+using Solar.Infrastructure.Common.Extensions;
 
 namespace Solar.Domain.Grammar.Lexical.Services
 {
@@ -16,22 +17,18 @@ namespace Solar.Domain.Grammar.Lexical.Services
 
         public ITokenType Recognize(string lexeme)
         {
-            return Recognize(lexeme, _tokenTypes);
-        }
-
-        public ITokenType ClarifyTokenType(string lexeme, ITokenType tokenType)
-        {
-            var tokenTypesWithoutOld = new List<ITokenType> { tokenType };
-            return Recognize(lexeme, _tokenTypes.Except(tokenTypesWithoutOld));
-        }
-
-        private static ITokenType Recognize(string lexeme, IEnumerable<ITokenType> tokenTypes)
-        {
-            foreach (var tokenType in tokenTypes.Where(t => t.CharacteristicRegex.IsMatch(lexeme)))
+            foreach (var tokenType in _tokenTypes.Where(t => t.CharacteristicRegex.IsMatch(lexeme)))
             {
                 return tokenType;
             }
             throw new UnrecognizedTokenException(lexeme);
+        }
+
+        public ITokenType ClarifyTokenType(string lexeme, ITokenType currentTokenType)
+        {
+            var tokemTypesExceptCurrent =_tokenTypes.ExceptItmes(currentTokenType);
+            var newTokenType = tokemTypesExceptCurrent.FirstOrDefault(t => t.CharacteristicRegex.IsMatch(lexeme));
+            return newTokenType ?? currentTokenType;
         }
     }
 }

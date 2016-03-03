@@ -39,16 +39,23 @@ namespace Solar.Domain.Analysis.Lexical
                 return result;
             }
             var tokenRawData = GetNewTokenRawData();
-            // TODO see to one char forward!!
             foreach (var character in content)
             {
-                if (IsEmptyToken(tokenRawData))
+                if (tokenRawData.IsEmpty)
                 {
                     AddCharacterToLexeme(tokenRawData, character);
                     continue;
                 }
-                if (IsNextTokenStarts(tokenRawData, character))
+                var checkedLexeme = tokenRawData.Lexeme + character;
+                if(!tokenRawData.TokenType.CharacteristicRegex.IsMatch(checkedLexeme))
                 {
+                    var clarifyedTokenType = _tokenTypeRecognizer.ClarifyTokenType(checkedLexeme, tokenRawData.TokenType);
+                    if (clarifyedTokenType != tokenRawData.TokenType)
+                    {
+                        tokenRawData += character;
+                        tokenRawData.TokenType = clarifyedTokenType;
+                        continue;
+                    }
                     var token = _tokenFactory.Produce(tokenRawData);
                     tokenRawData = GetNewTokenRawData();
                     AddCharacterToLexeme(tokenRawData, character);
@@ -68,21 +75,10 @@ namespace Solar.Domain.Analysis.Lexical
             return new TokenRawData(string.Empty);
         }
 
-        private static bool IsEmptyToken(TokenRawData tokenRawData)
+        private void AddCharacterToLexeme(TokenRawData tokenRawData, char character)
         {
-            return tokenRawData.Lexeme == string.Empty;
-        }
-
-        private void AddCharacterToLexeme(TokenRawData token, char character)
-        {
-            token.Lexeme += character;
-            token.TokenType = _tokenTypeRecognizer.Recognize(token.Lexeme);
-        }
-
-        private static bool IsNextTokenStarts(TokenRawData tokenRawData, char character)
-        {
-            var checkedLexeme = tokenRawData.Lexeme + character;
-            return !tokenRawData.TokenType.CharacteristicRegex.IsMatch(checkedLexeme);
+            tokenRawData += character;
+            tokenRawData.TokenType = _tokenTypeRecognizer.Recognize(tokenRawData.Lexeme);
         }
     }
 }

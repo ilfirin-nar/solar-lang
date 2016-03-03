@@ -19,5 +19,13 @@ namespace Solar.Domain.Analysis.Lexical.EntityFactories.RawData
         public string Lexeme { get; set; }
 
         public ITokenType TokenType { get; set; }
+
+        public bool IsEmpty => Lexeme == string.Empty;
+
+        public static TokenRawData operator +(TokenRawData tokenRawData, char character)
+        {
+            tokenRawData.Lexeme += character;
+            return tokenRawData;
+        }
     }
 }

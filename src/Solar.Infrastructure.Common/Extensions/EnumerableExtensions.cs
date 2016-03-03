@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Solar.Infrastructure.Common.Extensions
 {
@@ -12,6 +13,11 @@ namespace Solar.Infrastructure.Common.Extensions
         public static ISet<T> ToSortedSet<T>(this IEnumerable<T> enumerable)
         {
             return new SortedSet<T>(enumerable);
+        }
+
+        public static IEnumerable<T> ExceptItmes<T>(this IEnumerable<T> enumerable, params T[] items)
+        {
+            return enumerable.Except(items);
         }
     }
 }
