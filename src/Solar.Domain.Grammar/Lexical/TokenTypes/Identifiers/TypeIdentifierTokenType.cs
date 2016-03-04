@@ -1,10 +1,10 @@
 ﻿using System.Text.RegularExpressions;
-using Solar.Domain.Text;
+using Solar.Domain.Grammar.Lexical.Lexemes;
 
 namespace Solar.Domain.Grammar.Lexical.TokenTypes.Identifiers
 {
     public class TypeIdentifierTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemRegularExpressions.WordStartedWithCapitalChar;
+        public Regex CharacteristicRegex => LexemeRegularExpressions.WordStartedWithCapitalChar;
     }
 }

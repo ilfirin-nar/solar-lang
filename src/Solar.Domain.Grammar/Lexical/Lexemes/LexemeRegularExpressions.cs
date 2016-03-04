@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Solar.Domain.Text
+namespace Solar.Domain.Grammar.Lexical.Lexemes
 {
-    public static class LexemRegularExpressions
+    public static class LexemeRegularExpressions
     {
         public static readonly Regex Space = new Regex(@"^ $");
 

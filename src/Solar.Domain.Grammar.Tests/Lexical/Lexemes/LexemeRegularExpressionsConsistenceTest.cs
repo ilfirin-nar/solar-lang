@@ -2,11 +2,12 @@
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using Solar.Domain.Grammar.Lexical.Lexemes;
 using Solar.Infrastructure.Common.Extensions;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Solar.Domain.Text.Tests
+namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
 {
     public class LexemeRegularExpressionsConsistenceTest
     {

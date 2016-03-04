@@ -1,10 +1,10 @@
 ﻿using System.Text.RegularExpressions;
-using Solar.Domain.Text;
+using Solar.Domain.Grammar.Lexical.Lexemes;
 
 namespace Solar.Domain.Grammar.Lexical.TokenTypes.Brackets
 {
     public class RightParentheseTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemRegularExpressions.RightParenthese;
+        public Regex CharacteristicRegex => LexemeRegularExpressions.RightParenthese;
     }
 }

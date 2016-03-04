@@ -66,10 +66,6 @@
     <Compile Include="LexemeRegularExpressionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Solar.Domain.Text\Solar.Domain.Text.csproj">
-      <Project>{d31e25ff-2a73-4d61-8317-368087d376a3}</Project>
-      <Name>Solar.Domain.Text</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>

@@ -42,6 +42,7 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Exceptions\GrammarException.cs" />
     <Compile Include="Exceptions\InvalidGrammarOperationException.cs" />
+    <Compile Include="Lexical\Lexemes\LexemeRegularExpressions.cs" />
     <Compile Include="Lexical\Services\Exceptions\UnrecognizedTokenException.cs" />
     <Compile Include="Lexical\Services\ITokenTypeRecognizer.cs" />
     <Compile Include="Lexical\Services\TokenTypeRecognizer.cs" />
@@ -63,10 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Solar.Domain.Text\Solar.Domain.Text.csproj">
-      <Project>{d31e25ff-2a73-4d61-8317-368087d376a3}</Project>
-      <Name>Solar.Domain.Text</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>

@@ -1,6 +1,7 @@
-﻿using Xunit;
+﻿using Solar.Domain.Grammar.Lexical.Lexemes;
+using Xunit;
 
-namespace Solar.Domain.Text.Tests
+namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
 {
     public class LexemeRegularExpressionsTests
     {
