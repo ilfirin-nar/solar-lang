@@ -1,43 +1,9 @@
-﻿using System.Linq;
-using System.Text.RegularExpressions;
-using Solar.Infrastructure.Common.Extensions;
-using Xunit;
-using Xunit.Abstractions;
+﻿using Xunit;
 
 namespace Solar.Domain.Text.Tests
 {
-    public class LexemRegularExpressionsTests
+    public class LexemeRegularExpressionsTests
     {
-        private readonly ITestOutputHelper _output;
-
-        public LexemRegularExpressionsTests(ITestOutputHelper output)
-        {
-            _output = output;
-        }
-
-        [Fact]
-        internal void CheckConsistenceOfAllRegex_Consistent()
-        {
-            var regexFields = typeof (LexemRegularExpressions).GetFields().ToList();
-            var testMethods = typeof(LexemRegularExpressionsTests).GetStaticMethods().Where(m => m.Name.EndsWith("_IsMatch")).ToList();
-            foreach (var testMethod in testMethods)
-            {
-                var testCases = testMethod.CustomAttributes.Where(a => a.AttributeType == typeof(InlineDataAttribute)).ToList();
-                var testMethodRegexName = testMethod.Name.Split('_').First();
-                foreach (var regexFieldInfo in regexFields.Where(f => f.Name != testMethodRegexName))
-                {
-                    var regex = (Regex) regexFieldInfo.GetValue(null);
-                    foreach (var value in testCases.Select(testCase => ((dynamic)testCase.ConstructorArguments.First().Value)[0].Value))
-                    {
-                        var isMatch = regex.IsMatch(value);
-                        var resultString = isMatch ? "Is match! It's very bad!" : "Isn't match. Good."; 
-                        _output.WriteLine($"Test method regex name: `{testMethodRegexName}`\nRegex name: {regexFieldInfo.Name}\nTest case: `{value}`\nResult: {resultString}\n");
-                        Assert.False(isMatch);
-                    }
-                }
-            }
-        }
-
         [Theory]
         [InlineData(" ")]
         internal void Space_IsMatch(string value)
