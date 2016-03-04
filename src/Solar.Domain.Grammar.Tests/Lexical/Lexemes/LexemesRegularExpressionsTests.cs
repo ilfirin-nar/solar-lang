@@ -3,13 +3,13 @@ using Xunit;
 
 namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
 {
-    public class LexemeRegularExpressionsTests
+    public class LexemesRegularExpressionsTests
     {
         [Theory]
         [InlineData(" ")]
         internal void Space_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.Space.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.Space.IsMatch(value));
         }
 
         [Theory]
@@ -20,14 +20,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("ef")]
         internal void Space_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.Space.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.Space.IsMatch(value));
         }
 
         [Theory]
         [InlineData("  ")]
         internal void Indent_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.Indent.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.Indent.IsMatch(value));
         }
 
         [Theory]
@@ -39,14 +39,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("ef")]
         internal void Indent_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.Indent.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.Indent.IsMatch(value));
         }
 
         [Theory]
         [InlineData("\n\r")]
         internal void NewLine_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.NewLine.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.NewLine.IsMatch(value));
         }
 
         [Theory]
@@ -61,7 +61,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("wg2g2\n\r2g23g2")]
         internal void NewLine_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.NewLine.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.NewLine.IsMatch(value));
         }
 
         [Theory]
@@ -72,7 +72,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("FFFooBar")]
         internal void WordStartedWithCapitalChar_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.WordStartedWithCapitalChar.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.WordStartedWithCapitalChar.IsMatch(value));
         }
 
         [Theory]
@@ -90,7 +90,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("Foo/Bar")]
         internal void WordStartedWithCapitalChar_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.WordStartedWithCapitalChar.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.WordStartedWithCapitalChar.IsMatch(value));
         }
 
         [Theory]
@@ -101,7 +101,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("fFFooBar")]
         internal void WordStartedWithNonCapitalChar_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.WordStartedWithNonCapitalChar.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.WordStartedWithNonCapitalChar.IsMatch(value));
         }
 
         [Theory]
@@ -119,14 +119,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("Foo/Bar")]
         internal void WordStartedWithNonCapitalChar_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.WordStartedWithNonCapitalChar.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.WordStartedWithNonCapitalChar.IsMatch(value));
         }
 
         [Theory]
         [InlineData(">")]
         internal void GreaterThen_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.GreaterThen.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.GreaterThen.IsMatch(value));
         }
 
         [Theory]
@@ -137,14 +137,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData(">_")]
         internal void GreaterThen_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.GreaterThen.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.GreaterThen.IsMatch(value));
         }
 
         [Theory]
         [InlineData("<")]
         internal void LessThen_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.LessThen.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.LessThen.IsMatch(value));
         }
 
         [Theory]
@@ -155,14 +155,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("<-")]
         internal void LessThen_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.LessThen.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.LessThen.IsMatch(value));
         }
 
         [Theory]
         [InlineData("<-")]
         internal void LeftArrow_IsMatch(string value)
         {
-            Assert.True(LexemeRegularExpressions.LeftArrow.IsMatch(value));
+            Assert.True(LexemesRegularExpressions.LeftArrow.IsMatch(value));
         }
 
         [Theory]
@@ -175,7 +175,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         [InlineData("<<")]
         internal void LeftArrow_IsNotMatch(string value)
         {
-            Assert.False(LexemeRegularExpressions.LeftArrow.IsMatch(value));
+            Assert.False(LexemesRegularExpressions.LeftArrow.IsMatch(value));
         }
     }
 }

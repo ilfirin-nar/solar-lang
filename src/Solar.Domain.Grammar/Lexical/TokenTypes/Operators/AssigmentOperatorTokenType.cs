@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class AssigmentOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.LeftArrow;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.LeftArrow;
     }
 }

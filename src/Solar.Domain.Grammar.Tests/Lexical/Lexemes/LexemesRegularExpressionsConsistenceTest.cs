@@ -9,11 +9,11 @@ using Xunit.Abstractions;
 
 namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
 {
-    public class LexemeRegularExpressionsConsistenceTest
+    public class LexemesRegularExpressionsConsistenceTest
     {
         private readonly ITestOutputHelper _output;
 
-        public LexemeRegularExpressionsConsistenceTest(ITestOutputHelper output)
+        public LexemesRegularExpressionsConsistenceTest(ITestOutputHelper output)
         {
             _output = output;
         }
@@ -22,12 +22,12 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         {
             get
             {
-                var staticMethods = typeof(LexemeRegularExpressionsTests).GetStaticMethods();
+                var staticMethods = typeof(LexemesRegularExpressionsTests).GetStaticMethods();
                 return staticMethods.Where(m => m.Name.EndsWith("_IsMatch"));
             }
         }
 
-        private static IEnumerable<FieldInfo> RegexFields => typeof (LexemeRegularExpressions).GetFields();
+        private static IEnumerable<FieldInfo> RegexFields => typeof (LexemesRegularExpressions).GetFields();
 
         [Fact]
         internal void CheckConsistenceOfAllRegex_Consistent()

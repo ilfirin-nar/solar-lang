@@ -61,8 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lexical\Lexemes\LexemeRegularExpressionsConsistenceTest.cs" />
-    <Compile Include="Lexical\Lexemes\LexemeRegularExpressionsTests.cs" />
+    <Compile Include="Lexical\Lexemes\LexemesRegularExpressionsConsistenceTest.cs" />
+    <Compile Include="Lexical\Lexemes\LexemesRegularExpressionsTests.cs" />
     <Compile Include="Lexical\Services\TokenTypeRecognizerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

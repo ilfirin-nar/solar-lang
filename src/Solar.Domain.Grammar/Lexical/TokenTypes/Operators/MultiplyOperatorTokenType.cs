@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class MultiplyOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.Multiply;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.Multiply;
     }
 }

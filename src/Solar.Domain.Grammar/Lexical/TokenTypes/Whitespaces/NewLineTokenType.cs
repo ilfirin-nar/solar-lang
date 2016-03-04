@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Whitespaces
 {
     public class NewLineTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.NewLine;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.NewLine;
     }
 }

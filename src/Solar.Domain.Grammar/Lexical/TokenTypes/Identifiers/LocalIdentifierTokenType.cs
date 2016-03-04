@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Identifiers
 {
     public class LocalIdentifierTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.WordStartedWithNonCapitalChar;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.WordStartedWithNonCapitalChar;
     }
 }

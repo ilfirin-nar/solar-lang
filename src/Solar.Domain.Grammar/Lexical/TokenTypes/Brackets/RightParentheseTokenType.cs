@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Brackets
 {
     public class RightParentheseTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.RightParenthese;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.RightParenthese;
     }
 }

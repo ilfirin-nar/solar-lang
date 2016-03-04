@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Whitespaces
 {
     public class IndentTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.Indent;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.Indent;
     }
 }

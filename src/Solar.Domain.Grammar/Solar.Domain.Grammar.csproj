@@ -42,7 +42,7 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Exceptions\GrammarException.cs" />
     <Compile Include="Exceptions\InvalidGrammarOperationException.cs" />
-    <Compile Include="Lexical\Lexemes\LexemeRegularExpressions.cs" />
+    <Compile Include="Lexical\Lexemes\LexemesRegularExpressions.cs" />
     <Compile Include="Lexical\Services\Exceptions\UnrecognizedTokenException.cs" />
     <Compile Include="Lexical\Services\ITokenTypeRecognizer.cs" />
     <Compile Include="Lexical\Services\TokenTypeRecognizer.cs" />

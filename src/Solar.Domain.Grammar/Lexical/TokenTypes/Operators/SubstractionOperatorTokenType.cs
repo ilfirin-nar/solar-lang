@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class SubstractionOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.Substraction;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.Substraction;
     }
 }

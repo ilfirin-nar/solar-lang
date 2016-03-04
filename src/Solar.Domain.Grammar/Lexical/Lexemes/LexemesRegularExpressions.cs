@@ -2,7 +2,7 @@
 
 namespace Solar.Domain.Grammar.Lexical.Lexemes
 {
-    public static class LexemeRegularExpressions
+    public static class LexemesRegularExpressions
     {
         public static readonly Regex Space = new Regex(@"^ $");
 

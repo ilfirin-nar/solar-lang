@@ -5,6 +5,6 @@ namespace Solar.Domain.Grammar.Lexical.TokenTypes.Operators
 {
     public class AdditionOperatorTokenType : ITokenType
     {
-        public Regex CharacteristicRegex => LexemeRegularExpressions.Addition;
+        public Regex CharacteristicRegex => LexemesRegularExpressions.Addition;
     }
 }
