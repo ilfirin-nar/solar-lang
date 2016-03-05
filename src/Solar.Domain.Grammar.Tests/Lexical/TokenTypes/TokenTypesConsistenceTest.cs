@@ -2,8 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using LightInject.xUnit2;
-using Solar.Domain.Grammar.Lexical.Constants;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
+using Solar.Domain.Grammar.Lexical.Directories;
 using Solar.Infrastructure.Common.Extensions;
 using Xunit;
 using Xunit.Abstractions;
@@ -28,12 +27,10 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
             }
         }
 
-        private static IEnumerable<FieldInfo> RegexFields => typeof (LexemesRegularExpressions).GetFields();
-
-        [Theory]
-        [InjectData]
-        internal void CheckConsistenceOfAllTokenTypes_Consistent(IReadOnlyList<ITokenType> tokenTypes)
+        [Theory, InjectData]
+        internal void CheckConsistenceOfAllTokenTypes_Consistent(ITokenTypesDirectory tokenTypesDirectory)
         {
+            var tokenTypes = tokenTypesDirectory.TokenTypes;
             foreach (var testMethod in LexemeRegexIsMatchTestMethods)
             {
                 var testMethodRegexName = GetTestMethodTokenTypeName(testMethod);
@@ -51,7 +48,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
 
         private static IEnumerable<CustomAttributeData> GetTestCases(MemberInfo testMethod)
         {
-            return testMethod.CustomAttributes.Where(a => a.AttributeType == typeof (InlineDataAttribute));
+            return testMethod.CustomAttributes.Where(a => a.AttributeType == typeof (InjectDataAttribute));
         }
 
         private static string GetTestMethodTokenTypeName(MethodInfo testMethod)

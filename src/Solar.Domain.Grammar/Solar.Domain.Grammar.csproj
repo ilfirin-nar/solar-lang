@@ -43,9 +43,11 @@
     <Compile Include="Exceptions\GrammarException.cs" />
     <Compile Include="Exceptions\InvalidGrammarOperationException.cs" />
     <Compile Include="Lexical\Directories\IKeywordsDirectory.cs" />
+    <Compile Include="Lexical\Directories\ITokenTypesDirectory.cs" />
     <Compile Include="Lexical\Directories\KeywordsDirectory.cs" />
     <Compile Include="Lexical\Constants\LexemesRegularExpressions.cs" />
     <Compile Include="Lexical\Constants\SystemTypesNames.cs" />
+    <Compile Include="Lexical\Directories\TokenTypesDirectory.cs" />
     <Compile Include="Lexical\Services\Exceptions\UnrecognizedTokenException.cs" />
     <Compile Include="Lexical\Services\ITokenTypeRecognizer.cs" />
     <Compile Include="Lexical\Services\TokenTypeRecognizer.cs" />
