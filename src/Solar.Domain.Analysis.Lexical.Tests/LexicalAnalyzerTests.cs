@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using LightInject.xUnit2;
 using Solar.Domain.Analysis.Lexical.Exceptions;
-using Solar.Domain.Grammar.Lexical.TokenTypes;
+using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
 using Xunit;
 
 namespace Solar.Domain.Analysis.Lexical.Tests

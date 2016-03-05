@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Solar.Domain.Grammar.Lexical.Lexemes
+namespace Solar.Domain.Grammar.Lexical.Constants
 {
     public static class LexemesRegularExpressions
     {
@@ -13,6 +13,8 @@ namespace Solar.Domain.Grammar.Lexical.Lexemes
         public static readonly Regex LeftParenthese = new Regex(@"^\($");
 
         public static readonly Regex RightParenthese = new Regex(@"^\)$");
+
+        public static readonly Regex LowerCaseWord = new Regex(@"^[a-z]+$");
 
         public static readonly Regex WordStartedWithCapitalChar = new Regex(@"^([A-Z])([a-zA-Z0-9])*$");
 

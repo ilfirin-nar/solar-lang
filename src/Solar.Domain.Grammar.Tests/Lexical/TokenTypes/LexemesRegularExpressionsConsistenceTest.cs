@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Solar.Domain.Grammar.Lexical.Lexemes;
+using Solar.Domain.Grammar.Lexical.Constants;
 using Solar.Infrastructure.Common.Extensions;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
+namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
 {
     public class LexemesRegularExpressionsConsistenceTest
     {
@@ -22,7 +22,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Lexemes
         {
             get
             {
-                var staticMethods = typeof(LexemesRegularExpressionsTests).GetStaticMethods();
+                var staticMethods = typeof(TokenTypesTests).GetStaticMethods();
                 return staticMethods.Where(m => m.Name.EndsWith("_IsMatch"));
             }
         }

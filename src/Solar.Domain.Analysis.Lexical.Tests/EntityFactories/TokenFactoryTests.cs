@@ -1,7 +1,7 @@
 ﻿using LightInject.xUnit2;
 using Solar.Domain.Analysis.Lexical.EntityFactories;
 using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
-using Solar.Domain.Grammar.Lexical.TokenTypes.Whitespaces;
+using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Whitespaces;
 using Xunit;
 
 namespace Solar.Domain.Analysis.Lexical.Tests.EntityFactories

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Solar.Domain.Grammar.Lexical.Services.Exceptions;
-using Solar.Domain.Grammar.Lexical.TokenTypes;
+using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
 
 namespace Solar.Domain.Grammar.Lexical.Services
@@ -17,7 +17,7 @@ namespace Solar.Domain.Grammar.Lexical.Services
 
         public ITokenType Recognize(string lexeme)
         {
-            foreach (var tokenType in _tokenTypes.Where(t => t.CharacteristicRegex.IsMatch(lexeme)))
+            foreach (var tokenType in _tokenTypes.Where(t => t.IsMatch(lexeme)))
             {
                 return tokenType;
             }
@@ -27,13 +27,13 @@ namespace Solar.Domain.Grammar.Lexical.Services
         public ITokenType ClarifyTokenType(string lexeme, ITokenType currentTokenType)
         {
             var tokemTypesExceptCurrent =_tokenTypes.ExceptItmes(currentTokenType);
-            var newTokenType = tokemTypesExceptCurrent.FirstOrDefault(t => t.CharacteristicRegex.IsMatch(lexeme));
+            var newTokenType = tokemTypesExceptCurrent.FirstOrDefault(t => t.IsMatch(lexeme));
             return newTokenType ?? currentTokenType;
         }
 
         public bool Check(string lexeme, ITokenType tokenType)
         {
-            return tokenType.CharacteristicRegex.IsMatch(lexeme);
+            return tokenType.IsMatch(lexeme);
         }
     }
 }

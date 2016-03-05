@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using LightInject;
-using Solar.Domain.Grammar.Lexical.TokenTypes;
+using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.DependencyInjection;
 using Solar.Infrastructure.Common.DependencyInjection.Extensions;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
