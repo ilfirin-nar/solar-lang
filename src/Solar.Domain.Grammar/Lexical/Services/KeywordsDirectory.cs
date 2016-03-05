@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords;
 
 namespace Solar.Domain.Grammar.Lexical.Services
@@ -19,13 +18,16 @@ namespace Solar.Domain.Grammar.Lexical.Services
         {
             var tokenTypeName = keywordTokenType.GetType().Name;
             var lexeme = GetLexeme(tokenTypeName);
-            _keywords.Add(lexeme, keywordTokenType);
+            if (!Keywords.ContainsKey(lexeme))
+            {
+                _keywords.Add(lexeme, keywordTokenType);
+            }
             return lexeme;
         }
 
         public bool IsContains(string lexeme)
         {
-            return Keywords.Keys.Contains(lexeme);
+            return Keywords.ContainsKey(lexeme);
         }
 
         private static string GetLexeme(string keywordTokenType)
