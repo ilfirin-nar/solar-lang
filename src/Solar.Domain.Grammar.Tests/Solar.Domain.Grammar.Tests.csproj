@@ -61,7 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lexical\TokenTypes\LexemesRegularExpressionsConsistenceTest.cs" />
+    <Compile Include="Lexical\TokenTypes\TokenTypesConsistenceTest.cs" />
     <Compile Include="Lexical\TokenTypes\TokenTypesTests.cs" />
     <Compile Include="Lexical\Services\TokenTypeRecognizerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +79,9 @@
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lexical\Dictionaries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

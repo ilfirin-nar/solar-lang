@@ -11,7 +11,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
     {
         [Theory]
         [InjectData(" ")]
-        internal void Space_IsMatch(SpaceTokenType tokenType, string value)
+        internal void SpaceTokenType_IsMatch(SpaceTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -22,14 +22,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" _")]
         [InjectData("d ")]
         [InjectData("ef")]
-        internal void Space_IsNotMatch(SpaceTokenType tokenType, string value)
+        internal void SpaceTokenType_IsNotMatch(SpaceTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData("  ")]
-        internal void Indent_IsMatch(IndentTokenType tokenType, string value)
+        internal void IndentTokenType_IsMatch(IndentTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -41,14 +41,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData("d  ")]
         [InjectData("  d")]
         [InjectData("ef")]
-        internal void Indent_IsNotMatch(IndentTokenType tokenType, string value)
+        internal void IndentTokenType_IsNotMatch(IndentTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData("\n\r")]
-        internal void NewLine_IsMatch(NewLineTokenType tokenType, string value)
+        internal void NewLineTokenType_IsMatch(NewLineTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -63,14 +63,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" \n\r")]
         [InjectData(" \n\r ")]
         [InjectData("wg2g2\n\r2g23g2")]
-        internal void NewLine_IsNotMatch(NewLineTokenType tokenType, string value)
+        internal void NewLineTokenType_IsNotMatch(NewLineTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData("model")]
-        internal void ModelKeyword_IsMatch(ModelKeywordTokenType tokenType, string value)
+        internal void ModelKeywordTokenType_IsMatch(ModelKeywordTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -81,14 +81,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" model")]
         [InjectData("model ")]
         [InjectData("m")]
-        internal void ModelKeyword_IsNotMatch(ModelKeywordTokenType tokenType, string value)
+        internal void ModelKeywordTokenType_IsNotMatch(ModelKeywordTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData("service")]
-        internal void ServiceKeyword_IsMatch(ServiceKeywordTokenType tokenType, string value)
+        internal void ServiceKeywordTokenType_IsMatch(ServiceKeywordTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -99,7 +99,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" service")]
         [InjectData("service ")]
         [InjectData("s")]
-        internal void ServiceKeyword_IsNotMatch(ServiceKeywordTokenType tokenType, string value)
+        internal void ServiceKeywordTokenType_IsNotMatch(ServiceKeywordTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
@@ -110,7 +110,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData("Foo2bar")]
         [InjectData("Foo2Bar")]
         [InjectData("FFFooBar")]
-        internal void TypeIdentifier_IsMatch(TypeIdentifierTokenType tokenType, string value)
+        internal void TypeIdentifierTokenType_IsMatch(TypeIdentifierTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -128,7 +128,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" FooBar ")]
         [InjectData("Foo_Bar")]
         [InjectData("Foo/Bar")]
-        internal void TypeIdentifier_IsNotMatch(TypeIdentifierTokenType tokenType, string value)
+        internal void TypeIdentifierTokenType_IsNotMatch(TypeIdentifierTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
@@ -139,7 +139,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData("foo2bar")]
         [InjectData("foo2Bar")]
         [InjectData("fFFooBar")]
-        internal void LocalIdentifier_IsMatch(LocalIdentifierTokenType tokenType, string value)
+        internal void LocalIdentifierTokenType_IsMatch(LocalIdentifierTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -157,14 +157,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" fooBar ")]
         [InjectData("foo_bar")]
         [InjectData("Foo/Bar")]
-        internal void LocalIdentifier_IsNotMatch(LocalIdentifierTokenType tokenType, string value)
+        internal void LocalIdentifierTokenType_IsNotMatch(LocalIdentifierTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData(">")]
-        internal void GreaterThenOperator_IsMatch(GreaterThenOperatorTokenType tokenType, string value)
+        internal void GreaterThenOperatorTokenType_IsMatch(GreaterThenOperatorTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -175,14 +175,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" >")]
         [InjectData(">>")]
         [InjectData(">_")]
-        internal void GreaterThenOperator_IsNotMatch(GreaterThenOperatorTokenType tokenType, string value)
+        internal void GreaterThenOperatorTokenType_IsNotMatch(GreaterThenOperatorTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData("<")]
-        internal void LessThenOperator_IsMatch(LessThenOperatorTokenType tokenType, string value)
+        internal void LessThenOperatorTokenType_IsMatch(LessThenOperatorTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -193,14 +193,14 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" <")]
         [InjectData("<<")]
         [InjectData("<-")]
-        internal void LessThenOperator_IsNotMatch(LessThenOperatorTokenType tokenType, string value)
+        internal void LessThenOperatorTokenType_IsNotMatch(LessThenOperatorTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
 
         [Theory]
         [InjectData("<-")]
-        internal void AssigmentOperator_IsMatch(AssigmentOperatorTokenType tokenType, string value)
+        internal void AssigmentOperatorTokenType_IsMatch(AssigmentOperatorTokenType tokenType, string value)
         {
             Assert.True(tokenType.IsMatch(value));
         }
@@ -213,7 +213,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(" <-")]
         [InjectData("<-<")]
         [InjectData("<<")]
-        internal void AssigmentOperator_IsNotMatch(AssigmentOperatorTokenType tokenType, string value)
+        internal void AssigmentOperatorTokenType_IsNotMatch(AssigmentOperatorTokenType tokenType, string value)
         {
             Assert.False(tokenType.IsMatch(value));
         }
