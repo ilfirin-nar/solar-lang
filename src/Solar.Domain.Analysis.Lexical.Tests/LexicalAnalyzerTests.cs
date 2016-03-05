@@ -18,6 +18,8 @@ namespace Solar.Domain.Analysis.Lexical.Tests
         [InjectData("foo <- a() + b - c * d / e", 23)]
         [InjectData("foo <- bar()", 7)]
         [InjectData("foo <- a + b", 9)]
+        [InjectData("model foo", 3)]
+        [InjectData("model model service", 5)]
         internal void Analyse_ValidString_ValidTokentCounts(ILexicalAnalyzer analyzer, IReadOnlyList<ITokenType> tokenTypes, string testString, int expectedTokensCount)
         {
             var result = analyzer.Analyse(testString).Count;
