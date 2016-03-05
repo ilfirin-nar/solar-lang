@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords;
-using Solar.Infrastructure.Common.Interfaces.DomainLayer;
+using Solar.Infrastructure.Common.Interfaces;
 
-namespace Solar.Domain.Grammar.Lexical.Services
+namespace Solar.Domain.Grammar.Lexical.Directories
 {
-    public interface IKeywordsDirectory : IDomainService
+    public interface IKeywordsDirectory : IDirectory
     {
         IReadOnlyDictionary<string, IKeywordTokenType> Keywords { get; }
 

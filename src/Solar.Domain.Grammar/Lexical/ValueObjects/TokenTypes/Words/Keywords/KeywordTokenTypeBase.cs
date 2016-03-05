@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 using Solar.Domain.Grammar.Lexical.Constants;
+using Solar.Domain.Grammar.Lexical.Directories;
 using Solar.Domain.Grammar.Lexical.Services;
 
 namespace Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords

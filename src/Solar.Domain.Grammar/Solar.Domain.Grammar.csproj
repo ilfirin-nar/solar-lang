@@ -42,8 +42,8 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Exceptions\GrammarException.cs" />
     <Compile Include="Exceptions\InvalidGrammarOperationException.cs" />
-    <Compile Include="Lexical\Services\IKeywordsDirectory.cs" />
-    <Compile Include="Lexical\Services\KeywordsDirectory.cs" />
+    <Compile Include="Lexical\Directories\IKeywordsDirectory.cs" />
+    <Compile Include="Lexical\Directories\KeywordsDirectory.cs" />
     <Compile Include="Lexical\Constants\LexemesRegularExpressions.cs" />
     <Compile Include="Lexical\Constants\SystemTypesNames.cs" />
     <Compile Include="Lexical\Services\Exceptions\UnrecognizedTokenException.cs" />

@@ -1,3 +1,4 @@
+using Solar.Domain.Grammar.Lexical.Directories;
 using Solar.Domain.Grammar.Lexical.Services;
 
 namespace Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords

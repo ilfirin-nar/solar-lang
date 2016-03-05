@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords;
 
-namespace Solar.Domain.Grammar.Lexical.Services
+namespace Solar.Domain.Grammar.Lexical.Directories
 {
     internal class KeywordsDirectory : IKeywordsDirectory
     {
