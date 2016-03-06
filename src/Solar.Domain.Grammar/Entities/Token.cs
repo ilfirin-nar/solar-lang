@@ -6,13 +6,13 @@ namespace Solar.Domain.Grammar.Entities
 {
     public class Token : IAggregationRoot
     {
-        public Token(Lexem lexem, ITokenType type)
+        public Token(Lexeme lexeme, ITokenType type)
         {
-            Lexem = lexem;
+            Lexeme = lexeme;
             Type = type;
         }
 
-        public Lexem Lexem { get; private set; }
+        public Lexeme Lexeme { get; private set; }
 
         public ITokenType Type { get; private set; }
     }

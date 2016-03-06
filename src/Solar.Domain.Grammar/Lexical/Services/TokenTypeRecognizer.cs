@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Solar.Domain.Grammar.Lexical.Directories;
 using Solar.Domain.Grammar.Lexical.Services.Exceptions;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
@@ -8,16 +9,16 @@ namespace Solar.Domain.Grammar.Lexical.Services
 {
     internal class TokenTypeRecognizer : ITokenTypeRecognizer
     {
-        private readonly IReadOnlyList<ITokenType> _tokenTypes;
+        private readonly ITokenTypesDirectory _tokenTypesDirectory;
 
-        public TokenTypeRecognizer(IReadOnlyList<ITokenType> tokenTypes)
+        public TokenTypeRecognizer(ITokenTypesDirectory tokenTypesDirectory)
         {
-            _tokenTypes = tokenTypes;
+            _tokenTypesDirectory = tokenTypesDirectory;
         }
 
         public ITokenType Recognize(string lexeme)
         {
-            foreach (var tokenType in _tokenTypes.Where(t => t.IsMatch(lexeme)))
+            foreach (var tokenType in _tokenTypesDirectory.TokenTypes.Where(t => t.IsMatch(lexeme)))
             {
                 return tokenType;
             }
@@ -26,7 +27,7 @@ namespace Solar.Domain.Grammar.Lexical.Services
 
         public ITokenType ClarifyTokenType(string lexeme, ITokenType currentTokenType)
         {
-            var tokemTypesExceptCurrent =_tokenTypes.ExceptItmes(currentTokenType);
+            var tokemTypesExceptCurrent = _tokenTypesDirectory.TokenTypes.ExceptItmes(currentTokenType);
             var newTokenType = tokemTypesExceptCurrent.FirstOrDefault(t => t.IsMatch(lexeme));
             return newTokenType ?? currentTokenType;
         }

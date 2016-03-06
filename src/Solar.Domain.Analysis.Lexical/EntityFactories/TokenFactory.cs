@@ -10,7 +10,7 @@ namespace Solar.Domain.Analysis.Lexical.EntityFactories
     {
         public Token Produce(TokenRawData rawData)
         {
-            var lexem = new Lexem(rawData.Lexeme);
+            var lexem = new Lexeme(rawData.Lexeme);
             var tokenType = rawData.TokenType;
             return new Token(lexem, tokenType);
         }

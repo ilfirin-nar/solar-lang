@@ -2,9 +2,9 @@
 
 namespace Solar.Domain.Grammar.ValueObjects
 {
-    public class Lexem : IValueObject
+    public class Lexeme : IValueObject
     {
-        public Lexem(string value)
+        public Lexeme(string value)
         {
             Value = value;
         }
