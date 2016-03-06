@@ -1,10 +1,10 @@
 ﻿using LightInject.xUnit2;
-using Solar.Domain.Analysis.Lexical.EntityFactories;
-using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
+using Solar.Domain.Grammar.EntityFactories;
+using Solar.Domain.Grammar.EntityFactories.RawData;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Whitespaces;
 using Xunit;
 
-namespace Solar.Domain.Analysis.Lexical.Tests.EntityFactories
+namespace Solar.Domain.Grammar.Tests.EntityFactories
 {
     public class TokenFactoryTests
     {

@@ -39,9 +39,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityFactories\ITokenFactory.cs" />
-    <Compile Include="EntityFactories\TokenFactory.cs" />
-    <Compile Include="EntityFactories\RawData\TokenRawData.cs" />
     <Compile Include="Exceptions\LexicalAnalyzerException.cs" />
     <Compile Include="LexicalAnalyzer.cs" />
     <Compile Include="CompositionRoot.cs" />

@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFactories\TokenFactoryTests.cs" />
     <Compile Include="Lexical\TokenTypes\TokenTypesConsistenceTest.cs" />
     <Compile Include="Lexical\TokenTypes\TokenTypesTests.cs" />
     <Compile Include="Lexical\Services\TokenTypeRecognizerTests.cs" />

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
 using Solar.Domain.Grammar.Entities;
+using Solar.Domain.Grammar.EntityFactories.RawData;
 using Solar.Domain.Grammar.ValueObjects;
 
-namespace Solar.Domain.Analysis.Lexical.EntityFactories
+namespace Solar.Domain.Grammar.EntityFactories
 {
     internal class TokenFactory : ITokenFactory
     {

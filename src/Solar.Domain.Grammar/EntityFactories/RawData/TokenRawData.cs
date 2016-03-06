@@ -2,9 +2,9 @@
 using Solar.Infrastructure.Common.Extensions;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
-namespace Solar.Domain.Analysis.Lexical.EntityFactories.RawData
+namespace Solar.Domain.Grammar.EntityFactories.RawData
 {
-    internal class TokenRawData : IEntityRawData
+    public class TokenRawData : IEntityRawData
     {
         public TokenRawData(string lexeme)
         {

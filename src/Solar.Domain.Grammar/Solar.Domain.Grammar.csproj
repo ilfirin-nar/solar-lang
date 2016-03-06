@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Entities\Token.cs" />
+    <Compile Include="EntityFactories\ITokenFactory.cs" />
+    <Compile Include="EntityFactories\RawData\TokenRawData.cs" />
+    <Compile Include="EntityFactories\TokenFactory.cs" />
     <Compile Include="Exceptions\GrammarException.cs" />
     <Compile Include="Exceptions\InvalidGrammarOperationException.cs" />
     <Compile Include="Lexical\Directories\IKeywordsDirectory.cs" />
