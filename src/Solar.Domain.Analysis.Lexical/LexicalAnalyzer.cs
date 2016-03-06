@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Solar.Domain.Analysis.Lexical.Entities;
 using Solar.Domain.Analysis.Lexical.EntityFactories;
 using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
 using Solar.Domain.Analysis.Lexical.Exceptions;
+using Solar.Domain.Grammar.Entities;
 using Solar.Domain.Grammar.Exceptions;
 using Solar.Domain.Grammar.Lexical.Services;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;

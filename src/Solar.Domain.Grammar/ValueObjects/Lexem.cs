@@ -1,6 +1,6 @@
 ﻿using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
-namespace Solar.Domain.Analysis.Lexical.ValueObjects
+namespace Solar.Domain.Grammar.ValueObjects
 {
     public class Lexem : IValueObject
     {

@@ -45,11 +45,8 @@
     <Compile Include="Exceptions\LexicalAnalyzerException.cs" />
     <Compile Include="LexicalAnalyzer.cs" />
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="Entities\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ILexicalAnalyzer.cs" />
-    <Compile Include="ValueObjects\Lexem.cs" />
-    <Compile Include="ValueObjects\TokenAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">

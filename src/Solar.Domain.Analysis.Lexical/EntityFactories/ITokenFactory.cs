@@ -1,5 +1,5 @@
-﻿using Solar.Domain.Analysis.Lexical.Entities;
-using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
+﻿using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
+using Solar.Domain.Grammar.Entities;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
 namespace Solar.Domain.Analysis.Lexical.EntityFactories

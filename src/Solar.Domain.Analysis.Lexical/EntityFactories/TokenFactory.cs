@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Solar.Domain.Analysis.Lexical.Entities;
 using Solar.Domain.Analysis.Lexical.EntityFactories.RawData;
-using Solar.Domain.Analysis.Lexical.ValueObjects;
+using Solar.Domain.Grammar.Entities;
+using Solar.Domain.Grammar.ValueObjects;
 
 namespace Solar.Domain.Analysis.Lexical.EntityFactories
 {

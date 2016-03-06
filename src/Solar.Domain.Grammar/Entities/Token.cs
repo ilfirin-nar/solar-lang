@@ -1,8 +1,8 @@
-﻿using Solar.Domain.Analysis.Lexical.ValueObjects;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
+﻿using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
+using Solar.Domain.Grammar.ValueObjects;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
-namespace Solar.Domain.Analysis.Lexical.Entities
+namespace Solar.Domain.Grammar.Entities
 {
     public class Token : IAggregationRoot
     {
