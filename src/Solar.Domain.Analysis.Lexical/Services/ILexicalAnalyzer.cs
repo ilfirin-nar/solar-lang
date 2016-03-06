@@ -2,7 +2,7 @@
 using Solar.Domain.Grammar.Entities;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
-namespace Solar.Domain.Analysis.Lexical
+namespace Solar.Domain.Analysis.Lexical.Services
 {
     internal interface ILexicalAnalyzer : IDomainService
     {

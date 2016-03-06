@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using LightInject.xUnit2;
 using Solar.Domain.Analysis.Lexical.Exceptions;
+using Solar.Domain.Analysis.Lexical.Services;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
 using Xunit;
 
-namespace Solar.Domain.Analysis.Lexical.Tests
+namespace Solar.Domain.Analysis.Lexical.Tests.Service
 {
     public class LexicalAnalyzerTests
     {

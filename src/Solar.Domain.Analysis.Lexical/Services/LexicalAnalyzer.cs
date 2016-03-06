@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 using Solar.Domain.Analysis.Lexical.Exceptions;
 using Solar.Domain.Grammar.Entities;
 using Solar.Domain.Grammar.EntityFactories;
@@ -8,7 +9,7 @@ using Solar.Domain.Grammar.Lexical.Services;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
 
-namespace Solar.Domain.Analysis.Lexical
+namespace Solar.Domain.Analysis.Lexical.Services
 {
     internal class LexicalAnalyzer : ILexicalAnalyzer
     {
@@ -21,7 +22,8 @@ namespace Solar.Domain.Analysis.Lexical
             _tokenTypeRecognizer = tokenTypeRecognizer;
         }
 
-        public IReadOnlyList<Token> Analyze(string content)
+        [NotNull]
+        public IReadOnlyList<Token> Analyze([NotNull] string content)
         {
             try
             {
