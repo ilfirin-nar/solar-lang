@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{7785BEB6-0554-4DFB-BEF5-8F01150917DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solar.Domain.Diagnostics", "Solar.Domain.Diagnostics\Solar.Domain.Diagnostics.csproj", "{0A9C6FAE-A48F-41BE-BF50-DECBBEF6A9B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2C11B4FD-C445-4C32-92B5-CB3186CC032C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C11B4FD-C445-4C32-92B5-CB3186CC032C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C11B4FD-C445-4C32-92B5-CB3186CC032C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9C6FAE-A48F-41BE-BF50-DECBBEF6A9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9C6FAE-A48F-41BE-BF50-DECBBEF6A9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9C6FAE-A48F-41BE-BF50-DECBBEF6A9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9C6FAE-A48F-41BE-BF50-DECBBEF6A9B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,5 +123,6 @@ Global
 		{DA10B67C-DE09-4D20-82DF-392554464541} = {316C8ACD-A86A-40BA-A00B-EDD03BBDF23B}
 		{4CB53998-D678-4306-B98E-9D1E07D533BC} = {316C8ACD-A86A-40BA-A00B-EDD03BBDF23B}
 		{2C11B4FD-C445-4C32-92B5-CB3186CC032C} = {316C8ACD-A86A-40BA-A00B-EDD03BBDF23B}
+		{0A9C6FAE-A48F-41BE-BF50-DECBBEF6A9B6} = {316C8ACD-A86A-40BA-A00B-EDD03BBDF23B}
 	EndGlobalSection
 EndGlobal
