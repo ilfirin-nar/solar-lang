@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Solar.Domain.Grammar.Lexical.Directories;
 using Solar.Domain.Grammar.Lexical.Services.Exceptions;
 using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
