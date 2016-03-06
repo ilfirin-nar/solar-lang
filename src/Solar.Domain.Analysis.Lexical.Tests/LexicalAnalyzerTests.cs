@@ -13,26 +13,26 @@ namespace Solar.Domain.Analysis.Lexical.Tests
         [InjectData(" ", 1)]
         [InjectData("  ", 1)]
         [InjectData("   ", 2)]
-        [InjectData("kjhHlJHlHlHLHlHRIdddddddd2222", 1)]
-        [InjectData("kjhHlJHlHlHLHlH RIdddddddd2222", 3)]
+        [InjectData("kjhHlJHlHlHLHlHRIdd2222", 1)]
+        [InjectData("kjhHlJHlHlHLHlH RIdd2222", 3)]
         [InjectData("foo <- a() + b - c * d / e", 23)]
         [InjectData("foo <- bar()", 7)]
         [InjectData("foo <- a + b", 9)]
         [InjectData("model foo", 3)]
         [InjectData("model model service", 5)]
-        internal void Analyse_ValidString_ValidTokentCounts(ILexicalAnalyzer analyzer, IReadOnlyList<ITokenType> tokenTypes, string testString, int expectedTokensCount)
+        internal void Analyze_ValidString_ValidTokentCounts(ILexicalAnalyzer analyzer, IReadOnlyList<ITokenType> tokenTypes, string testString, int expectedTokensCount)
         {
-            var result = analyzer.Analyse(testString).Count;
+            var result = analyzer.Analyze(testString).Count;
             Assert.Equal(expectedTokensCount, result);
         }
 
         [Theory]
         [InjectData("_")]
-        internal void Analyse_InvalidString_Exception(ILexicalAnalyzer analyzer, string testString)
+        internal void Analyze_InvalidString_Exception(ILexicalAnalyzer analyzer, string testString)
         {
             try
             {
-                analyzer.Analyse(testString);
+                analyzer.Analyze(testString);
                 Assert.True(false);
             }
             catch (LexicalAnalyzerException)
@@ -43,11 +43,11 @@ namespace Solar.Domain.Analysis.Lexical.Tests
 
         [Theory]
         [InjectData("_")]
-        internal void Analyse_InvalidString_HaveInnerException(ILexicalAnalyzer analyzer, string testString)
+        internal void Analyze_InvalidString_HaveInnerException(ILexicalAnalyzer analyzer, string testString)
         {
             try
             {
-                analyzer.Analyse(testString);
+                analyzer.Analyze(testString);
                 Assert.True(false);
             }
             catch (LexicalAnalyzerException exception)

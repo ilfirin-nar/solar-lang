@@ -21,7 +21,7 @@ namespace Solar.Domain.Analysis.Lexical
             _tokenTypeRecognizer = tokenTypeRecognizer;
         }
 
-        public IReadOnlyList<Token> Analyse(string content)
+        public IReadOnlyList<Token> Analyze(string content)
         {
             try
             {

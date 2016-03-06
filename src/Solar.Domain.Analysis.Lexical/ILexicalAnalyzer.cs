@@ -6,6 +6,6 @@ namespace Solar.Domain.Analysis.Lexical
 {
     internal interface ILexicalAnalyzer : IDomainService
     {
-        IReadOnlyList<Token> Analyse(string content);
+        IReadOnlyList<Token> Analyze(string content);
     }
 }
