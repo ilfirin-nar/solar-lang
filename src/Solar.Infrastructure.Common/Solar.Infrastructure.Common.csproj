@@ -43,6 +43,7 @@
     <Compile Include="DependencyInjection\ISolarCompositionRoot.cs" />
     <Compile Include="DependencyInjection\LifetimeFactory.cs" />
     <Compile Include="DependencyInjection\ServiceRegistrationFilter.cs" />
+    <Compile Include="Exceptions\SolarExceptino.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

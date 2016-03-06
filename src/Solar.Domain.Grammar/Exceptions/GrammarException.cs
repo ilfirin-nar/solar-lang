@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Solar.Infrastructure.Common.Exceptions;
 
 namespace Solar.Domain.Grammar.Exceptions
 {
-    public abstract class GrammarException : Exception {}
+    public abstract class GrammarException : SolarException { }
 }
