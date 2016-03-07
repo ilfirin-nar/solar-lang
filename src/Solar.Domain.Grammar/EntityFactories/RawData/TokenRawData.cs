@@ -1,4 +1,4 @@
-﻿using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
+﻿using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 

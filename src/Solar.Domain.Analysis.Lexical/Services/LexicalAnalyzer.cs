@@ -5,8 +5,8 @@ using Solar.Domain.Grammar.Entities;
 using Solar.Domain.Grammar.EntityFactories;
 using Solar.Domain.Grammar.EntityFactories.RawData;
 using Solar.Domain.Grammar.Exceptions;
-using Solar.Domain.Grammar.Lexical.Services;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
+using Solar.Domain.Grammar.Lexis.Services;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
 
 namespace Solar.Domain.Analysis.Lexical.Services

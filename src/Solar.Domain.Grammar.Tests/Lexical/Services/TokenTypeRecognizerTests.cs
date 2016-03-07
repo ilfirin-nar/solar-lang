@@ -1,12 +1,12 @@
 ﻿using System;
 using LightInject.xUnit2;
-using Solar.Domain.Grammar.Lexical.Services;
-using Solar.Domain.Grammar.Lexical.Services.Exceptions;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Brackets;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Operators;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Whitespaces;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Identifiers;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords;
+using Solar.Domain.Grammar.Lexis.Services;
+using Solar.Domain.Grammar.Lexis.Services.Exceptions;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Brackets;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Operators;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Whitespaces;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Identifiers;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Keywords;
 using Xunit;
 
 namespace Solar.Domain.Grammar.Tests.Lexical.Services
@@ -32,8 +32,8 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
         [InjectData(" ", typeof (SpaceTokenType))]
         [InjectData("  ", typeof(IndentTokenType))]
         [InjectData("\n\r", typeof(NewLineTokenType))]
-        [InjectData("(", typeof(LeftParentheseTokenType))]
-        [InjectData(")", typeof(RightParentheseTokenType))]
+        [InjectData("(", typeof(LeftParenthesisTokenType))]
+        [InjectData(")", typeof(RightParenthesisTokenType))]
         [InjectData("<", typeof(LessThenOperatorTokenType))]
         [InjectData(">", typeof(GreaterThenOperatorTokenType))]
         [InjectData("<-", typeof(AssigmentOperatorTokenType))]

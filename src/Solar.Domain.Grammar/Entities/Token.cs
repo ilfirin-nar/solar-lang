@@ -1,10 +1,9 @@
-﻿using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes;
+﻿using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
 using Solar.Domain.Grammar.ValueObjects;
-using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
 namespace Solar.Domain.Grammar.Entities
 {
-    public class Token : IAggregationRoot
+    public class Token : IToken
     {
         public Token(Lexeme lexeme, ITokenType type)
         {

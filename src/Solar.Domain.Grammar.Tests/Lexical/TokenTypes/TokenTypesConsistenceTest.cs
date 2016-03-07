@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using LightInject.xUnit2;
-using Solar.Domain.Grammar.Lexical.Directories;
+using Solar.Domain.Grammar.Lexis.Directories;
 using Solar.Infrastructure.Common.Extensions;
 using Xunit;
 using Xunit.Abstractions;

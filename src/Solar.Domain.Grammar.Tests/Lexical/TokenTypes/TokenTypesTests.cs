@@ -1,8 +1,8 @@
 ﻿using LightInject.xUnit2;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Operators;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Whitespaces;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Identifiers;
-using Solar.Domain.Grammar.Lexical.ValueObjects.TokenTypes.Words.Keywords;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Operators;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Whitespaces;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Identifiers;
+using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Keywords;
 using Xunit;
 
 namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
