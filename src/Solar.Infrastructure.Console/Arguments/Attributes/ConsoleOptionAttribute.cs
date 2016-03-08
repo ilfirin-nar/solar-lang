@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Solar.Infrastructure.Console.Attributes
+namespace Solar.Infrastructure.Console.Arguments.Attributes
 {
     public class ConsoleOptionAttribute : Attribute
     {

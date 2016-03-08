@@ -1,7 +1,7 @@
 ﻿using Solar.Application.Compiler.Services;
 using Solar.Frontend.Compiler.DataTransferObjects;
 using Solar.Frontend.Compiler.Services.Mapper;
-using Solar.Infrastructure.Console.Services;
+using Solar.Infrastructure.Console.Arguments.Services;
 
 namespace Solar.Frontend.Compiler.Services
 {

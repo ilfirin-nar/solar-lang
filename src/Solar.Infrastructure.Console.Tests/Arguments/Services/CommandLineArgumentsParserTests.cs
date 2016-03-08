@@ -1,10 +1,10 @@
 ﻿using LightInject.xUnit2;
-using Solar.Infrastructure.Console.Services;
-using Solar.Infrastructure.Console.Services.Exceptions;
-using Solar.Infrastructure.Console.Tests.Services.TestDataTransferObjects;
+using Solar.Infrastructure.Console.Arguments.Services;
+using Solar.Infrastructure.Console.Arguments.Services.Exceptions;
+using Solar.Infrastructure.Console.Tests.Arguments.Services.TestDataTransferObjects;
 using Xunit;
 
-namespace Solar.Infrastructure.Console.Tests.Services
+namespace Solar.Infrastructure.Console.Tests.Arguments.Services
 {
     public class CommandLineArgumentsParserTests
     {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Solar.Infrastructure.Console.Attributes;
-using Solar.Infrastructure.Console.DataTransferObjects;
+using Solar.Infrastructure.Console.Arguments.Attributes;
+using Solar.Infrastructure.Console.Arguments.DataTransferObjects;
 
-namespace Solar.Infrastructure.Console.Tests.Services.TestDataTransferObjects
+namespace Solar.Infrastructure.Console.Tests.Arguments.Services.TestDataTransferObjects
 {
     public class TestCommandLineArguments : ICommandLineArguments
     {

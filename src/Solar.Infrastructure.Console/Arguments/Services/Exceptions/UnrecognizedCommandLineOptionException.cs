@@ -1,6 +1,6 @@
 ﻿using Solar.Infrastructure.Common.Exceptions;
 
-namespace Solar.Infrastructure.Console.Services.Exceptions
+namespace Solar.Infrastructure.Console.Arguments.Services.Exceptions
 {
     public class UnrecognizedCommandLineOptionException : SolarException
     {

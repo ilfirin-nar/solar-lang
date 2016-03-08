@@ -1,5 +1,5 @@
 ﻿using Solar.Application.Compiler.DataTransferObjects;
-using Solar.Infrastructure.Console.DataTransferObjects;
+using Solar.Infrastructure.Console.Arguments.DataTransferObjects;
 
 namespace Solar.Frontend.Compiler.Services.Mapper
 {
