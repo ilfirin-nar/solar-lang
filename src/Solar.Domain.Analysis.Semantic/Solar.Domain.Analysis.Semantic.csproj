@@ -40,9 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
+    <Compile Include="Entity\ISemanticModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ISemanticAnalyzer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">
+      <Project>{1DF046E6-3083-4BA2-B38A-138FBA765AE2}</Project>
+      <Name>Solar.Domain.Grammar</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>

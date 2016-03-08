@@ -23,7 +23,7 @@ namespace Solar.Domain.Analysis.Lexical.Services
         }
 
         [NotNull]
-        public IReadOnlyList<Token> Analyze([NotNull] string content)
+        public IReadOnlyList<IToken> Analyze([NotNull] string content)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace Solar.Domain.Analysis.Lexical.Services
             }
         }
 
-        private IReadOnlyList<Token> Parse(string content)
+        private IReadOnlyList<IToken> Parse(string content)
         {
             var result = new List<Token>();
             if (content.IsEmpty())

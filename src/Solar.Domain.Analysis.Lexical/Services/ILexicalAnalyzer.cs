@@ -4,8 +4,8 @@ using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
 namespace Solar.Domain.Analysis.Lexical.Services
 {
-    internal interface ILexicalAnalyzer : IDomainService
+    public interface ILexicalAnalyzer : IDomainService
     {
-        IReadOnlyList<Token> Analyze(string content);
+        IReadOnlyList<IToken> Analyze(string content);
     }
 }
