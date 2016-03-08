@@ -13,32 +13,22 @@ namespace Solar.Frontend.Compiler.Services
         private readonly ICommandLineArgumentsParser<CompilerArguments> _commandLineArgumentsParser;
         private readonly ICompilerArgumentsMapper _mapper;
         private readonly ICompiler _compiler;
-        private readonly IErrorHandler _errorHandler;
 
         public CompilerProgram(
             ICommandLineArgumentsParser<CompilerArguments> commandLineArgumentsParser,
             ICompilerArgumentsMapper mapper,
-            ICompiler compiler,
-            IErrorHandler errorHandler)
+            ICompiler compiler)
         {
             _commandLineArgumentsParser = commandLineArgumentsParser;
             _mapper = mapper;
             _compiler = compiler;
-            _errorHandler = errorHandler;
         }
 
         public void Start(string[] args)
         {
-            try
-            {
-                var arguments = _commandLineArgumentsParser.Parse(args);
-                var result = _mapper.Map(arguments);
-                _compiler.Compile(result);
-            }
-            catch (Exception exception)
-            {
-                _errorHandler.Handle(exception);
-            }
+            var arguments = _commandLineArgumentsParser.Parse(args);
+            var result = _mapper.Map(arguments);
+            _compiler.Compile(result);
         }
     }
 }

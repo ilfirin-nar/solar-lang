@@ -47,8 +47,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="Interceptors\ErrorHandlingInterceptor.cs" />
     <Compile Include="Interceptors\IErrorHandlingInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ErrorHandler.cs" />
     <Compile Include="Services\IErrorHandler.cs" />
   </ItemGroup>
   <ItemGroup>
