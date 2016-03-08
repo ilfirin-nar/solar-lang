@@ -32,6 +32,9 @@ namespace Solar.Infrastructure.Console.Tests.Services
             var result = parser.Parse(args);
             Assert.Equal("fooValue", result.Foo);
             Assert.Equal(3, result.Foos.Count);
+            Assert.Equal("foo1", result.Foos[0]);
+            Assert.Equal("foo2", result.Foos[1]);
+            Assert.Equal("foo3", result.Foos[2]);
             Assert.Equal("barValue", result.Bar);
         }
 
