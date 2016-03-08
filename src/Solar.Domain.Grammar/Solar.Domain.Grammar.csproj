@@ -94,6 +94,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Grammar\grammar.ebnf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
