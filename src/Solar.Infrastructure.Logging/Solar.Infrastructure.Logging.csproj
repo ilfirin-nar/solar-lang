@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53C0C8E9-79FE-46AB-87EF-ED7FADD30F34}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{5BEDEC95-9655-44B9-B5B6-4327C226DE0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Frontend.Compiler</RootNamespace>
-    <AssemblyName>slc</AssemblyName>
+    <RootNamespace>Solar.Infrastructure.Logging</RootNamespace>
+    <AssemblyName>Solar.Infrastructure.Logging</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,53 +29,34 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Solar.Frontend.Compiler.EntryPoint</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="LightInject, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\LightInject.4.0.8\lib\net46\LightInject.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTransferObjects\CompilerArguments.cs" />
-    <Compile Include="EntryPoint.cs" />
+    <Compile Include="CompositionRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CompilerProgram.cs" />
-    <Compile Include="Services\ICompilerProgram.cs" />
-    <Compile Include="Services\Mapper\CompilerArgumentsMapper.cs" />
-    <Compile Include="Services\Mapper\ICompilerArgumentsMapper.cs" />
+    <Compile Include="Services\ILogger.cs" />
+    <Compile Include="Services\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Solar.Applicaton.Compilier\Solar.Application.Compiler.csproj">
-      <Project>{D0F8B16D-4D00-49E0-AF26-D826C5B702A3}</Project>
-      <Name>Solar.Application.Compiler</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Solar.Infrastructure.Console\Solar.Infrastructure.Console.csproj">
-      <Project>{e0c195e2-22a9-47d8-b992-6a7787374cbe}</Project>
-      <Name>Solar.Infrastructure.Console</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Solar.Infrastructure.ErrorHandling\Solar.Infrastructure.ErrorHandling.csproj">
-      <Project>{BEBA6289-7881-405E-ACA2-CA0E4DFC5569}</Project>
-      <Name>Solar.Infrastructure.ErrorHandling</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Solar.Infrastructure.Logging\Solar.Infrastructure.Logging.csproj">
-      <Project>{5BEDEC95-9655-44B9-B5B6-4327C226DE0D}</Project>
-      <Name>Solar.Infrastructure.Logging</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

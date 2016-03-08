@@ -5,7 +5,7 @@ using Solar.Infrastructure.Common.DependencyInjection.Extensions;
 using Solar.Infrastructure.Common.DependencyInjection.Registration;
 using Solar.Infrastructure.Common.Interfaces.InfrastructureLayer;
 
-namespace Solar.Infrastructure.Console
+namespace Solar.Infrastructure.Logging
 {
     internal class CompositionRoot : ISolarCompositionRoot
     {
