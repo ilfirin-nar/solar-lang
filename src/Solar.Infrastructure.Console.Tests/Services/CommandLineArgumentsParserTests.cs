@@ -1,5 +1,7 @@
-﻿using LightInject.xUnit2;
+﻿using System;
+using LightInject.xUnit2;
 using Solar.Infrastructure.Console.Services;
+using Solar.Infrastructure.Console.Services.Exceptions;
 using Solar.Infrastructure.Console.Tests.Services.TestDataTransferObjects;
 using Xunit;
 
@@ -8,18 +10,57 @@ namespace Solar.Infrastructure.Console.Tests.Services
     public class CommandLineArgumentsParserTests
     {
         [Theory]
-        [InjectData("-f fooValue -b 42 -r", "fooValue", 42, true)]
-        public static void Parse_ValidStringWithoutArray_ValidDto(
+        [InjectData("-f fooValue -b barValue -r rockValue", "fooValue", "barValue", "rockValue")]
+        public static void Parse_ValidArgumentsWithoutArray_ValidDto(
             ICommandLineArgumentsParser<TestCommandLineArguments> parser,
             string args,
             string foo,
-            int bar,
-            bool isRock)
+            string bar,
+            string rock)
         {
             var result = parser.Parse(args.Split(' '));
             Assert.Equal(foo, result.Foo);
+            Assert.Equal(0, result.Foos.Count);
             Assert.Equal(bar, result.Bar);
-            Assert.Equal(isRock, result.IsRock);
+            Assert.Equal(rock, result.Rock);
+        }
+
+        [Theory, InjectData]
+        public static void Parse_ValidArgumentsWithArray_ValidDto(ICommandLineArgumentsParser<TestCommandLineArguments> parser)
+        {
+            var args = "-f fooValue -fs foo1 foo2 foo3 -b barValue".Split(' ');
+            var result = parser.Parse(args);
+            Assert.Equal("fooValue", result.Foo);
+            Assert.Equal(3, result.Foos.Count);
+            Assert.Equal("barValue", result.Bar);
+        }
+
+        [Theory, InjectData]
+        public static void Parse_InvalidArgumentsWithoutArray_Exception(ICommandLineArgumentsParser<TestCommandLineArguments> parser)
+        {
+            try
+            {
+                parser.Parse("-f fooValue -e foo".Split(' '));
+                Assert.True(false);
+            }
+            catch (UnrecognizedCommandLineOptionException)
+            {
+                Assert.True(true);
+            }
+        }
+
+        [Theory, InjectData]
+        public static void Parse_InvalidArgumentsWithArray_Exception(ICommandLineArgumentsParser<TestCommandLineArguments> parser)
+        {
+            try
+            {
+                parser.Parse("-f fooValue -fs -b barValue".Split(' '));
+                Assert.True(false);
+            }
+            catch (InvalidCommandLineOptionValuesCountException)
+            {
+                Assert.True(true);
+            }
         }
     }
 }

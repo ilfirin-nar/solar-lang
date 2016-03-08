@@ -6,6 +6,11 @@ namespace Solar.Infrastructure.Console.Tests.Services.TestDataTransferObjects
 {
     public class TestCommandLineArguments : ICommandLineArguments
     {
+        public TestCommandLineArguments()
+        {
+            Foos = new List<string>();
+        }
+
         [ConsoleOption("f")]
         public string Foo { get; set; }
 
@@ -13,9 +18,9 @@ namespace Solar.Infrastructure.Console.Tests.Services.TestDataTransferObjects
         public IList<string> Foos { get; set; }
 
         [ConsoleOption("b")]
-        public int Bar { get; set; }
+        public string Bar { get; set; }
 
         [ConsoleOption("r", IsRequired = true)]
-        public bool IsRock { get; set; }
+        public string Rock { get; set; }
     }
 }

@@ -43,6 +43,8 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="DataTransferObjects\ICommandLineArguments.cs" />
     <Compile Include="Services\CommandLineArgumentsParser.cs" />
+    <Compile Include="Services\Exceptions\InvalidCommandLineOptionValuesCountException.cs" />
+    <Compile Include="Services\Exceptions\UnrecognizedCommandLineOptionException.cs" />
     <Compile Include="Services\ICommandLineArgumentsParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

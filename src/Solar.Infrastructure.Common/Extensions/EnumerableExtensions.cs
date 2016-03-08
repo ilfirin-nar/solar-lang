@@ -19,5 +19,10 @@ namespace Solar.Infrastructure.Common.Extensions
         {
             return enumerable.Except(items);
         }
+
+        public static bool ContainsOneElement<T>(this IEnumerable<T> enumerable)
+        {
+            return enumerable.Count() == 1;
+        }
     }
 }

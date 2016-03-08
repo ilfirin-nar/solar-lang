@@ -4,11 +4,12 @@ using System.Reflection;
 using Solar.Infrastructure.Common.Extensions;
 using Solar.Infrastructure.Console.Attributes;
 using Solar.Infrastructure.Console.DataTransferObjects;
+using Solar.Infrastructure.Console.Services.Exceptions;
 
 namespace Solar.Infrastructure.Console.Services
 {
     internal class CommandLineArgumentsParser<TCommandLineArguments> : ICommandLineArgumentsParser<TCommandLineArguments>
-        where TCommandLineArguments : ICommandLineArguments
+        where TCommandLineArguments : ICommandLineArguments, new()
     {
         private const string OptionPrefix = "-";
         private static readonly IReadOnlyDictionary<ConsoleOptionAttribute, PropertyInfo> OptionsProperties;
@@ -20,18 +21,56 @@ namespace Solar.Infrastructure.Console.Services
                 .ToDictionary(p => p.GetFirstAttribute<ConsoleOptionAttribute>(), p => p);
         }
 
-        public TCommandLineArguments Parse(string[] args)
+        public TCommandLineArguments Parse(IEnumerable<string> args)
         {
-            var map =  new Dictionary<string, IList<string>>();
+            var options = GetOptionWithValues(args);
+            var result = new TCommandLineArguments();
+            foreach (var option in options)
+            {
+                var optionProperty = OptionsProperties.FirstOrDefault(op => op.Key.Option == option.Key);
+                if (optionProperty.Equals(default(KeyValuePair<ConsoleOptionAttribute, PropertyInfo>)))
+                {
+                    throw new UnrecognizedCommandLineOptionException(option.Key);
+                }
+                SetResultValue(result, option, optionProperty.Value);
+            }
+            return result;
+        }
+
+        private static IDictionary<string, IList<string>> GetOptionWithValues(IEnumerable<string> args)
+        {
+            var map = new Dictionary<string, IList<string>>();
+            var valuesList = new List<string>();
             foreach (var argument in args)
             {
                 if (argument.StartsWith(OptionPrefix))
                 {
-                    
+                    valuesList = new List<string>();
+                    map.Add(argument.Substring(1), valuesList);
+                }
+                else
+                {
+                    valuesList.Add(argument);
                 }
             }
-            throw new System.NotImplementedException();
-            //if (OptionsProperties.Keys.Select(c => c.Option).Contains(argument.))
+            return map;
+        }
+
+        private static void SetResultValue(TCommandLineArguments result, KeyValuePair<string, IList<string>> optionValue, PropertyInfo optionPropertyInfo)
+        {
+            object value;
+            switch (optionValue.Value.Count)
+            {
+                case 0:
+                    throw new InvalidCommandLineOptionValuesCountException(optionValue.Key);
+                case 1:
+                    value = optionValue.Value.Single();
+                    break;
+                default:
+                    value = optionValue.Value;
+                    break;
+            }
+            optionPropertyInfo.SetValue(result, value);
         }
     }
 }

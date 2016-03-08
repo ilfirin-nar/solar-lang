@@ -2,9 +2,9 @@
 
 namespace Solar.Infrastructure.Common.Exceptions
 {
-    public class SolarException : Exception
+    public abstract class SolarException : Exception
     {
-        public SolarException()
+        protected SolarException()
         {
         }
 
