@@ -3,8 +3,9 @@ using Solar.Infrastructure.Console.DataTransferObjects;
 
 namespace Solar.Infrastructure.Console.Services
 {
-    public interface ICommandLineArgumentsParser : IInfrastructureService
+    public interface ICommandLineArgumentsParser<out TCommandLineArguments> : IInfrastructureService
+        where TCommandLineArguments : ICommandLineArguments
     {
-        ICommandLineArguments Parse(string[] args);
+        TCommandLineArguments Parse(string[] args);
     }
 }

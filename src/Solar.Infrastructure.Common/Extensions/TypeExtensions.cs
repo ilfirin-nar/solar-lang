@@ -18,9 +18,20 @@ namespace Solar.Infrastructure.Common.Extensions
             return type.GetInterfaces().Any(it => it == interfaceType);
         }
 
-        public static IList<MethodInfo> GetStaticMethods(this Type type)
+        public static IEnumerable<MethodInfo> GetStaticMethods(this Type type)
         {
-            return type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).ToList();
+            return type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance);
+        }
+
+        public static IEnumerable<PropertyInfo> GetPublicProperties(this Type type)
+        {
+            return type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        public static IEnumerable<PropertyInfo> GetPropertiesWith<TAttribute>(this Type type)
+            where TAttribute : Attribute
+        {
+            return type.GetPublicProperties().Where(p => p.HasAttribute<TAttribute>());
         }
     }
 }

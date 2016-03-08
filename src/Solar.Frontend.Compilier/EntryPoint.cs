@@ -9,8 +9,7 @@ namespace Solar.Frontend.Compiler
 
         static EntryPoint()
         {
-            var container = new ServiceContainer();
-            CompilerProgram = container.GetInstance<ICompilerProgram>();
+            CompilerProgram = new ServiceContainer().GetInstance<ICompilerProgram>();
         }
 
         public static void Main(string[] args)

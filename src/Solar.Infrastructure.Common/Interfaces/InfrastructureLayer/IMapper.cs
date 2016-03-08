@@ -1,6 +1,8 @@
 ﻿namespace Solar.Infrastructure.Common.Interfaces.InfrastructureLayer
 {
-    public interface IMapper<in TSource, out TTarget> : IInfrastructureService
+    public interface IMapper : IInfrastructureService {}
+
+    public interface IMapper<in TSource, out TTarget> : IMapper
         where TSource : IDataTransferObject
         where TTarget : IDataTransferObject
     {
