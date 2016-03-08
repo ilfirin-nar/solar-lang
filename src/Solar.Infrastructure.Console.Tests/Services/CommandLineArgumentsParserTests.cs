@@ -1,5 +1,4 @@
-﻿using System;
-using LightInject.xUnit2;
+﻿using LightInject.xUnit2;
 using Solar.Infrastructure.Console.Services;
 using Solar.Infrastructure.Console.Services.Exceptions;
 using Solar.Infrastructure.Console.Tests.Services.TestDataTransferObjects;

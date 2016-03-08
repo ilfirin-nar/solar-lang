@@ -1,5 +1,4 @@
-﻿using System;
-using Solar.Infrastructure.Common.Exceptions;
+﻿using Solar.Infrastructure.Common.Exceptions;
 
 namespace Solar.Infrastructure.Console.Services.Exceptions
 {
