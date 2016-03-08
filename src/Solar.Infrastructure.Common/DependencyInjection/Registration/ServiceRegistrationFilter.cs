@@ -1,7 +1,7 @@
 ﻿using System;
 using Solar.Infrastructure.Common.Extensions;
 
-namespace Solar.Infrastructure.Common.DependencyInjection
+namespace Solar.Infrastructure.Common.DependencyInjection.Registration
 {
     public static class ServiceRegistrationFilter
     {

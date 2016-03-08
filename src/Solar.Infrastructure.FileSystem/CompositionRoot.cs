@@ -1,7 +1,8 @@
 ﻿using System.Reflection;
 using LightInject;
-using Solar.Infrastructure.Common.DependencyInjection;
+using Solar.Infrastructure.Common.DependencyInjection.Composition;
 using Solar.Infrastructure.Common.DependencyInjection.Extensions;
+using Solar.Infrastructure.Common.DependencyInjection.Registration;
 using Solar.Infrastructure.Common.Interfaces.InfrastructureLayer;
 
 namespace Solar.Infrastructure.FileSystem

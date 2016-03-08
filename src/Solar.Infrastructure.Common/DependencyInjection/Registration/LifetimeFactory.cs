@@ -1,7 +1,7 @@
 ﻿using System;
 using LightInject;
 
-namespace Solar.Infrastructure.Common.DependencyInjection
+namespace Solar.Infrastructure.Common.DependencyInjection.Registration
 {
     public static class LifeTimeFactory
     {

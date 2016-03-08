@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using LightInject;
+using Solar.Infrastructure.Common.DependencyInjection.Registration;
 
 namespace Solar.Infrastructure.Common.DependencyInjection.Extensions
 {

@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependencyInjection\Extensions\ServiceRegistryExtensions.cs" />
-    <Compile Include="DependencyInjection\ISolarCompositionRoot.cs" />
-    <Compile Include="DependencyInjection\LifetimeFactory.cs" />
-    <Compile Include="DependencyInjection\ServiceRegistrationFilter.cs" />
+    <Compile Include="DependencyInjection\Composition\ISolarCompositionRoot.cs" />
+    <Compile Include="DependencyInjection\Registration\LifetimeFactory.cs" />
+    <Compile Include="DependencyInjection\Registration\ServiceRegistrationFilter.cs" />
     <Compile Include="Exceptions\SolarExceptino.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -60,10 +60,13 @@
     <Compile Include="Interfaces\DomainLayer\IDomainService.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntity.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntityBehaviorService.cs" />
+    <Compile Include="Interfaces\FrontendLayer\IConsoleProgram.cs" />
+    <Compile Include="Interfaces\FrontendLayer\IFrontendService.cs" />
     <Compile Include="Interfaces\IDirectory.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObject.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObjectFactory.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IInfrastructureService.cs" />
+    <Compile Include="Interfaces\InfrastructureLayer\IMapper.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

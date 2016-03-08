@@ -32,19 +32,34 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Solar.Frontend.Compiler.EntryPoint</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LightInject, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LightInject.4.0.8\lib\net46\LightInject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CompilerProgram.cs" />
+    <Compile Include="Services\ICompilerProgram.cs" />
+    <Compile Include="Services\Mapper\CompilerArgumentsMapper.cs" />
+    <Compile Include="Services\Mapper\ICompilerArgumentsMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Solar.Applicaton.Compilier\Solar.Application.Compiler.csproj">
+      <Project>{D0F8B16D-4D00-49E0-AF26-D826C5B702A3}</Project>
+      <Name>Solar.Application.Compiler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
@@ -54,6 +69,7 @@
       <Name>Solar.Infrastructure.Console</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
