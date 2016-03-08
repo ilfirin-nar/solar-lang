@@ -39,13 +39,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\ConsoleOptionAttribute.cs" />
+    <Compile Include="Arguments\Attributes\ConsoleOptionAttribute.cs" />
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="DataTransferObjects\ICommandLineArguments.cs" />
-    <Compile Include="Services\CommandLineArgumentsParser.cs" />
-    <Compile Include="Services\Exceptions\InvalidCommandLineOptionValuesCountException.cs" />
-    <Compile Include="Services\Exceptions\UnrecognizedCommandLineOptionException.cs" />
-    <Compile Include="Services\ICommandLineArgumentsParser.cs" />
+    <Compile Include="Arguments\DataTransferObjects\ICommandLineArguments.cs" />
+    <Compile Include="Arguments\Services\CommandLineArgumentsParser.cs" />
+    <Compile Include="Arguments\Services\Exceptions\InvalidCommandLineOptionValuesCountException.cs" />
+    <Compile Include="Arguments\Services\Exceptions\UnrecognizedCommandLineOptionException.cs" />
+    <Compile Include="Arguments\Services\ICommandLineArgumentsParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

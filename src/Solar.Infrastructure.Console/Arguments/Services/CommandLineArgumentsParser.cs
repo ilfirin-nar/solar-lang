@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Reflection;
 using Solar.Infrastructure.Common.Extensions;
-using Solar.Infrastructure.Console.Attributes;
-using Solar.Infrastructure.Console.DataTransferObjects;
-using Solar.Infrastructure.Console.Services.Exceptions;
+using Solar.Infrastructure.Console.Arguments.Attributes;
+using Solar.Infrastructure.Console.Arguments.DataTransferObjects;
+using Solar.Infrastructure.Console.Arguments.Services.Exceptions;
 
-namespace Solar.Infrastructure.Console.Services
+namespace Solar.Infrastructure.Console.Arguments.Services
 {
     internal class CommandLineArgumentsParser<TCommandLineArguments> : ICommandLineArgumentsParser<TCommandLineArguments>
         where TCommandLineArguments : ICommandLineArguments, new()
