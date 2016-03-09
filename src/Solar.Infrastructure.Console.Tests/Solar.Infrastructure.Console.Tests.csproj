@@ -63,7 +63,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Arguments\Services\CommandLineArgumentsParserTests.cs" />
-    <Compile Include="Arguments\Services\TestDataTransferObjects\TestCommandLineArguments.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">

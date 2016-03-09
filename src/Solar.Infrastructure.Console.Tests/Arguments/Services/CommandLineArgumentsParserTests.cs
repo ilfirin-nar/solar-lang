@@ -1,13 +1,35 @@
-﻿using LightInject.xUnit2;
+﻿using System.Collections.Generic;
+using LightInject.xUnit2;
+using Solar.Infrastructure.Console.Arguments.Attributes;
+using Solar.Infrastructure.Console.Arguments.DataTransferObjects;
 using Solar.Infrastructure.Console.Arguments.Services;
 using Solar.Infrastructure.Console.Arguments.Services.Exceptions;
-using Solar.Infrastructure.Console.Tests.Arguments.Services.TestDataTransferObjects;
 using Xunit;
 
 namespace Solar.Infrastructure.Console.Tests.Arguments.Services
 {
     public class CommandLineArgumentsParserTests
     {
+        public class TestCommandLineArguments : ICommandLineArguments
+        {
+            public TestCommandLineArguments()
+            {
+                Foos = new List<string>();
+            }
+
+            [ConsoleOption("f")]
+            public string Foo { get; set; }
+
+            [ConsoleOption("fs", AllowMultiple = true)]
+            public IList<string> Foos { get; set; }
+
+            [ConsoleOption("b")]
+            public string Bar { get; set; }
+
+            [ConsoleOption("r", IsRequired = true)]
+            public string Rock { get; set; }
+        }
+
         [Theory]
         [InjectData("-f fooValue -b barValue -r rockValue", "fooValue", "barValue", "rockValue")]
         public static void Parse_ValidArgumentsWithoutArray_ValidDto(
