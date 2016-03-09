@@ -22,7 +22,7 @@ namespace Solar.Application.Compiler.Services
             _semanticAnalyzer = semanticAnalyzer;
         }
 
-        public void Compile(IModulesPathes modulesPathes)
+        public void Compile(ModulesPathes modulesPathes)
         {
             Console.WriteLine("Start");
         }

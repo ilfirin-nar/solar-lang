@@ -3,7 +3,7 @@ using Solar.Infrastructure.Common.Interfaces.InfrastructureLayer;
 
 namespace Solar.Application.Compiler.DataTransferObjects
 {
-    public interface IModulesPathes : IDataTransferObject
+    public class ModulesPathes : IDataTransferObject
     {
          IReadOnlyList<string> Pathes { get; }
     }

@@ -55,8 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CompilerProgram.cs" />
     <Compile Include="Services\ICompilerProgram.cs" />
-    <Compile Include="Services\Mapper\CompilerArgumentsMapper.cs" />
-    <Compile Include="Services\Mapper\ICompilerArgumentsMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

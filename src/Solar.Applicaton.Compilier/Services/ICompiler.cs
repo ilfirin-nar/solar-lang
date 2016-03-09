@@ -5,6 +5,6 @@ namespace Solar.Application.Compiler.Services
 {
     public interface ICompiler : IApplicationService
     {
-        void Compile(IModulesPathes modulesPathes);
+        void Compile(ModulesPathes modulesPathes);
     }
 }

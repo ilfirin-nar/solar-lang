@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Solar.Application.Compiler.DataTransferObjects;
 using Solar.Application.Compiler.Services;
 using Solar.Frontend.Compiler.DataTransferObjects;
-using Solar.Frontend.Compiler.Services.Mapper;
+using Solar.Infrastructure.Common.Services;
 using Solar.Infrastructure.Console.Arguments.Services;
 
 namespace Solar.Frontend.Compiler.Services
@@ -9,12 +10,12 @@ namespace Solar.Frontend.Compiler.Services
     internal class CompilerProgram : ICompilerProgram
     {
         private readonly ICommandLineArgumentsParser<CompilerArguments> _commandLineArgumentsParser;
-        private readonly ICompilerArgumentsMapper _mapper;
+        private readonly IDataMapper<CompilerArguments, ModulesPathes> _mapper;
         private readonly ICompiler _compiler;
 
         public CompilerProgram(
             ICommandLineArgumentsParser<CompilerArguments> commandLineArgumentsParser,
-            ICompilerArgumentsMapper mapper,
+            IDataMapper<CompilerArguments, ModulesPathes> mapper,
             ICompiler compiler)
         {
             _commandLineArgumentsParser = commandLineArgumentsParser;
@@ -25,8 +26,8 @@ namespace Solar.Frontend.Compiler.Services
         public void Start(IEnumerable<string> args)
         {
             var arguments = _commandLineArgumentsParser.Parse(args);
-            var result = _mapper.Map(arguments);
-            _compiler.Compile(result);
+            var pathes = _mapper.Map(arguments);
+            _compiler.Compile(pathes);
         }
     }
 }
