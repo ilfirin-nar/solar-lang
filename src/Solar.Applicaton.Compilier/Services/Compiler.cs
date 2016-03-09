@@ -1,5 +1,4 @@
-﻿using System;
-using Solar.Application.Compiler.DataTransferObjects;
+﻿using Solar.Application.Compiler.DataTransferObjects;
 using Solar.Domain.Analysis.Lexical.Services;
 using Solar.Domain.Analysis.Semantic.Services;
 using Solar.Domain.Analysis.Syntax.Services;
@@ -24,7 +23,6 @@ namespace Solar.Application.Compiler.Services
 
         public void Compile(ModulesPathes modulesPathes)
         {
-            Console.WriteLine("Start");
         }
     }
 }

@@ -53,8 +53,13 @@
     <Compile Include="DataTransferObjects\CompilerArguments.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CompilerProgram.cs" />
-    <Compile Include="Services\ICompilerProgram.cs" />
+    <Compile Include="Services\ActionSelector.cs" />
+    <Compile Include="Services\Actions\CompileAction.cs" />
+    <Compile Include="Services\Actions\ICommandLineAction.cs" />
+    <Compile Include="Services\Actions\ShowHelpAction.cs" />
+    <Compile Include="Services\IActionSelector.cs" />
+    <Compile Include="Program\CompilerProgram.cs" />
+    <Compile Include="Program\ICompilerProgram.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,7 +87,6 @@
       <Name>Solar.Infrastructure.Logging</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

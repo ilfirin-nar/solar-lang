@@ -1,4 +1,5 @@
 ﻿using LightInject;
+using Solar.Frontend.Compiler.Program;
 using Solar.Frontend.Compiler.Services;
 
 namespace Solar.Frontend.Compiler

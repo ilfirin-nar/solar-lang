@@ -1,6 +1,6 @@
 ﻿using Solar.Infrastructure.Common.Interfaces.FrontendLayer;
 
-namespace Solar.Frontend.Compiler.Services
+namespace Solar.Frontend.Compiler.Program
 {
     public interface ICompilerProgram : IConsoleProgram {}
 }
