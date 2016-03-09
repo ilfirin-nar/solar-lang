@@ -59,10 +59,7 @@ namespace Solar.Infrastructure.Console.Arguments.Services
 
         private static object SetResultValue(KeyValuePair<string, IList<string>> optionValue, ConsoleOptionAttribute optionPropertyAttribute)
         {
-            if (optionValue.Value.Count == 0 || (!optionPropertyAttribute.AllowMultiple && optionValue.Value.Count > 1))
-            {
-                throw new InvalidCommandLineOptionValuesCountException(optionValue.Key, optionValue.Value.Count, optionPropertyAttribute.AllowMultiple);
-            }
+            ValidateValue(optionValue, optionPropertyAttribute);
             object value;
             if (optionValue.Value.Count == 1)
             {
@@ -73,6 +70,14 @@ namespace Solar.Infrastructure.Console.Arguments.Services
                 value = optionValue.Value;
             }
             return value;
+        }
+
+        private static void ValidateValue(KeyValuePair<string, IList<string>> optionValue, ConsoleOptionAttribute optionPropertyAttribute)
+        {
+            if (optionValue.Value.Count == 0 || (!optionPropertyAttribute.AllowMultiple && optionValue.Value.Count > 1))
+            {
+                throw new InvalidCommandLineOptionValuesCountException(optionValue.Key, optionValue.Value.Count, optionPropertyAttribute.AllowMultiple);
+            }
         }
     }
 }
