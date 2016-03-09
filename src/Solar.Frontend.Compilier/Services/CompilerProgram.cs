@@ -1,4 +1,5 @@
-﻿using Solar.Application.Compiler.Services;
+﻿using System.Collections.Generic;
+using Solar.Application.Compiler.Services;
 using Solar.Frontend.Compiler.DataTransferObjects;
 using Solar.Frontend.Compiler.Services.Mapper;
 using Solar.Infrastructure.Console.Arguments.Services;
@@ -21,7 +22,7 @@ namespace Solar.Frontend.Compiler.Services
             _compiler = compiler;
         }
 
-        public void Start(string[] args)
+        public void Start(IEnumerable<string> args)
         {
             var arguments = _commandLineArgumentsParser.Parse(args);
             var result = _mapper.Map(arguments);

@@ -4,13 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44EF742-D11B-4803-9CE8-DE6F035CDB6E}</ProjectGuid>
+    <ProjectGuid>{E18398C1-F8D2-4746-84F4-E82D69DB2364}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Domain.Analysis.Semantic</RootNamespace>
-    <AssemblyName>Solar.Domain.Analysis.Semantic</AssemblyName>
+    <RootNamespace>Solar.Infrastructure.Common.Tests</RootNamespace>
+    <AssemblyName>Solar.Infrastructure.Common.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,28 +36,42 @@
       <HintPath>..\packages\LightInject.4.0.8\lib\net46\LightInject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LightInject.xUnit2, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.xUnit.2.0.0.5\lib\net46\LightInject.xUnit2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompositionRoot.cs" />
-    <Compile Include="Entity\ISemanticModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ISemanticAnalyzer.cs" />
-    <Compile Include="Services\SemanticAnalyzer.cs" />
+    <Compile Include="Services\DataMapperTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">
-      <Project>{1DF046E6-3083-4BA2-B38A-138FBA765AE2}</Project>
-      <Name>Solar.Domain.Grammar</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

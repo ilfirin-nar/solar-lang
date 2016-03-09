@@ -3,10 +3,9 @@ using LightInject;
 using Solar.Infrastructure.Common.DependencyInjection.Composition;
 using Solar.Infrastructure.Common.DependencyInjection.Extensions;
 using Solar.Infrastructure.Common.DependencyInjection.Registration;
-using Solar.Infrastructure.Common.Interfaces.InfrastructureLayer;
-using Solar.Infrastructure.ErrorHandling.Interceptors;
+using Solar.Infrastructure.Common.Interfaces;
 
-namespace Solar.Infrastructure.ErrorHandling
+namespace Solar.Infrastructure.Common
 {
     internal class CompositionRoot : ISolarCompositionRoot
     {
@@ -14,8 +13,7 @@ namespace Solar.Infrastructure.ErrorHandling
 
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            serviceRegistry.Register<IInfrastructureService>(ThisAssembly, LifeTimeFactory.PerContainer);
-            serviceRegistry.Register<IErrorHandlingInterceptor, ErrorHandlingInterceptor>();
+            serviceRegistry.Register<IService>(ThisAssembly, LifeTimeFactory.PerContainer);
         }
     }
 }

@@ -42,6 +42,7 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ISyntaxAnalyzer.cs" />
+    <Compile Include="Services\SyntaxAnalyzer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">

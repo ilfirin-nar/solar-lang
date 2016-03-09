@@ -6,6 +6,10 @@ namespace Solar.Frontend.Compiler.DataTransferObjects
 {
     public class CompilerArguments : ICommandLineArguments
     {
+        public CompilerArguments()
+        {
+        }
+
         [ConsoleOption("f", IsRequired = true)]
         public IList<string> ModulesPathes { get; set; }
     }

@@ -43,6 +43,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompositionRoot.cs" />
     <Compile Include="DependencyInjection\Extensions\ServiceRegistryExtensions.cs" />
     <Compile Include="DependencyInjection\Composition\ISolarCompositionRoot.cs" />
     <Compile Include="DependencyInjection\Registration\LifetimeFactory.cs" />
@@ -64,6 +65,8 @@
     <Compile Include="Interfaces\FrontendLayer\IConsoleProgram.cs" />
     <Compile Include="Interfaces\FrontendLayer\IFrontendService.cs" />
     <Compile Include="Interfaces\IDirectory.cs" />
+    <Compile Include="Services\DataMapper.cs" />
+    <Compile Include="Services\IDataMapper.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObject.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObjectFactory.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IInfrastructureService.cs" />
