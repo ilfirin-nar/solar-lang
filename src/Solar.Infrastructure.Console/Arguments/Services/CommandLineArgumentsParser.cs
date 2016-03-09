@@ -32,7 +32,7 @@ namespace Solar.Infrastructure.Console.Arguments.Services
                 {
                     throw new UnrecognizedCommandLineOptionException(option.Key);
                 }
-                var value = SetResultValue(option);
+                var value = SetResultValue(option, optionProperty.Key);
                 optionProperty.Value.SetValue(result, value);
             }
             return result;
@@ -57,19 +57,20 @@ namespace Solar.Infrastructure.Console.Arguments.Services
             return map;
         }
 
-        private static object SetResultValue(KeyValuePair<string, IList<string>> optionValue)
+        private static object SetResultValue(KeyValuePair<string, IList<string>> optionValue, ConsoleOptionAttribute optionPropertyAttribute)
         {
-            object value;
-            switch (optionValue.Value.Count)
+            if (optionValue.Value.Count == 0 || (!optionPropertyAttribute.AllowMultiple && optionValue.Value.Count > 1))
             {
-                case 0:
-                    throw new InvalidCommandLineOptionValuesCountException(optionValue.Key);
-                case 1:
-                    value = optionValue.Value.Single();
-                    break;
-                default:
-                    value = optionValue.Value;
-                    break;
+                throw new InvalidCommandLineOptionValuesCountException(optionValue.Key, optionValue.Value.Count, optionPropertyAttribute.AllowMultiple);
+            }
+            object value;
+            if (optionValue.Value.Count == 1)
+            {
+                value = optionValue.Value.Single();
+            }
+            else
+            {
+                value = optionValue.Value;
             }
             return value;
         }

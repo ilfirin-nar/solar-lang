@@ -64,5 +64,19 @@ namespace Solar.Infrastructure.Console.Tests.Arguments.Services
                 Assert.True(true);
             }
         }
+
+        [Theory, InjectData]
+        public static void Parse_InvalidArgumentsNotAllowMultiple_Exception(ICommandLineArgumentsParser<TestCommandLineArguments> parser)
+        {
+            try
+            {
+                parser.Parse("-f foo1 foo2 foo3 -b barValue".Split(' '));
+                Assert.True(false);
+            }
+            catch (InvalidCommandLineOptionValuesCountException)
+            {
+                Assert.True(true);
+            }
+        }
     }
 }

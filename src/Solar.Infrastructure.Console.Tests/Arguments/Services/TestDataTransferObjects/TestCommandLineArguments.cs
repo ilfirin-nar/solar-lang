@@ -14,7 +14,7 @@ namespace Solar.Infrastructure.Console.Tests.Arguments.Services.TestDataTransfer
         [ConsoleOption("f")]
         public string Foo { get; set; }
 
-        [ConsoleOption("fs")]
+        [ConsoleOption("fs", AllowMultiple = true)]
         public IList<string> Foos { get; set; }
 
         [ConsoleOption("b")]
