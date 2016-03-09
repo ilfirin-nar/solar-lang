@@ -15,12 +15,12 @@ namespace Solar.Infrastructure.ErrorHandling.Services
 
         public void Handle(Exception exception)
         {
-            if (exception is SolarException)
+            if (exception is CompilerException)
             {
                 _logger.Error(exception.Message);
             }
             _logger.Fatal(exception.Message);
-            throw new Exception("FATAL!", exception);
+            throw new FatalException(exception);
         }
     }
 }
