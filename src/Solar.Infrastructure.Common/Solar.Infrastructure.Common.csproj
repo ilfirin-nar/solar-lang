@@ -47,8 +47,6 @@
     <Compile Include="DependencyInjection\Composition\ISolarCompositionRoot.cs" />
     <Compile Include="DependencyInjection\Registration\LifetimeFactory.cs" />
     <Compile Include="DependencyInjection\Registration\ServiceRegistrationFilter.cs" />
-    <Compile Include="Exceptions\CompilerException.cs" />
-    <Compile Include="Exceptions\FatalException.cs" />
     <Compile Include="Exceptions\SolarException.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />

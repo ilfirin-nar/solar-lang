@@ -1,25 +1,26 @@
 ﻿using System;
 using Solar.Infrastructure.Common.Exceptions;
+using Solar.Infrastructure.ErrorHandling.Exceptions;
 using Solar.Infrastructure.Logging.Services;
 
 namespace Solar.Infrastructure.ErrorHandling.Services
 {
     internal class ErrorHandler : IErrorHandler
     {
-        private readonly ILogger _logger;
+        private readonly IExceptionsLogger _logger;
 
-        public ErrorHandler(ILogger logger)
+        public ErrorHandler(IExceptionsLogger logger)
         {
             _logger = logger;
         }
 
         public void Handle(Exception exception)
         {
-            if (exception is CompilerException)
+            _logger.Log(exception);
+            if (exception is SolarException)
             {
-                _logger.Error(exception.Message);
+                return;
             }
-            _logger.Fatal(exception.Message);
             throw new FatalException(exception);
         }
     }

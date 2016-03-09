@@ -1,8 +1,9 @@
 ﻿using System;
+using Solar.Infrastructure.Common.Exceptions;
 
-namespace Solar.Infrastructure.Common.Exceptions
+namespace Solar.Infrastructure.ErrorHandling.Exceptions
 {
-    public class FatalException : Exception
+    public class FatalException : SolarException
     {
         private const string ExceptionMessage = "FATAL!";
 
