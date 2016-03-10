@@ -5,16 +5,16 @@ namespace Solar.Infrastructure.Logging.Services
 {
     public interface ILogger : IInfrastructureService
     {
-        void Fatal([NotNull] string message);
+        void Fatal([NotNull] object message);
 
-        void Error([NotNull] string message);
+        void Error([NotNull] object message);
 
-        void Warn([NotNull] string message);
+        void Warn([NotNull] object message);
 
-        void Info([NotNull] string message);
+        void Info([NotNull] object message);
 
-        void Debug([NotNull] string message);
+        void Debug([NotNull] object message);
 
-        void Trace([NotNull] string message);
+        void Trace([NotNull] object message);
     }
 }

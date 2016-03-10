@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Solar.Infrastructure.Common.Tests.Services
 {
-    public class DataMapperTests
+    internal class DataMapperTests
     {
         public class Foo : IDataTransferObject
         {

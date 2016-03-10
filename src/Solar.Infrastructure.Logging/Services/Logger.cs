@@ -1,37 +1,64 @@
-﻿using JetBrains.Annotations;
+﻿using System.IO;
+using Newtonsoft.Json;
+using Solar.Infrastructure.FileSystem.Services;
+using Solar.Infrastructure.Logging.Constants;
+using Solar.Infrastructure.Logging.Services.Mappers;
 
 namespace Solar.Infrastructure.Logging.Services
 {
     internal class Logger : ILogger
     {
-        public void Fatal([NotNull] string message)
+        private static readonly string StandartLogFilePath;
+        private readonly ITextFileWriter _fileWriter;
+        private readonly ILogMapper _mapper;
+
+        static Logger()
         {
-            throw new System.NotImplementedException();
+            var currentDirectory = Directory.GetCurrentDirectory();
+            StandartLogFilePath = currentDirectory + "\\log.log";
         }
 
-        public void Error([NotNull] string message)
+        public Logger(ITextFileWriter fileWriter, ILogMapper mapper)
         {
-            throw new System.NotImplementedException();
+            _fileWriter = fileWriter;
+            _mapper = mapper;
         }
 
-        public void Warn([NotNull] string message)
+        public void Fatal(object message)
         {
-            throw new System.NotImplementedException();
+            Log(message, LoggingLevel.Fatal);
         }
 
-        public void Info([NotNull] string message)
+        public void Error(object message)
         {
-            throw new System.NotImplementedException();
+            Log(message, LoggingLevel.Error);
         }
 
-        public void Debug([NotNull] string message)
+        public void Warn(object message)
         {
-            throw new System.NotImplementedException();
+            Log(message, LoggingLevel.Warn);
         }
 
-        public void Trace([NotNull] string message)
+        public void Info(object message)
         {
-            throw new System.NotImplementedException();
+            Log(message, LoggingLevel.Info);
+        }
+
+        public void Debug(object message)
+        {
+            Log(message, LoggingLevel.Debug);
+        }
+
+        public void Trace(object message)
+        {
+            Log(message, LoggingLevel.Trace);
+        }
+
+        private void Log(object message, LoggingLevel level)
+        {
+            var log = _mapper.Map(message, level);
+            var logJson = JsonConvert.SerializeObject(log);
+            _fileWriter.Write(StandartLogFilePath, logJson);
         }
     }
 }

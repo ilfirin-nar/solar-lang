@@ -38,22 +38,37 @@
       <HintPath>..\packages\LightInject.4.0.8\lib\net46\LightInject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
+    <Compile Include="Constants\LoggingLevel.cs" />
+    <Compile Include="DataTransferObjects\ExceptionLogMessage.cs" />
+    <Compile Include="DataTransferObjects\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExceptionsLogger.cs" />
     <Compile Include="Services\IExceptionsLogger.cs" />
     <Compile Include="Services\ILogger.cs" />
     <Compile Include="Services\Logger.cs" />
+    <Compile Include="Services\Mappers\ExceptionLogMapper.cs" />
+    <Compile Include="Services\Mappers\IExceptionLogMapper.cs" />
+    <Compile Include="Services\Mappers\ILogMapper.cs" />
+    <Compile Include="Services\Mappers\LogMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.FileSystem\Solar.Infrastructure.FileSystem.csproj">
+      <Project>{ab2fcb0d-e222-47e8-b837-79284700ed30}</Project>
+      <Name>Solar.Infrastructure.FileSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
