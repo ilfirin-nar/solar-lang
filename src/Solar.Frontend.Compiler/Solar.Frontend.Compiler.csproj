@@ -66,7 +66,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Solar.Applicaton.Compilier\Solar.Application.Compiler.csproj">
+    <ProjectReference Include="..\Solar.Applicaton.Compiler\Solar.Application.Compiler.csproj">
       <Project>{D0F8B16D-4D00-49E0-AF26-D826C5B702A3}</Project>
       <Name>Solar.Application.Compiler</Name>
     </ProjectReference>
