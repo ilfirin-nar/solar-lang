@@ -6,11 +6,11 @@ using Solar.Frontend.Compiler.Services.Actions;
 
 namespace Solar.Frontend.Compiler.Services
 {
-    internal class ActionSelector : IActionSelector
+    internal class CommandLineActionSelector : ICommandLineActionSelector
     {
         private readonly IReadOnlyList<ICommandLineAction> _actions;
 
-        public ActionSelector(IReadOnlyList<ICommandLineAction> actions)
+        public CommandLineActionSelector(IReadOnlyList<ICommandLineAction> actions)
         {
             _actions = actions;
         }

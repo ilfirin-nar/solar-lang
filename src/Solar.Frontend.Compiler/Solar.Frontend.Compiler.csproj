@@ -53,11 +53,11 @@
     <Compile Include="DataTransferObjects\CompilerArguments.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ActionSelector.cs" />
+    <Compile Include="Services\CommandLineActionSelector.cs" />
     <Compile Include="Services\Actions\CompileAction.cs" />
     <Compile Include="Services\Actions\ICommandLineAction.cs" />
     <Compile Include="Services\Actions\ShowHelpAction.cs" />
-    <Compile Include="Services\IActionSelector.cs" />
+    <Compile Include="Services\ICommandLineActionSelector.cs" />
     <Compile Include="Program\CompilerProgram.cs" />
     <Compile Include="Program\ICompilerProgram.cs" />
   </ItemGroup>

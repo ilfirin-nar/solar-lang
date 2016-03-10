@@ -8,20 +8,20 @@ namespace Solar.Frontend.Compiler.Program
     internal class CompilerProgram : ICompilerProgram
     {
         private readonly ICommandLineArgumentsParser<CompilerArguments> _commandLineArgumentsParser;
-        private readonly IActionSelector _actionSelector;
+        private readonly ICommandLineActionSelector _commandLineActionSelector;
 
         public CompilerProgram(
             ICommandLineArgumentsParser<CompilerArguments> commandLineArgumentsParser,
-            IActionSelector actionSelector)
+            ICommandLineActionSelector commandLineActionSelector)
         {
             _commandLineArgumentsParser = commandLineArgumentsParser;
-            _actionSelector = actionSelector;
+            _commandLineActionSelector = commandLineActionSelector;
         }
 
         public void Start(IEnumerable<string> args)
         {
             var arguments = _commandLineArgumentsParser.Parse(args);
-            _actionSelector.Select(arguments)(arguments);
+            _commandLineActionSelector.Select(arguments)(arguments);
         }
     }
 }
