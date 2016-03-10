@@ -6,9 +6,17 @@ namespace Solar.Infrastructure.FileSystem.Services
     {
         public void Write(string filePath, string text)
         {
-            using (var outputFile = new StreamWriter(filePath))
+            if (!File.Exists(filePath))
             {
-                outputFile.WriteLine(text);
+                using (var writer = File.CreateText(filePath))
+                {
+                    writer.WriteLineAsync(text);
+                    return;
+                }
+            }
+            using (var writer = File.AppendText(filePath))
+            {
+                writer.WriteLineAsync(text);
             }
         }
     }

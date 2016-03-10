@@ -21,5 +21,17 @@ namespace Solar.Infrastructure.Logging.Tests.Services
             Assert.True(result.Contains(level));
             Assert.True(result.Contains(message));
         }
+
+        [Theory, InjectData]
+        internal void LogMethod_TwoValidMessage_ValidLog(ILogger logger)
+        {
+            const string foo = "foo";
+            const string bar = "bar";
+            logger.Info(foo);
+            logger.Info(bar);
+            var result = GetLogText();
+            Assert.True(result.Contains(foo));
+            Assert.True(result.Contains(bar));
+        }
     }
 }
