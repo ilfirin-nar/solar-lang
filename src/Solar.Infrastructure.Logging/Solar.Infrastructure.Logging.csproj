@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Constants\LoggingLevel.cs" />
+    <Compile Include="DataTransferObjects\ConfigOptions\LoggingConfig.cs" />
     <Compile Include="DataTransferObjects\ExceptionLogMessage.cs" />
     <Compile Include="DataTransferObjects\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.Config\Solar.Infrastructure.Config.csproj">
+      <Project>{B333E524-D2F5-45EC-A546-EF2B8C8F1EE6}</Project>
+      <Name>Solar.Infrastructure.Config</Name>
     </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.FileSystem\Solar.Infrastructure.FileSystem.csproj">
       <Project>{ab2fcb0d-e222-47e8-b837-79284700ed30}</Project>

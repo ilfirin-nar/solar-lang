@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Applicaton.Compiler\Solar.Application.Compiler.csproj">
@@ -74,6 +76,10 @@
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.Config\Solar.Infrastructure.Config.csproj">
+      <Project>{B333E524-D2F5-45EC-A546-EF2B8C8F1EE6}</Project>
+      <Name>Solar.Infrastructure.Config</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Console\Solar.Infrastructure.Console.csproj">
       <Project>{e0c195e2-22a9-47d8-b992-6a7787374cbe}</Project>
       <Name>Solar.Infrastructure.Console</Name>
@@ -81,6 +87,10 @@
     <ProjectReference Include="..\Solar.Infrastructure.ErrorHandling\Solar.Infrastructure.ErrorHandling.csproj">
       <Project>{BEBA6289-7881-405E-ACA2-CA0E4DFC5569}</Project>
       <Name>Solar.Infrastructure.ErrorHandling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.FileSystem\Solar.Infrastructure.FileSystem.csproj">
+      <Project>{AB2FCB0D-E222-47E8-B837-79284700ED30}</Project>
+      <Name>Solar.Infrastructure.FileSystem</Name>
     </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.Logging\Solar.Infrastructure.Logging.csproj">
       <Project>{5BEDEC95-9655-44B9-B5B6-4327C226DE0D}</Project>

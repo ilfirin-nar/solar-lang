@@ -11,5 +11,10 @@
         {
             return (TResult) obj.GetType().GetMethod(name).Invoke(obj, parameters);
         }
+
+        public static object GetPropertyValue(this object obj, string name)
+        {
+            return obj.GetType().GetProperty(name).GetValue(obj);
+        }
     }
 }

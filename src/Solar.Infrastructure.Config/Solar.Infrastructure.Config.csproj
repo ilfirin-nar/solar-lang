@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}</ProjectGuid>
+    <ProjectGuid>{B333E524-D2F5-45EC-A546-EF2B8C8F1EE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solar.Infrastructure.Common</RootNamespace>
-    <AssemblyName>Solar.Infrastructure.Common</AssemblyName>
+    <RootNamespace>Solar.Infrastructure.Config</RootNamespace>
+    <AssemblyName>Solar.Infrastructure.Config</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,39 +44,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
-    <Compile Include="DependencyInjection\Extensions\ServiceRegistryExtensions.cs" />
-    <Compile Include="DependencyInjection\Composition\ISolarCompositionRoot.cs" />
-    <Compile Include="DependencyInjection\Registration\LifetimeFactory.cs" />
-    <Compile Include="DependencyInjection\Registration\ServiceRegistrationFilter.cs" />
-    <Compile Include="Exceptions\SolarException.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Extensions\PropertyInfoExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Extensions\TypeExtensions.cs" />
-    <Compile Include="Interfaces\ApplicationLayer\IApplicationService.cs" />
-    <Compile Include="Interfaces\DomainLayer\IAggregationRoot.cs" />
-    <Compile Include="Interfaces\DomainLayer\IEntityFactory.cs" />
-    <Compile Include="Interfaces\DomainLayer\IEntityRawData.cs" />
-    <Compile Include="Interfaces\DomainLayer\IValueObject.cs" />
-    <Compile Include="Interfaces\DomainLayer\IDomainService.cs" />
-    <Compile Include="Interfaces\DomainLayer\IEntity.cs" />
-    <Compile Include="Interfaces\DomainLayer\IEntityBehaviorService.cs" />
-    <Compile Include="Interfaces\FrontendLayer\IConsoleProgram.cs" />
-    <Compile Include="Interfaces\FrontendLayer\IFrontendService.cs" />
-    <Compile Include="Interfaces\IDirectory.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IGlobalStateObject.cs" />
-    <Compile Include="Services\DataMapper.cs" />
-    <Compile Include="Services\IDataMapper.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObject.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObjectFactory.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IInfrastructureService.cs" />
-    <Compile Include="Interfaces\InfrastructureLayer\IMapper.cs" />
-    <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="GlobalStateObject\Configuration.cs" />
+    <Compile Include="Exceptions\ConfigOptionAlreadySettedException.cs" />
+    <Compile Include="Exceptions\ConfigOptionNotFoundException.cs" />
+    <Compile Include="DataTransferObjects\IConfigSection.cs" />
+    <Compile Include="GlobalStateObject\IConfiguration.cs" />
+    <Compile Include="Services\Configurator.cs" />
+    <Compile Include="Services\IConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">
+      <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
+      <Name>Solar.Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solar.Infrastructure.FileSystem\Solar.Infrastructure.FileSystem.csproj">
+      <Project>{ab2fcb0d-e222-47e8-b837-79284700ed30}</Project>
+      <Name>Solar.Infrastructure.FileSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
