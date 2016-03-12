@@ -1,5 +1,7 @@
-﻿using LightInject.xUnit2;
+﻿using LightInject;
+using LightInject.xUnit2;
 using Solar.Infrastructure.Common.Extensions;
+using Solar.Infrastructure.Config.Services;
 using Solar.Infrastructure.Logging.Services;
 using Xunit;
 
@@ -7,6 +9,19 @@ namespace Solar.Infrastructure.Logging.Tests.Services
 {
     public class LoggerTests : LoggingTestsBase
     {
+        private static IServiceContainer _container;
+
+        public static void Configure(IServiceContainer container)
+        {
+            _container = container;
+        }
+
+        public LoggerTests()
+        {
+            var configurator = _container.GetInstance<IConfigurator>();
+            Configure(configurator);
+        }
+
         [Theory]
         [InjectData("Fatal", "FATAL", "fatal test log")]
         [InjectData("Error", "ERROR", "error test log")]
@@ -23,8 +38,9 @@ namespace Solar.Infrastructure.Logging.Tests.Services
         }
 
         [Theory, InjectData]
-        internal void LogMethod_TwoValidMessage_ValidLog(ILogger logger)
+        internal void LogMethod_TwoValidMessage_ValidLog(ILogger logger, IConfigurator configurator)
         {
+            Configure(configurator);
             const string foo = "foo";
             const string bar = "bar";
             logger.Info(foo);

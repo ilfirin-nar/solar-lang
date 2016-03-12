@@ -8,25 +8,22 @@ namespace Solar.Frontend.Compiler.Program
 {
     internal class CompilerProgram : ICompilerProgram
     {
-        private const string DefaultConfigPath = "config.json";
         private readonly ICommandLineArgumentsParser<CompilerArguments> _commandLineArgumentsParser;
-        private readonly IConfigurator _configurator;
         private readonly ICommandLineActionSelector _commandLineActionSelector;
 
         public CompilerProgram(
-            ICommandLineArgumentsParser<CompilerArguments> commandLineArgumentsParser,
             IConfigurator configurator,
+            ICommandLineArgumentsParser<CompilerArguments> commandLineArgumentsParser,
             ICommandLineActionSelector commandLineActionSelector)
         {
+            configurator.Configure();
             _commandLineArgumentsParser = commandLineArgumentsParser;
-            _configurator = configurator;
             _commandLineActionSelector = commandLineActionSelector;
         }
 
         public void Start(IEnumerable<string> args)
         {
             var arguments = _commandLineArgumentsParser.Parse(args);
-            _configurator.Configure(DefaultConfigPath);
             _commandLineActionSelector.Select(arguments)(arguments);
         }
     }

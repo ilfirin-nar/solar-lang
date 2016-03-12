@@ -1,0 +1,5 @@
+﻿{
+    "LoggingConfig": {
+        "LogFilePath":  "log.log"
+    }
+}

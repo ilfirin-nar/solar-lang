@@ -52,7 +52,7 @@
     <Compile Include="Services\IJsonFileParser.cs" />
     <Compile Include="Services\ITextFileReader.cs" />
     <Compile Include="Services\ITextFileWriter.cs" />
-    <Compile Include="Services\Exceptions\JsonFileNotConsistNestedObjectException.cs" />
+    <Compile Include="Services\Exceptions\JsonNotConsistNestedObjectException.cs" />
     <Compile Include="Services\JsonFileParser.cs" />
     <Compile Include="Services\TextFileReader.cs" />
     <Compile Include="Services\TextFileWriter.cs" />

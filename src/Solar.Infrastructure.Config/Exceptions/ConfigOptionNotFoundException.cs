@@ -1,5 +1,5 @@
 ﻿using System;
-using Solar.Infrastructure.Config.DataTransferObjects;
+using Solar.Infrastructure.Config.GlobalStateObject;
 
 namespace Solar.Infrastructure.Config.Exceptions
 {

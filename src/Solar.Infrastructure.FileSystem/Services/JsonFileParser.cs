@@ -15,26 +15,26 @@ namespace Solar.Infrastructure.FileSystem.Services
             _fileReader = fileReader;
         }
 
-        public IList<object> ParseNestedObject(string jsonFilePath, IEnumerable<Type> types)
+        public IList<object> ParseNestedObjectFromFile(string jsonFilePath, IEnumerable<Type> types)
         {
-            var json = Parse(jsonFilePath);
-            return types.Select(type => ParseNestedObject(jsonFilePath, json, type)).ToList();
+            var jsonString = _fileReader.Read(jsonFilePath);
+            return ParseNestedObjectFromString(jsonString, types);
         }
 
-        private static object ParseNestedObject(string jsonFilePath, JObject json, Type type)
+        public IList<object> ParseNestedObjectFromString(string jsonString, IEnumerable<Type> types)
+        {
+            var json = JObject.Parse(jsonString);
+            return types.Select(type => ParseNestedObject(json, type)).ToList();
+        }
+
+        private static object ParseNestedObject(JObject json, Type type)
         {
             var resultJson = json[type.Name];
             if (resultJson == null)
             {
-                throw new JsonFileNotConsistNestedObjectException(jsonFilePath, type);
+                throw new JsonNotConsistNestedObjectException(json.ToString(), type);
             }
             return resultJson.ToObject(type);
-        }
-
-        private JObject Parse(string jsonFilePath)
-        {
-            var configContent = _fileReader.Read(jsonFilePath);
-            return JObject.Parse(configContent);
         }
     }
 }

@@ -1,27 +1,25 @@
-﻿using System.IO;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Solar.Infrastructure.FileSystem.Services;
 using Solar.Infrastructure.Logging.Constants;
+using Solar.Infrastructure.Logging.GlobalStateObject.ConfigSections;
 using Solar.Infrastructure.Logging.Services.Mappers;
 
 namespace Solar.Infrastructure.Logging.Services
 {
     internal class Logger : ILogger
     {
-        private static readonly string StandartLogFilePath;
         private readonly ITextFileWriter _fileWriter;
         private readonly ILogMapper _mapper;
+        private readonly LoggingConfig _config;
 
-        static Logger()
-        {
-            var currentDirectory = Directory.GetCurrentDirectory();
-            StandartLogFilePath = currentDirectory + "\\log.log";
-        }
-
-        public Logger(ITextFileWriter fileWriter, ILogMapper mapper)
+        public Logger(
+            ITextFileWriter fileWriter,
+            ILogMapper mapper,
+            LoggingConfig config)
         {
             _fileWriter = fileWriter;
             _mapper = mapper;
+            _config = config;
         }
 
         public void Fatal(object message)
@@ -58,7 +56,7 @@ namespace Solar.Infrastructure.Logging.Services
         {
             var log = _mapper.Map(message, level);
             var logJson = JsonConvert.SerializeObject(log);
-            _fileWriter.Write(StandartLogFilePath, logJson);
+            _fileWriter.Write(_config.LogFilePath, logJson);
         }
     }
 }

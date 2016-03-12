@@ -5,6 +5,8 @@ namespace Solar.Infrastructure.Config.Services
 {
     public interface IConfigurator : IInfrastructureService
     {
-        void Configure([NotNull] string configPath);
+        void Configure();
+
+        void Configure([NotNull] string configString);
     }
 }

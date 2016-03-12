@@ -1,5 +1,7 @@
 ﻿using System;
+using LightInject;
 using LightInject.xUnit2;
+using Solar.Infrastructure.Config.Services;
 using Solar.Infrastructure.Logging.Services;
 using Xunit;
 
@@ -7,6 +9,19 @@ namespace Solar.Infrastructure.Logging.Tests.Services
 {
     public class ExceptionsLoggerTests : LoggingTestsBase
     {
+        private static IServiceContainer _container;
+
+        public static void Configure(IServiceContainer container)
+        {
+            _container = container;
+        }
+
+        public ExceptionsLoggerTests()
+        {
+            var configurator = _container.GetInstance<IConfigurator>();
+            Configure(configurator);
+        }
+
         [Theory, InjectData]
         internal void Log_ValidException_ValidLevel(IExceptionsLogger logger)
         {

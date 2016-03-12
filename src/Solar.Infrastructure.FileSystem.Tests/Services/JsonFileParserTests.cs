@@ -30,22 +30,22 @@ namespace Solar.Infrastructure.FileSystem.Tests.Services
         protected override string FileContent => JsonConvert.SerializeObject(_foo);
 
         [Theory, InjectData]
-        internal void ParseNestedObject_ValidNestedJson_ValidResult(IJsonFileParser jsonFileParser)
+        internal void ParseNestedObjectFromFile_ValidNestedJson_ValidResult(IJsonFileParser jsonFileParser)
         {
-            var result = jsonFileParser.ParseNestedObject(TestFilePath, new List<Type> { typeof (Bar), typeof(Buz) });
+            var result = jsonFileParser.ParseNestedObjectFromFile(TestFilePath, new List<Type> { typeof (Bar), typeof(Buz) });
             Assert.Equal(_foo.Bar, result.Single(o => o is Bar));
             Assert.Equal(_foo.Buz, result.Single(o => o is Buz));
         }
 
         [Theory, InjectData]
-        internal void ParseNestedObject_ValidNestedJson_Exception(IJsonFileParser jsonFileParser)
+        internal void ParseNestedObjectFromFile_ValidNestedJson_Exception(IJsonFileParser jsonFileParser)
         {
             try
             {
-                jsonFileParser.ParseNestedObject(TestFilePath, new List<Type> {typeof (Foo)});
+                jsonFileParser.ParseNestedObjectFromFile(TestFilePath, new List<Type> {typeof (Foo)});
                 Assert.True(false);
             }
-            catch (JsonFileNotConsistNestedObjectException)
+            catch (JsonNotConsistNestedObjectException)
             {
                 Assert.True(true);
             }
