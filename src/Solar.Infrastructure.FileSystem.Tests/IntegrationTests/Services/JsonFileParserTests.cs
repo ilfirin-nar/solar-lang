@@ -7,7 +7,7 @@ using Solar.Infrastructure.FileSystem.Services;
 using Solar.Infrastructure.FileSystem.Services.Exceptions;
 using Xunit;
 
-namespace Solar.Infrastructure.FileSystem.Tests.Services
+namespace Solar.Infrastructure.FileSystem.Tests.IntegrationTests.Services
 {
     public sealed class JsonFileParserTests : TextReadersTestsBase
     {

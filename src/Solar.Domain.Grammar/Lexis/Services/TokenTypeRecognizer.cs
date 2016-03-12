@@ -26,8 +26,8 @@ namespace Solar.Domain.Grammar.Lexis.Services
 
         public ITokenType ClarifyTokenType(string lexeme, ITokenType currentTokenType)
         {
-            var tokemTypesExceptCurrent = _tokenTypesDirectory.TokenTypes.ExceptItmes(currentTokenType);
-            var newTokenType = tokemTypesExceptCurrent.FirstOrDefault(t => t.IsMatch(lexeme));
+            var tokenTypesExceptCurrent = _tokenTypesDirectory.TokenTypes.ExceptItmes(currentTokenType);
+            var newTokenType = tokenTypesExceptCurrent.FirstOrDefault(t => t.IsMatch(lexeme));
             return newTokenType ?? currentTokenType;
         }
 

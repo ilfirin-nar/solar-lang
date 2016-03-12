@@ -2,7 +2,7 @@
 using Solar.Infrastructure.FileSystem.Services;
 using Xunit;
 
-namespace Solar.Infrastructure.FileSystem.Tests.Services
+namespace Solar.Infrastructure.FileSystem.Tests.IntegrationTests.Services
 {
     public class TextReaderTests : TextReadersTestsBase
     {

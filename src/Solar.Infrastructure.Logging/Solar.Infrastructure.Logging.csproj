@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Constants\LoggingLevel.cs" />
+    <Compile Include="GlobalStateObject\ConfigSections\ILoggingConfig.cs" />
     <Compile Include="GlobalStateObject\ConfigSections\LoggingConfig.cs" />
     <Compile Include="DataTransferObjects\ExceptionLogMessage.cs" />
     <Compile Include="DataTransferObjects\Log.cs" />

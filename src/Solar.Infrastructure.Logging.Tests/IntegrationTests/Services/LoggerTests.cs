@@ -5,7 +5,7 @@ using Solar.Infrastructure.Config.Services;
 using Solar.Infrastructure.Logging.Services;
 using Xunit;
 
-namespace Solar.Infrastructure.Logging.Tests.Services
+namespace Solar.Infrastructure.Logging.Tests.IntegrationTests.Services
 {
     public class LoggerTests : LoggingTestsBase
     {

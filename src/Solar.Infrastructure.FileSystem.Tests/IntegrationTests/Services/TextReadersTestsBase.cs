@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Solar.Infrastructure.FileSystem.Tests.Services
+namespace Solar.Infrastructure.FileSystem.Tests.IntegrationTests.Services
 {
     public class TextReadersTestsBase : IDisposable
     {

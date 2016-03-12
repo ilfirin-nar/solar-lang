@@ -66,9 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\JsonFileParserTests.cs" />
-    <Compile Include="Services\TextReadersTestsBase.cs" />
-    <Compile Include="Services\TextReaderTests.cs" />
+    <Compile Include="IntegrationTests\Services\JsonFileParserTests.cs" />
+    <Compile Include="IntegrationTests\Services\TextReadersTestsBase.cs" />
+    <Compile Include="IntegrationTests\Services\TextReaderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">

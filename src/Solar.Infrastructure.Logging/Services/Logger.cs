@@ -10,12 +10,12 @@ namespace Solar.Infrastructure.Logging.Services
     {
         private readonly ITextFileWriter _fileWriter;
         private readonly ILogMapper _mapper;
-        private readonly LoggingConfig _config;
+        private readonly ILoggingConfig _config;
 
         public Logger(
             ITextFileWriter fileWriter,
             ILogMapper mapper,
-            LoggingConfig config)
+            ILoggingConfig config)
         {
             _fileWriter = fileWriter;
             _mapper = mapper;

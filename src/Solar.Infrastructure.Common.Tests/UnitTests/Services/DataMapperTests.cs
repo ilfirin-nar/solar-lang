@@ -4,7 +4,7 @@ using Solar.Infrastructure.Common.Interfaces.InfrastructureLayer;
 using Solar.Infrastructure.Common.Services;
 using Xunit;
 
-namespace Solar.Infrastructure.Common.Tests.Services
+namespace Solar.Infrastructure.Common.Tests.UnitTests.Services
 {
     internal class DataMapperTests
     {

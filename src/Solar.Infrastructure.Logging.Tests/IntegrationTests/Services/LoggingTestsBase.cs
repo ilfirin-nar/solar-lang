@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Solar.Infrastructure.Config.Services;
 using Solar.Infrastructure.Logging.GlobalStateObject.ConfigSections;
 
-namespace Solar.Infrastructure.Logging.Tests.Services
+namespace Solar.Infrastructure.Logging.Tests.IntegrationTests.Services
 {
     public abstract class LoggingTestsBase : IDisposable
     {

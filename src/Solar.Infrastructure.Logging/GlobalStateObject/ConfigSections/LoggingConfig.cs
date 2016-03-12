@@ -1,8 +1,6 @@
-﻿using Solar.Infrastructure.Config.GlobalStateObject;
-
-namespace Solar.Infrastructure.Logging.GlobalStateObject.ConfigSections
+﻿namespace Solar.Infrastructure.Logging.GlobalStateObject.ConfigSections
 {
-    public class LoggingConfig : IConfigSection
+    internal class LoggingConfig : ILoggingConfig
     {
          public string LogFilePath { get; set; }
     }

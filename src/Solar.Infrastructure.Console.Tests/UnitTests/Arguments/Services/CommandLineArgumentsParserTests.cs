@@ -6,7 +6,7 @@ using Solar.Infrastructure.Console.Arguments.Services;
 using Solar.Infrastructure.Console.Arguments.Services.Exceptions;
 using Xunit;
 
-namespace Solar.Infrastructure.Console.Tests.Arguments.Services
+namespace Solar.Infrastructure.Console.Tests.UnitTests.Arguments.Services
 {
     public class CommandLineArgumentsParserTests
     {
