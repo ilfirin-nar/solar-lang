@@ -1,6 +1,6 @@
 ﻿using LightInject;
 using LightInject.xUnit2;
-using Solar.Infrastructure.Common.Extensions;
+using Solar.Infrastructure.Common.Extensions.ObjectExtensions;
 using Solar.Infrastructure.Config.Services;
 using Solar.Infrastructure.Logging.Services;
 using Xunit;

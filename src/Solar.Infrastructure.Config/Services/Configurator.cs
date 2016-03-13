@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Omu.ValueInjecter;
+using Solar.Infrastructure.Common.Extensions.ObjectExtensions;
 using Solar.Infrastructure.Config.GlobalStateObject;
 using Solar.Infrastructure.FileSystem.Services;
 
@@ -16,8 +16,8 @@ namespace Solar.Infrastructure.Config.Services
 
         public Configurator(IReadOnlyList<IConfigSection> configSections, IJsonFileParser fileParser)
         {
-            _configSectionsTypes = configSections.Select(o => o.GetType()).Distinct();
-            _configSections = configSections.Distinct().ToList();
+            _configSectionsTypes = configSections.Select(o => o.GetType());
+            _configSections = configSections.ToList();
             _fileParser = fileParser;
         }
 
@@ -37,10 +37,8 @@ namespace Solar.Infrastructure.Config.Services
         {
             foreach (var configSection in configSections)
             {
-                foreach (var section in _configSections.Where(cs => cs.GetType() == configSection.GetType()))
-                {
-                    section.InjectFrom(configSection);
-                }
+                var section = _configSections.Single(cs => cs.GetType() == configSection.GetType());
+                section.Map(configSection);
             }
         }
     }

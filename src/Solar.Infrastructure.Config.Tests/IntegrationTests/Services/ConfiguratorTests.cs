@@ -1,4 +1,6 @@
-﻿using LightInject;
+﻿using System.Collections.Generic;
+using System.Linq;
+using LightInject;
 using LightInject.xUnit2;
 using Newtonsoft.Json;
 using Solar.Infrastructure.Common.DependencyInjection.Extensions;
@@ -18,7 +20,7 @@ namespace Solar.Infrastructure.Config.Tests.IntegrationTests.Services
         }
 
         [Theory, InjectData]
-        internal void Configure_ValidConfig_ValidResult(IConfigurator configurator, FooConfig config)
+        internal void Configure_ValidConfig_ValidResult(IConfigurator configurator, IFooConfig config)
         {
             var fooConfig = new FooConfig { Bar = "test " };
             var configString = $"{{ \"FooConfig\" : {JsonConvert.SerializeObject(fooConfig)} }}";
@@ -28,7 +30,18 @@ namespace Solar.Infrastructure.Config.Tests.IntegrationTests.Services
             Assert.Equal(fooConfig, config);
         }
 
-        internal class FooConfig : IConfigSection
+        [Theory, InjectData]
+        internal void Configure_ValidIEnumerableConfig_ValidResult(IConfigurator configurator, IEnumerable<IConfigSection> configs)
+        {
+            var fooConfig = new FooConfig { Bar = "test " };
+            var configString = $"{{ \"FooConfig\" : {JsonConvert.SerializeObject(fooConfig)} }}";
+
+            configurator.Configure(configString);
+
+            Assert.Equal(1, configs.Count());
+        }
+
+        internal class FooConfig : IFooConfig
         {
             public string Bar { get; set; }
 
@@ -49,5 +62,10 @@ namespace Solar.Infrastructure.Config.Tests.IntegrationTests.Services
                 return Bar?.GetHashCode() ?? 0;
             }
         }
+    }
+
+    internal interface IFooConfig : IConfigSection
+    {
+        string Bar { get; }
     }
 }

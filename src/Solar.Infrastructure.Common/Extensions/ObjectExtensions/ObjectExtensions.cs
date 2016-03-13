@@ -1,4 +1,4 @@
-﻿namespace Solar.Infrastructure.Common.Extensions
+﻿namespace Solar.Infrastructure.Common.Extensions.ObjectExtensions
 {
     public static class ObjectExtensions
     {

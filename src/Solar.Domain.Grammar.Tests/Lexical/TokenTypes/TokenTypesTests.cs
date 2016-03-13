@@ -1,4 +1,6 @@
-﻿using LightInject.xUnit2;
+﻿using System;
+using LightInject.xUnit2;
+using Solar.Domain.Grammar.Lexis.Directories;
 using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Operators;
 using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Whitespaces;
 using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Identifiers;
@@ -10,212 +12,104 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
     public class TokenTypesTests
     {
         [Theory]
-        [InjectData(" ")]
-        internal void SpaceTokenType_IsMatch(SpaceTokenType tokenType, string value)
+        [InjectData(typeof(SpaceTokenType), " ")]
+        [InjectData(typeof(IndentTokenType), "  ")]
+        [InjectData(typeof(NewLineTokenType), "\n\r")]
+        [InjectData(typeof(ModelKeywordTokenType), "model")]
+        [InjectData(typeof(ServiceKeywordTokenType), "service")]
+        [InjectData(typeof(TypeIdentifierTokenType), "F")]
+        [InjectData(typeof(TypeIdentifierTokenType), "FooBar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "Foo2bar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "Foo2Bar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "FFFooBar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "f")]
+        [InjectData(typeof(LocalIdentifierTokenType), "fooBar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "foo2bar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "foo2Bar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "fFFooBar")]
+        [InjectData(typeof(GreaterThenOperatorTokenType), ">")]
+        [InjectData(typeof(LessThenOperatorTokenType), "<")]
+        [InjectData(typeof(AssigmentOperatorTokenType), "<-")]
+        internal void IsMatch(ITokenTypesDirectory tokenTypesDirectory, Type type, string value)
         {
-            Assert.True(tokenType.IsMatch(value));
+            Assert.True(tokenTypesDirectory.Get(type).IsMatch(value));
         }
 
         [Theory]
-        [InjectData("")]
-        [InjectData("  ")]
-        [InjectData(" _")]
-        [InjectData("d ")]
-        [InjectData("ef")]
-        internal void SpaceTokenType_IsNotMatch(SpaceTokenType tokenType, string value)
+        [InjectData(typeof(SpaceTokenType), "")]
+        [InjectData(typeof(SpaceTokenType), "  ")]
+        [InjectData(typeof(SpaceTokenType), " _")]
+        [InjectData(typeof(SpaceTokenType), "d ")]
+        [InjectData(typeof(SpaceTokenType), "ef")]
+        [InjectData(typeof(IndentTokenType), "")]
+        [InjectData(typeof(IndentTokenType), " ")]
+        [InjectData(typeof(IndentTokenType), "   ")]
+        [InjectData(typeof(IndentTokenType), "d  ")]
+        [InjectData(typeof(IndentTokenType), "  d")]
+        [InjectData(typeof(IndentTokenType), "ef")]
+        [InjectData(typeof(NewLineTokenType), "")]
+        [InjectData(typeof(NewLineTokenType), " ")]
+        [InjectData(typeof(NewLineTokenType), "  ")]
+        [InjectData(typeof(NewLineTokenType), "(")]
+        [InjectData(typeof(NewLineTokenType), "\r\n")]
+        [InjectData(typeof(NewLineTokenType), "\n\r ")]
+        [InjectData(typeof(NewLineTokenType), " \n\r")]
+        [InjectData(typeof(NewLineTokenType), " \n\r ")]
+        [InjectData(typeof(NewLineTokenType), "wg2g2\n\r2g23g2")]
+        [InjectData(typeof(ModelKeywordTokenType), "")]
+        [InjectData(typeof(ModelKeywordTokenType), " ")]
+        [InjectData(typeof(ModelKeywordTokenType), " model")]
+        [InjectData(typeof(ModelKeywordTokenType), "model ")]
+        [InjectData(typeof(ModelKeywordTokenType), "m")]
+        [InjectData(typeof(ServiceKeywordTokenType), "")]
+        [InjectData(typeof(ServiceKeywordTokenType), " ")]
+        [InjectData(typeof(ServiceKeywordTokenType), " service")]
+        [InjectData(typeof(ServiceKeywordTokenType), "service ")]
+        [InjectData(typeof(ServiceKeywordTokenType), "s")]
+        [InjectData(typeof(TypeIdentifierTokenType), "")]
+        [InjectData(typeof(TypeIdentifierTokenType), " ")]
+        [InjectData(typeof(TypeIdentifierTokenType), "f")]
+        [InjectData(typeof(TypeIdentifierTokenType), "")]
+        [InjectData(typeof(TypeIdentifierTokenType), "fooBar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "3fooBar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "3FooBar")]
+        [InjectData(typeof(TypeIdentifierTokenType), " FooBar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "FooBar ")]
+        [InjectData(typeof(TypeIdentifierTokenType), " FooBar ")]
+        [InjectData(typeof(TypeIdentifierTokenType), "Foo_Bar")]
+        [InjectData(typeof(TypeIdentifierTokenType), "Foo/Bar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "")]
+        [InjectData(typeof(LocalIdentifierTokenType), " ")]
+        [InjectData(typeof(LocalIdentifierTokenType), "F")]
+        [InjectData(typeof(LocalIdentifierTokenType), "")]
+        [InjectData(typeof(LocalIdentifierTokenType), "FooBar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "3fooBar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "3fooBar")]
+        [InjectData(typeof(LocalIdentifierTokenType), " fooBar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "fooBar ")]
+        [InjectData(typeof(LocalIdentifierTokenType), " fooBar ")]
+        [InjectData(typeof(LocalIdentifierTokenType), "foo_bar")]
+        [InjectData(typeof(LocalIdentifierTokenType), "Foo/Bar")]
+        [InjectData(typeof(GreaterThenOperatorTokenType), "")]
+        [InjectData(typeof(GreaterThenOperatorTokenType), "> ")]
+        [InjectData(typeof(GreaterThenOperatorTokenType), " >")]
+        [InjectData(typeof(GreaterThenOperatorTokenType), ">>")]
+        [InjectData(typeof(GreaterThenOperatorTokenType), ">_")]
+        [InjectData(typeof(LessThenOperatorTokenType), "")]
+        [InjectData(typeof(LessThenOperatorTokenType), "< ")]
+        [InjectData(typeof(LessThenOperatorTokenType), " <")]
+        [InjectData(typeof(LessThenOperatorTokenType), "<<")]
+        [InjectData(typeof(LessThenOperatorTokenType), "<-")]
+        [InjectData(typeof(AssigmentOperatorTokenType), "")]
+        [InjectData(typeof(AssigmentOperatorTokenType), "< ")]
+        [InjectData(typeof(AssigmentOperatorTokenType), " <")]
+        [InjectData(typeof(AssigmentOperatorTokenType), "<- ")]
+        [InjectData(typeof(AssigmentOperatorTokenType), " <-")]
+        [InjectData(typeof(AssigmentOperatorTokenType), "<-<")]
+        [InjectData(typeof(AssigmentOperatorTokenType), "<<")]
+        internal void IsNotMatch(ITokenTypesDirectory tokenTypesDirectory, Type type, string value)
         {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("  ")]
-        internal void IndentTokenType_IsMatch(IndentTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData(" ")]
-        [InjectData("   ")]
-        [InjectData("d  ")]
-        [InjectData("  d")]
-        [InjectData("ef")]
-        internal void IndentTokenType_IsNotMatch(IndentTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("\n\r")]
-        internal void NewLineTokenType_IsMatch(NewLineTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData(" ")]
-        [InjectData("  ")]
-        [InjectData("(")]
-        [InjectData("\r\n")]
-        [InjectData("\n\r ")]
-        [InjectData(" \n\r")]
-        [InjectData(" \n\r ")]
-        [InjectData("wg2g2\n\r2g23g2")]
-        internal void NewLineTokenType_IsNotMatch(NewLineTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("model")]
-        internal void ModelKeywordTokenType_IsMatch(ModelKeywordTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData(" ")]
-        [InjectData(" model")]
-        [InjectData("model ")]
-        [InjectData("m")]
-        internal void ModelKeywordTokenType_IsNotMatch(ModelKeywordTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("service")]
-        internal void ServiceKeywordTokenType_IsMatch(ServiceKeywordTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData(" ")]
-        [InjectData(" service")]
-        [InjectData("service ")]
-        [InjectData("s")]
-        internal void ServiceKeywordTokenType_IsNotMatch(ServiceKeywordTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("F")]
-        [InjectData("FooBar")]
-        [InjectData("Foo2bar")]
-        [InjectData("Foo2Bar")]
-        [InjectData("FFFooBar")]
-        internal void TypeIdentifierTokenType_IsMatch(TypeIdentifierTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData(" ")]
-        [InjectData("f")]
-        [InjectData("")]
-        [InjectData("fooBar")]
-        [InjectData("3fooBar")]
-        [InjectData("3FooBar")]
-        [InjectData(" FooBar")]
-        [InjectData("FooBar ")]
-        [InjectData(" FooBar ")]
-        [InjectData("Foo_Bar")]
-        [InjectData("Foo/Bar")]
-        internal void TypeIdentifierTokenType_IsNotMatch(TypeIdentifierTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("f")]
-        [InjectData("fooBar")]
-        [InjectData("foo2bar")]
-        [InjectData("foo2Bar")]
-        [InjectData("fFFooBar")]
-        internal void LocalIdentifierTokenType_IsMatch(LocalIdentifierTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData(" ")]
-        [InjectData("F")]
-        [InjectData("")]
-        [InjectData("FooBar")]
-        [InjectData("3fooBar")]
-        [InjectData("3fooBar")]
-        [InjectData(" fooBar")]
-        [InjectData("fooBar ")]
-        [InjectData(" fooBar ")]
-        [InjectData("foo_bar")]
-        [InjectData("Foo/Bar")]
-        internal void LocalIdentifierTokenType_IsNotMatch(LocalIdentifierTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData(">")]
-        internal void GreaterThenOperatorTokenType_IsMatch(GreaterThenOperatorTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData("> ")]
-        [InjectData(" >")]
-        [InjectData(">>")]
-        [InjectData(">_")]
-        internal void GreaterThenOperatorTokenType_IsNotMatch(GreaterThenOperatorTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("<")]
-        internal void LessThenOperatorTokenType_IsMatch(LessThenOperatorTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData("< ")]
-        [InjectData(" <")]
-        [InjectData("<<")]
-        [InjectData("<-")]
-        internal void LessThenOperatorTokenType_IsNotMatch(LessThenOperatorTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("<-")]
-        internal void AssigmentOperatorTokenType_IsMatch(AssigmentOperatorTokenType tokenType, string value)
-        {
-            Assert.True(tokenType.IsMatch(value));
-        }
-
-        [Theory]
-        [InjectData("")]
-        [InjectData("< ")]
-        [InjectData(" <")]
-        [InjectData("<- ")]
-        [InjectData(" <-")]
-        [InjectData("<-<")]
-        [InjectData("<<")]
-        internal void AssigmentOperatorTokenType_IsNotMatch(AssigmentOperatorTokenType tokenType, string value)
-        {
-            Assert.False(tokenType.IsMatch(value));
+            Assert.False(tokenTypesDirectory.Get(type).IsMatch(value));
         }
     }
 }
