@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solar.Infrastructure.Config
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solar.Infrastructure.Config.Tests", "Solar.Infrastructure.Config.Tests\Solar.Infrastructure.Config.Tests.csproj", "{170827AB-0B88-4144-9AD1-365552A4FD14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solar.Frontend.Compiler.Tests", "Solar.Frontend.Compiler.Tests\Solar.Frontend.Compiler.Tests.csproj", "{D0698D18-F1FD-4EE2-8727-59D54DCE2DDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{170827AB-0B88-4144-9AD1-365552A4FD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{170827AB-0B88-4144-9AD1-365552A4FD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{170827AB-0B88-4144-9AD1-365552A4FD14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0698D18-F1FD-4EE2-8727-59D54DCE2DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0698D18-F1FD-4EE2-8727-59D54DCE2DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0698D18-F1FD-4EE2-8727-59D54DCE2DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0698D18-F1FD-4EE2-8727-59D54DCE2DDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
