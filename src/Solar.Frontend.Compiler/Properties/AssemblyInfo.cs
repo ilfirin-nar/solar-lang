@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using LightInject;
 using Solar.Frontend.Compiler;
@@ -36,4 +37,5 @@ using Solar.Frontend.Compiler;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
+[assembly: InternalsVisibleTo("Solar.Frontend.Compiler.Tests")]
 [assembly: CompositionRootType(typeof(CompositionRoot))]
