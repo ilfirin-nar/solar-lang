@@ -13,7 +13,17 @@ namespace Solar.Frontend.Compiler.Tests.UnitTests.Services
 
         public static void Configure(IServiceContainer container)
         {
-            container.RegisterInstance(new Mock<ICommandLineAction>().Object);
+            // TODO Fix mocks
+            var obj = new Mock<ICommandLineAction>().Object;
+            container.Override(
+                r => r.ServiceType == typeof (ICommandLineAction),
+                (f, r) =>
+                {                    
+                    r.Value = obj;
+                    r.ImplementingType = obj.GetType();
+                    return r;
+                });
+            //container.RegisterInstance(new Mock<ICommandLineAction>().Object);
         }
 
         [Theory, InjectData]
