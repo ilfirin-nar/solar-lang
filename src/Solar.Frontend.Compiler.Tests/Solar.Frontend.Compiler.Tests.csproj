@@ -36,10 +36,6 @@
       <HintPath>..\packages\LightInject.4.0.8\lib\net46\LightInject.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LightInject.Mocking, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.Mocking.1.0.0.5\lib\net45\LightInject.Mocking.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="LightInject.xUnit2, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LightInject.xUnit.2.0.0.5\lib\net46\LightInject.xUnit2.dll</HintPath>
       <Private>True</Private>
