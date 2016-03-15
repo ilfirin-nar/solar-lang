@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using LightInject;
-using LightInject.xUnit2;
-using Moq;
-using Solar.Frontend.Compiler.Services;
-using Solar.Frontend.Compiler.Services.Actions;
+﻿using DryIoc;
 using Xunit;
 
 namespace Solar.Frontend.Compiler.Tests.UnitTests.Services
@@ -11,25 +6,29 @@ namespace Solar.Frontend.Compiler.Tests.UnitTests.Services
     public class CommandLineActionSelectorTests
     {
 
-        public static void Configure(IServiceContainer container)
+        //public static void Configure(IServiceContainer container)
+        //{
+        //    //container.RegisterInstance(new Mock<ICommandLineAction>().Object);
+        //}
+
+        //[Theory, InjectData]
+        //internal void Select_ValidResult(ICommandLineActionSelector selector)
+        //{
+        //    Assert.True(true); // TODO Fix it
+        //}
+        [Fact]
+        internal void Select_ValidResult()
         {
-            // TODO Fix mocks
-            var obj = new Mock<ICommandLineAction>().Object;
-            container.Override(
-                r => r.ServiceType == typeof (ICommandLineAction),
-                (f, r) =>
-                {                    
-                    r.Value = obj;
-                    r.ImplementingType = obj.GetType();
-                    return r;
-                });
-            //container.RegisterInstance(new Mock<ICommandLineAction>().Object);
+            var container = new Container();
+            container.RegisterMany(new[] { GetType().Assembly }, type => type == typeof(IService));
+            var foo = container.Resolve<IFoo>();
+            Assert.NotNull(foo);
         }
 
-        [Theory, InjectData]
-        internal void Select_ValidResult(ICommandLineActionSelector selector)
-        {
-            Assert.True(true); // TODO Fix it
-        }
+        internal interface IService { }
+        internal interface IFoo : IService { }
+        internal class Foo : IFoo {}
+        internal interface IBar : IService { }
+        internal class Bar : IBar { }
     }
 }
