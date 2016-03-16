@@ -1,34 +1,32 @@
-﻿using DryIoc;
+﻿using LightInject;
+using LightInject.xUnit2;
+using Moq;
+using Solar.Frontend.Compiler.Services;
+using Solar.Frontend.Compiler.Services.Actions;
 using Xunit;
 
 namespace Solar.Frontend.Compiler.Tests.UnitTests.Services
 {
     public class CommandLineActionSelectorTests
     {
-
-        //public static void Configure(IServiceContainer container)
-        //{
-        //    //container.RegisterInstance(new Mock<ICommandLineAction>().Object);
-        //}
-
-        //[Theory, InjectData]
-        //internal void Select_ValidResult(ICommandLineActionSelector selector)
-        //{
-        //    Assert.True(true); // TODO Fix it
-        //}
-        [Fact]
-        internal void Select_ValidResult()
+        public static void Configure(IServiceContainer container)
         {
-            var container = new Container();
-            container.RegisterMany(new[] { GetType().Assembly }, type => type == typeof(IService));
-            var foo = container.Resolve<IFoo>();
-            Assert.NotNull(foo);
+            var mock = new Mock<ICommandLineAction>();
+            container.RegisterInstance(mock.Object);
+            //container.Override(r => r.ServiceType == typeof(IFoo),
+            //    (f, r) => new ServiceRegistration()
+            //    {
+            //        ServiceType = typeof(IFoo),
+            //        ImplementingType = typeof(NewFoo),
+            //        Lifetime = null,
+            //        ServiceName = ""
+            //    });
         }
 
-        internal interface IService { }
-        internal interface IFoo : IService { }
-        internal class Foo : IFoo {}
-        internal interface IBar : IService { }
-        internal class Bar : IBar { }
+        [Theory, InjectData]
+        internal void Select_ValidResult(ICommandLineActionSelector selector)
+        {
+            
+        }
     }
 }
