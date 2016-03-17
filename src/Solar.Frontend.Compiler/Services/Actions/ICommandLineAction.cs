@@ -3,8 +3,8 @@ using Solar.Infrastructure.Common.Interfaces.FrontendLayer;
 
 namespace Solar.Frontend.Compiler.Services.Actions
 {
-    public interface ICommandLineAction :IFrontendService
+    internal interface ICommandLineAction :IFrontendService
     {
-        void Action(CompilerArguments arguments);
+        void Action(ICompilerArguments arguments);
     }
 }

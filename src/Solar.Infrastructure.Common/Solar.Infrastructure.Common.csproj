@@ -50,6 +50,7 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="DependencyInjection\Extensions\ServiceRegistryExtensions.cs" />
     <Compile Include="DependencyInjection\Composition\ISolarCompositionRoot.cs" />
+    <Compile Include="DependencyInjection\Extensions\MockingExtension.cs" />
     <Compile Include="DependencyInjection\Registration\LifetimeFactory.cs" />
     <Compile Include="DependencyInjection\Registration\ServiceRegistrationFilter.cs" />
     <Compile Include="Exceptions\SolarException.cs" />
