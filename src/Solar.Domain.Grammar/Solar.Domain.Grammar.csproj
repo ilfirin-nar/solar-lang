@@ -53,7 +53,7 @@
     <Compile Include="Lexis\Directories\IKeywordsDirectory.cs" />
     <Compile Include="Lexis\Directories\ITokenTypesDirectory.cs" />
     <Compile Include="Lexis\Directories\KeywordsDirectory.cs" />
-    <Compile Include="Lexis\Constants\LexemesRegularExpressions.cs" />
+    <Compile Include="Lexis\Static\LexemesRegularExpressions.cs" />
     <Compile Include="Lexis\Directories\TokenTypesDirectory.cs" />
     <Compile Include="Lexis\Services\Exceptions\UnrecognizedTokenException.cs" />
     <Compile Include="Lexis\Services\ITokenTypeRecognizer.cs" />

@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Solar.Domain.Grammar.Lexis.Constants
+namespace Solar.Domain.Grammar.Lexis.Static
 {
     public static class LexemesRegularExpressions
     {
