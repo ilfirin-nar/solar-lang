@@ -67,6 +67,7 @@
     <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Identifiers\LocalIdentifierTokenType.cs" />
     <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Identifiers\TypeIdentifierTokenType.cs" />
     <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Keywords\IKeywordTokenType.cs" />
+    <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Keywords\InterfaceKeywordTokenType.cs" />
     <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Keywords\KeywordTokenTypeBase.cs" />
     <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Keywords\ModelKeywordTokenType.cs" />
     <Compile Include="Lexis\ValueObjects\TokenTypes\Words\Keywords\ServiceKeywordTokenType.cs" />
@@ -94,7 +95,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Grammar\grammar.ebnf" />
+    <None Include="Ebnf\grammar.ebnf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

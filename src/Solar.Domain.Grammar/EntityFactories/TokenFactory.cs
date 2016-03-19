@@ -10,9 +10,9 @@ namespace Solar.Domain.Grammar.EntityFactories
     {
         public Token Produce(TokenRawData rawData)
         {
-            var lexem = new Lexeme(rawData.Lexeme);
+            var lexeme = new Lexeme(rawData.Lexeme);
             var tokenType = rawData.TokenType;
-            return new Token(lexem, tokenType);
+            return new Token(lexeme, tokenType);
         }
 
         public IEnumerable<Token> Manufacture(IEnumerable<TokenRawData> rawData)
