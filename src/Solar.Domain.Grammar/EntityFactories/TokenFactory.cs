@@ -2,7 +2,6 @@
 using System.Linq;
 using Solar.Domain.Grammar.Entities;
 using Solar.Domain.Grammar.EntityFactories.RawData;
-using Solar.Domain.Grammar.ValueObjects;
 
 namespace Solar.Domain.Grammar.EntityFactories
 {
@@ -10,9 +9,7 @@ namespace Solar.Domain.Grammar.EntityFactories
     {
         public Token Produce(TokenRawData rawData)
         {
-            var lexeme = new Lexeme(rawData.Lexeme);
-            var tokenType = rawData.TokenType;
-            return new Token(lexeme, tokenType);
+            return new Token(rawData.Lexeme, rawData.TokenType);
         }
 
         public IEnumerable<Token> Manufacture(IEnumerable<TokenRawData> rawData)
