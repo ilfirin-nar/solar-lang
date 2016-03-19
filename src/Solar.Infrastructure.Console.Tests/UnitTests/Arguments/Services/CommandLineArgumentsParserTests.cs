@@ -17,16 +17,16 @@ namespace Solar.Infrastructure.Console.Tests.UnitTests.Arguments.Services
                 Foos = new List<string>();
             }
 
-            [ConsoleOption("f")]
+            [ConsoleOption(Option = "f")]
             public string Foo { get; set; }
 
-            [ConsoleOption("fs", AllowMultiple = true)]
+            [ConsoleOption(Option = "fs", AllowMultiple = true)]
             public IList<string> Foos { get; set; }
 
-            [ConsoleOption("b")]
+            [ConsoleOption(Option = "b")]
             public string Bar { get; set; }
 
-            [ConsoleOption("r", IsRequired = true)]
+            [ConsoleOption(Option = "r", IsRequired = true)]
             public string Rock { get; set; }
         }
 

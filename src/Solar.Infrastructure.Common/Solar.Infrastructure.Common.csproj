@@ -53,6 +53,10 @@
     <Compile Include="DependencyInjection\Extensions\MockingExtension.cs" />
     <Compile Include="DependencyInjection\Registration\LifetimeFactory.cs" />
     <Compile Include="DependencyInjection\Registration\ServiceRegistrationFilter.cs" />
+    <Compile Include="Exceptions\ApplicationException.cs" />
+    <Compile Include="Exceptions\DomainException.cs" />
+    <Compile Include="Exceptions\FrontendException.cs" />
+    <Compile Include="Exceptions\InfrastructureException.cs" />
     <Compile Include="Exceptions\SolarException.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Solar.Frontend.Compiler.Services.Actions;
 
-namespace Solar.Frontend.Compiler.Services
+namespace Solar.Infrastructure.Console.Actions.Directory
 {
     internal class CommandLineActionsDirectory : ICommandLineActionsDirectory
     {
@@ -10,6 +9,6 @@ namespace Solar.Frontend.Compiler.Services
             Actions = actions;
         }
 
-        public IReadOnlyList<ICommandLineAction> Actions { get; private set; }
+        public IReadOnlyList<ICommandLineAction> Actions { get; }
     }
 }

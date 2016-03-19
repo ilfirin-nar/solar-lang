@@ -1,4 +1,7 @@
-﻿namespace Solar.Infrastructure.Common.Extensions.ObjectExtensions
+﻿using System;
+using System.Collections.Generic;
+
+namespace Solar.Infrastructure.Common.Extensions.ObjectExtensions
 {
     public static class ObjectExtensions
     {
@@ -15,6 +18,12 @@
         public static object GetPropertyValue(this object obj, string name)
         {
             return obj.GetType().GetProperty(name).GetValue(obj);
+        }
+
+        public static IEnumerable<TAttribute> GetPropertiesAttributes<TAttribute>(this object obj)
+            where TAttribute : Attribute
+        {
+            return obj.GetType().GetTypePropertiesAttributes<TAttribute>();
         }
     }
 }

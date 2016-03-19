@@ -1,10 +1,45 @@
-﻿using System;
+﻿/*****************************************************************************   
+    The MIT License (MIT)
+
+    Copyright (c) 2014 bernhard.richter@gmail.com
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+******************************************************************************
+    LightInject.Mocking version 1.0.0.5
+    http://seesharper.github.io/LightInject/
+    http://twitter.com/bernhardrichter       
+******************************************************************************/
+
+using System;
 using System.Linq;
 using LightInject;
 
+[module: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1633:FileMustHaveHeader", Justification = "Custom header.")]
+[module: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "All public members are documented.")]
+
 namespace Solar.Infrastructure.Common.DependencyInjection.Extensions
 {
-    public static class MockingExtension
+    /// <summary>
+    /// Extends the <see cref="IServiceRegistry"/> interface.
+    /// </summary>
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    internal static class LightInjectMocking
     {
         private static readonly ThreadSafeDictionary<Tuple<IServiceRegistry, Type, string>, ServiceRegistration> MockedServices
             = new ThreadSafeDictionary<Tuple<IServiceRegistry, Type, string>, ServiceRegistration>();
@@ -12,11 +47,24 @@ namespace Solar.Infrastructure.Common.DependencyInjection.Extensions
         private static readonly ThreadSafeDictionary<Tuple<IServiceRegistry, Type, string>, ServiceRegistration> ServicesMocks
             = new ThreadSafeDictionary<Tuple<IServiceRegistry, Type, string>, ServiceRegistration>();
 
+        /// <summary>
+        /// Allows a service to be mocked using the given <paramref name="implementingType"/>.
+        /// </summary>
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="serviceType">The type of service to mock.</param>        
+        /// <param name="implementingType">The type that represents the mock to be created.</param>
         public static void StartMocking(this IServiceRegistry serviceRegistry, Type serviceType, Type implementingType)
         {
             StartMocking(serviceRegistry, serviceType, string.Empty, implementingType);
         }
 
+        /// <summary>
+        /// Allows a named service to be mocked using the given <paramref name="implementingType"/>.
+        /// </summary>
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="serviceType">The type of service to mock.</param>
+        /// <param name="serviceName">The name of the service to mock.</param>
+        /// <param name="implementingType">The type that represents the mock to be created.</param>
         public static void StartMocking(this IServiceRegistry serviceRegistry, Type serviceType, string serviceName, Type implementingType)
         {
             var key = CreateServiceKey(serviceRegistry, serviceType, serviceName);
@@ -35,6 +83,13 @@ namespace Solar.Infrastructure.Common.DependencyInjection.Extensions
             ServicesMocks.TryAdd(key, mockServiceRegistration);
         }
 
+        /// <summary>
+        /// Allows a named service to be mocked using the given <paramref name="mockFactory"/>.
+        /// </summary>
+        /// <typeparam name="TService">The type of service to mock.</typeparam>
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="mockFactory">The factory delegate that creates the mock instance.</param>
+        /// <param name="serviceName">The name of the service to mock.</param>
         public static void StartMocking<TService>(this IServiceRegistry serviceRegistry, Func<TService> mockFactory, string serviceName) where TService : class
         {
             var key = CreateServiceKey(serviceRegistry, typeof(TService), serviceName);
@@ -52,22 +107,45 @@ namespace Solar.Infrastructure.Common.DependencyInjection.Extensions
             serviceRegistry.Register(mockServiceRegistration);
             ServicesMocks.TryAdd(key, mockServiceRegistration);
         }
-     
+
+        /// <summary>
+        /// Allows a service to be mocked using the given <paramref name="mockFactory"/>.
+        /// </summary>
+        /// <typeparam name="TService">The type of service to mock.</typeparam>
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="mockFactory">The factory delegate that creates the mock instance.</param>        
         public static void StartMocking<TService>(this IServiceRegistry serviceRegistry, Func<TService> mockFactory) where TService : class
         {
             StartMocking(serviceRegistry, mockFactory, string.Empty);
         }
 
+        /// <summary>
+        /// Ends mocking the <typeparamref name="TService"/> with the given <paramref name="serviceName"/>.
+        /// </summary>
+        /// <typeparam name="TService">The type of service for which to end mocking.</typeparam>
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="serviceName">The name of the service for which to end mocking.</param>
         public static void EndMocking<TService>(this IServiceRegistry serviceRegistry, string serviceName)
         {
             EndMocking(serviceRegistry, typeof(TService), serviceName);
         }
 
+        /// <summary>
+        /// Ends mocking the <paramref name="serviceType"/>.
+        /// </summary>        
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="serviceType">The type of service for which to end mocking.</param>        
         public static void EndMocking(this IServiceRegistry serviceRegistry, Type serviceType)
         {
             EndMocking(serviceRegistry, serviceType, string.Empty);
         }
 
+        /// <summary>
+        /// Ends mocking the <paramref name="serviceType"/> with the given <paramref name="serviceName"/>.
+        /// </summary>        
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>
+        /// <param name="serviceType">The type of service for which to end mocking.</param>
+        /// <param name="serviceName">The name of the service for which to end mocking.</param>
         public static void EndMocking(this IServiceRegistry serviceRegistry, Type serviceType, string serviceName)
         {
             var key = Tuple.Create(serviceRegistry, serviceType, serviceName);
@@ -88,7 +166,12 @@ namespace Solar.Infrastructure.Common.DependencyInjection.Extensions
                 serviceRegistry.Register(serviceRegistration);
             }
         }
-    
+
+        /// <summary>
+        /// Ends mocking the <typeparamref name="TService"/>.
+        /// </summary>
+        /// <typeparam name="TService">The type of service for which to end mocking.</typeparam>
+        /// <param name="serviceRegistry">The target <see cref="IServiceRegistry"/> instance.</param>        
         public static void EndMocking<TService>(this IServiceRegistry serviceRegistry)
         {
             EndMocking<TService>(serviceRegistry, string.Empty);

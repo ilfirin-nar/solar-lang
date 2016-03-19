@@ -39,6 +39,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\Directory\CommandLineActionsDirectory.cs" />
+    <Compile Include="Actions\Services\CommandLineActionSelector.cs" />
+    <Compile Include="Actions\ICommandLineAction.cs" />
+    <Compile Include="Actions\Directory\ICommandLineActionsDirectory.cs" />
+    <Compile Include="Actions\Services\Exceptions\NoActionWasFoundException.cs" />
+    <Compile Include="Actions\Services\ICommandLineActionSelector.cs" />
     <Compile Include="Arguments\Attributes\ConsoleOptionAttribute.cs" />
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Arguments\DataTransferObjects\ICommandLineArguments.cs" />

@@ -1,9 +1,10 @@
 ﻿using System;
 using Solar.Frontend.Compiler.DataTransferObjects;
+using Solar.Infrastructure.Console.Actions;
 
 namespace Solar.Frontend.Compiler.Services.Actions
 {
-    internal class ShowHelpAction : ICommandLineAction
+    internal class ShowHelpAction : ICommandLineAction<ICompilerArguments>
     {
         public void Action(ICompilerArguments arguments)
         {

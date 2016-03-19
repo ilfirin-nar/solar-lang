@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Solar.Frontend.Compiler.DataTransferObjects;
-using Solar.Frontend.Compiler.Services;
 using Solar.Infrastructure.Config.Services;
+using Solar.Infrastructure.Console.Actions.Services;
 using Solar.Infrastructure.Console.Arguments.Services;
 
 namespace Solar.Frontend.Compiler.Program
@@ -9,12 +9,12 @@ namespace Solar.Frontend.Compiler.Program
     internal class CompilerProgram : ICompilerProgram
     {
         private readonly ICommandLineArgumentsParser<CompilerArguments> _commandLineArgumentsParser;
-        private readonly ICommandLineActionSelector _commandLineActionSelector;
+        private readonly ICommandLineActionSelector<CompilerArguments> _commandLineActionSelector;
 
         public CompilerProgram(
             IConfigurator configurator,
             ICommandLineArgumentsParser<CompilerArguments> commandLineArgumentsParser,
-            ICommandLineActionSelector commandLineActionSelector)
+            ICommandLineActionSelector<CompilerArguments> commandLineActionSelector)
         {
             configurator.Configure();
             _commandLineArgumentsParser = commandLineArgumentsParser;

@@ -45,5 +45,11 @@ namespace Solar.Infrastructure.Common.Extensions
         {
             return type.GetPublicProperties().Where(p => p.HasAttribute<TAttribute>());
         }
+
+        public static IEnumerable<TAttribute> GetTypePropertiesAttributes<TAttribute>(this Type type)
+            where TAttribute : Attribute
+        {
+            return type.GetPublicProperties().SelectMany(p => p.GetCustomAttributes<TAttribute>());
+        }
     }
 }

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Solar.Frontend.Compiler.Services.Actions;
 using Solar.Infrastructure.Common.Interfaces;
 
-namespace Solar.Frontend.Compiler.Services
+namespace Solar.Infrastructure.Console.Actions.Directory
 {
     internal interface ICommandLineActionsDirectory : IDirectory
     {

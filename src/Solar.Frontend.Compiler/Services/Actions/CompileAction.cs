@@ -2,10 +2,11 @@
 using Solar.Application.Compiler.Services;
 using Solar.Frontend.Compiler.DataTransferObjects;
 using Solar.Infrastructure.Common.Services;
+using Solar.Infrastructure.Console.Actions;
 
 namespace Solar.Frontend.Compiler.Services.Actions
 {
-    internal class CompileAction : ICommandLineAction
+    internal class CompileAction : ICommandLineAction<ICompilerArguments>
     {
         private readonly IDataMapper<ICompilerArguments, ModulesPathes> _mapper;
         private readonly ICompiler _compiler;
