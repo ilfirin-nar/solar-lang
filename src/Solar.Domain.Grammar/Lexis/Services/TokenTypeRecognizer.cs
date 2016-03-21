@@ -31,7 +31,7 @@ namespace Solar.Domain.Grammar.Lexis.Services
             return newTokenType ?? currentTokenType;
         }
 
-        public bool Check(string lexeme, ITokenType tokenType)
+        public bool IsMatch(string lexeme, ITokenType tokenType)
         {
             return tokenType.IsMatch(lexeme);
         }

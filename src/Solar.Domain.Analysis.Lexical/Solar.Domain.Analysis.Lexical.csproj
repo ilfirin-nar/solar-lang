@@ -48,6 +48,8 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ILexicalAnalyzer.cs" />
+    <Compile Include="Services\Parsing\ITokenTypeClarifier.cs" />
+    <Compile Include="Services\Parsing\TokenTypeClarifier.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Domain.Grammar\Solar.Domain.Grammar.csproj">

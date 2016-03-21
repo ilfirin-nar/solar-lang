@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
 using Solar.Domain.Analysis.Lexical.Exceptions;
+using Solar.Domain.Analysis.Lexical.Services.Parsing;
 using Solar.Domain.Grammar.Entities;
 using Solar.Domain.Grammar.EntityFactories;
 using Solar.Domain.Grammar.EntityFactories.RawData;
 using Solar.Domain.Grammar.Exceptions;
 using Solar.Domain.Grammar.Lexis.Services;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
 
 namespace Solar.Domain.Analysis.Lexical.Services
@@ -15,11 +15,16 @@ namespace Solar.Domain.Analysis.Lexical.Services
     {
         private readonly ITokenFactory _tokenFactory;
         private readonly ITokenTypeRecognizer _tokenTypeRecognizer;
+        private readonly ITokenTypeClarifier _tokenTypeClarifier;
 
-        public LexicalAnalyzer(ITokenFactory tokenFactory, ITokenTypeRecognizer tokenTypeRecognizer)
+        public LexicalAnalyzer(
+            ITokenFactory tokenFactory, 
+            ITokenTypeRecognizer tokenTypeRecognizer,
+            ITokenTypeClarifier tokenTypeClarifier)
         {
             _tokenFactory = tokenFactory;
             _tokenTypeRecognizer = tokenTypeRecognizer;
+            _tokenTypeClarifier = tokenTypeClarifier;
         }
 
         [NotNull]
@@ -51,13 +56,13 @@ namespace Solar.Domain.Analysis.Lexical.Services
                     continue;
                 }
                 var checkedLexeme = tokenRawData.Lexeme + character;
-                if(_tokenTypeRecognizer.Check(checkedLexeme, tokenRawData.TokenType))
+                if(_tokenTypeRecognizer.IsMatch(checkedLexeme, tokenRawData.TokenType))
                 {
                     tokenRawData.Lexeme = checkedLexeme;
                 }
                 else
                 {
-                    if (TryToClarifyTokenType(checkedLexeme, tokenRawData, character))
+                    if (_tokenTypeClarifier.TryToClarifyTokenType(checkedLexeme, tokenRawData, character))
                     {
                         continue;
                     }
@@ -82,40 +87,13 @@ namespace Solar.Domain.Analysis.Lexical.Services
 
         private void SetCharToToken(TokenRawData tokenRawData, char character)
         {
-            AddCharacterToLexeme(tokenRawData, character);
-            RecognizeTokenType(tokenRawData);
-        }
-
-        private static void AddCharacterToLexeme(TokenRawData tokenRawData, char character)
-        {
             tokenRawData.Lexeme += character;
-        }
-
-        private void RecognizeTokenType(TokenRawData token)
-        {
-            token.TokenType = _tokenTypeRecognizer.Recognize(token.Lexeme);
+            tokenRawData.TokenType = _tokenTypeRecognizer.Recognize(tokenRawData.Lexeme);
         }
 
         private void AddToResult(ICollection<Token> result, TokenRawData tokenRawData)
         {
             result.Add(_tokenFactory.Produce(tokenRawData));
-        }
-
-        private bool TryToClarifyTokenType(string checkedLexeme, TokenRawData tokenRawData, char character)
-        {
-            var clarifyedTokenType = _tokenTypeRecognizer.ClarifyTokenType(checkedLexeme, tokenRawData.TokenType);
-            if (clarifyedTokenType == tokenRawData.TokenType)
-            {
-                return false;
-            }
-            ApplyClarifyedTokenType(tokenRawData, character, clarifyedTokenType);
-            return true;
-        }
-
-        private static void ApplyClarifyedTokenType(TokenRawData tokenRawData, char character, ITokenType clarifyedTokenType)
-        {
-            AddCharacterToLexeme(tokenRawData, character);
-            tokenRawData.TokenType = clarifyedTokenType;
         }
     }
 }

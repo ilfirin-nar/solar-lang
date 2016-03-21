@@ -9,6 +9,6 @@ namespace Solar.Domain.Grammar.Lexis.Services
 
         ITokenType ClarifyTokenType(string lexeme, ITokenType currentTokenType);
 
-        bool Check(string lexeme, ITokenType tokenType);
+        bool IsMatch(string lexeme, ITokenType tokenType);
     }
 }
