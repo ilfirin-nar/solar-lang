@@ -3,5 +3,7 @@
     internal class AbstractSyntaxTree : IAbstractSyntaxTree
     {
         public IToken Root { get; }
+
+        public int NodesCount { get; }
     }
 }
