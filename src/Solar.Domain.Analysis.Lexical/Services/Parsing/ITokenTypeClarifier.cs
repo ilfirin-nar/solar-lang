@@ -5,6 +5,6 @@ namespace Solar.Domain.Analysis.Lexical.Services.Parsing
 {
     internal interface ITokenTypeClarifier : IDomainService
     {
-        bool TryToClarifyTokenType(string checkedLexeme, TokenRawData tokenRawData, char character);
+        bool TryToClarifyTokenType(string checkedLexeme, TokenRawData tokenRawData);
     }
 }

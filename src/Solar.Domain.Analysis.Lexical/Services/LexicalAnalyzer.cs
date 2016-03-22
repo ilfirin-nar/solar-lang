@@ -50,28 +50,35 @@ namespace Solar.Domain.Analysis.Lexical.Services
             var tokenRawData = GetNewTokenRawData();
             foreach (var character in content)
             {
-                if (tokenRawData.IsEmpty)
-                {
-                    SetCharToToken(tokenRawData, character);
-                    continue;
-                }
-                var checkedLexeme = tokenRawData.Lexeme + character;
-                if(_tokenTypeRecognizer.IsMatch(checkedLexeme, tokenRawData.TokenType))
-                {
-                    tokenRawData.Lexeme = checkedLexeme;
-                }
-                else
-                {
-                    if (_tokenTypeClarifier.TryToClarifyTokenType(checkedLexeme, tokenRawData, character))
-                    {
-                        continue;
-                    }
-                    AddToResult(result, tokenRawData);
-                    tokenRawData = GetNewTokenRawData(character);
-                }
+                tokenRawData = SetCharToLexeme(tokenRawData, character, result);
             }
             AddToResult(result, tokenRawData);
             return result;
+        }
+
+        private TokenRawData SetCharToLexeme(TokenRawData tokenRawData, char character, ICollection<Token> result)
+        {
+            if (tokenRawData.IsEmpty)
+            {
+                SetCharToToken(tokenRawData, character);
+                return tokenRawData;
+            }
+            var checkedLexeme = tokenRawData.Lexeme + character;
+            if (_tokenTypeRecognizer.IsMatch(checkedLexeme, tokenRawData.TokenType))
+            {
+                tokenRawData.Lexeme = checkedLexeme;
+            }
+            else
+            {
+                if (_tokenTypeClarifier.TryToClarifyTokenType(checkedLexeme, tokenRawData))
+                {
+                    AddCharToLexeme(tokenRawData, character);
+                    return tokenRawData;
+                }
+                AddToResult(result, tokenRawData);
+                tokenRawData = GetNewTokenRawData(character);
+            }
+            return tokenRawData;
         }
 
         private TokenRawData GetNewTokenRawData(char? character = null)
@@ -87,8 +94,13 @@ namespace Solar.Domain.Analysis.Lexical.Services
 
         private void SetCharToToken(TokenRawData tokenRawData, char character)
         {
-            tokenRawData.Lexeme += character;
+            AddCharToLexeme(tokenRawData, character);
             tokenRawData.TokenType = _tokenTypeRecognizer.Recognize(tokenRawData.Lexeme);
+        }
+
+        private static void AddCharToLexeme(TokenRawData tokenRawData, char character)
+        {
+            tokenRawData.Lexeme += character;
         }
 
         private void AddToResult(ICollection<Token> result, TokenRawData tokenRawData)
