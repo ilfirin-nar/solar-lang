@@ -7,6 +7,10 @@ namespace Solar.Domain.Analysis.Syntax.Services
     {
         public IAbstractSyntaxTree Analyze(IReadOnlyList<IToken> tokens)
         {
+            foreach (var token in tokens)
+            {
+                
+            }
             throw new System.NotImplementedException();
         }
     }
