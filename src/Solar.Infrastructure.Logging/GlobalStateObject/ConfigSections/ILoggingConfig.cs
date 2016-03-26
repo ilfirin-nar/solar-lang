@@ -1,4 +1,4 @@
-using Solar.Infrastructure.Config.GlobalStateObject;
+using Solar.Infrastructure.Configuration.GlobalStateObject;
 
 namespace Solar.Infrastructure.Logging.GlobalStateObject.ConfigSections
 {

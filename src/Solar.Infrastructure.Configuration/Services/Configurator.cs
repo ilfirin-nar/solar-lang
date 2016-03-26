@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Solar.Infrastructure.Common.Extensions.ObjectExtensions;
-using Solar.Infrastructure.Config.GlobalStateObject;
+using Solar.Infrastructure.Configuration.GlobalStateObject;
 using Solar.Infrastructure.FileSystem.Services;
 
-namespace Solar.Infrastructure.Config.Services
+namespace Solar.Infrastructure.Configuration.Services
 {
     internal class Configurator : IConfigurator
     {

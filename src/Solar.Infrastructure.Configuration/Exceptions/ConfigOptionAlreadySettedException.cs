@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Solar.Infrastructure.Config.Exceptions
+namespace Solar.Infrastructure.Configuration.Exceptions
 {
     public class ConfigOptionAlreadySettedException : Exception
     {

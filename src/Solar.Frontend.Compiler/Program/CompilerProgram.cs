@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Solar.Frontend.Compiler.DataTransferObjects;
-using Solar.Infrastructure.Config.Services;
+using Solar.Infrastructure.Configuration.Services;
 using Solar.Infrastructure.Console.Actions.Services;
 using Solar.Infrastructure.Console.Arguments.Services;
 

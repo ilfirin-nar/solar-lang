@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using Newtonsoft.Json;
-using Solar.Infrastructure.Config.Services;
+using Solar.Infrastructure.Configuration.Services;
 using Solar.Infrastructure.Logging.GlobalStateObject.ConfigSections;
 
 namespace Solar.Infrastructure.Logging.Tests.IntegrationTests.Services

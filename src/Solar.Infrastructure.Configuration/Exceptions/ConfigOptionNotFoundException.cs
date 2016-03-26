@@ -1,7 +1,7 @@
 ﻿using System;
-using Solar.Infrastructure.Config.GlobalStateObject;
+using Solar.Infrastructure.Configuration.GlobalStateObject;
 
-namespace Solar.Infrastructure.Config.Exceptions
+namespace Solar.Infrastructure.Configuration.Exceptions
 {
     public class ConfigOptionNotFoundException<TConfigOption> : Exception
         where TConfigOption : IConfigSection

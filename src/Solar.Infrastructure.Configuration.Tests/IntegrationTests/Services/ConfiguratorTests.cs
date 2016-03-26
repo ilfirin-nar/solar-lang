@@ -5,11 +5,11 @@ using LightInject.xUnit2;
 using Newtonsoft.Json;
 using Solar.Infrastructure.Common.DependencyInjection.Extensions;
 using Solar.Infrastructure.Common.DependencyInjection.Registration;
-using Solar.Infrastructure.Config.GlobalStateObject;
-using Solar.Infrastructure.Config.Services;
+using Solar.Infrastructure.Configuration.GlobalStateObject;
+using Solar.Infrastructure.Configuration.Services;
 using Xunit;
 
-namespace Solar.Infrastructure.Config.Tests.IntegrationTests.Services
+namespace Solar.Infrastructure.Configuration.Tests.IntegrationTests.Services
 {
     public class ConfiguratorTests
     {

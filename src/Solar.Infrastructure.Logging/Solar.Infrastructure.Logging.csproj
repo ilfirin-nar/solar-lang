@@ -68,9 +68,9 @@
       <Project>{cc47ee27-0f13-4cfb-87dd-ac7163bc5375}</Project>
       <Name>Solar.Infrastructure.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Solar.Infrastructure.Config\Solar.Infrastructure.Config.csproj">
-      <Project>{B333E524-D2F5-45EC-A546-EF2B8C8F1EE6}</Project>
-      <Name>Solar.Infrastructure.Config</Name>
+    <ProjectReference Include="..\Solar.Infrastructure.Configuration\Solar.Infrastructure.Configuration.csproj">
+      <Project>{9A8EE86F-09E0-4EE5-984F-8DB794AE5E93}</Project>
+      <Name>Solar.Infrastructure.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\Solar.Infrastructure.FileSystem\Solar.Infrastructure.FileSystem.csproj">
       <Project>{ab2fcb0d-e222-47e8-b837-79284700ed30}</Project>
