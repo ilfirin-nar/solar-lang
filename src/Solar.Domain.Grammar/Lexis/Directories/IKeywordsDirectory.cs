@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Keywords;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Keywords;
 using Solar.Infrastructure.Common.Interfaces;
 
 namespace Solar.Domain.Grammar.Lexis.Directories

@@ -14,16 +14,16 @@ namespace Solar.Domain.Analysis.Lexical.Services
     internal class LexicalAnalyzer : ILexicalAnalyzer
     {
         private readonly ITokenFactory _tokenFactory;
-        private readonly ITokenTypeRecognizer _tokenTypeRecognizer;
+        private readonly ILexicalTokenTypeRecognizer _lexicalTokenTypeRecognizer;
         private readonly ITokenTypeClarifier _tokenTypeClarifier;
 
         public LexicalAnalyzer(
             ITokenFactory tokenFactory, 
-            ITokenTypeRecognizer tokenTypeRecognizer,
+            ILexicalTokenTypeRecognizer lexicalTokenTypeRecognizer,
             ITokenTypeClarifier tokenTypeClarifier)
         {
             _tokenFactory = tokenFactory;
-            _tokenTypeRecognizer = tokenTypeRecognizer;
+            _lexicalTokenTypeRecognizer = lexicalTokenTypeRecognizer;
             _tokenTypeClarifier = tokenTypeClarifier;
         }
 
@@ -64,7 +64,7 @@ namespace Solar.Domain.Analysis.Lexical.Services
                 return tokenRawData;
             }
             var checkedLexeme = tokenRawData.Lexeme + character;
-            if (_tokenTypeRecognizer.IsMatch(checkedLexeme, tokenRawData.TokenType))
+            if (_lexicalTokenTypeRecognizer.IsMatch(checkedLexeme, tokenRawData.TokenType))
             {
                 tokenRawData.Lexeme = checkedLexeme;
             }
@@ -95,7 +95,7 @@ namespace Solar.Domain.Analysis.Lexical.Services
         private void SetCharToToken(TokenRawData tokenRawData, char character)
         {
             AddCharToLexeme(tokenRawData, character);
-            tokenRawData.TokenType = _tokenTypeRecognizer.Recognize(tokenRawData.Lexeme);
+            tokenRawData.TokenType = _lexicalTokenTypeRecognizer.Recognize(tokenRawData.Lexeme);
         }
 
         private static void AddCharToLexeme(TokenRawData tokenRawData, char character)

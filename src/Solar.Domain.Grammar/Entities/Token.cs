@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
+using Solar.Domain.Grammar.GlobalStateObjects;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes;
 
 namespace Solar.Domain.Grammar.Entities
 {

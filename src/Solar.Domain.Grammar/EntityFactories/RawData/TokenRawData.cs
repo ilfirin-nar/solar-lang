@@ -1,4 +1,4 @@
-﻿using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
+﻿using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes;
 using Solar.Infrastructure.Common.Extensions;
 using Solar.Infrastructure.Common.Interfaces.DomainLayer;
 
@@ -11,7 +11,7 @@ namespace Solar.Domain.Grammar.EntityFactories.RawData
             Lexeme = lexeme;
         }
 
-        public TokenRawData(string lexeme, ITokenType tokenType)
+        public TokenRawData(string lexeme, ILexicalTokenType tokenType)
         {
             Lexeme = lexeme;
             TokenType = tokenType;
@@ -19,7 +19,7 @@ namespace Solar.Domain.Grammar.EntityFactories.RawData
 
         public string Lexeme { get; set; }
 
-        public ITokenType TokenType { get; set; }
+        public ILexicalTokenType TokenType { get; set; }
 
         public bool IsEmpty => Lexeme.IsEmpty();
     }

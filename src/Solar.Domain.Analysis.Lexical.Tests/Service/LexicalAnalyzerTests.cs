@@ -2,7 +2,8 @@
 using LightInject.xUnit2;
 using Solar.Domain.Analysis.Lexical.Exceptions;
 using Solar.Domain.Analysis.Lexical.Services;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes;
+using Solar.Domain.Grammar.GlobalStateObjects;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes;
 using Xunit;
 
 namespace Solar.Domain.Analysis.Lexical.Tests.Service

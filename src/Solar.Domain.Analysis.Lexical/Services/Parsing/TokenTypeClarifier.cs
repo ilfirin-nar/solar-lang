@@ -5,16 +5,16 @@ namespace Solar.Domain.Analysis.Lexical.Services.Parsing
 {
     internal class TokenTypeClarifier : ITokenTypeClarifier
     {
-        private readonly ITokenTypeRecognizer _tokenTypeRecognizer;
+        private readonly ILexicalTokenTypeRecognizer _lexicalTokenTypeRecognizer;
 
-        public TokenTypeClarifier(ITokenTypeRecognizer tokenTypeRecognizer)
+        public TokenTypeClarifier(ILexicalTokenTypeRecognizer lexicalTokenTypeRecognizer)
         {
-            _tokenTypeRecognizer = tokenTypeRecognizer;
+            _lexicalTokenTypeRecognizer = lexicalTokenTypeRecognizer;
         }
 
         public bool TryToClarifyTokenType(string checkedLexeme, TokenRawData tokenRawData)
         {
-            var clarifyedTokenType = _tokenTypeRecognizer.ClarifyTokenType(checkedLexeme, tokenRawData.TokenType);
+            var clarifyedTokenType = _lexicalTokenTypeRecognizer.ClarifyTokenType(checkedLexeme, tokenRawData.TokenType);
             if (clarifyedTokenType == tokenRawData.TokenType)
             {
                 return false;

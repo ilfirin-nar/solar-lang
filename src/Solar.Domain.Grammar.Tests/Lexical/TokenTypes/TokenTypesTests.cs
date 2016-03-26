@@ -1,10 +1,10 @@
 ﻿using System;
 using LightInject.xUnit2;
 using Solar.Domain.Grammar.Lexis.Directories;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Operators;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Whitespaces;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Identifiers;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Keywords;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Operators;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Whitespaces;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Identifiers;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Keywords;
 using Xunit;
 
 namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
@@ -31,9 +31,9 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(typeof(GreaterThenOperatorTokenType), ">")]
         [InjectData(typeof(LessThenOperatorTokenType), "<")]
         [InjectData(typeof(AssigmentOperatorTokenType), "<-")]
-        internal void IsMatch(ITokenTypesDirectory tokenTypesDirectory, Type type, string value)
+        internal void IsMatch(ILexicalTokenTypesDirectory lexicalTokenTypesDirectory, Type type, string value)
         {
-            Assert.True(tokenTypesDirectory.Get(type).IsMatch(value));
+            Assert.True(lexicalTokenTypesDirectory.Get(type).IsMatch(value));
         }
 
         [Theory]
@@ -113,9 +113,9 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         [InjectData(typeof(AssigmentOperatorTokenType), " <-")]
         [InjectData(typeof(AssigmentOperatorTokenType), "<-<")]
         [InjectData(typeof(AssigmentOperatorTokenType), "<<")]
-        internal void IsNotMatch(ITokenTypesDirectory tokenTypesDirectory, Type type, string value)
+        internal void IsNotMatch(ILexicalTokenTypesDirectory lexicalTokenTypesDirectory, Type type, string value)
         {
-            Assert.False(tokenTypesDirectory.Get(type).IsMatch(value));
+            Assert.False(lexicalTokenTypesDirectory.Get(type).IsMatch(value));
         }
     }
 }

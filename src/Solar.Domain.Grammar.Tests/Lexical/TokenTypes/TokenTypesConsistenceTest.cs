@@ -28,9 +28,9 @@ namespace Solar.Domain.Grammar.Tests.Lexical.TokenTypes
         }
 
         [Theory, InjectData]
-        internal void CheckConsistenceOfAllTokenTypes_Consistent(ITokenTypesDirectory tokenTypesDirectory)
+        internal void CheckConsistenceOfAllTokenTypes_Consistent(ILexicalTokenTypesDirectory lexicalTokenTypesDirectory)
         {
-            var tokenTypes = tokenTypesDirectory.TokenTypes;
+            var tokenTypes = lexicalTokenTypesDirectory.LexicalTokenTypes;
             Assert.NotEmpty(tokenTypes);
             foreach (var testMethod in LexemeRegexIsMatchTestMethods)
             {

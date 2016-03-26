@@ -1,12 +1,12 @@
 ﻿using System;
 using LightInject.xUnit2;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Brackets;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Operators;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Whitespaces;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Identifiers;
+using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Keywords;
 using Solar.Domain.Grammar.Lexis.Services;
 using Solar.Domain.Grammar.Lexis.Services.Exceptions;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Brackets;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Operators;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Whitespaces;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Identifiers;
-using Solar.Domain.Grammar.Lexis.ValueObjects.TokenTypes.Words.Keywords;
 using Xunit;
 
 namespace Solar.Domain.Grammar.Tests.Lexical.Services
@@ -15,7 +15,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
     {
         [Theory]
         [InjectData("")]
-        internal void Recognize_InvalidLexeme_Exception(ITokenTypeRecognizer recognizer, string lexeme)
+        internal void Recognize_InvalidLexeme_Exception(ILexicalTokenTypeRecognizer recognizer, string lexeme)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Solar.Domain.Grammar.Tests.Lexical.Services
         [InjectData("FooBar", typeof(TypeIdentifierTokenType))]
         [InjectData("model", typeof(ModelKeywordTokenType))]
         [InjectData("service", typeof(ServiceKeywordTokenType))]
-        internal void Recognize_ValidLexeme_ValidTokenType(ITokenTypeRecognizer recognizer, string lexeme, Type tokenTypeType)
+        internal void Recognize_ValidLexeme_ValidTokenType(ILexicalTokenTypeRecognizer recognizer, string lexeme, Type tokenTypeType)
         {
             var result = recognizer.Recognize(lexeme);
             Assert.Equal(tokenTypeType, result.GetType());
