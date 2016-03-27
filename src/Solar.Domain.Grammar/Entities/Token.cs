@@ -1,28 +1,17 @@
-﻿using System.Collections.Generic;
-using Solar.Domain.Grammar.GlobalStateObjects;
-using Solar.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes;
+﻿using Solar.Domain.Grammar.GlobalStateObjects;
 
 namespace Solar.Domain.Grammar.Entities
 {
     public class Token : IToken
     {
-        public Token(string lexeme, ITokenType type)
+        public Token(string value, ITokenType type)
         {
-            Lexeme = lexeme;
+            Value = value;
             Type = type;
         }
 
-        public Token(string lexeme, ITokenType type, IReadOnlyList<IToken> innerTokens)
-        {
-            Lexeme = lexeme;
-            Type = type;
-            InnerTokens = innerTokens;
-        }
-
-        public string Lexeme { get; }
+        public string Value { get; }
 
         public ITokenType Type { get; }
-
-        public IReadOnlyList<IToken> InnerTokens { get; }
     }
 }

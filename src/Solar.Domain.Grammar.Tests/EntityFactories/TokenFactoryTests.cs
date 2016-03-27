@@ -23,7 +23,7 @@ namespace Solar.Domain.Grammar.Tests.EntityFactories
         {
             var data = new TokenRawData(Content, new SpaceTokenType());
             var result = tokenFactory.Produce(data);
-            Assert.Equal(result.Lexeme, Content);
+            Assert.Equal(result.Value, Content);
         }
 
         [Theory, InjectData]

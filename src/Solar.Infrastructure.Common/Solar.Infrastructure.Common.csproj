@@ -66,7 +66,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Interfaces\ApplicationLayer\IApplicationService.cs" />
-    <Compile Include="Interfaces\DomainLayer\IAggregationRoot.cs" />
+    <Compile Include="Interfaces\DomainLayer\IAggregationRootEntity.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntityFactory.cs" />
     <Compile Include="Interfaces\DomainLayer\IEntityRawData.cs" />
     <Compile Include="Interfaces\DomainLayer\IValueObject.cs" />
