@@ -1,12 +1,12 @@
-﻿using Solar.Domain.Grammar.Entities;
-using Solar.Domain.Grammar.Syntax.GlobalStateObjects.TokenTypes;
+﻿using System.Collections.Generic;
+using Solar.Domain.Grammar.GlobalStateObjects;
 using Solar.Infrastructure.Common.Interfaces.InfrastructureLayer;
 
 namespace Solar.Domain.Grammar.Syntax
 {
     public interface IForwardingRule<TToken> : IGlobalStateObject
-        where TToken : ISyntaxTokenType
+        where TToken : ITokenType
     {
-        bool IsForwarding(IToken token);
+        IReadOnlyList<ITokenType> To { get; }
     }
 }
