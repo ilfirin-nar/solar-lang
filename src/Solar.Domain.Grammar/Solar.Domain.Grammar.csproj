@@ -87,11 +87,10 @@
     <Compile Include="Lexis\GlobalStateObjects\TokenTypes\Whitespaces\SpaceTokenType.cs" />
     <Compile Include="Lexis\GlobalStateObjects\TokenTypes\Words\WordTokenTypeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Syntax\DeclarationScopeForwardingRule.cs" />
+    <Compile Include="Syntax\GlobalStateObjects\SyntaxExpectations\ISyntaxExpectation.cs" />
     <Compile Include="Syntax\GlobalStateObjects\TokenTypes\ISyntaxTokenType.cs" />
     <Compile Include="Syntax\GlobalStateObjects\TokenTypes\Statements\DeclarationScopeStatementTokenType.cs" />
     <Compile Include="Syntax\GlobalStateObjects\TokenTypes\Statements\IStatementTokenType.cs" />
-    <Compile Include="Syntax\IForwardingRule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">

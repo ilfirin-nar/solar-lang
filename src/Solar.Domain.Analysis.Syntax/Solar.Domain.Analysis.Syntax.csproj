@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositionRoot.cs" />
+    <Compile Include="Entities\ISyntaxExpectationsStack.cs" />
+    <Compile Include="Entities\SyntaxExpectationsStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ISyntaxAnalyzer.cs" />
     <Compile Include="Services\SyntaxAnalyzer.cs" />
