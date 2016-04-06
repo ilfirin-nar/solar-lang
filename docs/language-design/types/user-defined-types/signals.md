@@ -1,8 +1,34 @@
 # Signals
 ## About
-Signals is... It float up by call stack.
+Signals float up by call stack.
 ```
 signal SomethingHappens
+[
+  message: 'Something happens!'
+]
+```
+
+## Throw signal
+```
+service Foo
+[
+  logger is Logger
+  
+  foo:
+  {
+    SomethingHappens !
+  }
+  
+  bar:
+  {
+    foo() ?! log
+  }
+  
+  log: signal =>
+  {
+    logger.log(signal.message)
+  }
+]
 ```
 
 ## Content
