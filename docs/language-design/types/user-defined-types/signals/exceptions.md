@@ -25,6 +25,7 @@ service Foo is IFoo
   {
     fooResult <- foo() ?! log
     fooResult <> someString
+    fooResult = String.Empty
   }
   
   log: signal =>
