@@ -10,11 +10,11 @@ signal SomethingHappens
 
 ## Throw signal
 ```
-service Foo
+service Foo is IFoo
 [
-  logger is Logger
+  logger is ILogger
   
-  someString: `it's foo!`
+  someString: 'It\'s foo!'
   
   foo:
   {
