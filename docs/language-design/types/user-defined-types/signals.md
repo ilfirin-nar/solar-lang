@@ -14,14 +14,18 @@ service Foo
 [
   logger is Logger
   
+  someString: `it's foo!`
+  
   foo:
   {
     SomethingHappens !
+    <- someString
   }
   
   bar:
   {
-    foo() ?! log
+    fooResult <- foo() ?! log
+    fooResult = someString ?
   }
   
   log: signal =>
