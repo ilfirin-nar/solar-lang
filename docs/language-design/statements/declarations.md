@@ -1,5 +1,12 @@
 # Declarations
-Declaring a local variable is runtime assignation expression from right side to variable name literal at the left side.
+## Compile-time
+```
+
+```
+
+## Runtime
+Declaring a local variable is runtime mutable/immutable assignation expression from right side to variable name literal at the left side. Maybe used in declaration scope (by only immutable assignation) and in execution scope (by both immutable and mutable assignations).
+
 ### Declare and initialize variable statement
 ```
 someVar <- 3.14
@@ -14,8 +21,7 @@ someAnotherVar <- 42
 someVar <- someAnotherVar
 ```
 
-## Local functions (lambdas)
-### With parameteres
+### Local functions with parameteres
 ```
 greet <- x => {
     console.print(x)
@@ -27,7 +33,7 @@ or inline syntax
 greet <- x => console.print(x)
 greet('Hello!')
 ```
-### Without parameteres
+### Local functions without parameteres
 ```
 greet <- {
     console.print('Hello')
