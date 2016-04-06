@@ -5,7 +5,7 @@
 ```
 
 ## Runtime
-Declaring a local variable is runtime mutable/immutable assignation expression from right side to variable name literal at the left side. Maybe used in declaration scope (by only immutable assignation) and in execution scope (by both immutable and mutable assignations).
+Declaring a local variable is runtime mutable/immutable assignation expression from right side to variable name literal at the left side. Maybe used in declaration scope by only immutable assignation and in execution scope by both immutable and mutable assignations.
 
 ### Declare and initialize variable statement
 ```
