@@ -1,7 +1,10 @@
 # Declarations
 ## Compile-time
+In compile-time declaring performing with compile-time assignation operator `:`.
 ```
-
+foo: 2 + 2
+bar: 'Ann going to Fooland'
+buz: x => x + 1
 ```
 
 ## Runtime
