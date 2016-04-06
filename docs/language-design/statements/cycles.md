@@ -19,18 +19,3 @@ someArray = [2..11]
 index = 0
 index < 5 % index++
 ```
-or in inline form
-```
-index = 0
-index < 5 % { index++ }
-```
-
-## Cycle function call
-```
-addNumber: (array, n) => $ + m
-bar: () =>
-{
-  numbers <= [1..100]
-  addNumber(numbers, n)
-}
-```
