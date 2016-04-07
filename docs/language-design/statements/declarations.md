@@ -26,10 +26,12 @@ someVar <- someAnotherVar
 
 ### Local functions with parameteres
 ```
-greet <- x => {
-    console.print(x)
+greet <- (x, y) =>
+{
+  console.print(x)
+  console.print(y)
 }
-greet('Hello!')
+greet('Hello ', 'World!')
 ```
 or inline syntax
 ```
@@ -38,8 +40,10 @@ greet('Hello!')
 ```
 ### Local functions without parameteres
 ```
-greet <- {
-    console.print('Hello')
+greet <-
+{
+  console.print('Hello ')
+  console.print('World!')
 }
 greet()
 ```
@@ -51,8 +55,6 @@ greet()
 ### Closures
 ```
 greeting <- 'Hello!'
-greet <- {
-    console.print(greeting)
-}
+greet <- { console.print(greeting) }
 greet()
 ```
