@@ -5,7 +5,7 @@ Allows only as an expressions
 codition ? doSomething()
 ```
 ```
-condition ? doSomething() ! doAnotherThing()
+condition ? doSomething() : doAnotherThing()
 ```
 or
 ```
@@ -15,7 +15,7 @@ codition ?
 ```
 condition ?
   doSomething()
-  ! doAnotherThing()
+  : doAnotherThing()
 ```
 
 ## Switch statement
@@ -24,5 +24,5 @@ value ?
   1 ? doSomething()
   2 ? doSecondThing()
   is Number ? doThirdThing()
-  ! doAnotherThing()
+  : doAnotherThing()
 ```
