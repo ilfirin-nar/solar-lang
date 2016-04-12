@@ -2,7 +2,7 @@
 Experimental pragmatic programming language vision.
 
 ## Status
-[![AppVeyor Status](https://ci.appveyor.com/api/projects/status/github/sunloving/solar-lang?retina=true)](https://ci.appveyor.com/project/sunloving/solar-lang)
+[![AppVeyor Status](https://ci.appveyor.com/api/projects/status/github/sunloving/solar-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/solar-lang)
 
 ## Documentation
 1. [Theses](docs/theses.md)
