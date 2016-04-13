@@ -1,7 +1,6 @@
 configuration: Release
 
 before_build:
-  - echo Restoring NuGet packages!
   - cd src
   - nuget restore
   - cd ..
