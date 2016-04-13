@@ -1,15 +1,14 @@
+skip_commits:
+  message: /((Create.*\.md)|(Update.*\.md))/
+
 version: 1.0.{build}
 
 configuration: Release
-
-build:
-  verbosity: normal
 
 before_build:
   - cd src
   - nuget restore
   - cd ..
 
-skip_commits:
-  message: /((Create.*\.md)|(Update.*\.md))/ 
-  
+build:
+  verbosity: normal
