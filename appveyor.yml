@@ -1,3 +1,5 @@
+version: 1.0.{build}
+
 configuration: Release
 
 before_build:
@@ -7,3 +9,4 @@ before_build:
 
 skip_commits:
   message: /((Create.*\.md)|(Update.*\.md))/ 
+  
