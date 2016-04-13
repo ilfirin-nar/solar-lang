@@ -4,3 +4,6 @@ before_build:
   - cd src
   - nuget restore
   - cd ..
+
+skip_commits:
+  message: /((Create.*\.md)|(Update.*\.md))/ 
