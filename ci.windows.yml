@@ -10,5 +10,5 @@ before_build:
   - nuget restore
 
 build:
-  project: main.sln
+  project: src/main.sln
   verbosity: normal
