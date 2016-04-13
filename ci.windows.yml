@@ -8,6 +8,7 @@ configuration: Release
 before_build:
   - cd src
   - nuget restore
+  - cd ..
 
 build:
   project: src\main.sln
