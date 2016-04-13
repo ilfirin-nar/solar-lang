@@ -2,6 +2,9 @@ version: 1.0.{build}
 
 configuration: Release
 
+build:
+  verbosity: detailed
+
 before_build:
   - cd src
   - nuget restore
