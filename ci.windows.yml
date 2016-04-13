@@ -6,8 +6,9 @@ version: 1.0.{build}
 configuration: Release
 
 before_build:
-  - cd ..\src
+  - cd src
   - nuget restore
 
 build:
+  project: main.sln
   verbosity: normal
