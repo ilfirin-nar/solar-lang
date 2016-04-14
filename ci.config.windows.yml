@@ -1,3 +1,5 @@
+# Via AppVeyor
+
 skip_commits:
   message: /((Create.*\.md)|(Update.*\.md))/
 
