@@ -85,6 +85,9 @@
     <Compile Include="Interfaces\InfrastructureLayer\IMapper.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMapper.cs" />
+    <Compile Include="Services\Mapper.cs" />
+    <Compile Include="Services\Exceptions\TargetTypeMustHaveConstructorException.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
