@@ -3,7 +3,7 @@
 ## About
 Experimental pragmatic programming language vision.
 
-## Statuses
+## Status
 ### CI
 Platform | Status
 ---------|-------
