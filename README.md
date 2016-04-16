@@ -11,7 +11,7 @@ Windows | [![Windows build Status](https://ci.appveyor.com/api/projects/status/g
 Linux | [![Linux build Status](https://travis-ci.org/sunloving/solar-lang.svg?branch=master)](https://travis-ci.org/sunloving/solar-lang)
 
 ### Development
-Milestone I: workging compiler to LLVM representation
+Milestone I: working compiler to LLVM representation
 
 1. Lexical analysis — done
 2. Syntax analysis
