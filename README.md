@@ -3,6 +3,9 @@
 ## About
 Experimental pragmatic programming language vision.
 
+### License
+[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)<br/>
+
 ### Statuses
 #### CI
 Platform | Status
@@ -18,9 +21,6 @@ Milestone: workging compiler to LLVM representation
 3. Semantic analysis
 4. Optimizations (?)
 5. LLVM code emmiting
-
-### License
-[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)<br/>
 
 ## Documentation
 1. [Theses](docs/theses.md)
