@@ -48,7 +48,7 @@ namespace Solar.Infrastructure.Common.Services
 
         public static Func<TSource, TTarget> Generate()
         {
-            var dynamicMethod = new DynamicMethod("MappingMethod", typeof(TTarget), new Type[] { typeof(TSource) });
+            var dynamicMethod = new DynamicMethod("MappingMethod", typeof(TTarget), new[] { typeof(TSource) });
             var ilGenerator = dynamicMethod.GetILGenerator();
             GenerateParameters(dynamicMethod);
             GenerateMapMethodBody(ilGenerator);

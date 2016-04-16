@@ -88,9 +88,7 @@
     <Compile Include="Services\Mapper.cs" />
     <Compile Include="Services\Exceptions\TargetTypeMustHaveConstructorException.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CilGeneration\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
