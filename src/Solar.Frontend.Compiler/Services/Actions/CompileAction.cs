@@ -8,11 +8,11 @@ namespace Solar.Frontend.Compiler.Services.Actions
 {
     internal class CompileAction : ICommandLineAction<ICompilerArguments>
     {
-        private readonly IDataMapper<ICompilerArguments, ModulesPathes> _mapper;
+        private readonly IMapper<ICompilerArguments, ModulesPathes> _mapper;
         private readonly ICompiler _compiler;
 
         public CompileAction(
-            IDataMapper<ICompilerArguments, ModulesPathes> mapper,
+            IMapper<ICompilerArguments, ModulesPathes> mapper,
             ICompiler compiler)
         {
             _mapper = mapper;

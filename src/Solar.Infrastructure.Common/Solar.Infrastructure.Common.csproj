@@ -77,8 +77,6 @@
     <Compile Include="Interfaces\FrontendLayer\IFrontendService.cs" />
     <Compile Include="Interfaces\IDirectory.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IGlobalStateObject.cs" />
-    <Compile Include="Services\DataMapper.cs" />
-    <Compile Include="Services\IDataMapper.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObject.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IDataTransferObjectFactory.cs" />
     <Compile Include="Interfaces\InfrastructureLayer\IInfrastructureService.cs" />
@@ -86,10 +84,13 @@
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IMapper.cs" />
+    <Compile Include="Services\MapFunctionGenerator.cs" />
     <Compile Include="Services\Mapper.cs" />
     <Compile Include="Services\Exceptions\TargetTypeMustHaveConstructorException.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CilGeneration\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

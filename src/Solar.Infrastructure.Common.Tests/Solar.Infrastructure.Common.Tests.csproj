@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="IntegrationTests\DependencyInjection\Extensions\ServiceRegistryExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\Services\DataMapperTests.cs" />
+    <Compile Include="UnitTests\Services\MapperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solar.Infrastructure.Common\Solar.Infrastructure.Common.csproj">

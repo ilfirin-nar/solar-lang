@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Solar.Infrastructure.Common.Tests.UnitTests.Services
 {
-    public class DataMapperTests
+    public class MapperTests
     {
         public class Foo : IDataTransferObject
         {
@@ -33,7 +33,7 @@ namespace Solar.Infrastructure.Common.Tests.UnitTests.Services
         }
 
         [Theory, InjectData]
-        public static void Map_ValidDtoToValidDto_ValidResult(IDataMapper<Foo, Bar> mapper)
+        public static void Map_DtoToWiderDto_ValidResult(IMapper<Foo, Bar> mapper)
         {
             var foo = new Foo()
             {
@@ -42,12 +42,29 @@ namespace Solar.Infrastructure.Common.Tests.UnitTests.Services
                 C = 42,
                 D = true
             };
-            var result = mapper.Map(foo);
-            Assert.Equal(foo.A, result.A);
-            Assert.Equal(foo.B, result.B);
-            Assert.Equal(foo.C, result.C);
-            Assert.Equal(foo.D, result.D);
-            Assert.Null(result.E);
+            var bar = mapper.Map(foo);
+            Assert.Equal(foo.A, bar.A);
+            Assert.Equal(foo.B, bar.B);
+            Assert.Equal(foo.C, bar.C);
+            Assert.Equal(foo.D, bar.D);
+        }
+
+        [Theory, InjectData]
+        public static void Map_WiderDtoToDto_ValidResult(IMapper<Bar, Foo> mapper)
+        {
+            var bar = new Bar()
+            {
+                A = "test",
+                B = new List<string> { "a", "b", "c" },
+                C = 42,
+                D = true
+            };
+            var foo = mapper.Map(bar);
+            Assert.Equal(bar.A, foo.A);
+            Assert.Equal(bar.B, foo.B);
+            Assert.Equal(bar.C, foo.C);
+            Assert.Equal(bar.D, foo.D);
+            Assert.Null(bar.E);
         }
     }
 }
