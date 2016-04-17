@@ -19,7 +19,6 @@ namespace Solar.Infrastructure.Common.StaticServices
         public static Action<object, object> Generate(Type sourceType, Type targetType)
         {
             var dynamicMethod = GetDynamicMethod(sourceType, targetType);
-            //return (Action<object, object>) dynamicMethod.CreateDelegate(typeof(Action<object, object>));
             return (source, target) =>
             {
                 var parameters = new[]
