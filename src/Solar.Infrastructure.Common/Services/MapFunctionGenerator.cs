@@ -33,7 +33,7 @@ namespace Solar.Infrastructure.Common.Services
             get
             {
                 var sourceProperties = SourceType.GetPublicProperties();
-                var targetProperties = TargetType.GetPublicProperties().ToList();
+                var targetProperties = TargetType.GetPublicProperties();
                 return
                     from sp in sourceProperties
                     let tp = targetProperties.FirstOrDefault(tp => tp.Name == sp.Name && tp.PropertyType == sp.PropertyType)
