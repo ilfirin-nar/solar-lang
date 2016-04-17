@@ -8,7 +8,7 @@ Experimental pragmatic programming language vision.
 Platform | Status
 ---------|-------
 Windows | [![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/solar-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/solar-lang)
-Linux | [![Linux build Status](https://travis-ci.org/sunloving/solar-lang.svg?branch=master)](https://travis-ci.org/sunloving/solar-lang)
+Linux | Migration after release .NET Core
 
 ### Development
 Milestone I: working compiler to LLVM representation
