@@ -4,7 +4,7 @@ using Solar.Infrastructure.ErrorHandling.Services;
 
 namespace Solar.Infrastructure.ErrorHandling.Interceptors
 {
-    public class ErrorHandlingInterceptor : IErrorHandlingInterceptor
+    internal class ErrorHandlingInterceptor : IErrorHandlingInterceptor
     {
         private readonly IErrorHandler _errorHandler;
 

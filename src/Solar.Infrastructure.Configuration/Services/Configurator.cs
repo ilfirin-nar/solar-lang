@@ -38,7 +38,7 @@ namespace Solar.Infrastructure.Configuration.Services
             foreach (var configSection in configSections)
             {
                 var section = _configSections.Single(cs => cs.GetType() == configSection.GetType());
-                section.Map(configSection);
+                section.MapObject(configSection);
             }
         }
     }

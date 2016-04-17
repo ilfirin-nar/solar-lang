@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Solar.Infrastructure.Common.StaticServices;
 
 namespace Solar.Infrastructure.Common.Services
 {
@@ -6,16 +6,9 @@ namespace Solar.Infrastructure.Common.Services
         where TSource : class
         where TTarget : class, new()
     {
-        private static readonly Func<TSource, TTarget> ProduceMapping;
-
-        static Mapper()
-        {
-            ProduceMapping = MapFunctionGenerator<TSource, TTarget>.Generate();
-        }
-
         public TTarget Map(TSource source)
         {
-            return ProduceMapping(source);
+            return StaticMapper<TSource, TTarget>.Map(source);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Solar.Infrastructure.Configuration.Tests.IntegrationTests.Services
         internal void Configure_ValidConfig_ValidResult(IConfigurator configurator, IFooConfig config)
         {
             var fooConfig = new FooConfig { Bar = "test " };
-            var configString = $"{{ \"FooConfig\" : {JsonConvert.SerializeObject(fooConfig)} }}";
+            var configString = $"{{ \"FooConfig\" : { JsonConvert.SerializeObject(fooConfig) } }}";
 
             configurator.Configure(configString);
 
@@ -34,20 +34,20 @@ namespace Solar.Infrastructure.Configuration.Tests.IntegrationTests.Services
         internal void Configure_ValidIEnumerableConfig_ValidResult(IConfigurator configurator, IEnumerable<IConfigSection> configs)
         {
             var fooConfig = new FooConfig { Bar = "test " };
-            var configString = $"{{ \"FooConfig\" : {JsonConvert.SerializeObject(fooConfig)} }}";
+            var configString = $"{{ \"FooConfig\" : { JsonConvert.SerializeObject(fooConfig) } }}";
 
             configurator.Configure(configString);
 
             Assert.Equal(1, configs.Count());
         }
 
-        internal class FooConfig : IFooConfig
+        public class FooConfig : IFooConfig
         {
             public string Bar { get; set; }
 
             protected bool Equals(FooConfig other)
             {
-                return string.Equals(Bar, (string) other.Bar);
+                return string.Equals(Bar, other.Bar);
             }
 
             public override bool Equals(object obj)
@@ -62,10 +62,10 @@ namespace Solar.Infrastructure.Configuration.Tests.IntegrationTests.Services
                 return Bar?.GetHashCode() ?? 0;
             }
         }
-    }
 
-    internal interface IFooConfig : IConfigSection
-    {
-        string Bar { get; }
+        public interface IFooConfig : IConfigSection
+        {
+            string Bar { get; }
+        }
     }
 }
