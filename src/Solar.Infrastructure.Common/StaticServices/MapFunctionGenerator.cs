@@ -90,22 +90,4 @@ namespace Solar.Infrastructure.Common.StaticServices
             public MethodInfo TargetPropertySetter { get; set; }
         }
     }
-
-    public class Foo
-    {
-        public int Fddd { get; set; }
-    }
-
-    public class Bar
-    {
-        public int Fddd { get; set; }
-    }
-
-    public class TestMapper
-    {
-        public void Map(Foo foo, Bar bar)
-        {
-            bar.Fddd = foo.Fddd;
-        }
-    }
 }
