@@ -11,15 +11,15 @@ Windows | [![Windows build Status](https://ci.appveyor.com/api/projects/status/g
 Linux | Migration after release .NET Core
 
 ### Development
-Milestone I: working compiler to LLVM representation
+Milestone I: working compiler to CIL.
 
 1. Lexical analysis — done
 2. Syntax analysis
 3. Semantic analysis
 4. Optimizations (?)
-5. LLVM code emmiting
+5. CIL code emmiting
 
-Milestone II: go to the cross-platform state.
+Milestone II: go to the cross-platform state and compiler to LLVM.
 
 ## Documentation
 1. [Theses](docs/theses.md)
