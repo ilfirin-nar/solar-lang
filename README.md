@@ -1,4 +1,4 @@
-# Existence Programming Language
+# Oakrime Programming Language
 
 ## About
 Experimental pragmatic programming language vision.
