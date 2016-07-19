@@ -1,4 +1,4 @@
-# Oakrime Programming Language
+# Evergreen Programming Language 🌲
 
 ## About
 Experimental pragmatic programming language vision.
