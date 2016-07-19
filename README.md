@@ -1,4 +1,4 @@
-# Solar Language
+# Existence Programming Language
 
 ## About
 Experimental pragmatic programming language vision.
