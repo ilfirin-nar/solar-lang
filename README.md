@@ -4,11 +4,8 @@
 Experimental pragmatic programming language vision. At work!
 
 ## Status
-### CI
-Platform | Status
----------|-------
-Windows | [![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
-Linux | Migration after release .NET Core
+[![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
+[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ### Development
 Milestone I: working compiler to CIL.
@@ -25,6 +22,3 @@ Milestone II: go to the cross-platform state and compiler to LLVM.
 1. [Theses](docs/theses.md)
 2. [Language design](docs/language-design.md)
 3. [Library](docs/library.md)
-
-### License
-[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)<br/>
