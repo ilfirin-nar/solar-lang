@@ -1,15 +1,24 @@
 skip_commits:
   message: /((Create.*\.md)|(Update.*\.md))/
 
-version: 1.0.{build}
+version: 0.0.0.{build}
 
 configuration: Release
 
-before_build:
-  - cd src
-  - nuget restore
-  - cd ..
+environment:
+  sourcesFolder: src
+  solutionName: evergreen-lang.sln
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
 
 build:
-  project: src\main.sln
-  verbosity: normal
+  verbosity: minimal  
+  project: $(sourcesFolder)\$(solutionName)
+  publish_nuget: true
+  publish_nuget_symbols: true
+  
