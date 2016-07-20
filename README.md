@@ -5,18 +5,7 @@ Experimental pragmatic programming language vision. At work!
 
 ## Status
 [![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
-[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-
-### Development
-Milestone I: working compiler to CIL.
-
-1. Lexical analysis — done
-2. Syntax analysis
-3. Semantic analysis
-4. Optimizations (?)
-5. CIL code emmiting
-
-Milestone II: go to the cross-platform state and compiler to LLVM.
+[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://github.com/sunloving/evergreen-lang/blob/master/LICENSE)
 
 ## Documentation
 1. [Theses](docs/theses.md)
