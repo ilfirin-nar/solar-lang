@@ -26,7 +26,7 @@ namespace Evergreen.Domain.Grammar.Lexis.Services
 
         public ILexicalTokenType ClarifyTokenType(string lexeme, ILexicalTokenType currentTokenType)
         {
-            var tokenTypesExceptCurrent = _lexicalTokenTypesDirectory.LexicalTokenTypes.ExceptItmes(currentTokenType);
+            var tokenTypesExceptCurrent = _lexicalTokenTypesDirectory.LexicalTokenTypes.ExceptItems(currentTokenType);
             var newTokenType = tokenTypesExceptCurrent.FirstOrDefault(t => t.IsMatch(lexeme));
             return newTokenType ?? currentTokenType;
         }

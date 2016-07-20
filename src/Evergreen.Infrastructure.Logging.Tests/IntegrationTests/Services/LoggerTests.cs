@@ -1,4 +1,4 @@
-﻿using Evergreen.Infrastructure.Common.Extensions.ObjectExtensions;
+﻿using Evergreen.Infrastructure.Common.Extensions;
 using Evergreen.Infrastructure.Configuration.Services;
 using Evergreen.Infrastructure.Logging.Services;
 using LightInject;

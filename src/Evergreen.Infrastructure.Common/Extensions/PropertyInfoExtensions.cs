@@ -11,11 +11,5 @@ namespace Evergreen.Infrastructure.Common.Extensions
         {
             return propertyInfo.GetCustomAttributes<TAttribute>().Any();
         }
-
-        public static TAttribute GetFirstAttribute<TAttribute>(this PropertyInfo type)
-            where TAttribute : Attribute
-        {
-            return type.GetCustomAttributes<TAttribute>().First();
-        }
     }
 }

@@ -59,10 +59,9 @@
     <Compile Include="Exceptions\FrontendException.cs" />
     <Compile Include="Exceptions\InfrastructureException.cs" />
     <Compile Include="Exceptions\EvergreenException.cs" />
-    <Compile Include="Extensions\ConcurrentDictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Extensions\ObjectExtensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
