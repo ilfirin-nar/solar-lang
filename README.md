@@ -1,7 +1,7 @@
 # Evergreen Programming Language
 
 ## About
-Experimental pragmatic programming language vision. At work!
+Experimental pragmatic programming language vision. Not usable yet. Only prototype yet.
 
 ## Status
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
