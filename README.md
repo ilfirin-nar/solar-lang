@@ -1,13 +1,13 @@
-# Evergreen Programming Language 🌲
+# Evergreen Programming Language
 
 ## About
-Experimental pragmatic programming language vision.
+Experimental pragmatic programming language vision. At work!
 
 ## Status
 ### CI
 Platform | Status
 ---------|-------
-Windows | [![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/solar-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/solar-lang)
+Windows | [![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
 Linux | Migration after release .NET Core
 
 ### Development
