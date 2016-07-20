@@ -4,7 +4,7 @@
 Experimental pragmatic programming language vision. At work!
 
 ## Status
-[![Windows build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/sunloving/evergreen-lang?retina=true&svg=true)](https://ci.appveyor.com/project/sunloving/evergreen-lang)
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://github.com/sunloving/evergreen-lang/blob/master/LICENSE)
 
 ## Documentation
