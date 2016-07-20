@@ -1,5 +1,7 @@
 skip_commits:
   message: /((Create.*\.md)|(Update.*\.md))/
+  files:
+  - docs/*
 
 version: 0.0.0.{build}
 
