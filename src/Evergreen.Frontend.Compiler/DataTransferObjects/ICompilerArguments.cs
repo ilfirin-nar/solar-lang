@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Evergreen.Infrastructure.Console.Arguments.DataTransferObjects;
+using Photosphere.Console.Arguments.DataTransferObjects;
 
 namespace Evergreen.Frontend.Compiler.DataTransferObjects
 {

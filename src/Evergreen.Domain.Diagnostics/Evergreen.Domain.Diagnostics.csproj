@@ -30,15 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LightInject">
-      <HintPath>..\packages\LightInject.4.0.9\lib\net46\LightInject.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompositionRoot.cs" />
     <Compile Include="IDiagnostician.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

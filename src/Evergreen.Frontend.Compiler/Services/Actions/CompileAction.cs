@@ -2,7 +2,7 @@
 using Evergreen.Application.Compiler.Services;
 using Evergreen.Frontend.Compiler.DataTransferObjects;
 using Evergreen.Infrastructure.Common.Services;
-using Evergreen.Infrastructure.Console.Actions;
+using Photosphere.Console.Actions;
 
 namespace Evergreen.Frontend.Compiler.Services.Actions
 {

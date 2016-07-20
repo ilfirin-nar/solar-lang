@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Evergreen.Frontend.Compiler.DataTransferObjects;
 using Evergreen.Infrastructure.Configuration.Services;
-using Evergreen.Infrastructure.Console.Actions.Services;
-using Evergreen.Infrastructure.Console.Arguments.Services;
+using Photosphere.Console.Actions.Services;
+using Photosphere.Console.Arguments.Services;
 
 namespace Evergreen.Frontend.Compiler.Program
 {
