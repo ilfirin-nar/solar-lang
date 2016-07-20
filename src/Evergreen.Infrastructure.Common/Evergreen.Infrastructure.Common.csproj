@@ -38,6 +38,10 @@
       <HintPath>..\packages\LightInject.4.0.11\lib\net46\LightInject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Photosphere.DependencyInjection, Version=0.7.0.109, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Photosphere.DependencyInjection.0.7.0.109\lib\net461\Photosphere.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -58,9 +62,7 @@
     <Compile Include="Extensions\ConcurrentDictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Extensions\ObjectExtensions\MappingObjectExtension.cs" />
     <Compile Include="Extensions\ObjectExtensions\ObjectExtensions.cs" />
-    <Compile Include="StaticServices\StaticMapper.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
@@ -82,10 +84,6 @@
     <Compile Include="Interfaces\InfrastructureLayer\IMapper.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IMapper.cs" />
-    <Compile Include="StaticServices\MapFunctionGenerator.cs" />
-    <Compile Include="Services\Mapper.cs" />
-    <Compile Include="Services\Exceptions\TargetTypeMustHaveConstructorException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

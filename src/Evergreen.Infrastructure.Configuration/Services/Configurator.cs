@@ -4,6 +4,7 @@ using System.Linq;
 using Evergreen.Infrastructure.Common.Extensions.ObjectExtensions;
 using Evergreen.Infrastructure.Configuration.GlobalStateObject;
 using Evergreen.Infrastructure.FileSystem.Services;
+using Photosphere.Mapping.Extensions;
 
 namespace Evergreen.Infrastructure.Configuration.Services
 {
@@ -38,7 +39,7 @@ namespace Evergreen.Infrastructure.Configuration.Services
             foreach (var configSection in configSections)
             {
                 var section = _configSections.Single(cs => cs.GetType() == configSection.GetType());
-                section.MapObject(configSection);
+                configSection.MapToObject(section);
             }
         }
     }
