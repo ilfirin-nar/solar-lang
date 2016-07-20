@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using Evergreen.Frontend.Compiler.DataTransferObjects;
+using Evergreen.Infrastructure.Common.Interfaces.FrontendLayer;
 using Evergreen.Infrastructure.Configuration.Services;
 using Photosphere.Console.Actions.Services;
 using Photosphere.Console.Arguments.Services;
 
 namespace Evergreen.Frontend.Compiler.Program
 {
-    internal class CompilerProgram : ICompilerProgram
+    internal class CompilerProgram : IConsoleProgram
     {
         private readonly ICommandLineArgumentsParser<CompilerArguments> _commandLineArgumentsParser;
         private readonly ICommandLineActionSelector<CompilerArguments> _commandLineActionSelector;

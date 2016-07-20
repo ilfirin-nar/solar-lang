@@ -65,7 +65,6 @@
     <Compile Include="Services\Actions\CompileAction.cs" />
     <Compile Include="Services\Actions\ShowHelpAction.cs" />
     <Compile Include="Program\CompilerProgram.cs" />
-    <Compile Include="Program\ICompilerProgram.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,11 +5,11 @@ namespace Evergreen.Frontend.Compiler
 {
     public static class EntryPoint
     {
-        private static readonly ICompilerProgram CompilerProgram;
+        private static readonly CompilerProgram CompilerProgram;
 
         static EntryPoint()
         {
-            CompilerProgram = new ServiceContainer().GetInstance<ICompilerProgram>();
+            CompilerProgram = new ServiceContainer().GetInstance<CompilerProgram>();
         }
 
         public static void Main(string[] args)
