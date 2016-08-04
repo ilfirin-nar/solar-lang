@@ -40,10 +40,6 @@
       <HintPath>..\packages\LightInject.4.0.11\lib\net46\LightInject.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LightInject.Interception, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.Interception.1.0.0.11\lib\net46\LightInject.Interception.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Photosphere.Console, Version=0.1.0.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Photosphere.Console.0.1.0.3\lib\net461\Photosphere.Console.dll</HintPath>
       <Private>True</Private>

@@ -5,7 +5,6 @@ using Evergreen.Infrastructure.Common.DependencyInjection.Extensions;
 using Evergreen.Infrastructure.Common.DependencyInjection.Registration;
 using Evergreen.Infrastructure.Common.Interfaces.FrontendLayer;
 using Evergreen.Infrastructure.Common.Interfaces.InfrastructureLayer;
-using Evergreen.Infrastructure.ErrorHandling.Interceptors;
 
 namespace Evergreen.Frontend.Compiler
 {
@@ -17,7 +16,6 @@ namespace Evergreen.Frontend.Compiler
         {
             serviceRegistry.Register<IInfrastructureService>(ThisAssembly, LifeTimeFactory.PerContainer);
             serviceRegistry.Register<IFrontendService>(ThisAssembly, LifeTimeFactory.PerContainer);
-            serviceRegistry.Intercept(sr => sr.ServiceType == typeof(IConsoleProgram), sf => sf.GetInstance<IErrorHandlingInterceptor>());
         }
     }
 }
