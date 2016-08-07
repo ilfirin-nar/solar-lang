@@ -6,7 +6,7 @@ using Evergreen.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Identif
 using Evergreen.Domain.Grammar.Lexis.GlobalStateObjects.TokenTypes.Words.Keywords;
 using Evergreen.Domain.Grammar.Lexis.Services;
 using Evergreen.Domain.Grammar.Lexis.Services.Exceptions;
-using LightInject.xUnit2;
+using Photosphere.DependencyInjection.xUnit;
 using Xunit;
 
 namespace Evergreen.Domain.Grammar.Tests.Lexical.Services
@@ -14,8 +14,8 @@ namespace Evergreen.Domain.Grammar.Tests.Lexical.Services
     public class TokenTypeRecognizerTests
     {
         [Theory]
-        [InjectData("")]
-        internal void Recognize_InvalidLexeme_Exception(ILexicalTokenTypeRecognizer recognizer, string lexeme)
+        [InjectDependency("")]
+        internal void Recognize_InvalidLexeme_Exception(string lexeme, ILexicalTokenTypeRecognizer recognizer)
         {
             try
             {
@@ -29,23 +29,23 @@ namespace Evergreen.Domain.Grammar.Tests.Lexical.Services
         }
 
         [Theory]
-        [InjectData(" ", typeof (SpaceTokenType))]
-        [InjectData("  ", typeof(IndentTokenType))]
-        [InjectData("\n\r", typeof(NewLineTokenType))]
-        [InjectData("(", typeof(LeftParenthesisTokenType))]
-        [InjectData(")", typeof(RightParenthesisTokenType))]
-        [InjectData("<", typeof(LessThenOperatorTokenType))]
-        [InjectData(">", typeof(GreaterThenOperatorTokenType))]
-        [InjectData("<-", typeof(AssigmentOperatorTokenType))]
-        [InjectData("+", typeof(AdditionOperatorTokenType))]
-        [InjectData("-", typeof(SubstractionOperatorTokenType))]
-        [InjectData("*", typeof(MultiplyOperatorTokenType))]
-        [InjectData("/", typeof(DivisionOperatorTokenType))]
-        [InjectData("fooBar", typeof(LocalIdentifierTokenType))]
-        [InjectData("FooBar", typeof(TypeIdentifierTokenType))]
-        [InjectData("model", typeof(ModelKeywordTokenType))]
-        [InjectData("service", typeof(ServiceKeywordTokenType))]
-        internal void Recognize_ValidLexeme_ValidTokenType(ILexicalTokenTypeRecognizer recognizer, string lexeme, Type tokenTypeType)
+        [InjectDependency(" ", typeof (SpaceTokenType))]
+        [InjectDependency("  ", typeof(IndentTokenType))]
+        [InjectDependency("\n\r", typeof(NewLineTokenType))]
+        [InjectDependency("(", typeof(LeftParenthesisTokenType))]
+        [InjectDependency(")", typeof(RightParenthesisTokenType))]
+        [InjectDependency("<", typeof(LessThenOperatorTokenType))]
+        [InjectDependency(">", typeof(GreaterThenOperatorTokenType))]
+        [InjectDependency("<-", typeof(AssigmentOperatorTokenType))]
+        [InjectDependency("+", typeof(AdditionOperatorTokenType))]
+        [InjectDependency("-", typeof(SubstractionOperatorTokenType))]
+        [InjectDependency("*", typeof(MultiplyOperatorTokenType))]
+        [InjectDependency("/", typeof(DivisionOperatorTokenType))]
+        [InjectDependency("fooBar", typeof(LocalIdentifierTokenType))]
+        [InjectDependency("FooBar", typeof(TypeIdentifierTokenType))]
+        [InjectDependency("model", typeof(ModelKeywordTokenType))]
+        [InjectDependency("service", typeof(ServiceKeywordTokenType))]
+        internal void Recognize_ValidLexeme_ValidTokenType(string lexeme, Type tokenTypeType, ILexicalTokenTypeRecognizer recognizer)
         {
             var result = recognizer.Recognize(lexeme);
             Assert.Equal(tokenTypeType, result.GetType());

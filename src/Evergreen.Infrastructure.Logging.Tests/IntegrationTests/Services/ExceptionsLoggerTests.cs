@@ -1,30 +1,30 @@
 ﻿using System;
 using Evergreen.Infrastructure.Configuration.Services;
 using Evergreen.Infrastructure.Logging.Services;
-using LightInject;
-using LightInject.xUnit2;
+using Photosphere.DependencyInjection.xUnit;
 using Xunit;
 
 namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
 {
     public class ExceptionsLoggerTests : LoggingTestsBase
     {
-        private static IServiceContainer _container;
+        //private static IServiceContainer _container;
 
-        public static void Configure(IServiceContainer container)
-        {
-            _container = container;
-        }
+        //public static void Configure(IServiceContainer container)
+        //{
+        //    _container = container;
+        //}
 
-        public ExceptionsLoggerTests()
+        //public ExceptionsLoggerTests()
+        //{
+        //    var configurator = _container.GetInstance<IConfigurator>();
+        //    Configure(configurator);
+        //}
+
+        [Theory, InjectDependency]
+        internal void Log_ValidException_ValidLevel(IExceptionsLogger logger, IConfigurator configurator)
         {
-            var configurator = _container.GetInstance<IConfigurator>();
             Configure(configurator);
-        }
-
-        [Theory, InjectData]
-        internal void Log_ValidException_ValidLevel(IExceptionsLogger logger)
-        {
             try
             {
                 throw new TestException();
@@ -37,9 +37,10 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
             }
         }
 
-        [Theory, InjectData]
-        internal void Log_ValidException_ValidStackTrace(IExceptionsLogger logger)
+        [Theory, InjectDependency]
+        internal void Log_ValidException_ValidStackTrace(IExceptionsLogger logger, IConfigurator configurator)
         {
+            Configure(configurator);
             try
             {
                 throw new TestException();
@@ -52,9 +53,10 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
             }
         }
 
-        [Theory, InjectData]
-        internal void Log_ValidException_ValidMessage(IExceptionsLogger logger)
+        [Theory, InjectDependency]
+        internal void Log_ValidException_ValidMessage(IExceptionsLogger logger, IConfigurator configurator)
         {
+            Configure(configurator);
             try
             {
                 throw new TestException();
@@ -67,9 +69,10 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
             }
         }
 
-        [Theory, InjectData]
-        internal void Log_ValidException_NullInnerException(IExceptionsLogger logger)
+        [Theory, InjectDependency]
+        internal void Log_ValidException_NullInnerException(IExceptionsLogger logger, IConfigurator configurator)
         {
+            Configure(configurator);
             try
             {
                 throw new TestException();
@@ -82,9 +85,10 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
             }
         }
 
-        [Theory, InjectData]
-        internal void Log_ValidExceptionWithInnerException_ValidInnerException(IExceptionsLogger logger)
+        [Theory, InjectDependency]
+        internal void Log_ValidExceptionWithInnerException_ValidInnerException(IExceptionsLogger logger, IConfigurator configurator)
         {
+            Configure(configurator);
             try
             {
                 try

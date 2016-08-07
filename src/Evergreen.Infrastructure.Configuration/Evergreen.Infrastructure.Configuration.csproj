@@ -38,6 +38,10 @@
       <HintPath>..\packages\LightInject.4.0.11\lib\net46\LightInject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Photosphere.DependencyInjection, Version=0.7.0.111, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Photosphere.DependencyInjection.0.7.0.111\lib\net461\Photosphere.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Photosphere.Mapping, Version=1.2.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Photosphere.Mapping.1.2.0.7\lib\net461\Photosphere.Mapping.dll</HintPath>
       <Private>True</Private>

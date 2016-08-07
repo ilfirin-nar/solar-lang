@@ -7,7 +7,7 @@ namespace Evergreen.Domain.Grammar.Lexis.Directories
 {
     public interface ILexicalTokenTypesDirectory : IDirectory
     {
-        IReadOnlyList<ILexicalTokenType> LexicalTokenTypes { get; }
+        IReadOnlyCollection<ILexicalTokenType> LexicalTokenTypes { get; }
 
         TTokenType Get<TTokenType>() where TTokenType : ILexicalTokenType;
 

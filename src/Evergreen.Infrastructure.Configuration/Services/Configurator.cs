@@ -11,10 +11,10 @@ namespace Evergreen.Infrastructure.Configuration.Services
     {
         private const string DefaultConfigPath = "config.json";
         private readonly IEnumerable<Type> _configSectionsTypes;
-        private readonly IReadOnlyList<IConfigSection> _configSections;
+        private readonly IReadOnlyCollection<IConfigSection> _configSections;
         private readonly IJsonFileParser _fileParser;
 
-        public Configurator(IReadOnlyList<IConfigSection> configSections, IJsonFileParser fileParser)
+        public Configurator(IReadOnlyCollection<IConfigSection> configSections, IJsonFileParser fileParser)
         {
             _configSectionsTypes = configSections.Select(o => o.GetType());
             _configSections = configSections.ToList();

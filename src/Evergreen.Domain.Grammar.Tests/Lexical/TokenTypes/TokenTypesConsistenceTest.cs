@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Evergreen.Domain.Grammar.Lexis.Directories;
 using Evergreen.Infrastructure.Common.Extensions;
-using LightInject.xUnit2;
+using Photosphere.DependencyInjection.xUnit;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -27,7 +27,7 @@ namespace Evergreen.Domain.Grammar.Tests.Lexical.TokenTypes
             }
         }
 
-        [Theory, InjectData]
+        [Theory, InjectDependency]
         internal void CheckConsistenceOfAllTokenTypes_Consistent(ILexicalTokenTypesDirectory lexicalTokenTypesDirectory)
         {
             var tokenTypes = lexicalTokenTypesDirectory.LexicalTokenTypes;
@@ -49,7 +49,7 @@ namespace Evergreen.Domain.Grammar.Tests.Lexical.TokenTypes
 
         private static IEnumerable<CustomAttributeData> GetTestCases(MemberInfo testMethod)
         {
-            return testMethod.CustomAttributes.Where(a => a.AttributeType == typeof (InjectDataAttribute));
+            return testMethod.CustomAttributes.Where(a => a.AttributeType == typeof (InjectDependencyAttribute));
         }
 
         private static string GetTestMethodTokenTypeName(MethodInfo testMethod)

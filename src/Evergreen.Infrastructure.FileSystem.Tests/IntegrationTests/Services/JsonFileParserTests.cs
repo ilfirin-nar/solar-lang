@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Evergreen.Infrastructure.FileSystem.Services;
 using Evergreen.Infrastructure.FileSystem.Services.Exceptions;
-using LightInject.xUnit2;
 using Newtonsoft.Json;
+using Photosphere.DependencyInjection.xUnit;
 using Xunit;
 
 namespace Evergreen.Infrastructure.FileSystem.Tests.IntegrationTests.Services
@@ -29,7 +29,7 @@ namespace Evergreen.Infrastructure.FileSystem.Tests.IntegrationTests.Services
 
         protected override string FileContent => JsonConvert.SerializeObject(_foo);
 
-        [Theory, InjectData]
+        [Theory, InjectDependency]
         internal void ParseNestedObjectFromFile_ValidNestedJson_ValidResult(IJsonFileParser jsonFileParser)
         {
             var result = jsonFileParser.ParseNestedObjectFromFile(TestFilePath, new List<Type> { typeof (Bar), typeof(Buz) });
@@ -37,7 +37,7 @@ namespace Evergreen.Infrastructure.FileSystem.Tests.IntegrationTests.Services
             Assert.Equal(_foo.Buz, result.Single(o => o is Buz));
         }
 
-        [Theory, InjectData]
+        [Theory, InjectDependency]
         internal void ParseNestedObjectFromFile_ValidNestedJson_Exception(IJsonFileParser jsonFileParser)
         {
             try

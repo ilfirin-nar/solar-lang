@@ -7,12 +7,12 @@ namespace Evergreen.Domain.Grammar.Lexis.Directories
 {
     internal class LexicalTokenTypesDirectory : ILexicalTokenTypesDirectory
     {
-        public LexicalTokenTypesDirectory(IReadOnlyList<ILexicalTokenType> tokenTypes)
+        public LexicalTokenTypesDirectory(IReadOnlyCollection<ILexicalTokenType> tokenTypes)
         {
             LexicalTokenTypes = tokenTypes;
         }
 
-        public IReadOnlyList<ILexicalTokenType> LexicalTokenTypes { get; }
+        public IReadOnlyCollection<ILexicalTokenType> LexicalTokenTypes { get; }
 
         public TTokenType Get<TTokenType>() where TTokenType : ILexicalTokenType
         {
