@@ -1,5 +1,5 @@
 ﻿using Evergreen.Frontend.Compiler.Program;
-using LightInject;
+using Photosphere.DependencyInjection;
 
 namespace Evergreen.Frontend.Compiler
 {
@@ -9,7 +9,7 @@ namespace Evergreen.Frontend.Compiler
 
         static EntryPoint()
         {
-            CompilerProgram = new ServiceContainer().GetInstance<CompilerProgram>();
+            CompilerProgram = new DependencyContainer().GetInstance<CompilerProgram>();
         }
 
         public static void Main(string[] args)

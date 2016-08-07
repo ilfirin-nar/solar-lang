@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.25428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evergreen.Infrastructure.Common", "Evergreen.Infrastructure.Common\Evergreen.Infrastructure.Common.csproj", "{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evergreen.Infrastructure.Common.Tests", "Evergreen.Infrastructure.Common.Tests\Evergreen.Infrastructure.Common.Tests.csproj", "{E18398C1-F8D2-4746-84F4-E82D69DB2364}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evergreen.Infrastructure.Configuration", "Evergreen.Infrastructure.Configuration\Evergreen.Infrastructure.Configuration.csproj", "{9A8EE86F-09E0-4EE5-984F-8DB794AE5E93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evergreen.Infrastructure.FileSystem", "Evergreen.Infrastructure.FileSystem\Evergreen.Infrastructure.FileSystem.csproj", "{AB2FCB0D-E222-47E8-B837-79284700ED30}"
@@ -57,10 +55,6 @@ Global
 		{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC47EE27-0F13-4CFB-87DD-AC7163BC5375}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E18398C1-F8D2-4746-84F4-E82D69DB2364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E18398C1-F8D2-4746-84F4-E82D69DB2364}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E18398C1-F8D2-4746-84F4-E82D69DB2364}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E18398C1-F8D2-4746-84F4-E82D69DB2364}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9A8EE86F-09E0-4EE5-984F-8DB794AE5E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A8EE86F-09E0-4EE5-984F-8DB794AE5E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A8EE86F-09E0-4EE5-984F-8DB794AE5E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -139,7 +133,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CC47EE27-0F13-4CFB-87DD-AC7163BC5375} = {437CE6F1-8949-4BAB-9E1B-FDFF87290ECB}
-		{E18398C1-F8D2-4746-84F4-E82D69DB2364} = {437CE6F1-8949-4BAB-9E1B-FDFF87290ECB}
 		{9A8EE86F-09E0-4EE5-984F-8DB794AE5E93} = {437CE6F1-8949-4BAB-9E1B-FDFF87290ECB}
 		{AB2FCB0D-E222-47E8-B837-79284700ED30} = {437CE6F1-8949-4BAB-9E1B-FDFF87290ECB}
 		{A865C686-DF9B-4CD2-8295-47E263F86C42} = {437CE6F1-8949-4BAB-9E1B-FDFF87290ECB}

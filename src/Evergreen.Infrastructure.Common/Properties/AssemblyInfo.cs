@@ -1,8 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using Evergreen.Infrastructure.Common;
-using Evergreen.Infrastructure.Common.Interfaces;
-using LightInject;
+using Evergreen.Infrastructure.Common.Interfaces.InfrastructureLayer;
 using Photosphere.DependencyInjection;
 using Photosphere.DependencyInjection.Attributes;
 
@@ -18,5 +16,5 @@ using Photosphere.DependencyInjection.Attributes;
 [assembly: Guid("cc47ee27-0f13-4cfb-87dd-ac7163bc5375")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: CompositionRootType(typeof(CompositionRoot))]
-[assembly: RegisterDependencies(typeof(IService), Lifetime.PerContainer)]
+
+[assembly: RegisterDependencies(typeof(IInfrastructureService), Lifetime.PerContainer)]

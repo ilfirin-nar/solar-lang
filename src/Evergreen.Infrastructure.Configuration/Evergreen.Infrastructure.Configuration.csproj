@@ -34,12 +34,8 @@
       <HintPath>..\packages\JetBrains.Annotations.10.1.5\lib\net\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LightInject, Version=4.0.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.4.0.11\lib\net46\LightInject.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Photosphere.DependencyInjection, Version=0.7.0.111, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Photosphere.DependencyInjection.0.7.0.111\lib\net461\Photosphere.DependencyInjection.dll</HintPath>
+    <Reference Include="Photosphere.DependencyInjection, Version=0.7.0.112, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Photosphere.DependencyInjection.0.7.0.112\lib\net461\Photosphere.DependencyInjection.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Photosphere.Mapping, Version=1.2.0.7, Culture=neutral, processorArchitecture=MSIL">
@@ -52,7 +48,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompositionRoot.cs" />
     <Compile Include="Exceptions\ConfigOptionAlreadySettedException.cs" />
     <Compile Include="Exceptions\ConfigOptionNotFoundException.cs" />
     <Compile Include="GlobalStateObject\IConfigSection.cs" />
