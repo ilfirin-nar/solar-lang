@@ -14,7 +14,7 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
         {
             _logFilePath = $"log-{Guid.NewGuid()}.log";
             var configSectionJsonString = JsonConvert.SerializeObject(new LoggingConfig { LogFilePath = _logFilePath });
-            var configJsonString =  $"{{ \"{typeof (LoggingConfig).Name}\": {configSectionJsonString} }}";
+            var configJsonString = $"{{ \"{typeof(LoggingConfig).Name}\": {configSectionJsonString} }}";
             configurator.Configure(configJsonString);
         }
 

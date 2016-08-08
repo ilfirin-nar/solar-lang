@@ -3,8 +3,12 @@ using System.Linq;
 using Evergreen.Infrastructure.Configuration.GlobalStateObject;
 using Evergreen.Infrastructure.Configuration.Services;
 using Newtonsoft.Json;
+using Photosphere.DependencyInjection;
+using Photosphere.DependencyInjection.Attributes;
 using Photosphere.DependencyInjection.xUnit;
 using Xunit;
+
+[assembly: RegisterDependencies(typeof(IConfigSection), Lifetime.PerContainer)]
 
 namespace Evergreen.Infrastructure.Configuration.Tests.IntegrationTests.Services
 {
@@ -31,32 +35,32 @@ namespace Evergreen.Infrastructure.Configuration.Tests.IntegrationTests.Services
 
             Assert.Equal(1, configs.Count());
         }
+    }
 
-        public class FooConfig : IFooConfig
+    public class FooConfig : IFooConfig
+    {
+        public string Bar { get; set; }
+
+        protected bool Equals(FooConfig other)
         {
-            public string Bar { get; set; }
-
-            protected bool Equals(FooConfig other)
-            {
-                return string.Equals(Bar, other.Bar);
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (ReferenceEquals(null, obj)) return false;
-                if (ReferenceEquals(this, obj)) return true;
-                return obj.GetType() == GetType() && Equals((FooConfig) obj);
-            }
-
-            public override int GetHashCode()
-            {
-                return Bar?.GetHashCode() ?? 0;
-            }
+            return string.Equals(Bar, other.Bar);
         }
 
-        public interface IFooConfig : IConfigSection
+        public override bool Equals(object obj)
         {
-            string Bar { get; }
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            return obj.GetType() == GetType() && Equals((FooConfig)obj);
         }
+
+        public override int GetHashCode()
+        {
+            return Bar?.GetHashCode() ?? 0;
+        }
+    }
+
+    public interface IFooConfig : IConfigSection
+    {
+        string Bar { get; }
     }
 }

@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Photosphere.DependencyInjection, Version=0.7.0.112, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Photosphere.DependencyInjection.0.7.0.112\lib\net461\Photosphere.DependencyInjection.dll</HintPath>
+    <Reference Include="Photosphere.DependencyInjection, Version=0.7.0.117, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Photosphere.DependencyInjection.0.7.0.117\lib\net461\Photosphere.DependencyInjection.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Photosphere.DependencyInjection.xUnit, Version=0.1.0.5, Culture=neutral, processorArchitecture=MSIL">

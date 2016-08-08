@@ -17,4 +17,5 @@ using Photosphere.DependencyInjection.Attributes;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
+[assembly: RegisterDependencies(typeof(IGlobalStateObject), Lifetime.PerContainer)]
 [assembly: RegisterDependencies(typeof(IInfrastructureService), Lifetime.PerContainer)]

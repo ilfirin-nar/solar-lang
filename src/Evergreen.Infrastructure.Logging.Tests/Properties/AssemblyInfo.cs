@@ -13,6 +13,3 @@ using System.Runtime.InteropServices;
 [assembly: Guid("838daae7-094e-44a9-b851-0beb69bcc9b0")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-//[assembly: RegisterDependencies(typeof(IGlobalStateObject), Lifetime.PerContainer)]
-//[assembly: RegisterDependencies(typeof(IInfrastructureService), Lifetime.PerContainer)]

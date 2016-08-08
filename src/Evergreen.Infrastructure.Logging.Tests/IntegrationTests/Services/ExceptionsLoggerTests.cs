@@ -8,18 +8,6 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
 {
     public class ExceptionsLoggerTests : LoggingTestsBase
     {
-        //private static IServiceContainer _container;
-
-        //public static void Configure(IServiceContainer container)
-        //{
-        //    _container = container;
-        //}
-
-        //public ExceptionsLoggerTests()
-        //{
-        //    var configurator = _container.GetInstance<IConfigurator>();
-        //    Configure(configurator);
-        //}
 
         [Theory, InjectDependency]
         internal void Log_ValidException_ValidLevel(IExceptionsLogger logger, IConfigurator configurator)
@@ -113,9 +101,9 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
         {
             private const string MessageString = "Test exception message";
 
-            public TestException() {}
+            public TestException() { }
 
-            public TestException(Exception innerException) : base(MessageString, innerException) {}
+            public TestException(Exception innerException) : base(MessageString, innerException) { }
 
             public override string Message => MessageString;
         }

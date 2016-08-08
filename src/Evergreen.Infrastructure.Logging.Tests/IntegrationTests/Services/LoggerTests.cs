@@ -8,19 +8,6 @@ namespace Evergreen.Infrastructure.Logging.Tests.IntegrationTests.Services
 {
     public class LoggerTests : LoggingTestsBase
     {
-        //private static IServiceContainer _container;
-
-        //public static void Configure(IServiceContainer container)
-        //{
-        //    _container = container;
-        //}
-
-        //public LoggerTests()
-        //{
-        //    var configurator = _container.GetInstance<IConfigurator>();
-        //    Configure(configurator);
-        //}
-
         [Theory]
         [InjectDependency("Fatal", "FATAL", "fatal test log")]
         [InjectDependency("Error", "ERROR", "error test log")]
