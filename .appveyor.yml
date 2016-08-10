@@ -28,7 +28,3 @@ build:
   project: $(sourcesFolder)\$(solutionName)
   publish_nuget: true
   publish_nuget_symbols: true
-  
-test:
-  assemblies:
-    - *.Tests.dll
