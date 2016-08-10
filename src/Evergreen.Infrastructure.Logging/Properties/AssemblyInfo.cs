@@ -1,9 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Evergreen.Infrastructure.Common.Interfaces.InfrastructureLayer;
-using Photosphere.DependencyInjection;
-using Photosphere.DependencyInjection.Attributes;
 
 [assembly: AssemblyTitle("Evergreen.Infrastructure.Logging")]
 [assembly: AssemblyDescription("")]
@@ -19,6 +16,3 @@ using Photosphere.DependencyInjection.Attributes;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: InternalsVisibleTo("Evergreen.Infrastructure.Logging.Tests")]
-
-[assembly: RegisterDependencies(typeof(IGlobalStateObject), Lifetime.PerContainer)]
-[assembly: RegisterDependencies(typeof(IInfrastructureService), Lifetime.PerContainer)]
