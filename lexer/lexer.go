@@ -2,18 +2,19 @@ package lexer
 
 import (
 	"errors"
+	"evergreen-lang/grammar"
 	"regexp"
 )
 
 const maxLexemeLength = 50
 
-func Lex(source string) ([]*Lexeme, error) {
+func Lex(source string) ([]*Token, error) {
 	if len(source) == 0 {
 		return nil, errors.New("Empty source, nothing to lex")
 	}
 
 	var (
-		lexemes    []*Lexeme
+		lexemes    []*Token
 		lineNumber uint
 	)
 	for start := 0; start < len(source); start++ {
@@ -23,15 +24,15 @@ func Lex(source string) ([]*Lexeme, error) {
 				return nil, NewUnrecognizedLexemeError(uint(start), lineNumber)
 			}
 
-			lexeme, err := getLexeme(checkedSubstring, uint(start), lineNumber)
+			lexeme, err := getToken(checkedSubstring, uint(start), lineNumber)
 			if err != nil {
 				continue
 			}
-			if end+1 < len(source) && getType(source[start:end+2]) != InvalidLexemeType {
+			if end+1 < len(source) && getType(source[start:end+2]) != grammar.InvalidLexemeType {
 				continue
 			}
 
-			if lexeme.LexemeType == NewLine {
+			if lexeme.LexemeType == grammar.NewLine {
 				lineNumber++
 			}
 			lexemes = append(lexemes, lexeme)
@@ -42,62 +43,62 @@ func Lex(source string) ([]*Lexeme, error) {
 	return lexemes, nil
 }
 
-func getLexeme(value string, positionInLine uint, lineNumber uint) (*Lexeme, error) {
+func getToken(value string, positionInLine uint, lineNumber uint) (*Token, error) {
 	lexemeType := getType(value)
-	if lexemeType == InvalidLexemeType {
+	if lexemeType == grammar.InvalidLexemeType {
 		return nil, errors.New("Invalid lexeme type")
 	}
-	position := NewLexemePosition(positionInLine, lineNumber)
-	return NewLexeme(value, lexemeType, position), nil
+	position := NewTokenPosition(positionInLine, lineNumber)
+	return NewToken(value, lexemeType, position), nil
 }
 
-func getType(value string) LexemeType {
-	if checkType(value, Space) {
-		return Space
+func getType(value string) grammar.LexemeType {
+	if checkType(value, grammar.Space) {
+		return grammar.Space
 	}
-	if checkType(value, NewLine) {
-		return NewLine
+	if checkType(value, grammar.NewLine) {
+		return grammar.NewLine
 	}
-	if checkType(value, Variable) {
-		return Variable
+	if checkType(value, grammar.Assignment) {
+		return grammar.Assignment
 	}
-	if checkType(value, Assignment) {
-		return Assignment
+	if checkType(value, grammar.Equality) {
+		return grammar.Equality
 	}
-	if checkType(value, Equal) {
-		return Equal
+	if checkType(value, grammar.LessThan) {
+		return grammar.LessThan
 	}
-	if checkType(value, lessThan) {
-		return lessThan
+	if checkType(value, grammar.GreatThan) {
+		return grammar.GreatThan
 	}
-	if checkType(value, GreatThan) {
-		return GreatThan
+	if checkType(value, grammar.LessThanOrEq) {
+		return grammar.LessThanOrEq
 	}
-	if checkType(value, LessThanOrEq) {
-		return LessThanOrEq
+	if checkType(value, grammar.GreatThanOrEq) {
+		return grammar.GreatThanOrEq
 	}
-	if checkType(value, GreatThanOrEq) {
-		return GreatThanOrEq
+	if checkType(value, grammar.Addition) {
+		return grammar.Addition
 	}
-	if checkType(value, Addition) {
-		return Addition
+	if checkType(value, grammar.Subtraction) {
+		return grammar.Subtraction
 	}
-	if checkType(value, Subtraction) {
-		return Subtraction
+	if checkType(value, grammar.Multiplication) {
+		return grammar.Multiplication
 	}
-	if checkType(value, Multiply) {
-		return Multiply
+	if checkType(value, grammar.Division) {
+		return grammar.Division
 	}
-	if checkType(value, Division) {
-		return Division
+	if checkType(value, grammar.PrintKeyword) {
+		return grammar.PrintKeyword
 	}
-	if checkType(value, Print) {
-		return Print
+	if checkType(value, grammar.Variable) {
+		return grammar.Variable
 	}
-	return InvalidLexemeType
+	return grammar.InvalidLexemeType
 }
 
-func checkType(value string, lexemeType LexemeType) bool {
+func checkType(value string, lexemeType grammar.LexemeType) bool {
 	result, err := regexp.Match(string(lexemeType), []byte(value))
 	if err != nil {
 		return false

@@ -1,21 +1,21 @@
-package lexer
+package grammar
 
 const (
 	InvalidLexemeType = LexemeType("INVALID")
 	Space             = LexemeType("^[[:blank:]]+$")
 	NewLine           = LexemeType("^[\n]+$")
-	Variable          = LexemeType("^[[:word:]]+$")
 	Assignment        = LexemeType("^<-$")
-	Equal             = LexemeType("^=$")
-	lessThan          = LexemeType("^<$")
+	Equality          = LexemeType("^=$")
+	LessThan          = LexemeType("^<$")
 	GreatThan         = LexemeType("^>$")
 	LessThanOrEq      = LexemeType("^<=$")
 	GreatThanOrEq     = LexemeType("^>=$")
 	Addition          = LexemeType("^\\+$")
 	Subtraction       = LexemeType("^-$")
-	Multiply          = LexemeType("^\\*$")
+	Multiplication    = LexemeType("^\\*$")
 	Division          = LexemeType("^/$")
-	Print             = LexemeType("^print$")
+	PrintKeyword      = LexemeType("^print$")
+	Variable          = LexemeType("^([a-z])+([a-zA-Z0-9])*$")
 )
 
 type LexemeType string
