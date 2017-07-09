@@ -4,6 +4,7 @@ const (
 	InvalidLexemeType = LexemeType("INVALID")
 	Space             = LexemeType("^[[:blank:]]+$")
 	NewLine           = LexemeType("^[\n]+$")
+	NumericLiteral    = LexemeType("^[[:digit:]]+$")
 	Assignment        = LexemeType("^<-$")
 	Equality          = LexemeType("^=$")
 	LessThan          = LexemeType("^<$")

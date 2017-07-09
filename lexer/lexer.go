@@ -59,6 +59,9 @@ func getType(value string) grammar.LexemeType {
 	if checkType(value, grammar.NewLine) {
 		return grammar.NewLine
 	}
+	if checkType(value, grammar.NumericLiteral) {
+		return grammar.NumericLiteral
+	}
 	if checkType(value, grammar.Assignment) {
 		return grammar.Assignment
 	}
