@@ -2,7 +2,6 @@ package lexer
 
 import (
 	"errors"
-	"fmt"
 	"regexp"
 )
 
@@ -28,7 +27,7 @@ func Lex(source string) ([]*Lexeme, error) {
 			if err != nil {
 				continue
 			}
-			if end+1 < len(source) && checkType(source[start:end+2], lexeme.LexemeType) {
+			if end+1 < len(source) && getType(source[start:end+2]) != InvalidLexemeType {
 				continue
 			}
 
@@ -44,58 +43,58 @@ func Lex(source string) ([]*Lexeme, error) {
 }
 
 func getLexeme(value string, positionInLine uint, lineNumber uint) (*Lexeme, error) {
-	lexemeType, err := getType(value)
-	if err != nil {
-		return nil, err
+	lexemeType := getType(value)
+	if lexemeType == InvalidLexemeType {
+		return nil, errors.New("Invalid lexeme type")
 	}
 	position := NewLexemePosition(positionInLine, lineNumber)
 	return NewLexeme(value, lexemeType, position), nil
 }
 
-func getType(value string) (LexemeType, error) {
+func getType(value string) LexemeType {
 	if checkType(value, Space) {
-		return Space, nil
+		return Space
 	}
 	if checkType(value, NewLine) {
-		return NewLine, nil
+		return NewLine
 	}
 	if checkType(value, Variable) {
-		return Variable, nil
+		return Variable
 	}
 	if checkType(value, Assignment) {
-		return Assignment, nil
+		return Assignment
 	}
 	if checkType(value, Equal) {
-		return Equal, nil
+		return Equal
 	}
 	if checkType(value, lessThan) {
-		return lessThan, nil
+		return lessThan
 	}
 	if checkType(value, GreatThan) {
-		return GreatThan, nil
+		return GreatThan
 	}
 	if checkType(value, LessThanOrEq) {
-		return LessThanOrEq, nil
+		return LessThanOrEq
 	}
 	if checkType(value, GreatThanOrEq) {
-		return GreatThanOrEq, nil
+		return GreatThanOrEq
 	}
 	if checkType(value, Addition) {
-		return Addition, nil
+		return Addition
 	}
 	if checkType(value, Subtraction) {
-		return Subtraction, nil
+		return Subtraction
 	}
 	if checkType(value, Multiply) {
-		return Multiply, nil
+		return Multiply
 	}
 	if checkType(value, Division) {
-		return Division, nil
+		return Division
 	}
 	if checkType(value, Print) {
-		return Print, nil
+		return Print
 	}
-	return InvalidLexemeType, fmt.Errorf("Not recognized lexeme")
+	return InvalidLexemeType
 }
 
 func checkType(value string, lexemeType LexemeType) bool {

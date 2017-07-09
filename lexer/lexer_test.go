@@ -24,12 +24,22 @@ func TestLex(t *testing.T) {
 		})
 
 		t.Run("few words — few lexemes", func(t *testing.T) {
-			lexemes, err := Lex("kjhHlJHlHlHLHlH RIdd2222")
+			lexemes, err := Lex("foo2 bar3")
 			if err != nil {
 				t.Fatalf("Error")
 			}
 			if len(lexemes) != 3 {
-				t.Fatalf("Expected 2 lexemes, but received %d", len(lexemes))
+				t.Fatalf("Expected 3 lexemes, but received %d", len(lexemes))
+			}
+		})
+
+		t.Run("complex string — many lexemes", func(t *testing.T) {
+			lexemes, err := Lex("foo <- a + b - c * d / e")
+			if err != nil {
+				t.Fatalf("Error")
+			}
+			if len(lexemes) != 21 {
+				t.Fatalf("Expected 21 lexemes, but received %d", len(lexemes))
 			}
 		})
 	})
