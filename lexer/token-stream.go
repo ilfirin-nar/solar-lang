@@ -22,3 +22,7 @@ func (s *TokenStream) GetNext() (*Token, error) {
 	}
 	return s.tokens[s.currentIndex], nil
 }
+
+func (s *TokenStream) PryNext() *Token {
+	return s.tokens[s.currentIndex+1]
+}

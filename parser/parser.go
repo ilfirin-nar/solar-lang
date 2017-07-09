@@ -5,6 +5,7 @@ import (
 	"evergreen-lang/grammar"
 	"evergreen-lang/lexer"
 	"evergreen-lang/parser/ast"
+	"fmt"
 )
 
 func Parse(tokens []*lexer.Token) (*ast.Node, error) {
@@ -17,7 +18,7 @@ func Parse(tokens []*lexer.Token) (*ast.Node, error) {
 }
 
 func parseModule(tokens *lexer.TokenStream) (*ast.Node, error) {
-	node := ast.NewNode(ast.Module, nil)
+	node := ast.NewNode(ast.Module)
 	for {
 		token, err := tokens.GetNext()
 		if err != nil {
@@ -48,10 +49,10 @@ func parseStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 }
 
 func parsePrintStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
-	node := ast.NewNode(ast.StatementPrint, nil)
+	node := ast.NewNode(ast.StatementPrint)
 
-	if checkToken(tokens, grammar.Space) {
-		return nil, errors.New("Missed space")
+	if token, ok := checkToken(tokens, grammar.Space); !ok {
+		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
 
 	expressionNode, err := parseExpression(tokens)
@@ -63,20 +64,23 @@ func parsePrintStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 }
 
 func parseAssignmentStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
-	node := ast.NewNode(ast.StatementPrint, nil)
+	node := ast.NewNode(ast.StatementAssignment)
 	variableToken := tokens.GetCurrent()
 	appendLeaf(node, variableToken, ast.Variable)
 
-	if checkToken(tokens, grammar.Space) {
-		return nil, errors.New("Missed space")
+	if token, ok := checkToken(tokens, grammar.Space); !ok {
+		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
-	if checkToken(tokens, grammar.Assignment) {
-		return nil, errors.New("Missed assignment")
+	if token, ok := checkToken(tokens, grammar.Assignment); !ok {
+		return nil, fmt.Errorf("Missed assignment operator: %s", token.LexemeType)
 	}
-	if checkToken(tokens, grammar.Space) {
-		return nil, errors.New("Missed space")
+	if token, ok := checkToken(tokens, grammar.Space); !ok {
+		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
 
+	if _, err := tokens.GetNext(); err != nil {
+		return nil, err
+	}
 	expressionNode, err := parseExpression(tokens)
 	if err != nil {
 		return nil, err
@@ -86,92 +90,32 @@ func parseAssignmentStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 }
 
 func parseExpression(tokens *lexer.TokenStream) (*ast.Node, error) {
-	// todo
-}
+	node := ast.NewNode(ast.Expression)
 
-func _parseExpression(tokens *lexer.TokenStream) (*ast.Node, error) {
-	node := ast.NewNode(ast.Statement, nil)
-	for {
-		token, err := tokens.GetNext()
-		if err != nil {
-			break
-		}
-
-		if token.LexemeType == grammar.Space {
-			continue
-		}
-		if token.LexemeType == grammar.NewLine {
-			continue
-		}
-		if token.LexemeType == grammar.PrintKeyword {
-			// TODO
-			continue
-		}
-		if token.LexemeType == grammar.Variable {
-			// TODO
-			appendLeaf(node, token, ast.Variable)
-			continue
-		}
-		if token.LexemeType == grammar.NumericLiteral {
-			appendLeaf(node, token, ast.Number)
-			continue
-		}
-		if token.LexemeType == grammar.Assignment {
-			appendLeaf(node, token, ast.OperatorAssignment)
-			continue
-		}
-		if token.LexemeType == grammar.Equality {
-			appendLeaf(node, token, ast.OperatorEquality)
-			continue
-		}
-		if token.LexemeType == grammar.LessThan {
-			appendLeaf(node, token, ast.OperatorLessThan)
-			continue
-		}
-		if token.LexemeType == grammar.GreatThan {
-			appendLeaf(node, token, ast.OperatorGreatThan)
-			continue
-		}
-		if token.LexemeType == grammar.LessThanOrEq {
-			appendLeaf(node, token, ast.OperatorLessThanOrEq)
-			continue
-		}
-		if token.LexemeType == grammar.GreatThanOrEq {
-			appendLeaf(node, token, ast.OperatorGreatThanOrEq)
-			continue
-		}
-		if token.LexemeType == grammar.Addition {
-			appendLeaf(node, token, ast.OperatorAddition)
-			continue
-		}
-		if token.LexemeType == grammar.Subtraction {
-			appendLeaf(node, token, ast.OperatorSubtraction)
-			continue
-		}
-		if token.LexemeType == grammar.Multiplication {
-			appendLeaf(node, token, ast.OperatorMultiplication)
-			continue
-		}
-		if token.LexemeType == grammar.Division {
-			appendLeaf(node, token, ast.OperatorDivision)
-			continue
-		}
+	token := tokens.GetCurrent()
+	switch token.LexemeType {
+	case grammar.NewLine:
+		return nil, fmt.Errorf("Missed expression")
+	case grammar.NumericLiteral:
+		return nil, nil // todo
+	case grammar.Variable:
+		return nil, nil // todo
 	}
+
+	// todo
+
 	return node, nil
 }
 
-func checkToken(tokens *lexer.TokenStream, lexemeType grammar.LexemeType) bool {
+func checkToken(tokens *lexer.TokenStream, lexemeType grammar.LexemeType) (*lexer.Token, bool) {
 	token, err := tokens.GetNext()
 	if err != nil {
-		return false
+		return nil, false
 	}
-	if token.LexemeType != lexemeType {
-		return false
-	}
-	return true
+	return token, token.LexemeType != lexemeType
 }
 
 func appendLeaf(node *ast.Node, token *lexer.Token, nodeType ast.NodeType) *ast.Node {
-	childNode := ast.NewNode(nodeType, token)
+	childNode := ast.NewLeafNode(nodeType, token)
 	node.AppendChild(childNode)
 }

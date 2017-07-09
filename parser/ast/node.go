@@ -2,7 +2,11 @@ package ast
 
 import "evergreen-lang/lexer"
 
-func NewNode(nodeType NodeType, token *lexer.Token) *Node {
+func NewNode(nodeType NodeType) *Node {
+	return &Node{nodeType: nodeType}
+}
+
+func NewLeafNode(nodeType NodeType, token *lexer.Token) *Node {
 	return &Node{token: token, nodeType: nodeType}
 }
 
