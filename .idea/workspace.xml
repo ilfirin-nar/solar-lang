@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b3e868-b9b1-4d7e-a110-0e1ef2a2f500" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/GOPATH__evergreen_lang_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lexer/Lexeme.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lexer/LexemePosition.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lexer/lexemes.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lexer/lexer.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lexer/lexer_test.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.appveyor.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/grammar/lexems/lexemsRegexps.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main_test.go" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lexer/lexer.go" afterPath="$PROJECT_DIR$/lexer/errors.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main.go" afterPath="$PROJECT_DIR$/main.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/parser/parser.go" afterPath="$PROJECT_DIR$/parser/parser.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexer/lexemes.go" afterPath="$PROJECT_DIR$/lexer/lexemes.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexer/lexer.go" afterPath="$PROJECT_DIR$/lexer/lexer.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexer/lexer_test.go" afterPath="$PROJECT_DIR$/lexer/lexer_test.go" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,16 +14,37 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="LexicalAnalyzerTests.cs" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/_old-src/Evergreen.Domain.Analysis.Lexical.Tests/Service/LexicalAnalyzerTests.cs">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="408">
+                    <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="lexer_test.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lexer/lexer_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="167">
+              <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
               <folding>
                 <element signature="e#15#36#0" expanded="true" />
+                <element signature="e#1951#2253#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -42,8 +53,8 @@
       <file leaf-file-name="lexer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lexer/lexer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state relative-caret-position="388">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,8 +63,8 @@
       <file leaf-file-name="lexemes.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lexer/lexemes.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+            <state relative-caret-position="0">
+              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -73,9 +84,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lexer/errors.go" />
+        <option value="$PROJECT_DIR$/_old-src/Evergreen.Domain.Analysis.Lexical.Tests/Service/LexicalAnalyzerTests.cs" />
         <option value="$PROJECT_DIR$/lexer/lexemes.go" />
-        <option value="$PROJECT_DIR$/lexer/lexer_test.go" />
         <option value="$PROJECT_DIR$/lexer/lexer.go" />
+        <option value="$PROJECT_DIR$/lexer/lexer_test.go" />
       </list>
     </option>
   </component>
@@ -132,6 +144,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evergreen-lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evergreen-lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_old-src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evergreen-lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evergreen-lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_old-src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Evergreen.Domain.Analysis.Lexical.Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evergreen-lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="evergreen-lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_old-src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Evergreen.Domain.Analysis.Lexical.Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -159,27 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestLex in lexer_test.go">
-    <configuration default="false" name="TestLex/empty_string_—_nil in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="evergreen-lang" />
-      <working_directory value="$PROJECT_DIR$/lexer" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="evergreen-lang/lexer" />
-      <pattern value="^TestLex$/^empty_string_—_nil$" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestLex/one_space_—_space_lexeme in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="evergreen-lang" />
-      <working_directory value="$PROJECT_DIR$/lexer" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="evergreen-lang/lexer" />
-      <pattern value="^TestLex$/^one_space_—_space_lexeme$" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestLex/newlines in lexer_test.go">
     <configuration default="false" name="TestLex in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="evergreen-lang" />
       <working_directory value="$PROJECT_DIR$/lexer" />
@@ -190,14 +236,43 @@
       <pattern value="^TestLex$" />
       <method />
     </configuration>
-    <configuration default="false" name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration default="false" name="TestLexSpaces in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="evergreen-lang" />
       <working_directory value="$PROJECT_DIR$/lexer" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="evergreen-lang/lexer" />
-      <pattern value="^TestLex$/^few_spaces_—_space_lexeme$" />
+      <pattern value="^TestLexSpaces$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in 'evergreen-lang/lexer'" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="evergreen-lang" />
+      <working_directory value="$PROJECT_DIR$/lexer" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="evergreen-lang/lexer" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestLex/few_words_—_few_lexemes in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="evergreen-lang" />
+      <working_directory value="$PROJECT_DIR$/lexer" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="evergreen-lang/lexer" />
+      <pattern value="^TestLex$/^few_words_—_few_lexemes$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestLex/newlines in lexer_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="evergreen-lang" />
+      <working_directory value="$PROJECT_DIR$/lexer" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="evergreen-lang/lexer" />
+      <pattern value="^TestLex$/^newlines$" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -613,19 +688,21 @@
       <package value="evergreen-lang" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Go Application.run" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestLex/empty_string_—_nil in lexer_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestLex/one_space_—_space_lexeme in lexer_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestLex in lexer_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestLex/few_spaces_—_space_lexeme in lexer_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestLex in lexer_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestLexSpaces in lexer_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.All in 'evergreen-lang/lexer'" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestLex/few_words_—_few_lexemes in lexer_test.go" />
+      <item index="5" class="java.lang.String" itemvalue="Go Test.TestLex/newlines in lexer_test.go" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.TestLex in lexer_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestLex/empty_string_—_nil in lexer_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestLex/few_spaces_—_space_lexeme in lexer_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestLex/one_space_—_space_lexeme in lexer_test.go" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Go Test.TestLex/newlines in lexer_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.All in 'evergreen-lang/lexer'" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestLex in lexer_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestLex/few_words_—_few_lexemes in lexer_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestLexSpaces in lexer_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -639,44 +716,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1499548215646</updated>
-      <workItem from="1499548217220" duration="2858000" />
+      <workItem from="1499548217220" duration="4833000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLex_empty_string_—_nil_in_lexer_test_go - 2017.07.09 at 13h 06m 57s.xml">
-      <configuration name="TestLex/empty_string_—_nil in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="All_in_'evergreen-lang_lexer' - 2017.07.09 at 13h 29m 22s.xml">
+      <configuration name="All in 'evergreen-lang/lexer'" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 01h 59m 34s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="All_in_'evergreen-lang_lexer' - 2017.07.09 at 13h 30m 42s.xml">
+      <configuration name="All in 'evergreen-lang/lexer'" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 01h 59m 52s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="All_in_'evergreen-lang_lexer' - 2017.07.09 at 13h 32m 39s.xml">
+      <configuration name="All in 'evergreen-lang/lexer'" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 02h 00m 05s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLex_few_words_—_few_lexemes_in_lexer_test_go - 2017.07.09 at 13h 29m 13s.xml">
+      <configuration name="TestLex/few_words_—_few_lexemes in lexer_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 02h 00m 10s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 11h 57m 18s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 11h 57m 25s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 13h 06m 43s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestLex_few_spaces_—_space_lexeme_in_lexer_test_go - 2017.07.09 at 13h 06m 53s.xml">
-      <configuration name="TestLex/few_spaces_—_space_lexeme in lexer_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestLex_in_lexer_test_go - 2017.07.09 at 13h 07m 00s.xml">
+    <history-entry file="TestLex_in_lexer_test_go - 2017.07.09 at 13h 32m 00s.xml">
       <configuration name="TestLex in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLex_newlines_in_lexer_test_go - 2017.07.09 at 13h 35m 36s.xml">
+      <configuration name="TestLex/newlines in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLex_newlines_in_lexer_test_go - 2017.07.09 at 13h 37m 16s.xml">
+      <configuration name="TestLex/newlines in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLex_newlines_in_lexer_test_go - 2017.07.09 at 13h 39m 18s.xml">
+      <configuration name="TestLex/newlines in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLex_newlines_in_lexer_test_go - 2017.07.09 at 13h 39m 55s.xml">
+      <configuration name="TestLex/newlines in lexer_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestLex_newlines_in_lexer_test_go - 2017.07.09 at 13h 39m 58s.xml">
+      <configuration name="TestLex/newlines in lexer_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2858000" />
+    <option name="totallyTimeSpent" value="4833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -720,7 +797,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GoTestRunConfiguration">
@@ -746,14 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lexer/lexemes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lexer/errors.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -772,18 +841,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lexer/lexer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        <state relative-caret-position="388">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_old-src/Evergreen.Domain.Analysis.Lexical.Tests/Service/LexicalAnalyzerTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexer/lexemes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lexer/lexer_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="167">
+          <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
           <folding>
             <element signature="e#15#36#0" expanded="true" />
+            <element signature="e#1951#2253#0" expanded="false" />
           </folding>
         </state>
       </provider>

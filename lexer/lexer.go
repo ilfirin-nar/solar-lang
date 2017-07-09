@@ -36,7 +36,7 @@ func Lex(source string) ([]*Lexeme, error) {
 				lineNumber++
 			}
 			lexemes = append(lexemes, lexeme)
-			start = end + 1
+			start = end
 			break
 		}
 	}
