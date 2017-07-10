@@ -43,7 +43,7 @@ func parseStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 	switch token.LexemeType {
 	case grammar.PrintKeyword:
 		return parsePrintStatement(tokens)
-	case grammar.Variable:
+	case grammar.Identifier:
 		return parseAssignmentStatement(tokens)
 	}
 }
@@ -51,7 +51,7 @@ func parseStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 func parsePrintStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 	node := ast.NewNode(ast.StatementPrint)
 
-	if token, ok := checkToken(tokens, grammar.Space); !ok {
+	if token, ok := checkNextToken(tokens, grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
 
@@ -68,13 +68,13 @@ func parseAssignmentStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 	variableToken := tokens.GetCurrent()
 	appendLeaf(node, variableToken, ast.Variable)
 
-	if token, ok := checkToken(tokens, grammar.Space); !ok {
+	if token, ok := checkNextToken(tokens, grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
-	if token, ok := checkToken(tokens, grammar.Assignment); !ok {
+	if token, ok := checkNextToken(tokens, grammar.Assignment); !ok {
 		return nil, fmt.Errorf("Missed assignment operator: %s", token.LexemeType)
 	}
-	if token, ok := checkToken(tokens, grammar.Space); !ok {
+	if token, ok := checkNextToken(tokens, grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
 
@@ -91,23 +91,67 @@ func parseAssignmentStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 
 func parseExpression(tokens *lexer.TokenStream) (*ast.Node, error) {
 	node := ast.NewNode(ast.Expression)
+	var (
+		firstOperand  *ast.Node
+		operator      *ast.Node
+		secondOperand *ast.Node
+	)
 
 	token := tokens.GetCurrent()
 	switch token.LexemeType {
 	case grammar.NewLine:
 		return nil, fmt.Errorf("Missed expression")
 	case grammar.NumericLiteral:
-		return nil, nil // todo
-	case grammar.Variable:
-		return nil, nil // todo
+		firstOperand = ast.NewLeafNode(ast.Number, token)
+		break
+	case grammar.Identifier:
+		firstOperand = ast.NewLeafNode(ast.Variable, token)
+		break
+	default:
+		return nil, fmt.Errorf("Missed expression")
 	}
 
-	// todo
+	if spaceToken, ok := checkNextToken(tokens, grammar.Space); !ok {
+		return nil, fmt.Errorf("Missed space: %s", spaceToken.LexemeType)
+	}
 
+	operatorToken, err := tokens.GetNext()
+	if err != nil {
+		return nil, fmt.Errorf("Missed operator")
+	}
+	if operatorToken.LexemeType != grammar.NewLine {
+		node.AppendChild(firstOperand)
+		return node, nil
+	}
+
+	if operatorToken.LexemeType != grammar.Addition &&
+		operatorToken.LexemeType != grammar.Subtraction &&
+		operatorToken.LexemeType != grammar.Multiplication &&
+		operatorToken.LexemeType != grammar.Division {
+		return nil, fmt.Errorf("Missed operator")
+	}
+	operator = ast.NewNode(ast.OperatorAddition)
+
+	if spaceToken, ok := checkNextToken(tokens, grammar.Space); !ok {
+		return nil, fmt.Errorf("Missed space: %s", spaceToken.LexemeType)
+	}
+
+	_, err = tokens.GetNext()
+	if err != nil {
+		return nil, fmt.Errorf("Missed second operand")
+	}
+	secondOperand, err = parseExpression(tokens)
+	if err != nil {
+		return nil, err
+	}
+
+	operator.AppendChild(firstOperand)
+	operator.AppendChild(secondOperand)
+	node.AppendChild(operator)
 	return node, nil
 }
 
-func checkToken(tokens *lexer.TokenStream, lexemeType grammar.LexemeType) (*lexer.Token, bool) {
+func checkNextToken(tokens *lexer.TokenStream, lexemeType grammar.LexemeType) (*lexer.Token, bool) {
 	token, err := tokens.GetNext()
 	if err != nil {
 		return nil, false

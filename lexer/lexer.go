@@ -95,8 +95,8 @@ func getType(value string) grammar.LexemeType {
 	if checkType(value, grammar.PrintKeyword) {
 		return grammar.PrintKeyword
 	}
-	if checkType(value, grammar.Variable) {
-		return grammar.Variable
+	if checkType(value, grammar.Identifier) {
+		return grammar.Identifier
 	}
 	return grammar.InvalidLexemeType
 }

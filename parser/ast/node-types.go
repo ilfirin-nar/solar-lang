@@ -6,7 +6,6 @@ const (
 	StatementPrint         = NodeType("pr")
 	StatementAssignment    = NodeType("sass")
 	Expression             = NodeType("expr")
-	ExpressionBinary       = NodeType("bin")
 	OperatorAssignment     = NodeType("oass")
 	OperatorEquality       = NodeType("eq")
 	OperatorLessThan       = NodeType("lt")

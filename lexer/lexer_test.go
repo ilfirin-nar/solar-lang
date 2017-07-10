@@ -136,7 +136,7 @@ func TestLex(t *testing.T) {
 			if len(lexemes) != 1 {
 				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
 			}
-			if lexemes[0].LexemeType != grammar.Variable {
+			if lexemes[0].LexemeType != grammar.Identifier {
 				t.Fatalf("Expected newline token, but received %s", lexemes[0].LexemeType)
 			}
 		})
@@ -149,13 +149,13 @@ func TestLex(t *testing.T) {
 			if len(lexemes) != 3 {
 				t.Fatalf("Expected 3 token, but received %d", len(lexemes))
 			}
-			if lexemes[0].LexemeType != grammar.Variable {
+			if lexemes[0].LexemeType != grammar.Identifier {
 				t.Fatalf("Expected variable token, but received %s", lexemes[0].LexemeType)
 			}
 			if lexemes[1].LexemeType != grammar.Space {
 				t.Fatalf("Expected space token, but received %s", lexemes[0].LexemeType)
 			}
-			if lexemes[2].LexemeType != grammar.Variable {
+			if lexemes[2].LexemeType != grammar.Identifier {
 				t.Fatalf("Expected variable token, but received %s", lexemes[0].LexemeType)
 			}
 		})
@@ -189,7 +189,7 @@ func TestLex(t *testing.T) {
 			if lexemes[1].LexemeType != grammar.Space {
 				t.Fatalf("Expected space token, but received %s", lexemes[0].LexemeType)
 			}
-			if lexemes[2].LexemeType != grammar.Variable {
+			if lexemes[2].LexemeType != grammar.Identifier {
 				t.Fatalf("Expected variable token, but received %s", lexemes[0].LexemeType)
 			}
 		})
