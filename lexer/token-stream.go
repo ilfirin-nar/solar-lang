@@ -32,3 +32,7 @@ func (s *TokenStream) MoveNext() {
 func (s *TokenStream) PryNext() *Token {
 	return s.tokens[s.currentIndex+1]
 }
+
+func (s *TokenStream) IsEnd() bool {
+	return s.currentIndex >= len(s.tokens)-1
+}

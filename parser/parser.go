@@ -113,7 +113,7 @@ func parseExpression(tokens *lexer.TokenStream) (*ast.Node, error) {
 		return nil, fmt.Errorf("Missed expression")
 	}
 
-	if _, endOfExpr := checkNextToken(tokens, grammar.NewLine); endOfExpr {
+	if isExprEnds(tokens) {
 		node.AppendChild(firstOperand)
 		return node, nil
 	}
@@ -166,4 +166,9 @@ func appendLeaf(node *ast.Node, token *lexer.Token, nodeType ast.NodeType) *ast.
 	childNode := ast.NewLeafNode(nodeType, token)
 	node.AppendChild(childNode)
 	return childNode
+}
+
+func isExprEnds(tokens *lexer.TokenStream) bool {
+	_, ok := checkNextToken(tokens, grammar.NewLine)
+	return ok || tokens.IsEnd()
 }
