@@ -16,11 +16,17 @@ func (s *TokenStream) GetCurrent() *Token {
 }
 
 func (s *TokenStream) GetNext() (*Token, error) {
-	s.currentIndex++
-	if s.currentIndex > len(s.tokens) {
+	if s.currentIndex >= len(s.tokens)-1 {
 		return nil, errors.New("End of stream")
 	}
+	s.currentIndex++
 	return s.tokens[s.currentIndex], nil
+}
+
+func (s *TokenStream) MoveNext() {
+	if s.currentIndex <= len(s.tokens) {
+		s.currentIndex++
+	}
 }
 
 func (s *TokenStream) PryNext() *Token {

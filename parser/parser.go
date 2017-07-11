@@ -1,7 +1,6 @@
 package parser
 
 import (
-	"errors"
 	"evergreen-lang/grammar"
 	"evergreen-lang/lexer"
 	"evergreen-lang/parser/ast"
@@ -34,6 +33,7 @@ func parseModule(tokens *lexer.TokenStream) (*ast.Node, error) {
 			return nil, err
 		}
 		node.AppendChild(statementNode)
+		return node, nil
 	}
 	return node, nil
 }
@@ -46,6 +46,7 @@ func parseStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 	case grammar.Identifier:
 		return parseAssignmentStatement(tokens)
 	}
+	return nil, fmt.Errorf("Missed statement")
 }
 
 func parsePrintStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
@@ -55,6 +56,7 @@ func parsePrintStatement(tokens *lexer.TokenStream) (*ast.Node, error) {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
 	}
 
+	tokens.MoveNext()
 	expressionNode, err := parseExpression(tokens)
 	if err != nil {
 		return nil, err
@@ -111,6 +113,11 @@ func parseExpression(tokens *lexer.TokenStream) (*ast.Node, error) {
 		return nil, fmt.Errorf("Missed expression")
 	}
 
+	if _, endOfExpr := checkNextToken(tokens, grammar.NewLine); endOfExpr {
+		node.AppendChild(firstOperand)
+		return node, nil
+	}
+
 	if spaceToken, ok := checkNextToken(tokens, grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", spaceToken.LexemeType)
 	}
@@ -118,10 +125,6 @@ func parseExpression(tokens *lexer.TokenStream) (*ast.Node, error) {
 	operatorToken, err := tokens.GetNext()
 	if err != nil {
 		return nil, fmt.Errorf("Missed operator")
-	}
-	if operatorToken.LexemeType != grammar.NewLine {
-		node.AppendChild(firstOperand)
-		return node, nil
 	}
 
 	if operatorToken.LexemeType != grammar.Addition &&
@@ -156,10 +159,11 @@ func checkNextToken(tokens *lexer.TokenStream, lexemeType grammar.LexemeType) (*
 	if err != nil {
 		return nil, false
 	}
-	return token, token.LexemeType != lexemeType
+	return token, token.LexemeType == lexemeType
 }
 
 func appendLeaf(node *ast.Node, token *lexer.Token, nodeType ast.NodeType) *ast.Node {
 	childNode := ast.NewLeafNode(nodeType, token)
 	node.AppendChild(childNode)
+	return childNode
 }
