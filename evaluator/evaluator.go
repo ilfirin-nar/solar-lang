@@ -1,9 +1,9 @@
 package evaluator
 
 import (
-	"evergreen-lang/grammar"
+	"evergreen-lang/grammar/ast"
 )
 
-func Evaluate(ast grammar.AST) {
+func Evaluate(ast []*ast.Node) {
 	// TODO
 }
