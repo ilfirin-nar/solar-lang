@@ -36,7 +36,7 @@ func parsePrintStatement(tokens *TokenStateMachine) (*ast.Node, error) {
 func parseAssignmentStatement(tokens *TokenStateMachine) (*ast.Node, error) {
 	node := ast.NewNode(ast.StatementAssignment)
 	variableToken := tokens.GetCurrent()
-	appendLeaf(node, variableToken, ast.Variable)
+	appendLeaf(node, variableToken, ast.Identifier)
 
 	if token, ok := tokens.CheckNextToken(grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)

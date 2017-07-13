@@ -16,7 +16,7 @@ const (
 	OperatorSubtraction    = NodeType("sub")
 	OperatorMultiplication = NodeType("mul")
 	OperatorDivision       = NodeType("div")
-	Variable               = NodeType("var")
+	Identifier             = NodeType("var")
 	Number                 = NodeType("num")
 )
 

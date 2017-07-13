@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b3e868-b9b1-4d7e-a110-0e1ef2a2f500" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/evaluator/stack-machine.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser/parsing/append-leaf.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser/parsing/parse-expression.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser/parsing/parse-module.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser/parsing/parse-operand.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser/parsing/parse-statement.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parser/parsing/token-state-machine.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lexer/token-stream.go" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/parser/ast/node-types.go" afterPath="$PROJECT_DIR$/grammar/ast/node-types.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/parser/ast/node.go" afterPath="$PROJECT_DIR$/grammar/ast/node.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evaluator/evaluator.go" afterPath="$PROJECT_DIR$/evaluator/evaluator.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grammar/lexemes.go" afterPath="$PROJECT_DIR$/grammar/lexemes.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser.go" afterPath="$PROJECT_DIR$/parser/parser.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grammar/ast/node-types.go" afterPath="$PROJECT_DIR$/grammar/ast/node-types.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser_test.go" afterPath="$PROJECT_DIR$/parser/parser_test.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/parse-operand.go" afterPath="$PROJECT_DIR$/parser/parsing/parse-operand.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/parse-statement.go" afterPath="$PROJECT_DIR$/parser/parsing/parse-statement.go" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,25 +40,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="append-leaf.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parser/parsing/append-leaf.go">
+      <file leaf-file-name="parser_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding>
-                <element signature="e#17#81#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parse-operand.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/parser/parsing/parse-operand.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="e#17#90#0" expanded="true" />
+                <element signature="e#16#91#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +100,6 @@
         <option value="$PROJECT_DIR$/parser/parse-assignment-statement.go" />
         <option value="$PROJECT_DIR$/parser/ast/node-types.go" />
         <option value="$PROJECT_DIR$/lexer/token-stream.go" />
-        <option value="$PROJECT_DIR$/parser/parser_test.go" />
         <option value="$PROJECT_DIR$/parser/ast/node.go" />
         <option value="$PROJECT_DIR$/grammar/ast.go" />
         <option value="$PROJECT_DIR$/evaluator/evaluator.go" />
@@ -138,6 +115,7 @@
         <option value="$PROJECT_DIR$/parser/parser.go" />
         <option value="$PROJECT_DIR$/parser/parsing/parse-expression.go" />
         <option value="$PROJECT_DIR$/parser/parsing/parse-statement.go" />
+        <option value="$PROJECT_DIR$/parser/parser_test.go" />
       </list>
     </option>
   </component>
@@ -171,7 +149,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,11 +187,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsing" />
+              <option name="myItemId" value="lexer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -232,8 +207,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,16 +244,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Go Test.lexer_test.go">
-    <configuration default="false" name="TestParse in parser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="evergreen-lang" />
-      <working_directory value="$PROJECT_DIR$/parser" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="evergreen-lang/parser" />
-      <pattern value="^TestParse$" />
-      <method />
-    </configuration>
     <configuration default="false" name="TestParse/print_statement/number in parser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="evergreen-lang" />
       <working_directory value="$PROJECT_DIR$/parser" />
@@ -288,16 +252,6 @@
       <kind value="PACKAGE" />
       <package value="evergreen-lang/parser" />
       <pattern value="^TestParse$/^print_statement$/^number$" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestParse/print_statement/binary_expression in parser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="evergreen-lang" />
-      <working_directory value="$PROJECT_DIR$/parser" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="evergreen-lang/parser" />
-      <pattern value="^TestParse$/^print_statement$/^binary_expression$" />
       <method />
     </configuration>
     <configuration default="false" name="parser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
@@ -318,6 +272,26 @@
       <kind value="FILE" />
       <package value="evergreen-lang" />
       <filePath value="$PROJECT_DIR$/lexer/lexer_test.go" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestParse/assignment_statement in parser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="evergreen-lang" />
+      <working_directory value="$PROJECT_DIR$/parser" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="evergreen-lang/parser" />
+      <pattern value="^TestParse$/^assignment_statement$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestParse/assignment_statement/number in parser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="evergreen-lang" />
+      <working_directory value="$PROJECT_DIR$/parser" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="evergreen-lang/parser" />
+      <pattern value="^TestParse$/^assignment_statement$/^number$" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -742,19 +716,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Go Application.run" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestParse in parser_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestParse/print_statement/number in parser_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestParse/print_statement/binary_expression in parser_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.parser_test.go" />
-      <item index="5" class="java.lang.String" itemvalue="Go Test.lexer_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestParse/print_statement/number in parser_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.parser_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.lexer_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestParse/assignment_statement in parser_test.go" />
+      <item index="5" class="java.lang.String" itemvalue="Go Test.TestParse/assignment_statement/number in parser_test.go" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Go Test.lexer_test.go" />
         <item index="1" class="java.lang.String" itemvalue="Go Test.parser_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestParse/print_statement/binary_expression in parser_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestParse/print_statement/number in parser_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestParse in parser_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestParse/assignment_statement/number in parser_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestParse/assignment_statement in parser_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestParse/print_statement/number in parser_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -777,30 +751,28 @@
       <workItem from="1499799728033" duration="599000" />
       <workItem from="1499800353422" duration="6928000" />
       <workItem from="1499877774269" duration="676000" />
-      <workItem from="1499883410504" duration="9040000" />
+      <workItem from="1499883410504" duration="9108000" />
+      <workItem from="1499981572878" duration="536000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestParse_print_statement_binary_expression_in_parser_test_go - 2017.07.12 at 22h 32m 31s.xml">
-      <configuration name="TestParse/print_statement/binary_expression in parser_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_assignment_statement_in_parser_test_go - 2017.07.14 at 00h 40m 03s.xml">
+      <configuration name="TestParse/assignment_statement in parser_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestParse_print_statement_binary_expression_in_parser_test_go - 2017.07.12 at 22h 34m 09s.xml">
-      <configuration name="TestParse/print_statement/binary_expression in parser_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_assignment_statement_number_in_parser_test_go - 2017.07.14 at 00h 40m 46s.xml">
+      <configuration name="TestParse/assignment_statement/number in parser_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestParse_print_statement_binary_expression_in_parser_test_go - 2017.07.12 at 22h 34m 10s.xml">
-      <configuration name="TestParse/print_statement/binary_expression in parser_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_assignment_statement_number_in_parser_test_go - 2017.07.14 at 00h 41m 16s.xml">
+      <configuration name="TestParse/assignment_statement/number in parser_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestParse_print_statement_binary_expression_in_parser_test_go - 2017.07.12 at 22h 38m 14s.xml">
-      <configuration name="TestParse/print_statement/binary_expression in parser_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParse_print_statement_binary_expression_in_parser_test_go - 2017.07.12 at 22h 43m 49s.xml">
-      <configuration name="TestParse/print_statement/binary_expression in parser_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParse_print_statement_binary_expression_in_parser_test_go - 2017.07.12 at 22h 43m 55s.xml">
-      <configuration name="TestParse/print_statement/binary_expression in parser_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_print_statement_number_in_parser_test_go - 2017.07.14 at 00h 36m 07s.xml">
+      <configuration name="TestParse/print_statement/number in parser_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="lexer_test_go - 2017.07.12 at 23h 44m 02s.xml">
+      <configuration name="lexer_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="lexer_test_go - 2017.07.14 at 00h 41m 45s.xml">
       <configuration name="lexer_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="parser_test_go - 2017.07.12 at 22h 54m 16s.xml">
@@ -812,9 +784,12 @@
     <history-entry file="parser_test_go - 2017.07.12 at 23h 41m 57s.xml">
       <configuration name="parser_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="parser_test_go - 2017.07.14 at 00h 41m 37s.xml">
+      <configuration name="parser_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48865000" />
+    <option name="totallyTimeSpent" value="49469000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -837,27 +812,27 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2394822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21898597" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2416397" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40237325" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -868,7 +843,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="45" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GoTestRunConfiguration">
@@ -988,13 +963,6 @@
     <entry file="file://$PROJECT_DIR$/parser/ast/module.go" />
     <entry file="file://$PROJECT_DIR$/grammar/precedence.go" />
     <entry file="file://$PROJECT_DIR$/parser/parse-assignment-statement.go" />
-    <entry file="file://$PROJECT_DIR$/lexer/lexer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Go/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1006,7 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,14 +993,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/ast.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/ast.go" />
     <entry file="file://$PROJECT_DIR$/grammar/lexemes.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1065,7 +1025,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1075,7 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1083,9 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-          <folding>
-            <element signature="e#17#87#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1107,23 +1062,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="e#16#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/evaluator/evaluator.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,7 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,7 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,7 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,9 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <element signature="e#17#83#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1189,22 +1124,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/parser/parsing/parse-operand.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="51" lean-forward="false" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="e#17#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/parser/parsing/append-leaf.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#17#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/parsing/parse-operand.go">
+    <entry file="file://$PROJECT_DIR$/lexer/lexer_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="216">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
-            <element signature="e#17#90#0" expanded="true" />
+            <element signature="e#16#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
