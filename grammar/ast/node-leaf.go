@@ -29,6 +29,6 @@ func (n *LeafNode) GetLeafType() LeafType {
 	return n.nodeType
 }
 
-func (n *LeafNode) GetToken() *lexer.Token {
+func (n *LeafNode) GetValue() int {
 	return n.token
 }

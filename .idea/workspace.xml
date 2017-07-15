@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b3e868-b9b1-4d7e-a110-0e1ef2a2f500" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/node-expression.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/node-leaf.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/node-module.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/node-statement.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/types-expressions.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/types-leafs.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/types-node.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grammar/ast/types-statements.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/grammar/ast/node-types.go" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/chech.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/chech.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interpretator/evaluation-stack.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interpretator/evaluator.go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/stack.go" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/evaluator/evaluator.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/evaluator/stack-machine.go" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grammar/ast/node.go" afterPath="$PROJECT_DIR$/grammar/ast/node.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser.go" afterPath="$PROJECT_DIR$/parser/parser.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parser_test.go" afterPath="$PROJECT_DIR$/parser/parser_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/append-leaf.go" afterPath="$PROJECT_DIR$/parser/parsing/append-leaf.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/parse-expression.go" afterPath="$PROJECT_DIR$/parser/parsing/parse-expression.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/parse-module.go" afterPath="$PROJECT_DIR$/parser/parsing/parse-module.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/parse-operand.go" afterPath="$PROJECT_DIR$/parser/parsing/parse-operand.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser/parsing/parse-statement.go" afterPath="$PROJECT_DIR$/parser/parsing/parse-statement.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grammar/ast/node-leaf.go" afterPath="$PROJECT_DIR$/grammar/ast/node-leaf.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,12 +43,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="parser_test.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
+      <file leaf-file-name="evaluator.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interpretator/evaluator.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="572">
+              <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+              <folding>
+                <element signature="e#23#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="node-leaf.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grammar/ast/node-leaf.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+              <folding>
+                <element signature="e#13#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,9 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lexer/lexer.go" />
-        <option value="$PROJECT_DIR$/lexer/tokenStream.go" />
-        <option value="$PROJECT_DIR$/parser/ast.go" />
         <option value="$PROJECT_DIR$/parser/ast/statement.go" />
         <option value="$PROJECT_DIR$/parser/ast/expression.go" />
         <option value="$PROJECT_DIR$/parser/ast/assignmentStatement.go" />
@@ -103,9 +103,7 @@
         <option value="$PROJECT_DIR$/lexer/token-stream.go" />
         <option value="$PROJECT_DIR$/parser/ast/node.go" />
         <option value="$PROJECT_DIR$/grammar/ast.go" />
-        <option value="$PROJECT_DIR$/evaluator/evaluator.go" />
         <option value="$PROJECT_DIR$/grammar/lexemes.go" />
-        <option value="$PROJECT_DIR$/evaluator/stack-machine.go" />
         <option value="$PROJECT_DIR$/lexer/tokens-state-machine.go" />
         <option value="$PROJECT_DIR$/lexer/token-state-machine.go" />
         <option value="$PROJECT_DIR$/parser/token-state-machine.go" />
@@ -132,9 +130,14 @@
         <option value="$PROJECT_DIR$/grammar/ast/types-expressions.go" />
         <option value="$PROJECT_DIR$/grammar/ast/node-module.go" />
         <option value="$PROJECT_DIR$/grammar/ast/node-statement.go" />
-        <option value="$PROJECT_DIR$/grammar/ast/node-leaf.go" />
         <option value="$PROJECT_DIR$/grammar/ast/node-expression.go" />
         <option value="$PROJECT_DIR$/parser/parser_test.go" />
+        <option value="$PROJECT_DIR$/evaluator/stack-machine.go" />
+        <option value="$PROJECT_DIR$/utils/stack.go" />
+        <option value="$PROJECT_DIR$/evaluator/evaluation-stack.go" />
+        <option value="$PROJECT_DIR$/evaluator/evaluator.go" />
+        <option value="$PROJECT_DIR$/grammar/ast/node-leaf.go" />
+        <option value="$PROJECT_DIR$/interpretator/evaluator.go" />
       </list>
     </option>
   </component>
@@ -193,7 +196,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
+              <option name="myItemId" value="interpretator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,14 +247,14 @@
     <property name="SearchEverywhereHistoryKey" value="color sch&#9;ACTION&#9;ChangeColorScheme&#10;plugins&#9;ACTION&#9;WelcomeScreen.Plugins&#10;color s&#9;ACTION&#9;ChangeColorScheme" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspaces\my\go\src\evergreen-lang\parser" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspaces\my\go\src\evergreen-lang\parser\parsing" />
       <recent name="C:\workspaces\my\go\src\evergreen-lang\parser" />
       <recent name="C:\workspaces\my\go\src\evergreen-lang\grammar" />
       <recent name="C:\workspaces\my\go\src\evergreen-lang\parser\ast" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspaces\my\go\src\evergreen-lang\parser" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -777,7 +780,7 @@
       <workItem from="1499883410504" duration="9108000" />
       <workItem from="1499981572878" duration="797000" />
       <workItem from="1500059335045" duration="658000" />
-      <workItem from="1500110304702" duration="9230000" />
+      <workItem from="1500110304702" duration="16419000" />
     </task>
     <servers />
   </component>
@@ -814,7 +817,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59618000" />
+    <option name="totallyTimeSpent" value="66807000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,7 +841,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36893204" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36893204" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -877,13 +880,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_old-src/Evergreen.Domain.Grammar/Lexis/Static/LexemesRegularExpressions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_old-src/Evergreen.Domain.Grammar/Lexis/GlobalStateObjects/TokenTypes/Words/Identifiers/IdentifierTokenTypeBase.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -979,13 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evaluator/evaluator.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lexer/token-position.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -997,13 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/evaluator/stack-machine.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1022,14 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lexer/lexer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lexer/token.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1042,14 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/ast/types-node.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1138,24 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/ast/node.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/ast/node-leaf.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#13#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parser/parsing/parse-statement.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1176,9 +1124,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="288">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexer/lexer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/stack.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/ast/types-node.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/ast/node.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/ast/node-leaf.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <element signature="e#13#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interpretator/evaluation-stack.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="e#23#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interpretator/evaluator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="e#23#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

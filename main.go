@@ -1,7 +1,7 @@
 package main
 
 import (
-	"evergreen-lang/evaluator"
+	"evergreen-lang/interpretator"
 	"evergreen-lang/lexer"
 	"evergreen-lang/parser"
 	"fmt"
@@ -21,5 +21,5 @@ func main() {
 		fmt.Printf(err.Error())
 	}
 
-	evaluator.Evaluate(ast)
+	interpretator.Evaluate(ast)
 }
