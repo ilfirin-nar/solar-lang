@@ -1,7 +1,7 @@
 # Evergreen Programming Language
 
 ## About
-Experimental pragmatic programming language vision. Not usable yet. Only prototype.
+Trying to create experimental pragmatic programming language for learning and practice purposes.
 Current state: integer calculator with variables.
 
 ## Status
