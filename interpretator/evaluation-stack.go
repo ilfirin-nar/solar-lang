@@ -5,12 +5,20 @@ import (
 	"fmt"
 )
 
+func newEvaluationStack() *evaluationStack {
+	return &evaluationStack{stack: &utils.Stack{}}
+}
+
 type evaluationStack struct {
-	stack utils.Stack
+	stack *utils.Stack
 }
 
 func (s evaluationStack) Push(v int) {
 	s.stack.Push(v)
+}
+
+func (s evaluationStack) Pop() int {
+	return s.stack.Pop()
 }
 
 func (s evaluationStack) Add() {

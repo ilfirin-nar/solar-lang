@@ -22,7 +22,13 @@ func ParseModule(tokens *TokenStateMachine) (ast.Node, error) {
 			return nil, err
 		}
 		node.AppendChild(statementNode)
-		return node, nil
+		if isStatementEnds(tokens) {
+			break
+		}
 	}
 	return node, nil
+}
+
+func isStatementEnds(tokens *TokenStateMachine) bool {
+	return tokens.IsEnd() || tokens.GetCurrent().LexemeType == grammar.NewLine
 }

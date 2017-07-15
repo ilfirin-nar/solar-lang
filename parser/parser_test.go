@@ -153,5 +153,20 @@ func TestParse(t *testing.T) {
 				}
 			}
 		})
+
+		t.Run("number, then print — two statements", func(t *testing.T) {
+			tokens, _ := lexer.Lex("foo <- 42 + 5\nprint foo")
+			moduleAST, err := Parse(tokens)
+			if err != nil {
+				t.Fatalf("Parse error: %s", err.Error())
+			}
+			if moduleAST == nil {
+				t.Fatalf("Empty AST")
+			}
+			statementsASTs := moduleAST.GetChildren()
+			if len(statementsASTs) != 2 {
+				t.Fatalf("Expected 2 statements, but received %d", len(statementsASTs))
+			}
+		})
 	})
 }
