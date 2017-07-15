@@ -22,7 +22,10 @@ func TestParse(t *testing.T) {
 				t.Fatalf("Expected 1 statement, but received %d", len(statementsASTs))
 			}
 			printStatementAST := statementsASTs[0]
-			if printStatementAST.GetNodeType() != ast.StatementPrint {
+			if printStatementAST.GetNodeType() != ast.Statement {
+				t.Fatalf("Expected statement, but parsed `%s`", printStatementAST.GetNodeType())
+			}
+			if printStatementAST.(*ast.StatementNode).GetStatementType() != ast.StatementPrint {
 				t.Fatalf("Expected print statement, but parsed `%s`", printStatementAST.GetNodeType())
 			}
 			expressionsASTs := printStatementAST.GetChildren()
@@ -38,7 +41,7 @@ func TestParse(t *testing.T) {
 				t.Fatalf("Expected 1 expr child, but received %d", len(expressionChildrenAST))
 			}
 			numberAST := expressionChildrenAST[0]
-			if numberAST.GetNodeType() != ast.Number {
+			if numberAST.GetNodeType() != ast.Leaf {
 				t.Fatalf("Expected number, but parsed `%s`", numberAST.GetNodeType())
 			}
 			if numberAST.GetChildren() != nil {
@@ -60,7 +63,7 @@ func TestParse(t *testing.T) {
 				t.Fatalf("Expected 1 statement, but received %d", len(statementsASTs))
 			}
 			printStatementAST := statementsASTs[0]
-			if printStatementAST.GetNodeType() != ast.StatementPrint {
+			if printStatementAST.GetNodeType() != ast.Statement {
 				t.Fatalf("Expected print statement, but parsed `%s`", printStatementAST.GetNodeType())
 			}
 			expressionsASTs := printStatementAST.GetChildren()
@@ -71,22 +74,17 @@ func TestParse(t *testing.T) {
 			if expressionAST.GetNodeType() != ast.Expression {
 				t.Fatalf("Expected expression, but parsed `%s`", printStatementAST.GetNodeType())
 			}
-			expressionChildrenAST := expressionAST.GetChildren()
-			if len(expressionChildrenAST) != 1 {
-				t.Fatalf("Expected 1 expr child, but received %d", len(statementsASTs))
-			}
 			{
-				operatorAST := expressionChildrenAST[0]
-				if operatorAST.GetNodeType() != ast.OperatorAddition {
-					t.Fatalf("Expected number as first operand, but parsed `%s`", printStatementAST.GetNodeType())
+				if expressionAST.(*ast.ExpressionNode).GetExpressionType() != ast.ExpOpAddition {
+					t.Fatalf("Expected addition operator expression")
 				}
-				operandsASTs := operatorAST.GetChildren()
+				operandsASTs := expressionAST.GetChildren()
 				if len(operandsASTs) != 2 {
 					t.Fatalf("Expected 2 operands, but received %d", len(statementsASTs))
 				}
 				{
 					firstOperandAST := operandsASTs[0]
-					if firstOperandAST.GetNodeType() != ast.Number {
+					if firstOperandAST.GetNodeType() != ast.Leaf {
 						t.Fatalf("Expected number as first operand, but parsed `%s`", printStatementAST.GetNodeType())
 					}
 					if firstOperandAST.GetChildren() != nil {
@@ -95,7 +93,7 @@ func TestParse(t *testing.T) {
 				}
 				{
 					secondOperandAST := operandsASTs[1]
-					if secondOperandAST.GetNodeType() != ast.Number {
+					if secondOperandAST.GetNodeType() != ast.Leaf {
 						t.Fatalf("Expected number as second operand, but parsed `%s`", printStatementAST.GetNodeType())
 					}
 					if secondOperandAST.GetChildren() != nil {
@@ -121,7 +119,7 @@ func TestParse(t *testing.T) {
 				t.Fatalf("Expected 1 statement, but received %d", len(statementsASTs))
 			}
 			assignmentStatementAST := statementsASTs[0]
-			if assignmentStatementAST.GetNodeType() != ast.StatementAssignment {
+			if assignmentStatementAST.GetNodeType() != ast.Statement {
 				t.Fatalf("Expected print statement, but parsed `%s`", assignmentStatementAST.GetNodeType())
 			}
 			assignmentsChildren := assignmentStatementAST.GetChildren()
@@ -130,7 +128,7 @@ func TestParse(t *testing.T) {
 			}
 			{
 				identifierAST := assignmentsChildren[0]
-				if identifierAST.GetNodeType() != ast.Identifier {
+				if identifierAST.GetNodeType() != ast.Leaf {
 					t.Fatalf("Expected identifier, but parsed `%s`", identifierAST.GetNodeType())
 				}
 				if identifierAST.GetChildren() != nil {
@@ -147,7 +145,7 @@ func TestParse(t *testing.T) {
 					t.Fatalf("Expected 1 expr child, but received %d", len(expressionChildrenASTs))
 				}
 				numberAST := expressionChildrenASTs[0]
-				if numberAST.GetNodeType() != ast.Number {
+				if numberAST.GetNodeType() != ast.Leaf {
 					t.Fatalf("Expected number, but parsed `%s`", numberAST.GetNodeType())
 				}
 				if numberAST.GetChildren() != nil {

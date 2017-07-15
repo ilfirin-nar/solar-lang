@@ -6,7 +6,7 @@ import (
 	"evergreen-lang/parser/parsing"
 )
 
-func Parse(tokens []*lexer.Token) (*ast.Node, error) {
+func Parse(tokens []*lexer.Token) (ast.Node, error) {
 	tokenStream := parsing.NewTokenStateMachine(tokens)
 	node, err := parsing.ParseModule(tokenStream)
 	if err != nil {

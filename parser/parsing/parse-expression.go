@@ -6,12 +6,11 @@ import (
 	"fmt"
 )
 
-func parseExpression(tokens *TokenStateMachine) (*ast.Node, error) {
-	node := ast.NewNode(ast.Expression)
+func parseExpression(tokens *TokenStateMachine) (ast.Node, error) {
 	var (
-		firstOperand  *ast.Node
-		operator      *ast.Node
-		secondOperand *ast.Node
+		firstOperand           ast.Node
+		operatorExpressionType ast.ExpressionType
+		secondOperand          ast.Node
 	)
 
 	firstOperand, err := parseOperand(tokens)
@@ -20,6 +19,7 @@ func parseExpression(tokens *TokenStateMachine) (*ast.Node, error) {
 	}
 
 	if isExprEnds(tokens) {
+		node := ast.NewExpressionNode(ast.ExpValue)
 		node.AppendChild(firstOperand)
 		return node, nil
 	}
@@ -30,24 +30,24 @@ func parseExpression(tokens *TokenStateMachine) (*ast.Node, error) {
 
 	operatorToken, err := tokens.GetNext()
 	if err != nil {
-		return nil, fmt.Errorf("Missed operator")
+		return nil, fmt.Errorf("Missed operatorExpressionType")
 	}
 
 	switch operatorToken.LexemeType {
 	case grammar.Addition:
-		operator = ast.NewNode(ast.OperatorAddition)
+		operatorExpressionType = ast.ExpOpAddition
 		break
 	case grammar.Subtraction:
-		operator = ast.NewNode(ast.OperatorSubtraction)
+		operatorExpressionType = ast.ExpOpSubtraction
 		break
 	case grammar.Multiplication:
-		operator = ast.NewNode(ast.OperatorMultiplication)
+		operatorExpressionType = ast.ExpOpMultiplication
 		break
 	case grammar.Division:
-		operator = ast.NewNode(ast.OperatorDivision)
+		operatorExpressionType = ast.ExpOpDivision
 		break
 	default:
-		return nil, fmt.Errorf("Missed operator")
+		return nil, fmt.Errorf("Missed operatorExpressionType")
 	}
 
 	if spaceToken, ok := tokens.CheckNextToken(grammar.Space); !ok {
@@ -63,9 +63,9 @@ func parseExpression(tokens *TokenStateMachine) (*ast.Node, error) {
 		return nil, err
 	}
 
-	operator.AppendChild(firstOperand)
-	operator.AppendChild(secondOperand)
-	node.AppendChild(operator)
+	node := ast.NewExpressionNode(operatorExpressionType)
+	node.AppendChild(firstOperand)
+	node.AppendChild(secondOperand)
 	return node, nil
 }
 

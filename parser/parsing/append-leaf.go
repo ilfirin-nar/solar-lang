@@ -5,7 +5,7 @@ import (
 	"evergreen-lang/lexer"
 )
 
-func appendLeaf(node *ast.Node, token *lexer.Token, nodeType ast.NodeType) *ast.Node {
+func appendLeaf(node ast.Node, token *lexer.Token, nodeType ast.LeafType) ast.Node {
 	childNode := ast.NewLeafNode(nodeType, token)
 	node.AppendChild(childNode)
 	return childNode

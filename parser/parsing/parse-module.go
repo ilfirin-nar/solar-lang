@@ -5,8 +5,8 @@ import (
 	"evergreen-lang/grammar/ast"
 )
 
-func ParseModule(tokens *TokenStateMachine) (*ast.Node, error) {
-	node := ast.NewNode(ast.Module)
+func ParseModule(tokens *TokenStateMachine) (ast.Node, error) {
+	node := ast.NewModuleNode()
 	for {
 		token, err := tokens.GetNext()
 		if err != nil {

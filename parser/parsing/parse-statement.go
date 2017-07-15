@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-func parseStatement(tokens *TokenStateMachine) (*ast.Node, error) {
+func parseStatement(tokens *TokenStateMachine) (ast.Node, error) {
 	token := tokens.GetCurrent()
 	switch token.LexemeType {
 	case grammar.PrintKeyword:
@@ -17,8 +17,8 @@ func parseStatement(tokens *TokenStateMachine) (*ast.Node, error) {
 	return nil, fmt.Errorf("Missed statement")
 }
 
-func parsePrintStatement(tokens *TokenStateMachine) (*ast.Node, error) {
-	node := ast.NewNode(ast.StatementPrint)
+func parsePrintStatement(tokens *TokenStateMachine) (ast.Node, error) {
+	node := ast.NewStatementNode(ast.StatementPrint)
 
 	if token, ok := tokens.CheckNextToken(grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
@@ -33,10 +33,10 @@ func parsePrintStatement(tokens *TokenStateMachine) (*ast.Node, error) {
 	return node, nil
 }
 
-func parseAssignmentStatement(tokens *TokenStateMachine) (*ast.Node, error) {
-	node := ast.NewNode(ast.StatementAssignment)
+func parseAssignmentStatement(tokens *TokenStateMachine) (ast.Node, error) {
+	node := ast.NewStatementNode(ast.StatementAssignment)
 	variableToken := tokens.GetCurrent()
-	appendLeaf(node, variableToken, ast.Identifier)
+	appendLeaf(node, variableToken, ast.LeafIdentifier)
 
 	if token, ok := tokens.CheckNextToken(grammar.Space); !ok {
 		return nil, fmt.Errorf("Missed space: %s", token.LexemeType)
