@@ -1,4 +1,5 @@
 # Evergreen Programming Language
+[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://github.com/sunloving/evergreen-lang/blob/master/LICENSE)
 
 ## About
 Trying to create experimental pragmatic programming language for learning and practice purposes.
@@ -13,5 +14,3 @@ will prints
 -42
 ```
 
-## Status
-[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://github.com/sunloving/evergreen-lang/blob/master/LICENSE)
