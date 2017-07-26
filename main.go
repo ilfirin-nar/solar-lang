@@ -9,7 +9,18 @@ import (
 )
 
 func main() {
-	source := os.Args[0]
+	if len(os.Args) <= 1 {
+		fmt.Println("Missing source path")
+		os.Exit(1)
+		return
+	}
+
+	source := os.Args[1]
+	if source == "" {
+		fmt.Println("Source is empty")
+		os.Exit(1)
+		return
+	}
 
 	tokens, err := lexer.Lex(source)
 	if err != nil {
