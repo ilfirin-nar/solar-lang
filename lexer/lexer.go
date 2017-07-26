@@ -4,6 +4,7 @@ import (
 	"errors"
 	"evergreen-lang/grammar"
 	"regexp"
+	"strings"
 )
 
 const maxLexemeLength = 50
@@ -12,6 +13,8 @@ func Lex(source string) ([]*Token, error) {
 	if len(source) == 0 {
 		return nil, errors.New("Empty source, nothing to lex")
 	}
+
+	source = strings.TrimSpace(source)
 
 	var (
 		lexemes    []*Token

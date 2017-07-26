@@ -102,6 +102,21 @@ func TestParse(t *testing.T) {
 				}
 			}
 		})
+
+		t.Run("number", func(t *testing.T) {
+			tokens, _ := lexer.Lex("	print 42\n")
+			moduleAST, err := Parse(tokens)
+			if err != nil {
+				t.Fatalf("Parse error: %s", err.Error())
+			}
+			if moduleAST == nil {
+				t.Fatalf("Empty AST")
+			}
+			statementsASTs := moduleAST.GetChildren()
+			if len(statementsASTs) != 1 {
+				t.Fatalf("Expected 1 statement, but received %d", len(statementsASTs))
+			}
+		})
 	})
 
 	t.Run("assignment statement", func(t *testing.T) {
