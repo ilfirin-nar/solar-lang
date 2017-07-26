@@ -1,5 +1,5 @@
 # Evergreen Programming Language
-[![Travis](https://travis-ci.org/sunloving/evergreen-lang.svg?branch=master)](https://travis-ci.org/sunloving/evergreen-lang.svg?branch=master)
+[![Travis](https://travis-ci.org/sunloving/evergreen-lang.svg?branch=master)](https://travis-ci.org/sunloving/evergreen-lang)
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://github.com/sunloving/evergreen-lang/blob/master/LICENSE)
 
 ## About
