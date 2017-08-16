@@ -3,7 +3,5 @@ language: go
 go:
   - 1.8.3
   
-go_import_path: github.org/pkg/evergreen-lang
-
 script:
   - go test -v ./..
