@@ -101,6 +101,12 @@ func getType(value string) grammar.LexemeType {
 	if checkType(value, grammar.Identifier) {
 		return grammar.Identifier
 	}
+	if checkType(value, grammar.LeftParenthesis) {
+		return grammar.LeftParenthesis
+	}
+	if checkType(value, grammar.RightParenthesis) {
+		return grammar.RightParenthesis
+	}
 	return grammar.InvalidLexemeType
 }
 

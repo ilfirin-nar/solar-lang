@@ -7,14 +7,14 @@ import (
 
 func TestLex(t *testing.T) {
 	t.Run("counts", func(t *testing.T) {
-		t.Run("empty string — nil", func(t *testing.T) {
+		t.Run("empty string: nil", func(t *testing.T) {
 			_, err := Lex("")
 			if err == nil {
 				t.Fatalf("Error is nil")
 			}
 		})
 
-		t.Run("one word — one token", func(t *testing.T) {
+		t.Run("one word: one token", func(t *testing.T) {
 			lexemes, err := Lex("word")
 			if err != nil {
 				t.Fatalf("Error")
@@ -24,7 +24,7 @@ func TestLex(t *testing.T) {
 			}
 		})
 
-		t.Run("few words — few tokens", func(t *testing.T) {
+		t.Run("few words: few tokens", func(t *testing.T) {
 			lexemes, err := Lex("foo2 bar3")
 			if err != nil {
 				t.Fatalf("Error")
@@ -34,7 +34,7 @@ func TestLex(t *testing.T) {
 			}
 		})
 
-		t.Run("complex string — many tokens", func(t *testing.T) {
+		t.Run("complex string: many tokens", func(t *testing.T) {
 			lexemes, err := Lex("foo <- a + b - c * d / e")
 			if err != nil {
 				t.Fatalf("Error")
@@ -46,89 +46,71 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("spaces", func(t *testing.T) {
-		t.Run("one space — space token", func(t *testing.T) {
+		t.Run("one space: no tokens", func(t *testing.T) {
 			lexemes, err := Lex(" ")
 			if err != nil {
 				t.Fatalf("Error")
 			}
-			if len(lexemes) != 1 {
-				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
-			}
-			if lexemes[0].LexemeType != grammar.Space {
-				t.Fatalf("Expected space token, but received %s", lexemes[0].LexemeType)
+			if len(lexemes) != 0 {
+				t.Fatalf("Expected 0 tokens, but received %d", len(lexemes))
 			}
 		})
 
-		t.Run("few spaces — space token", func(t *testing.T) {
+		t.Run("few spaces: no tokens", func(t *testing.T) {
 			lexemes, err := Lex("     ")
 			if err != nil {
 				t.Fatalf("Error")
 			}
-			if len(lexemes) != 1 {
-				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
-			}
-			if lexemes[0].LexemeType != grammar.Space {
-				t.Fatalf("Expected space token, but received %s", lexemes[0].LexemeType)
+			if len(lexemes) != 0 {
+				t.Fatalf("Expected 0 tokens, but received %d", len(lexemes))
 			}
 		})
 
-		t.Run("tabs and spaces — space token", func(t *testing.T) {
+		t.Run("tabs and spaces: no tokens", func(t *testing.T) {
 			lexemes, err := Lex("	  	  ")
 			if err != nil {
 				t.Fatalf("Error")
 			}
-			if len(lexemes) != 1 {
-				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
-			}
-			if lexemes[0].LexemeType != grammar.Space {
-				t.Fatalf("Expected space token, but received %s", lexemes[0].LexemeType)
+			if len(lexemes) != 0 {
+				t.Fatalf("Expected 0 tokens, but received %d", len(lexemes))
 			}
 		})
 	})
 
 	t.Run("newlines", func(t *testing.T) {
-		t.Run("one newline — newline token", func(t *testing.T) {
+		t.Run("one newline: no tokens", func(t *testing.T) {
 			lexemes, err := Lex("\n")
 			if err != nil {
 				t.Fatalf("Error")
 			}
-			if len(lexemes) != 1 {
-				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
-			}
-			if lexemes[0].LexemeType != grammar.NewLine {
-				t.Fatalf("Expected newline token, but received %s", lexemes[0].LexemeType)
+			if len(lexemes) != 0 {
+				t.Fatalf("Expected 0 tokens, but received %d", len(lexemes))
 			}
 		})
 
-		t.Run("two newlines — newline token", func(t *testing.T) {
+		t.Run("two newlines: no tokens", func(t *testing.T) {
 			lexemes, err := Lex("\n\n")
 			if err != nil {
 				t.Fatalf("Error")
 			}
-			if len(lexemes) != 1 {
-				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
-			}
-			if lexemes[0].LexemeType != grammar.NewLine {
-				t.Fatalf("Expected newline token, but received %s", lexemes[0].LexemeType)
+			if len(lexemes) != 0 {
+				t.Fatalf("Expected 0 tokens, but received %d", len(lexemes))
 			}
 		})
 
-		t.Run("few newlines — newline token", func(t *testing.T) {
+		t.Run("few newlines: no tokens", func(t *testing.T) {
 			lexemes, err := Lex("\n\n\n\n\n")
 			if err != nil {
 				t.Fatalf("Error")
 			}
-			if len(lexemes) != 1 {
-				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
-			}
-			if lexemes[0].LexemeType != grammar.NewLine {
-				t.Fatalf("Expected newline token, but received %s", lexemes[0].LexemeType)
+			if len(lexemes) != 0 {
+				t.Fatalf("Expected 0 tokens, but received %d", len(lexemes))
 			}
 		})
 	})
 
 	t.Run("variables", func(t *testing.T) {
-		t.Run("one word — variable token", func(t *testing.T) {
+		t.Run("one word: variable token", func(t *testing.T) {
 			lexemes, err := Lex("foo")
 			if err != nil {
 				t.Fatalf("Error")
@@ -141,7 +123,7 @@ func TestLex(t *testing.T) {
 			}
 		})
 
-		t.Run("two words — two variables tokens", func(t *testing.T) {
+		t.Run("two words: two variables tokens", func(t *testing.T) {
 			lexemes, err := Lex("foo bar")
 			if err != nil {
 				t.Fatalf("Error")
@@ -162,7 +144,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("keywords", func(t *testing.T) {
-		t.Run("print word — print keyword", func(t *testing.T) {
+		t.Run("print word: print keyword", func(t *testing.T) {
 			lexemes, err := Lex("print")
 			if err != nil {
 				t.Fatalf("Error")
@@ -175,7 +157,7 @@ func TestLex(t *testing.T) {
 			}
 		})
 
-		t.Run("print and word — print keyword and variable", func(t *testing.T) {
+		t.Run("print and word: print keyword and variable", func(t *testing.T) {
 			lexemes, err := Lex("print foo")
 			if err != nil {
 				t.Fatalf("Error")
@@ -196,7 +178,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("assignment", func(t *testing.T) {
-		t.Run("assignment — assignment token", func(t *testing.T) {
+		t.Run("assignment: assignment token", func(t *testing.T) {
 			lexemes, err := Lex("<-")
 			if err != nil {
 				t.Fatalf("Error")
@@ -211,7 +193,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("equality", func(t *testing.T) {
-		t.Run("equality — equality token", func(t *testing.T) {
+		t.Run("equality: equality token", func(t *testing.T) {
 			lexemes, err := Lex("=")
 			if err != nil {
 				t.Fatalf("Error")
@@ -226,7 +208,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("less than", func(t *testing.T) {
-		t.Run("less than — less than token", func(t *testing.T) {
+		t.Run("less than: less than token", func(t *testing.T) {
 			lexemes, err := Lex("<")
 			if err != nil {
 				t.Fatalf("Error")
@@ -241,7 +223,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("great than", func(t *testing.T) {
-		t.Run("great than — great than token", func(t *testing.T) {
+		t.Run("great than: great than token", func(t *testing.T) {
 			lexemes, err := Lex(">")
 			if err != nil {
 				t.Fatalf("Error")
@@ -256,7 +238,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("less than or eq", func(t *testing.T) {
-		t.Run("less than or eq — less than or eq token", func(t *testing.T) {
+		t.Run("less than or eq: less than or eq token", func(t *testing.T) {
 			lexemes, err := Lex("<=")
 			if err != nil {
 				t.Fatalf("Error")
@@ -271,7 +253,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("great than or eq", func(t *testing.T) {
-		t.Run("great than or eq — great than or eq token", func(t *testing.T) {
+		t.Run("great than or eq: great than or eq token", func(t *testing.T) {
 			lexemes, err := Lex(">=")
 			if err != nil {
 				t.Fatalf("Error")
@@ -286,7 +268,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("addition", func(t *testing.T) {
-		t.Run("addition — addition token", func(t *testing.T) {
+		t.Run("addition: addition token", func(t *testing.T) {
 			lexemes, err := Lex("+")
 			if err != nil {
 				t.Fatalf("Error")
@@ -301,7 +283,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("subtraction", func(t *testing.T) {
-		t.Run("subtraction — subtraction token", func(t *testing.T) {
+		t.Run("subtraction: subtraction token", func(t *testing.T) {
 			lexemes, err := Lex("-")
 			if err != nil {
 				t.Fatalf("Error")
@@ -316,7 +298,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("multiplication", func(t *testing.T) {
-		t.Run("multiplication — multiplication token", func(t *testing.T) {
+		t.Run("multiplication: multiplication token", func(t *testing.T) {
 			lexemes, err := Lex("*")
 			if err != nil {
 				t.Fatalf("Error")
@@ -331,7 +313,7 @@ func TestLex(t *testing.T) {
 	})
 
 	t.Run("division", func(t *testing.T) {
-		t.Run("division — division token", func(t *testing.T) {
+		t.Run("division: division token", func(t *testing.T) {
 			lexemes, err := Lex("/")
 			if err != nil {
 				t.Fatalf("Error")
@@ -341,6 +323,34 @@ func TestLex(t *testing.T) {
 			}
 			if lexemes[0].LexemeType != grammar.Division {
 				t.Fatalf("Expected division token, but received %s", lexemes[0].LexemeType)
+			}
+		})
+	})
+
+	t.Run("parenthesis", func(t *testing.T) {
+		t.Run("parenthesis: left", func(t *testing.T) {
+			lexemes, err := Lex("(")
+			if err != nil {
+				t.Fatalf("Error")
+			}
+			if len(lexemes) != 1 {
+				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
+			}
+			if lexemes[0].LexemeType != grammar.LeftParenthesis {
+				t.Fatalf("Expected left parenthesis token, but received %s", lexemes[0].LexemeType)
+			}
+		})
+
+		t.Run("parenthesis: right", func(t *testing.T) {
+			lexemes, err := Lex(")")
+			if err != nil {
+				t.Fatalf("Error")
+			}
+			if len(lexemes) != 1 {
+				t.Fatalf("Expected 1 token, but received %d", len(lexemes))
+			}
+			if lexemes[0].LexemeType != grammar.RightParenthesis {
+				t.Fatalf("Expected right parenthesis token, but received %s", lexemes[0].LexemeType)
 			}
 		})
 	})

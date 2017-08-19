@@ -16,15 +16,15 @@ func TestEvaluate(t *testing.T) {
 	})
 
 	t.Run("assign expression", func(t *testing.T) {
-		eval("foo <- 42 + 8", t)
+		eval("foo <- 42 * 8", t)
 	})
 
 	t.Run("assign expression then print", func(t *testing.T) {
 		eval(
 			`
-				foo <- 2 * 3
+				foo <- 2 + (3 - 4)
 				bar <- 42 + foo
-				print foo - bar`,
+				print bar / 2`,
 			t,
 		)
 	})

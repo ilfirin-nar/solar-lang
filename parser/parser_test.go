@@ -169,8 +169,33 @@ func TestParse(t *testing.T) {
 			}
 		})
 
-		t.Run("number, then print — two statements", func(t *testing.T) {
-			tokens, _ := lexer.Lex("foo <- 42 + 5\nprint foo")
+		t.Run("expression with parenthesises: one statement, expr tree inside", func(t *testing.T) {
+			tokens, _ := lexer.Lex("foo <- 42 + (5 - 3)")
+			moduleAST, err := Parse(tokens)
+			if err != nil {
+				t.Fatalf("Parse error: %s", err.Error())
+			}
+			if moduleAST == nil {
+				t.Fatalf("Empty AST")
+			}
+			statementsASTs := moduleAST.GetChildren()
+			if len(statementsASTs) != 1 {
+				t.Fatalf("Expected 1 statement, but received %d", len(statementsASTs))
+			}
+			operandsASTs := statementsASTs[0].GetChildren()
+			if len(operandsASTs) != 2 {
+				t.Fatalf("Expected 2 operands, but received %d", len(operandsASTs))
+			}
+			if operandsASTs[0].GetNodeType() != ast.Leaf {
+				t.Fatalf("Expected first operand is leaf, but received %d", operandsASTs[0].GetNodeType())
+			}
+			if operandsASTs[1].GetNodeType() != ast.Expression {
+				t.Fatalf("Expected first operand is expression, but received %d", operandsASTs[1].GetNodeType())
+			}
+		})
+
+		t.Run("expression, then print: two statements", func(t *testing.T) {
+			tokens, _ := lexer.Lex("foo <- 42 + (5 - 3)\nprint foo")
 			moduleAST, err := Parse(tokens)
 			if err != nil {
 				t.Fatalf("Parse error: %s", err.Error())

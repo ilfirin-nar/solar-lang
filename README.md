@@ -6,12 +6,12 @@
 Trying to create experimental pragmatic programming language for learning and practice purposes.
 Current state: integer calculator with variables:
 ```
-foo <- 2 * 3
+foo <- 2 + (3 - 4)
 bar <- 42 + foo
-print foo - bar
+print bar / 2
 ```
 will prints
 ```
--42
+21
 ```
 

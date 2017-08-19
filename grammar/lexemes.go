@@ -17,6 +17,8 @@ const (
 	Division          = LexemeType("^/$")
 	PrintKeyword      = LexemeType("^print$")
 	Identifier        = LexemeType("^([a-z])+([a-zA-Z0-9])*$")
+	LeftParenthesis   = LexemeType("^\\($")
+	RightParenthesis  = LexemeType("^\\)$")
 )
 
 type LexemeType string
